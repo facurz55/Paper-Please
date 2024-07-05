@@ -16,6 +16,7 @@ public:
     QString obtenerNacionalidad() const;
     QString getPersonaVisa() const;
     QString getPersonaEstCivil() const;
+    //Faltan Estancia, residencia, proposito del viaje, integrantes, antecedentes
 
 private:
     void generarNombres();

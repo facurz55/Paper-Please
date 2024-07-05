@@ -9,6 +9,7 @@ int main(int argc, char *argv[])
     w.show();
     Persona Persona1;
     Persona1.Mostrar_Datos();
+    w.actualizarLabelConPersona(Persona1);
 
     return a.exec();
 }
