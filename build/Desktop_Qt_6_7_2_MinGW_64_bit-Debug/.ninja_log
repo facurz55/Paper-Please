@@ -1,17 +1,10 @@
 # ninja log v6
-61	491	7418243552384921	PaperPlease_autogen/timestamp	e485ff8c430b3ede
-2902	18959	7418193714491743	CMakeFiles/PaperPlease.dir/PaperPlease_autogen/mocs_compilation.cpp.obj	ebaa43c86446522
-61	491	7418243552384921	PaperPlease_autogen/mocs_compilation.cpp	e485ff8c430b3ede
-16635	17712	7418243718090723	PaperPlease.exe	28a5b1ff9272bdc5
-495	15883	7418243556693785	CMakeFiles/PaperPlease.dir/main.cpp.obj	1edefca60c0f71f2
-500	16634	7418243556743772	CMakeFiles/PaperPlease.dir/mainwindow.cpp.obj	5ce591aa5e7bfca8
-504	15500	7418243556783742	CMakeFiles/PaperPlease.dir/persona.cpp.obj	c288d15c1960479c
 15	1850	7421939260072936	PaperPlease_autogen/timestamp	8d74815c5f4fa48
-15	1850	7421939260072936	PaperPlease_autogen/mocs_compilation.cpp	8d74815c5f4fa48
-15	1850	7421939260072936	C:/Users/thiag/OneDrive/Escritorio/TRABAJO PRACTICO POO ANASHE/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/PaperPlease_autogen/timestamp	8d74815c5f4fa48
-15	1850	7421939260072936	C:/Users/thiag/OneDrive/Escritorio/TRABAJO PRACTICO POO ANASHE/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/PaperPlease_autogen/mocs_compilation.cpp	8d74815c5f4fa48
 1853	4926	7421939262238722	CMakeFiles/PaperPlease.dir/PaperPlease_autogen/mocs_compilation.cpp.obj	b242cc12eb6fa46a
-2093	4986	7421939264643658	CMakeFiles/PaperPlease.dir/persona.cpp.obj	4949b0d26b88f027
+15	1850	7421939260072936	PaperPlease_autogen/mocs_compilation.cpp	8d74815c5f4fa48
+5104	6396	7421939294752078	PaperPlease.exe	28a5b1ff9272bdc5
 1881	5034	7421939262519761	CMakeFiles/PaperPlease.dir/main.cpp.obj	e37121feaa96ba43
 1942	5104	7421939263140458	CMakeFiles/PaperPlease.dir/mainwindow.cpp.obj	e6dd2ff631dbf951
-5104	6396	7421939294752078	PaperPlease.exe	28a5b1ff9272bdc5
+2093	4986	7421939264643658	CMakeFiles/PaperPlease.dir/persona.cpp.obj	4949b0d26b88f027
+15	1850	7421939260072936	C:/Users/thiag/OneDrive/Escritorio/TRABAJO PRACTICO POO ANASHE/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/PaperPlease_autogen/timestamp	8d74815c5f4fa48
+15	1850	7421939260072936	C:/Users/thiag/OneDrive/Escritorio/TRABAJO PRACTICO POO ANASHE/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/PaperPlease_autogen/mocs_compilation.cpp	8d74815c5f4fa48

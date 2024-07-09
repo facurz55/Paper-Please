@@ -17,7 +17,14 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     void actualizarLabelConPersona(const Persona &persona);
+private slots:
+    void Button();
 
+    void pushButton_2();
+
+    void siPasa();
+
+    void noPasa();
 private:
     Ui::MainWindow *ui;
 };
