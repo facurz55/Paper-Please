@@ -25,6 +25,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         ${PROJECT_SOURCES}
         persona.h persona.cpp
         menu.h menu.cpp menu.ui
+        imagenes.qrc
 
     )
 # Define target properties for Android with Qt 6 as:

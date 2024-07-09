@@ -19,13 +19,13 @@ public:
     ~MainWindow();
 
 private slots:
-    void MostrarVentanas();
-    void Mostrar5Botones();//comentario
-
+    void CambiarPagina();//Pasar a page_2
+    void Volver();//volver a page
 
 private:
     Ui::MainWindow *ui;
-    Menu *menuPage;
-    QStackedWidget *stackedWidget;
+    Menu *menuPage;//Puntero de la clase
+    QStackedWidget *stackedWidget; //Puntero para el StackedWidget
+    QWidget *page_2; // Placeholder para la página del juego
 };
 #endif // MAINWINDOW_H
