@@ -1,7 +1,8 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-#include "persona.h"
+#include "menu.h"
 #include <QMainWindow>
+#include <QStackedWidget>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -16,9 +17,15 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-    void actualizarLabelConPersona(const Persona &persona);
+
+private slots:
+    void MostrarVentanas();
+    void Mostrar5Botones();
+
 
 private:
     Ui::MainWindow *ui;
+    Menu *menuPage;
+    QStackedWidget *stackedWidget;
 };
 #endif // MAINWINDOW_H
