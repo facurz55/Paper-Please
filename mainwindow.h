@@ -20,7 +20,7 @@ public:
 
 private slots:
     void MostrarVentanas();
-    void Mostrar5Botones();
+    void Mostrar5Botones();//comentario
 
 
 private:
