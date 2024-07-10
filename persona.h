@@ -9,6 +9,16 @@ public:
     Persona();
     void Mostrar_Datos();
 
+    void generarNombres();
+    void generarFecha();
+    void generarNacionalidad();
+    void generarVisa();
+    void generar_Estado_civil();
+    void generar_Estancia();
+
+    void retPop();
+    int obtenerPop();
+
     QString obtenerGenero() const;
     QString obtenerNombre() const;
     QString obtenerApellido() const;
@@ -17,15 +27,7 @@ public:
     QString getPersonaVisa() const;
     QString getPersonaEstCivil() const;
     //Faltan Estancia, residencia, proposito del viaje, integrantes, antecedentes
-
-private:
-    void generarNombres();
-    void generarFecha();
-    void generarNacionalidad();
-    void generarVisa();
-    void generar_Estado_civil();
-    void generar_Estancia();
-
+protected:
     QString genero;
     QString nombre;
     QString apellido;
@@ -34,6 +36,7 @@ private:
     QString Visa;
     QString Estadocivil;
     QString Estancia;
+    int pop = 0;
 };
 
 #endif // PERSONA_H

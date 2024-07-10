@@ -28,12 +28,25 @@ void Persona::generarNombres() {
     genero = generos[gen];
     QStringList nombresM = {"Gabriel", "Andrés", "Diego", "Ricardo", "Mario", "Fernando", "Javier", "Daniel", "Emilio", "Sebastián"};
     QStringList nombresF = {"María", "Ana", "Laura", "Sofía", "Carmen", "Isabel", "Patricia", "Julia", "Elena", "Marta"};
+    int ran = QRandomGenerator::global()->bounded(0, 100);
     if (gen == 0) {
         int nbm = QRandomGenerator::global()->bounded(nombresM.size());
         nombre = nombresM[nbm];
+        if (ran < 10)
+        {
+            int nbf = QRandomGenerator::global()->bounded(nombresF.size());
+            nombre = nombresF[nbf];
+            pop = 1;
+        }
     } else {
         int nbf = QRandomGenerator::global()->bounded(nombresF.size());
         nombre = nombresF[nbf];
+        if (ran < 10)
+        {
+            int nbm = QRandomGenerator::global()->bounded(nombresM.size());
+            nombre = nombresM[nbm];
+            pop = 1;
+        }
     }
     QStringList apellidos = {"García", "Rodríguez", "López", "Martínez", "González", "Gomez", "Sánchez", "Ramírez", "Torres", "Flores", "Navarro", "Molina"};
     int na = QRandomGenerator::global()->bounded(apellidos.size());
@@ -93,6 +106,16 @@ QString Persona::getPersonaVisa() const {
 
 QString Persona::getPersonaEstCivil() const {
     return Estadocivil;
+}
+
+void Persona::retPop()
+{
+    pop = 0;
+}
+
+int Persona::obtenerPop()
+{
+    return pop;
 }
 
 void Persona::Mostrar_Datos() {
