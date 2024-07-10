@@ -263,6 +263,12 @@
 			null
 		],
 		[
+			"C:/Users/thiag/OneDrive/Escritorio/TRABAJO PRACTICO POO ANASHE/Paper-Please/menu.h",
+			"MU",
+			"EWIEGA46WW/moc_menu.cpp",
+			null
+		],
+		[
 			"C:/Users/thiag/OneDrive/Escritorio/TRABAJO PRACTICO POO ANASHE/Paper-Please/persona.h",
 			"MU",
 			"EWIEGA46WW/moc_persona.cpp",
@@ -347,6 +353,11 @@
 		],
 		[
 			"C:/Users/thiag/OneDrive/Escritorio/TRABAJO PRACTICO POO ANASHE/Paper-Please/mainwindow.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/thiag/OneDrive/Escritorio/TRABAJO PRACTICO POO ANASHE/Paper-Please/menu.cpp",
 			"MU",
 			null
 		],
