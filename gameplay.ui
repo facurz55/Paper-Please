@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>gameplay</class>
+ <widget class="QWidget" name="gameplay">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>766</width>
+    <height>554</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_12">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QStackedWidget" name="stackedWidget">
+     <widget class="QWidget" name="game">
+      <layout class="QVBoxLayout" name="verticalLayout_13">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_10">
+         <item>
+          <widget class="QWidget" name="widget_2" native="true">
+           <property name="styleSheet">
+            <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(0, 0, 0, 255), stop:0.33 rgba(0, 0, 0, 255), stop:0.34 rgba(255, 30, 30, 255), stop:0.66 rgba(255, 0, 0, 255), stop:0.67 rgba(255, 255, 0, 255), stop:1 rgba(255, 255, 0, 255));</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_11">
+         <item>
+          <widget class="QWidget" name="mesa" native="true">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>330</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">#mesa{border-image: url(:/mesa.png);}</string>
+           </property>
+           <widget class="QPushButton" name="pushButton">
+            <property name="geometry">
+             <rect>
+              <x>650</x>
+              <y>30</y>
+              <width>80</width>
+              <height>24</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>ACEPTAR</string>
+            </property>
+           </widget>
+           <widget class="QPushButton" name="pushButton_2">
+            <property name="geometry">
+             <rect>
+              <x>650</x>
+              <y>70</y>
+              <width>80</width>
+              <height>24</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>DENEGAR</string>
+            </property>
+           </widget>
+           <widget class="QPushButton" name="pushButton_3">
+            <property name="geometry">
+             <rect>
+              <x>619</x>
+              <y>110</y>
+              <width>111</width>
+              <height>24</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>DOCUMENTACION</string>
+            </property>
+           </widget>
+           <widget class="QPushButton" name="pushButton_4">
+            <property name="geometry">
+             <rect>
+              <x>650</x>
+              <y>150</y>
+              <width>80</width>
+              <height>24</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>REQUISITOS</string>
+            </property>
+           </widget>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="game_2"/>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
