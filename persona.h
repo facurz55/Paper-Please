@@ -24,6 +24,7 @@ public:
     QString obtenerApellido() const;
     int obtenerFecha() const;
     QString obtenerNacionalidad() const;
+    QString obtenerEstancia() const;
     QString getPersonaVisa() const;
     QString getPersonaEstCivil() const;
     //Faltan Estancia, residencia, proposito del viaje, integrantes, antecedentes

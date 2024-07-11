@@ -12,14 +12,77 @@ Persona::Persona() {
     generarVisa();
     generar_Estado_civil();
     generar_Estancia();
-    Mostrar_Datos();
 }
 
 // Métodos de generación de datos
-void Persona::generar_Estancia() {
-    QStringList Estancias = {"Visita", "Permanencia", "Residencia", "Parada", "Alojamiento"};  // tipos de Estancias
-    int Estan = QRandomGenerator::global()->bounded(Estancias.size());
-    Estancia = Estancias[Estan];
+void Persona::generar_Estancia()
+{
+    int fallo = QRandomGenerator::global()->bounded(100);
+    if (Visa == "Turista")
+    {
+        int ran1 = QRandomGenerator::global()->bounded(1, 3);
+        QString est = QString("%1 semanas")
+            .arg(QString::number(ran1));
+        Estancia = est;
+        if (fallo < 10)
+        {
+            int rand1 = QRandomGenerator::global()->bounded(4, 10);
+            QString est = QString("%1 semanas")
+                .arg(QString::number(rand1));
+            Estancia = est;
+            pop = 1;
+        }
+    }
+    if (Visa == "diplomatico")
+    {
+        int ran2 = QRandomGenerator::global()->bounded(2, 4);
+        QString est = QString("%1 años")
+            .arg(QString::number(ran2));
+        Estancia = est;
+        if (fallo < 5)
+        {
+            int rand2 = QRandomGenerator::global()->bounded(6, 18);
+            QString est = QString("%1 meses")
+                .arg(QString::number(rand2));
+            Estancia = est;
+            pop = 1;
+        }
+        if (fallo > 95)
+        {
+            int rand2 = QRandomGenerator::global()->bounded(5, 10);
+            QString est = QString("%1 años")
+                .arg(QString::number(rand2));
+            Estancia = est;
+            pop = 1;
+        }
+    }
+    if (Visa == "Trabajo")
+    {
+        int ran3 = QRandomGenerator::global()->bounded(6, 18);
+        QString est = QString("%1 meses")
+            .arg(QString::number(ran3));
+        Estancia = est;
+        if (fallo < 10)
+        {
+            int rand3 = QRandomGenerator::global()->bounded(19, 26);
+            QString est = QString("%1 meses")
+                .arg(QString::number(rand3));
+            Estancia = est;
+            pop = 1;
+        }
+    }
+    if (Visa == "Residente")
+    {
+        Estancia = "indefinido";
+        if (fallo < 10)
+        {
+            int rand1 = QRandomGenerator::global()->bounded(2, 100);
+            QString est = QString("%1 años")
+            .arg(QString::number(rand1));
+            Estancia = est;
+            pop = 1;
+        }
+    }
 }
 
 void Persona::generarNombres() {
@@ -106,6 +169,11 @@ QString Persona::getPersonaVisa() const {
 
 QString Persona::getPersonaEstCivil() const {
     return Estadocivil;
+}
+
+QString Persona::obtenerEstancia() const
+{
+    return Estancia;
 }
 
 void Persona::retPop()

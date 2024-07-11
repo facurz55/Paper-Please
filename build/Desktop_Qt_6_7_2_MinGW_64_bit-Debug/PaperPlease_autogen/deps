@@ -1,6 +1,13 @@
 PaperPlease_autogen/timestamp: \
+	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/QList \
+	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/QObject \
+	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/QRect \
+	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/QSize \
+	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/QSizeF \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/QString \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/QStringList \
+	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/QTime \
+	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/QTimer \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/q20functional.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/q20memory.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/q20type_traits.h \
@@ -14,11 +21,13 @@ PaperPlease_autogen/timestamp: \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/qatomic.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/qatomic_cxx11.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/qbasicatomic.h \
+	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/qbasictimer.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/qbindingstorage.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/qbytearray.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/qbytearrayalgorithms.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/qbytearraylist.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/qbytearrayview.h \
+	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/qcalendar.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/qchar.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/qcompare.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/qcompare_impl.h \
@@ -30,10 +39,17 @@ PaperPlease_autogen/timestamp: \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/qcontainerinfo.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/qcontainertools_impl.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/qcontiguouscache.h \
+	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/qcoreapplication.h \
+	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/qcoreapplication_platform.h \
+	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/qcoreevent.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/qdarwinhelpers.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/qdatastream.h \
+	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/qdatetime.h \
+	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/qdeadlinetimer.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/qdebug.h \
+	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/qelapsedtimer.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/qendian.h \
+	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/qeventloop.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/qexceptionhandling.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/qflags.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/qfloat16.h \
@@ -45,12 +61,14 @@ PaperPlease_autogen/timestamp: \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/qglobalstatic.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/qhash.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/qhashfunctions.h \
+	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/qiodevice.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/qiodevicebase.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/qiterable.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/qiterator.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/qlatin1stringview.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/qline.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/qlist.h \
+	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/qlocale.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/qlogging.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/qmalloc.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/qmap.h \
@@ -60,6 +78,7 @@ PaperPlease_autogen/timestamp: \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/qmetatype.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/qminmax.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/qnamespace.h \
+	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/qnativeinterface.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/qnumeric.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/qobject.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/qobject_impl.h \
@@ -102,6 +121,7 @@ PaperPlease_autogen/timestamp: \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/qtdeprecationmarkers.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/qtenvironmentvariables.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/qtextstream.h \
+	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/qtimer.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/qtmetamacros.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/qtnoop.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/qtpreprocessorsupport.h \
@@ -112,35 +132,49 @@ PaperPlease_autogen/timestamp: \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/qtversionchecks.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/qtypeinfo.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/qtypes.h \
+	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/qurl.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/qutf8stringview.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/qvariant.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/qvarlengtharray.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/qversiontagging.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/qxptype_traits.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtCore/qyieldcpu.h \
+	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtGui/QCloseEvent \
+	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtGui/QTransform \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtGui/qaction.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtGui/qbitmap.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtGui/qbrush.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtGui/qcolor.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtGui/qcursor.h \
+	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtGui/qevent.h \
+	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtGui/qeventpoint.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtGui/qfont.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtGui/qfontinfo.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtGui/qfontmetrics.h \
+	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtGui/qguiapplication.h \
+	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtGui/qguiapplication_platform.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtGui/qicon.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtGui/qimage.h \
+	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtGui/qinputdevice.h \
+	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtGui/qinputmethod.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtGui/qkeysequence.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtGui/qpaintdevice.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtGui/qpalette.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtGui/qpixelformat.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtGui/qpixmap.h \
+	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtGui/qpointingdevice.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtGui/qpolygon.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtGui/qregion.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtGui/qrgb.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtGui/qrgba64.h \
+	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtGui/qscreen.h \
+	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtGui/qscreen_platform.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtGui/qtgui-config.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtGui/qtguiexports.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtGui/qtguiglobal.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtGui/qtransform.h \
+	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtGui/qvector2d.h \
+	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtGui/qvectornd.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtGui/qwindowdefs.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtGui/qwindowdefs_win.h \
 	C:/Users/maria/OneDrive/Desktop/Nuevacarpeta/6.7.2/mingw_64/include/QtWidgets/QMainWindow \
