@@ -20,11 +20,11 @@ Menu::~Menu()
     delete ui;
 }
 
-QPushButton* Menu::getBotonJugar() {
+QPushButton* Menu::getBotonJugar() {//esto es para llamar en el qstaked
     return ui->BotonJugar;
 }
 
-QPushButton* Menu::getBotonAtras() {
+QPushButton* Menu::getBotonAtras() {//esto es para llamr en el qstaked
     return ui->BotonAtras;
 }
 
@@ -46,4 +46,8 @@ void Menu::Exit(){//Cierra la aplicacion
 
 void Menu::Continuar(){//Boton para comenzar el juego(debe irse a la pantalla del juego)
 
+}
+
+QPushButton* Menu::getBotonContinuar(){
+    return ui->BotonContinuar;
 }
