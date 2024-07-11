@@ -91,6 +91,19 @@
     <string>---------</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="pasarDia">
+   <property name="geometry">
+    <rect>
+     <x>700</x>
+     <y>280</y>
+     <width>83</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>pasar dia</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

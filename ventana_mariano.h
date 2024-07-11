@@ -30,6 +30,7 @@ private slots:
     void iniciarCronometro();
     void detenerCronometro();
     void actualizarCronometro();
+    void pasarDia();
 
 private:
     Ui::ventana_Mariano *ui;

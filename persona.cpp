@@ -129,8 +129,23 @@ void Persona::generarNacionalidad() {
 
 void Persona::generarVisa() {
     QStringList Visas = {"Turista", "diplomatico", "Trabajo", "Residente"};
-    int vi = QRandomGenerator::global()->bounded(Visas.size());
-    Visa = Visas[vi];
+    int vi = QRandomGenerator::global()->bounded(100);
+    if (vi <= 15)
+    {
+        Visa = Visas[1];
+    }
+    if ((vi > 15)&&(vi <= 47))
+    {
+        Visa = Visas[0];
+    }
+    if ((vi > 47)&&(vi <= 80))
+    {
+        Visa = Visas[2];
+    }
+    if (vi > 80)
+    {
+        Visa = Visas[3];
+    }
 }
 
 void Persona::generar_Estado_civil() {
