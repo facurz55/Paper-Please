@@ -1,6 +1,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 #include "menu.h"
+#include "gameplay.h"
 #include <QMainWindow>
 #include <QStackedWidget>
 
@@ -21,10 +22,12 @@ public:
 private slots:
     void CambiarPagina();//Pasar a page_2
     void Volver();//volver a page
+    void ComenzarJuego();//Muesta la pantalla gameplay
 
 private:
     Ui::MainWindow *ui;
     Menu *menuPage;//Puntero de la clase
+    gameplay *game;
     QStackedWidget *stackedWidget; //Puntero para el StackedWidget
     QWidget *page_2; // Placeholder para la página del juego
 };

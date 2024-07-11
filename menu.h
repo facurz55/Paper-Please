@@ -18,6 +18,7 @@ public:
     ~Menu();
     QPushButton* getBotonJugar();
     QPushButton* getBotonAtras();
+    QPushButton* getBotonContinuar();
 
 private slots:
     void DificultadBaja();
