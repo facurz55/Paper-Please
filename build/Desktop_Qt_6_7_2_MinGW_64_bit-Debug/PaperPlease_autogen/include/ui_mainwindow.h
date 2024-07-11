@@ -11,7 +11,6 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QWidget>
 
@@ -21,7 +20,6 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralwidget;
-    QLabel *label;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -30,14 +28,7 @@ public:
         MainWindow->resize(800, 600);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
-        centralwidget->setStyleSheet(QString::fromUtf8("background-color: black;"));
-        label = new QLabel(centralwidget);
-        label->setObjectName("label");
-        label->setGeometry(QRect(180, 100, 411, 261));
-        label->setStyleSheet(QString::fromUtf8("#label{\n"
-"background-color: green;\n"
-"color: white;\n"
-"}"));
+        centralwidget->setStyleSheet(QString::fromUtf8(""));
         MainWindow->setCentralWidget(centralwidget);
 
         retranslateUi(MainWindow);
@@ -48,7 +39,6 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
-        label->setText(QString());
     } // retranslateUi
 
 };
