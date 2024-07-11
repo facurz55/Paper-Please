@@ -107,7 +107,6 @@ void ventana_Mariano::eventoCerrar(QCloseEvent *event)
 
 void ventana_Mariano::iniciarCronometro()
 {
-    // Iniciar el QTimer para actualizar el cronómetro
     cronometro = new QTimer(this);
     connect(cronometro, &QTimer::timeout, this, &ventana_Mariano::actualizarCronometro);
     cronometro->start(1000); // Emitir la señal timeout cada 1 segundo
@@ -132,6 +131,5 @@ void ventana_Mariano::actualizarCronometro()
         return;
     }
 
-    // Mostrar el tiempo transcurrido formateado en el label
     ui->time->setText(tiempoActual.toString("hh:mm:ss"));
 }
