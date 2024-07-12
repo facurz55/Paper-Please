@@ -3,7 +3,7 @@
 /*
 puntos::puntos() {}
 void puntos::puntaje(QString npc){
-    if(npc=="refugiado){
+    if(npc=="aldeano "){
     puntos=puntos-15;
     }
     if(npc=="Refugiado político"){
@@ -27,7 +27,7 @@ void puntos::puntaje2(QString npc){
     puntos=puntos+25;
     }
 
-int puntos::obtener_puntos();{
+int puntos::obtener_puntos();{//gatter
  return puntos;
 }
 void puntos::puntuacion_asignada1(){
