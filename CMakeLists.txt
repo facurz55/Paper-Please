@@ -27,6 +27,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         menu.h menu.cpp menu.ui
         imagenes.qrc
         gameplay.h gameplay.cpp gameplay.ui
+        puntos.h puntos.cpp
 
 
 

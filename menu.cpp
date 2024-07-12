@@ -1,5 +1,7 @@
 #include "menu.h"
 #include "ui_menu.h"
+#include "puntos.cpp"
+
 #include <QVBoxLayout>
 Menu::Menu(QWidget *parent)
     : QWidget(parent) ,Puntos(0)
@@ -19,14 +21,14 @@ Menu::~Menu()
 }
 
 void Menu::DificultadBaja(){
-    Puntos=100;
-// ui->scoreLabel->setText("Puntuación: " + QString::number(Puntos));
+    //puntos=100
+    puntos2.puntuacion_asignada1();//asigna los puntos
 }
 void Menu::DificultadMedia(){
-    Puntos=50;
-// ui->scoreLabel->setText("Puntuación: " + QString::number(Puntos));
+    //puntos=50
+    puntos2.puntuacion2_asignada2();//asigna los puntos
 }
 void Menu::DificultadAlta(){
-    Puntos=0;
-// ui->scoreLabel->setText("Puntuación: " + QString::number(Puntos));
+    //puntos=0;
+    puntos2.puntuacion3_asignada3();//asigna los puntos
 }

@@ -97,6 +97,14 @@ build CMakeFiles/PaperPlease.dir/gameplay.cpp.obj: CXX_COMPILER__PaperPlease_uns
   OBJECT_DIR = CMakeFiles\PaperPlease.dir
   OBJECT_FILE_DIR = CMakeFiles\PaperPlease.dir
 
+build CMakeFiles/PaperPlease.dir/puntos.cpp.obj: CXX_COMPILER__PaperPlease_unscanned_Debug C$:/Users/thiag/OneDrive/Escritorio/TRABAJO$ PRACTICO$ POO$ ANASHE/Paper-Please/puntos.cpp || cmake_object_order_depends_target_PaperPlease
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\PaperPlease.dir\puntos.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -I"C:/Users/thiag/OneDrive/Escritorio/TRABAJO PRACTICO POO ANASHE/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/PaperPlease_autogen/include" -isystem C:/Qt/6.7.2/mingw_64/include/QtCore -isystem C:/Qt/6.7.2/mingw_64/include -isystem C:/Qt/6.7.2/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.7.2/mingw_64/include/QtWidgets -isystem C:/Qt/6.7.2/mingw_64/include/QtGui
+  OBJECT_DIR = CMakeFiles\PaperPlease.dir
+  OBJECT_FILE_DIR = CMakeFiles\PaperPlease.dir
+
 build CMakeFiles/PaperPlease.dir/PaperPlease_autogen/EWIEGA46WW/qrc_imagenes.cpp.obj: CXX_COMPILER__PaperPlease_unscanned_Debug C$:/Users/thiag/OneDrive/Escritorio/TRABAJO$ PRACTICO$ POO$ ANASHE/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/PaperPlease_autogen/EWIEGA46WW/qrc_imagenes.cpp || cmake_object_order_depends_target_PaperPlease
   DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
   DEP_FILE = CMakeFiles\PaperPlease.dir\PaperPlease_autogen\EWIEGA46WW\qrc_imagenes.cpp.obj.d
@@ -113,7 +121,7 @@ build CMakeFiles/PaperPlease.dir/PaperPlease_autogen/EWIEGA46WW/qrc_imagenes.cpp
 #############################################
 # Link the executable PaperPlease.exe
 
-build PaperPlease.exe: CXX_EXECUTABLE_LINKER__PaperPlease_Debug CMakeFiles/PaperPlease.dir/PaperPlease_autogen/mocs_compilation.cpp.obj CMakeFiles/PaperPlease.dir/main.cpp.obj CMakeFiles/PaperPlease.dir/mainwindow.cpp.obj CMakeFiles/PaperPlease.dir/persona.cpp.obj CMakeFiles/PaperPlease.dir/menu.cpp.obj CMakeFiles/PaperPlease.dir/gameplay.cpp.obj CMakeFiles/PaperPlease.dir/PaperPlease_autogen/EWIEGA46WW/qrc_imagenes.cpp.obj | C$:/Qt/6.7.2/mingw_64/lib/libQt6Widgets.a C$:/Qt/6.7.2/mingw_64/lib/libQt6Gui.a C$:/Qt/6.7.2/mingw_64/lib/libQt6Core.a C$:/Qt/6.7.2/mingw_64/lib/libQt6EntryPoint.a || PaperPlease_autogen PaperPlease_autogen_timestamp_deps
+build PaperPlease.exe: CXX_EXECUTABLE_LINKER__PaperPlease_Debug CMakeFiles/PaperPlease.dir/PaperPlease_autogen/mocs_compilation.cpp.obj CMakeFiles/PaperPlease.dir/main.cpp.obj CMakeFiles/PaperPlease.dir/mainwindow.cpp.obj CMakeFiles/PaperPlease.dir/persona.cpp.obj CMakeFiles/PaperPlease.dir/menu.cpp.obj CMakeFiles/PaperPlease.dir/gameplay.cpp.obj CMakeFiles/PaperPlease.dir/puntos.cpp.obj CMakeFiles/PaperPlease.dir/PaperPlease_autogen/EWIEGA46WW/qrc_imagenes.cpp.obj | C$:/Qt/6.7.2/mingw_64/lib/libQt6Widgets.a C$:/Qt/6.7.2/mingw_64/lib/libQt6Gui.a C$:/Qt/6.7.2/mingw_64/lib/libQt6Core.a C$:/Qt/6.7.2/mingw_64/lib/libQt6EntryPoint.a || PaperPlease_autogen PaperPlease_autogen_timestamp_deps
   FLAGS = -DQT_QML_DEBUG -g
   LINK_FLAGS = -mwindows
   LINK_LIBRARIES = C:/Qt/6.7.2/mingw_64/lib/libQt6Widgets.a  C:/Qt/6.7.2/mingw_64/lib/libQt6Gui.a  C:/Qt/6.7.2/mingw_64/lib/libQt6Core.a  -lmpr  -luserenv  -lmingw32  C:/Qt/6.7.2/mingw_64/lib/libQt6EntryPoint.a  -lshell32  -ld3d11  -ldxgi  -ldxguid  -ld3d12  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32

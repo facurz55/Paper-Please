@@ -280,6 +280,12 @@
 			"MU",
 			"EWIEGA46WW/moc_persona.cpp",
 			null
+		],
+		[
+			"C:/Users/thiag/OneDrive/Escritorio/TRABAJO PRACTICO POO ANASHE/Paper-Please/puntos.h",
+			"MU",
+			"EWIEGA46WW/moc_puntos.cpp",
+			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
@@ -375,6 +381,11 @@
 		],
 		[
 			"C:/Users/thiag/OneDrive/Escritorio/TRABAJO PRACTICO POO ANASHE/Paper-Please/persona.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/thiag/OneDrive/Escritorio/TRABAJO PRACTICO POO ANASHE/Paper-Please/puntos.cpp",
 			"MU",
 			null
 		]
