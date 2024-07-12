@@ -184,7 +184,7 @@ build PaperPlease_autogen_timestamp_deps: phony
 #############################################
 # Utility command for PaperPlease_autogen
 
-build PaperPlease_autogen: phony CMakeFiles/PaperPlease_autogen PaperPlease_autogen/include/ui_mainwindow.h PaperPlease_autogen/include/ui_ventana_Mariano.h PaperPlease_autogen/timestamp PaperPlease_autogen/mocs_compilation.cpp PaperPlease_autogen_timestamp_deps
+build PaperPlease_autogen: phony CMakeFiles/PaperPlease_autogen PaperPlease_autogen/include/ui_mainwindow.h PaperPlease_autogen/include/ui_ventana_mariano.h PaperPlease_autogen/timestamp PaperPlease_autogen/mocs_compilation.cpp PaperPlease_autogen_timestamp_deps
 
 
 #############################################
@@ -201,7 +201,7 @@ build PaperPlease_autogen/timestamp PaperPlease_autogen/mocs_compilation.cpp | $
 #############################################
 # Phony custom command for CMakeFiles\PaperPlease_autogen
 
-build CMakeFiles/PaperPlease_autogen PaperPlease_autogen/include/ui_mainwindow.h PaperPlease_autogen/include/ui_ventana_Mariano.h | ${cmake_ninja_workdir}CMakeFiles/PaperPlease_autogen ${cmake_ninja_workdir}PaperPlease_autogen/include/ui_mainwindow.h ${cmake_ninja_workdir}PaperPlease_autogen/include/ui_ventana_Mariano.h: phony PaperPlease_autogen/timestamp || PaperPlease_autogen_timestamp_deps
+build CMakeFiles/PaperPlease_autogen PaperPlease_autogen/include/ui_mainwindow.h PaperPlease_autogen/include/ui_ventana_mariano.h | ${cmake_ninja_workdir}CMakeFiles/PaperPlease_autogen ${cmake_ninja_workdir}PaperPlease_autogen/include/ui_mainwindow.h ${cmake_ninja_workdir}PaperPlease_autogen/include/ui_ventana_mariano.h: phony PaperPlease_autogen/timestamp || PaperPlease_autogen_timestamp_deps
 
 # =============================================================================
 # Target aliases.
