@@ -104,6 +104,32 @@
     <string>pasar dia</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="pensar">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>470</y>
+     <width>83</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>preguntar</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="pppp">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>470</y>
+     <width>221</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>------</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

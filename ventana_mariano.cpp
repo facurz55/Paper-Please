@@ -14,6 +14,8 @@ ventana_Mariano::ventana_Mariano(QWidget *parent) :
     ui->nopasa->hide();
     ui->tabienono->hide();
     ui->pasarDia->hide();
+    ui->pensar->hide();
+    ui->pppp->hide();
 
     //esto se del reloj
     tiempoInicio = QTime(13, 0);  //inicia a las 13
@@ -23,7 +25,8 @@ ventana_Mariano::ventana_Mariano(QWidget *parent) :
     connect(ui->pushButton_2, &QPushButton::clicked, this, &ventana_Mariano::actualizarLabelConPersona); //boton de generar npc
     connect(ui->pasa, SIGNAL(clicked()), this, SLOT(siPasa()));
     connect(ui->nopasa, SIGNAL(clicked()), this, SLOT(noPasa()));
-    connect(ui->pasarDia, SIGNAL(clicked()), SLOT(pasarDia()));
+    connect(ui->pasarDia, SIGNAL(clicked()), this, SLOT(pasarDia()));
+    connect(ui->pensar, SIGNAL(clicked()), SLOT(preguntar()));
 }
 
 ventana_Mariano::~ventana_Mariano()
@@ -40,6 +43,7 @@ void ventana_Mariano::actualizarLabelConPersona() //esta funcion muestra los dat
     Persona.generarVisa();
     Persona.generar_Estado_civil();
     Persona.generar_Estancia();
+    Persona.pensamientos();
 
     QString datosPersona = QString("Genero: %1\nNombre: %2\nApellido: %3\nFecha de Nacimiento: %4\nNacionalidad: %5\nTipo de Visa: %6\nDuracion de la estancis: %7\nEstado Civil: %8")
                                .arg(Persona.obtenerGenero())
@@ -62,8 +66,10 @@ void ventana_Mariano::actualizarLabelConPersona() //esta funcion muestra los dat
     ui->tabienono->hide();
     ui->pasa->show();
     ui->nopasa->show();
+    ui->pensar->show();
     ui->pasa->setEnabled(true);
     ui->nopasa->setEnabled(true);
+    ui->pensar->setEnabled(true);
     ui->pushButton_2->setDisabled(true);
 }
 
@@ -76,6 +82,7 @@ void ventana_Mariano::siPasa()
     if (p1 == 1)
     {
         ui->tabienono->setText("re mal loco"); //en este caso se debe restar puntos
+        QString tipo = Persona.obtenerNpc();
     }
     else
     {
@@ -85,9 +92,11 @@ void ventana_Mariano::siPasa()
 
     //manejo de labels y botones
     ui->label->hide();
+    ui->pppp->hide();
     ui->tabienono->show();
     ui->pasa->setDisabled(true);
     ui->nopasa->setDisabled(true);
+    ui->pensar->setDisabled(true);
     ui->pushButton_2->setEnabled(true);
 }
 
@@ -106,9 +115,11 @@ void ventana_Mariano::noPasa()
 
     //manejo de labels y botones
     ui->label->hide();
+    ui->pppp->hide();
     ui->tabienono->show();
     ui->pasa->setDisabled(true);
     ui->nopasa->setDisabled(true);
+    ui->pensar->setDisabled(true);
     ui->pushButton_2->setEnabled(true);
 }
 
@@ -149,6 +160,8 @@ void ventana_Mariano::actualizarCronometro()
         ui->pushButton_2->hide();
         ui->tabienono->hide();
         ui->time->hide();
+        ui->pensar->hide();
+        ui->pppp->hide();
         return;
     }
 
@@ -160,6 +173,14 @@ void ventana_Mariano::actualizarCronometro()
 void ventana_Mariano::pasarDia()
 {
 
+}
+
+void ventana_Mariano::preguntar()
+{
+    QString per = Persona.obtenerPensamientos();
+    ui->pppp->show();
+    ui->pppp->setText(per);
+    ui->pensar->setDisabled(true);
 }
 
 

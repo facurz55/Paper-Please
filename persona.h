@@ -15,6 +15,7 @@ public:
     void generarVisa();
     void generar_Estado_civil();
     void generar_Estancia();
+    void pensamientos();
 
     void retPop();
     int obtenerPop();
@@ -27,8 +28,12 @@ public:
     QString obtenerEstancia() const;
     QString getPersonaVisa() const;
     QString getPersonaEstCivil() const;
+    QString obtenerPensamientos();
+    QString obtenerNpc();
+
     //Faltan Estancia, residencia, proposito del viaje, integrantes, antecedentes
 protected:
+    QString tipoNpc;
     QString genero;
     QString nombre;
     QString apellido;
@@ -38,6 +43,8 @@ protected:
     QString Estadocivil;
     QString Estancia;
     int pop = 0;
+    int multa = 0;
+    QString pensamiento;
 };
 
 #endif // PERSONA_H

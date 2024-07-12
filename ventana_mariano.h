@@ -31,6 +31,7 @@ private slots:
     void detenerCronometro();
     void actualizarCronometro();
     void pasarDia();
+    void preguntar();
 
 private:
     Ui::ventana_Mariano *ui;
