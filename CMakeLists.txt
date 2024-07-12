@@ -24,8 +24,9 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
         persona.h persona.cpp
-        ventana_mariano.h ventana_mariano.cpp ventana_mariano.ui
-
+        menu.h menu.cpp menu.ui
+        imagenes.qrc
+        gameplay.h gameplay.cpp gameplay.ui
 
     )
 # Define target properties for Android with Qt 6 as:
