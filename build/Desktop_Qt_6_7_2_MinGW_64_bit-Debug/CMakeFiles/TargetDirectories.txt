@@ -1,9 +1,9 @@
-C:/Users/thiag/OneDrive/Escritorio/REPOSITORIO 3/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/CMakeFiles/PaperPlease.dir
-C:/Users/thiag/OneDrive/Escritorio/REPOSITORIO 3/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/CMakeFiles/edit_cache.dir
-C:/Users/thiag/OneDrive/Escritorio/REPOSITORIO 3/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/CMakeFiles/rebuild_cache.dir
-C:/Users/thiag/OneDrive/Escritorio/REPOSITORIO 3/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/CMakeFiles/list_install_components.dir
-C:/Users/thiag/OneDrive/Escritorio/REPOSITORIO 3/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/CMakeFiles/install.dir
-C:/Users/thiag/OneDrive/Escritorio/REPOSITORIO 3/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/CMakeFiles/install/local.dir
-C:/Users/thiag/OneDrive/Escritorio/REPOSITORIO 3/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/CMakeFiles/install/strip.dir
-C:/Users/thiag/OneDrive/Escritorio/REPOSITORIO 3/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/CMakeFiles/PaperPlease_autogen_timestamp_deps.dir
-C:/Users/thiag/OneDrive/Escritorio/REPOSITORIO 3/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/CMakeFiles/PaperPlease_autogen.dir
+C:/Users/maria/OneDrive/Desktop/jp/Paper-Please-main/Paper-Please-main/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/CMakeFiles/PaperPlease.dir
+C:/Users/maria/OneDrive/Desktop/jp/Paper-Please-main/Paper-Please-main/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/CMakeFiles/edit_cache.dir
+C:/Users/maria/OneDrive/Desktop/jp/Paper-Please-main/Paper-Please-main/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/CMakeFiles/rebuild_cache.dir
+C:/Users/maria/OneDrive/Desktop/jp/Paper-Please-main/Paper-Please-main/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/CMakeFiles/list_install_components.dir
+C:/Users/maria/OneDrive/Desktop/jp/Paper-Please-main/Paper-Please-main/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/CMakeFiles/install.dir
+C:/Users/maria/OneDrive/Desktop/jp/Paper-Please-main/Paper-Please-main/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/CMakeFiles/install/local.dir
+C:/Users/maria/OneDrive/Desktop/jp/Paper-Please-main/Paper-Please-main/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/CMakeFiles/install/strip.dir
+C:/Users/maria/OneDrive/Desktop/jp/Paper-Please-main/Paper-Please-main/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/CMakeFiles/PaperPlease_autogen_timestamp_deps.dir
+C:/Users/maria/OneDrive/Desktop/jp/Paper-Please-main/Paper-Please-main/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/CMakeFiles/PaperPlease_autogen.dir
