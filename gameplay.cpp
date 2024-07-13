@@ -12,3 +12,12 @@ gameplay::~gameplay()
 {
     delete ui;
 }
+
+QLabel* gameplay::getLabelNPC(){
+    return ui->Label_NPC;
+}
+
+QPushButton* gameplay::getBotonSiguiente_NPC(){
+    return ui->Siguiente_NPC;
+}
+
