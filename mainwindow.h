@@ -4,6 +4,8 @@
 #include "gameplay.h"
 #include <QMainWindow>
 #include <QStackedWidget>
+#include <QLabel>
+#include<QPropertyAnimation>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -27,7 +29,7 @@ private slots:
 private:
     Ui::MainWindow *ui;
     Menu *menuPage;//Puntero de la clase
-    gameplay *game;
+    gameplay *game;//Puntero para la pantalla donde jugamos
     QStackedWidget *stackedWidget; //Puntero para el StackedWidget
     QWidget *page_2; // Placeholder para la página del juego
 };
