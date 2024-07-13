@@ -49,12 +49,55 @@
         <number>0</number>
        </property>
        <item>
-        <layout class="QVBoxLayout" name="verticalLayout_10">
+        <layout class="QVBoxLayout" name="Layout_NPC">
          <item>
-          <widget class="QWidget" name="widget_2" native="true">
-           <property name="styleSheet">
-            <string notr="true">border-image: url(:/wallpaperbetter.jpg);</string>
+          <widget class="QWidget" name="Widget_NPC" native="true">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
            </property>
+           <property name="styleSheet">
+            <string notr="true">#Widget_NPC{border-image: url(:/wallpaperbetter.jpg);}</string>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout">
+            <property name="spacing">
+             <number>0</number>
+            </property>
+            <property name="sizeConstraint">
+             <enum>QLayout::SetDefaultConstraint</enum>
+            </property>
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+            <item>
+             <widget class="QLabel" name="Label_NPC">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">image: url(:/pngwing.com.png);
+</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </widget>
          </item>
         </layout>
@@ -77,9 +120,12 @@
              <rect>
               <x>570</x>
               <y>10</y>
-              <width>80</width>
-              <height>24</height>
+              <width>81</width>
+              <height>21</height>
              </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true"/>
             </property>
             <property name="text">
              <string>ACEPTAR</string>
@@ -122,6 +168,19 @@
             </property>
             <property name="text">
              <string>MOSTRAR REQUISITOS</string>
+            </property>
+           </widget>
+           <widget class="QPushButton" name="Siguiente_NPC">
+            <property name="geometry">
+             <rect>
+              <x>570</x>
+              <y>100</y>
+              <width>171</width>
+              <height>24</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>SIGUIENTE NPC</string>
             </property>
            </widget>
           </widget>
