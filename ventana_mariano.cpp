@@ -1,5 +1,5 @@
 #include "ventana_mariano.h"
-#include "./ui_ventana_mariano.h"
+#include "./ui_ventana_Mariano.h"
 #include "persona.h"
 
 ventana_Mariano::ventana_Mariano(QWidget *parent) :

@@ -1,7 +1,9 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-#include "persona.h"
+#include "menu.h"
+#include "gameplay.h"
 #include <QMainWindow>
+#include <QStackedWidget>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -17,7 +19,16 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots:
+    void CambiarPagina();//Pasar a page_2
+    void Volver();//volver a page
+    void ComenzarJuego();//Muesta la pantalla gameplay
+
 private:
     Ui::MainWindow *ui;
+    Menu *menuPage;//Puntero de la clase
+    gameplay *game;
+    QStackedWidget *stackedWidget; //Puntero para el StackedWidget
+    QWidget *page_2; // Placeholder para la página del juego
 };
 #endif // MAINWINDOW_H
