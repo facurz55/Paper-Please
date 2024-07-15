@@ -4,7 +4,7 @@
 #include <QWidget>
 #include <QVBoxLayout>
 #include <QPushButton>
-
+#include "puntos.h"
 namespace Ui {
 class Menu;
 }
@@ -29,6 +29,7 @@ private slots:
 
 private:
     Ui::Menu *ui;
+    puntos puntos2;
 };
 
 #endif // MENU_H

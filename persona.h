@@ -9,23 +9,31 @@ public:
     Persona();
     void Mostrar_Datos();
 
-    QString obtenerGenero() const;
-    QString obtenerNombre() const;
-    QString obtenerApellido() const;
-    int obtenerFecha() const;
-    QString obtenerNacionalidad() const;
-    QString getPersonaVisa() const;
-    QString getPersonaEstCivil() const;
-    //Faltan Estancia, residencia, proposito del viaje, integrantes, antecedentes
-
-private:
     void generarNombres();
     void generarFecha();
     void generarNacionalidad();
     void generarVisa();
     void generar_Estado_civil();
     void generar_Estancia();
+    void pensamientos();
 
+    void retPop();
+    int obtenerPop();
+
+    QString obtenerGenero() const;
+    QString obtenerNombre() const;
+    QString obtenerApellido() const;
+    int obtenerFecha() const;
+    QString obtenerNacionalidad() const;
+    QString obtenerEstancia() const;
+    QString getPersonaVisa() const;
+    QString getPersonaEstCivil() const;
+    QString obtenerPensamientos();
+    QString obtenerNpc();
+
+    //Faltan Estancia, residencia, proposito del viaje, integrantes, antecedentes
+protected:
+    QString tipoNpc;
     QString genero;
     QString nombre;
     QString apellido;
@@ -34,6 +42,9 @@ private:
     QString Visa;
     QString Estadocivil;
     QString Estancia;
+    int pop = 0;
+    int multa = 0;
+    QString pensamiento;
 };
 
 #endif // PERSONA_H
