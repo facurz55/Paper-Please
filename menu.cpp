@@ -22,13 +22,14 @@ Menu::~Menu()
 
 void Menu::DificultadBaja(){
     //puntos=100
-    puntos2.puntuacion_asignada1();//asigna los puntos
+ //   puntos2.puntuacion_asignada1();//asigna los puntos
 }
+
 void Menu::DificultadMedia(){
     //puntos=50
-    puntos2.puntuacion2_asignada2();//asigna los puntos
+  //  puntos2.puntuacion2_asignada2();//asigna los puntos
 }
 void Menu::DificultadAlta(){
     //puntos=0;
-    puntos2.puntuacion3_asignada3();//asigna los puntos
+   // puntos2.puntuacion3_asignada3();//asigna los puntos
 }
