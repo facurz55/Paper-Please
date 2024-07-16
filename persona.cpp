@@ -145,7 +145,6 @@ void Persona::generarVisa() {
         {
             tipoNpc = "revolucionario";
             pop = 1;
-            multa = 1;
         }
     }
     if ((vi > 40)&&(vi <= 70))
@@ -157,7 +156,6 @@ void Persona::generarVisa() {
         {
             tipoNpc = "revolucionario";
             pop = 1;
-            multa = 1;
         }
     }
     if ((vi > 70)&&(vi <= 90))
@@ -169,7 +167,6 @@ void Persona::generarVisa() {
         {
             tipoNpc = "revolucionario";
             pop = 1;
-            multa = 1;
         }
     }
     if (vi > 90)
@@ -253,16 +250,6 @@ QString Persona::obtenerPensamientos()
 QString Persona::obtenerNpc()
 {
     return tipoNpc;
-}
-
-void Persona::Mostrar_Datos() {
-    qDebug() << "Genero: " << this->obtenerGenero();
-    qDebug() << "Nombre: " << this->obtenerNombre();
-    qDebug() << "Apellido: " << this->obtenerApellido();
-    qDebug() << "Fecha de Nacimiento: " << this->obtenerFecha();
-    qDebug() << "Nacionalidad: " << this->obtenerNacionalidad();
-    qDebug() << "Tipo de Visa: " << this->getPersonaVisa();
-    qDebug() << "Estado Civil: " << this->getPersonaEstCivil();
 }
 
 

@@ -49,12 +49,55 @@
         <number>0</number>
        </property>
        <item>
-        <layout class="QVBoxLayout" name="verticalLayout_10">
+        <layout class="QVBoxLayout" name="Layout_NPC">
          <item>
-          <widget class="QWidget" name="widget_2" native="true">
-           <property name="styleSheet">
-            <string notr="true">border-image: url(:/wallpaperbetter.jpg);</string>
+          <widget class="QWidget" name="Widget_NPC" native="true">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
            </property>
+           <property name="styleSheet">
+            <string notr="true">#Widget_NPC{border-image: url(:/wallpaperbetter.jpg);}</string>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout">
+            <property name="spacing">
+             <number>0</number>
+            </property>
+            <property name="sizeConstraint">
+             <enum>QLayout::SetDefaultConstraint</enum>
+            </property>
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+            <item>
+             <widget class="QLabel" name="Label_NPC">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">image: url(:/pngwing.com.png);
+</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </widget>
          </item>
         </layout>
@@ -72,20 +115,23 @@
            <property name="styleSheet">
             <string notr="true">#mesa{border-image: url(:/mesa.png);}</string>
            </property>
-           <widget class="QPushButton" name="pushButton">
+           <widget class="QPushButton" name="aceptar">
             <property name="geometry">
              <rect>
               <x>570</x>
               <y>10</y>
-              <width>80</width>
-              <height>24</height>
+              <width>81</width>
+              <height>21</height>
              </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true"/>
             </property>
             <property name="text">
              <string>ACEPTAR</string>
             </property>
            </widget>
-           <widget class="QPushButton" name="pushButton_2">
+           <widget class="QPushButton" name="denegar">
             <property name="geometry">
              <rect>
               <x>660</x>
@@ -98,7 +144,7 @@
              <string>DENEGAR</string>
             </property>
            </widget>
-           <widget class="QPushButton" name="pushButton_3">
+           <widget class="QPushButton" name="papeles">
             <property name="geometry">
              <rect>
               <x>570</x>
@@ -111,7 +157,7 @@
              <string>SOLICITAR DOCUMENTACION</string>
             </property>
            </widget>
-           <widget class="QPushButton" name="pushButton_4">
+           <widget class="QPushButton" name="mostrar_req">
             <property name="geometry">
              <rect>
               <x>570</x>
@@ -122,6 +168,90 @@
             </property>
             <property name="text">
              <string>MOSTRAR REQUISITOS</string>
+            </property>
+           </widget>
+           <widget class="QPushButton" name="Siguiente_NPC">
+            <property name="geometry">
+             <rect>
+              <x>570</x>
+              <y>100</y>
+              <width>171</width>
+              <height>24</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>SIGUIENTE NPC</string>
+            </property>
+           </widget>
+           <widget class="QPushButton" name="cerrar">
+            <property name="geometry">
+             <rect>
+              <x>330</x>
+              <y>300</y>
+              <width>61</width>
+              <height>29</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>cerrar</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="timer">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>300</y>
+              <width>63</width>
+              <height>20</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+           <widget class="QPushButton" name="documento">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>20</y>
+              <width>71</width>
+              <height>91</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">#documento{
+	
+	border-image: url(:/documents.png);
+}</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+           <widget class="QLabel" name="datos">
+            <property name="geometry">
+             <rect>
+              <x>260</x>
+              <y>10</y>
+              <width>251</width>
+              <height>271</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+           <widget class="QPushButton" name="pasarDia">
+            <property name="geometry">
+             <rect>
+              <x>602</x>
+              <y>200</y>
+              <width>111</width>
+              <height>29</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Terminar turno</string>
             </property>
            </widget>
           </widget>
