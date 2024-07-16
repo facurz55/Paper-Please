@@ -2,7 +2,4 @@
 #include "EWIEGA46WW/moc_gameplay.cpp"
 #include "EWIEGA46WW/moc_mainwindow.cpp"
 #include "EWIEGA46WW/moc_menu.cpp"
-<<<<<<< HEAD
-=======
 #include "EWIEGA46WW/moc_ventana_mariano.cpp"
->>>>>>> main

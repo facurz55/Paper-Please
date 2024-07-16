@@ -248,13 +248,58 @@
 		"C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginTargets.cmake",
 		"C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginTargets-relwithdebinfo.cmake",
 		"C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginAdditionalTargetInfo.cmake",
-		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/GNUInstallDirs.cmake"
+		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/GNUInstallDirs.cmake",
+		"C:/Users/thiag/OneDrive/Escritorio/REPOSITORIO 2/Paper-Please/imagenes.qrc"
 	],
 	"CMAKE_SOURCE_DIR" : "C:/Users/thiag/OneDrive/Escritorio/REPOSITORIO 2/Paper-Please",
 	"CROSS_CONFIG" : false,
 	"DEP_FILE" : "C:/Users/thiag/OneDrive/Escritorio/REPOSITORIO 2/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/PaperPlease_autogen/deps",
 	"DEP_FILE_RULE_NAME" : "PaperPlease_autogen/timestamp",
-	"HEADERS" : [],
+	"HEADERS" : 
+	[
+		[
+			"C:/Users/thiag/OneDrive/Escritorio/REPOSITORIO 2/Paper-Please/gameplay.h",
+			"MU",
+			"EWIEGA46WW/moc_gameplay.cpp",
+			null
+		],
+		[
+			"C:/Users/thiag/OneDrive/Escritorio/REPOSITORIO 2/Paper-Please/mainwindow.h",
+			"MU",
+			"EWIEGA46WW/moc_mainwindow.cpp",
+			null
+		],
+		[
+			"C:/Users/thiag/OneDrive/Escritorio/REPOSITORIO 2/Paper-Please/menu.h",
+			"MU",
+			"EWIEGA46WW/moc_menu.cpp",
+			null
+		],
+		[
+			"C:/Users/thiag/OneDrive/Escritorio/REPOSITORIO 2/Paper-Please/multas.h",
+			"MU",
+			"EWIEGA46WW/moc_multas.cpp",
+			null
+		],
+		[
+			"C:/Users/thiag/OneDrive/Escritorio/REPOSITORIO 2/Paper-Please/persona.h",
+			"MU",
+			"EWIEGA46WW/moc_persona.cpp",
+			null
+		],
+		[
+			"C:/Users/thiag/OneDrive/Escritorio/REPOSITORIO 2/Paper-Please/puntos.h",
+			"MU",
+			"EWIEGA46WW/moc_puntos.cpp",
+			null
+		],
+		[
+			"C:/Users/thiag/OneDrive/Escritorio/REPOSITORIO 2/Paper-Please/ventana_mariano.h",
+			"MU",
+			"EWIEGA46WW/moc_ventana_mariano.cpp",
+			null
+		]
+	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
 	"INCLUDE_DIR" : "C:/Users/thiag/OneDrive/Escritorio/REPOSITORIO 2/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/PaperPlease_autogen/include",
 	"MOC_COMPILATION_FILE" : "C:/Users/thiag/OneDrive/Escritorio/REPOSITORIO 2/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/PaperPlease_autogen/mocs_compilation.cpp",
@@ -324,7 +369,49 @@
 	"QT_VERSION_MAJOR" : 6,
 	"QT_VERSION_MINOR" : 7,
 	"SETTINGS_FILE" : "C:/Users/thiag/OneDrive/Escritorio/REPOSITORIO 2/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/CMakeFiles/PaperPlease_autogen.dir/AutogenUsed.txt",
-	"SOURCES" : [],
+	"SOURCES" : 
+	[
+		[
+			"C:/Users/thiag/OneDrive/Escritorio/REPOSITORIO 2/Paper-Please/gameplay.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/thiag/OneDrive/Escritorio/REPOSITORIO 2/Paper-Please/main.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/thiag/OneDrive/Escritorio/REPOSITORIO 2/Paper-Please/mainwindow.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/thiag/OneDrive/Escritorio/REPOSITORIO 2/Paper-Please/menu.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/thiag/OneDrive/Escritorio/REPOSITORIO 2/Paper-Please/multas.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/thiag/OneDrive/Escritorio/REPOSITORIO 2/Paper-Please/persona.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/thiag/OneDrive/Escritorio/REPOSITORIO 2/Paper-Please/puntos.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/thiag/OneDrive/Escritorio/REPOSITORIO 2/Paper-Please/ventana_mariano.cpp",
+			"MU",
+			null
+		]
+	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],
 	"UIC_SKIP" : [],
