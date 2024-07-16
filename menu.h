@@ -4,7 +4,7 @@
 #include <QWidget>
 #include <QVBoxLayout>
 #include <QPushButton>
-
+#include "puntos.h"
 namespace Ui {
 class Menu;
 }
@@ -18,6 +18,7 @@ public:
     ~Menu();
     QPushButton* getBotonJugar();
     QPushButton* getBotonAtras();
+    QPushButton* getBotonContinuar();
 
 private slots:
     void DificultadBaja();
@@ -28,7 +29,11 @@ private slots:
 
 private:
     Ui::Menu *ui;
+<<<<<<< HEAD
     int Puntos;//validar con cuanto empieza los puntos
+=======
+    puntos puntos2;
+>>>>>>> main
 };
 
 #endif // MENU_H

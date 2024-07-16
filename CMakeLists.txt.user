@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 <!-- Written by QtCreator 13.0.2, 2024-07-12T17:06:47. -->
 =======
@@ -9,6 +10,13 @@
 =======
 <!-- Written by QtCreator 13.0.2, 2024-07-15T22:11:39. -->
 >>>>>>> 2ba03a12fc5095237e1cd07cb3fe5437746776bc
+=======
+<<<<<<< Updated upstream
+<!-- Written by QtCreator 13.0.2, 2024-07-15T18:37:40. -->
+=======
+<!-- Written by QtCreator 13.0.2, 2024-07-12T20:07:18. -->
+>>>>>>> Stashed changes
+>>>>>>> main
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -116,9 +124,15 @@
 -DCMAKE_C_COMPILER:FILEPATH=%{Compiler:Executable:C}
 -DCMAKE_CXX_COMPILER:FILEPATH=%{Compiler:Executable:Cxx}
 -DCMAKE_CXX_FLAGS_INIT:STRING=%{Qt:QML_DEBUG_FLAG}</value>
+<<<<<<< HEAD
     <value type="QString" key="CMake.Source.Directory">C:\Users\thiag\OneDrive\Escritorio\TRABAJO PRACTICO POO ANASHE\Paper-Please</value>
     <value type="int" key="EnableQmlDebugging">0</value>
     <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:\Users\thiag\OneDrive\Escritorio\TRABAJO PRACTICO POO ANASHE\Paper-Please\build\Desktop_Qt_6_7_2_MinGW_64_bit-Debug</value>
+=======
+    <value type="QString" key="CMake.Source.Directory">C:\Users\Alumno\Paper-Please</value>
+    <value type="int" key="EnableQmlDebugging">0</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:\Users\Alumno\Paper-Please\build\Desktop_Qt_6_7_2_MinGW_64_bit-Debug</value>
+>>>>>>> main
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="QString" key="CMakeProjectManager.MakeStep.BuildPreset"></value>
@@ -192,7 +206,11 @@
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseLibrarySearchPath">true</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
+<<<<<<< HEAD
     <value type="QString" key="RunConfiguration.WorkingDirectory.default">C:/Users/thiag/OneDrive/Escritorio/TRABAJO PRACTICO POO ANASHE/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug</value>
+=======
+    <value type="QString" key="RunConfiguration.WorkingDirectory.default">C:/Users/Alumno/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug</value>
+>>>>>>> main
    </valuemap>
    <value type="qlonglong" key="ProjectExplorer.Target.RunConfigurationCount">1</value>
   </valuemap>

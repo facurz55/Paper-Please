@@ -1,5 +1,6 @@
 {
 	"AUTOGEN_COMMAND_LINE_LENGTH_MAX" : 32000,
+<<<<<<< HEAD
 	"BUILD_DIR" : "C:/Users/thiag/OneDrive/Escritorio/TRABAJO PRACTICO POO ANASHE/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/PaperPlease_autogen",
 	"CMAKE_BINARY_DIR" : "C:/Users/thiag/OneDrive/Escritorio/TRABAJO PRACTICO POO ANASHE/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug",
 	"CMAKE_CURRENT_BINARY_DIR" : "C:/Users/thiag/OneDrive/Escritorio/TRABAJO PRACTICO POO ANASHE/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug",
@@ -13,6 +14,21 @@
 		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeSystemSpecificInitialize.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Platform/Windows-Initialize.cmake",
 		"C:/Users/thiag/OneDrive/Escritorio/TRABAJO PRACTICO POO ANASHE/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/CMakeFiles/3.29.3/CMakeCXXCompiler.cmake",
+=======
+	"BUILD_DIR" : "C:/Users/Alumno/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/PaperPlease_autogen",
+	"CMAKE_BINARY_DIR" : "C:/Users/Alumno/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "C:/Users/Alumno/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug",
+	"CMAKE_CURRENT_SOURCE_DIR" : "C:/Users/Alumno/Paper-Please",
+	"CMAKE_EXECUTABLE" : "C:/Qt/Tools/CMake_64/bin/cmake.exe",
+	"CMAKE_LIST_FILES" : 
+	[
+		"C:/Users/Alumno/Paper-Please/CMakeLists.txt",
+		"C:/Users/Alumno/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/.qtc/package-manager/auto-setup.cmake",
+		"C:/Users/Alumno/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/CMakeFiles/3.29.3/CMakeSystem.cmake",
+		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeSystemSpecificInitialize.cmake",
+		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Platform/Windows-Initialize.cmake",
+		"C:/Users/Alumno/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/CMakeFiles/3.29.3/CMakeCXXCompiler.cmake",
+>>>>>>> main
 		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeSystemSpecificInformation.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeGenericSystem.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeInitializeConfigs.cmake",
@@ -25,7 +41,11 @@
 		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Compiler/CMakeCommonCompilerMacros.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Platform/Windows-GNU-CXX.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Platform/Windows-GNU.cmake",
+<<<<<<< HEAD
 		"C:/Users/thiag/OneDrive/Escritorio/TRABAJO PRACTICO POO ANASHE/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/CMakeFiles/3.29.3/CMakeRCCompiler.cmake",
+=======
+		"C:/Users/Alumno/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/CMakeFiles/3.29.3/CMakeRCCompiler.cmake",
+>>>>>>> main
 		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeRCInformation.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Platform/Windows-windres.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Platform/Windows-GNU-CXX-ABI.cmake",
@@ -249,39 +269,64 @@
 		"C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginTargets-relwithdebinfo.cmake",
 		"C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginAdditionalTargetInfo.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/GNUInstallDirs.cmake",
+<<<<<<< HEAD
 		"C:/Users/thiag/OneDrive/Escritorio/TRABAJO PRACTICO POO ANASHE/Paper-Please/imagenes.qrc"
 	],
 	"CMAKE_SOURCE_DIR" : "C:/Users/thiag/OneDrive/Escritorio/TRABAJO PRACTICO POO ANASHE/Paper-Please",
 	"CROSS_CONFIG" : false,
 	"DEP_FILE" : "C:/Users/thiag/OneDrive/Escritorio/TRABAJO PRACTICO POO ANASHE/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/PaperPlease_autogen/deps",
+=======
+		"C:/Users/Alumno/Paper-Please/imagenes.qrc"
+	],
+	"CMAKE_SOURCE_DIR" : "C:/Users/Alumno/Paper-Please",
+	"CROSS_CONFIG" : false,
+	"DEP_FILE" : "C:/Users/Alumno/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/PaperPlease_autogen/deps",
+>>>>>>> main
 	"DEP_FILE_RULE_NAME" : "PaperPlease_autogen/timestamp",
 	"HEADERS" : 
 	[
 		[
+<<<<<<< HEAD
 			"C:/Users/thiag/OneDrive/Escritorio/TRABAJO PRACTICO POO ANASHE/Paper-Please/gameplay.h",
+=======
+			"C:/Users/Alumno/Paper-Please/gameplay.h",
+>>>>>>> main
 			"MU",
 			"EWIEGA46WW/moc_gameplay.cpp",
 			null
 		],
 		[
+<<<<<<< HEAD
 			"C:/Users/thiag/OneDrive/Escritorio/TRABAJO PRACTICO POO ANASHE/Paper-Please/mainwindow.h",
+=======
+			"C:/Users/Alumno/Paper-Please/mainwindow.h",
+>>>>>>> main
 			"MU",
 			"EWIEGA46WW/moc_mainwindow.cpp",
 			null
 		],
 		[
+<<<<<<< HEAD
 			"C:/Users/thiag/OneDrive/Escritorio/TRABAJO PRACTICO POO ANASHE/Paper-Please/menu.h",
+=======
+			"C:/Users/Alumno/Paper-Please/menu.h",
+>>>>>>> main
 			"MU",
 			"EWIEGA46WW/moc_menu.cpp",
 			null
 		],
 		[
+<<<<<<< HEAD
 			"C:/Users/thiag/OneDrive/Escritorio/TRABAJO PRACTICO POO ANASHE/Paper-Please/persona.h",
+=======
+			"C:/Users/Alumno/Paper-Please/persona.h",
+>>>>>>> main
 			"MU",
 			"EWIEGA46WW/moc_persona.cpp",
 			null
 		],
 		[
+<<<<<<< HEAD
 			"C:/Users/thiag/OneDrive/Escritorio/TRABAJO PRACTICO POO ANASHE/Paper-Please/puntos.h",
 			"MU",
 			"EWIEGA46WW/moc_puntos.cpp",
@@ -291,6 +336,23 @@
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
 	"INCLUDE_DIR" : "C:/Users/thiag/OneDrive/Escritorio/TRABAJO PRACTICO POO ANASHE/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/PaperPlease_autogen/include",
 	"MOC_COMPILATION_FILE" : "C:/Users/thiag/OneDrive/Escritorio/TRABAJO PRACTICO POO ANASHE/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/PaperPlease_autogen/mocs_compilation.cpp",
+=======
+			"C:/Users/Alumno/Paper-Please/puntos.h",
+			"MU",
+			"EWIEGA46WW/moc_puntos.cpp",
+			null
+		],
+		[
+			"C:/Users/Alumno/Paper-Please/ventana_mariano.h",
+			"MU",
+			"EWIEGA46WW/moc_ventana_mariano.cpp",
+			null
+		]
+	],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "C:/Users/Alumno/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/PaperPlease_autogen/include",
+	"MOC_COMPILATION_FILE" : "C:/Users/Alumno/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/PaperPlease_autogen/mocs_compilation.cpp",
+>>>>>>> main
 	"MOC_DEFINITIONS" : 
 	[
 		"MINGW_HAS_SECURE_API=1",
@@ -346,16 +408,26 @@
 		"-c",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeCXXCompilerABI.cpp"
 	],
+<<<<<<< HEAD
 	"MOC_PREDEFS_FILE" : "C:/Users/thiag/OneDrive/Escritorio/TRABAJO PRACTICO POO ANASHE/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/PaperPlease_autogen/moc_predefs.h",
 	"MOC_RELAXED_MODE" : false,
 	"MOC_SKIP" : [],
 	"MULTI_CONFIG" : false,
 	"PARALLEL" : 6,
 	"PARSE_CACHE_FILE" : "C:/Users/thiag/OneDrive/Escritorio/TRABAJO PRACTICO POO ANASHE/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/CMakeFiles/PaperPlease_autogen.dir/ParseCache.txt",
+=======
+	"MOC_PREDEFS_FILE" : "C:/Users/Alumno/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/PaperPlease_autogen/moc_predefs.h",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : [],
+	"MULTI_CONFIG" : false,
+	"PARALLEL" : 2,
+	"PARSE_CACHE_FILE" : "C:/Users/Alumno/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/CMakeFiles/PaperPlease_autogen.dir/ParseCache.txt",
+>>>>>>> main
 	"QT_MOC_EXECUTABLE" : "C:/Qt/6.7.2/mingw_64/./bin/moc.exe",
 	"QT_UIC_EXECUTABLE" : "C:/Qt/6.7.2/mingw_64/./bin/uic.exe",
 	"QT_VERSION_MAJOR" : 6,
 	"QT_VERSION_MINOR" : 7,
+<<<<<<< HEAD
 	"SETTINGS_FILE" : "C:/Users/thiag/OneDrive/Escritorio/TRABAJO PRACTICO POO ANASHE/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/CMakeFiles/PaperPlease_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
@@ -389,6 +461,18 @@
 			"MU",
 			null
 		]
+=======
+	"SETTINGS_FILE" : "C:/Users/Alumno/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/CMakeFiles/PaperPlease_autogen.dir/AutogenUsed.txt",
+	"SOURCES" : 
+	[
+		[ "C:/Users/Alumno/Paper-Please/gameplay.cpp", "MU", null ],
+		[ "C:/Users/Alumno/Paper-Please/main.cpp", "MU", null ],
+		[ "C:/Users/Alumno/Paper-Please/mainwindow.cpp", "MU", null ],
+		[ "C:/Users/Alumno/Paper-Please/menu.cpp", "MU", null ],
+		[ "C:/Users/Alumno/Paper-Please/persona.cpp", "MU", null ],
+		[ "C:/Users/Alumno/Paper-Please/puntos.cpp", "MU", null ],
+		[ "C:/Users/Alumno/Paper-Please/ventana_mariano.cpp", "MU", null ]
+>>>>>>> main
 	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],
