@@ -22,6 +22,7 @@ public:
     ~MainWindow();
 
 protected:
+    //
     //Esta función se llamará automáticamente cada vez que el widget sea redimensionado,
     //permitiendo que se manejen eventos de redimensionamiento personalizados dentro de la clase.
     //Override se utiliza para indicar que esta función está sobrescribiendo una función virtual de una clase base.
