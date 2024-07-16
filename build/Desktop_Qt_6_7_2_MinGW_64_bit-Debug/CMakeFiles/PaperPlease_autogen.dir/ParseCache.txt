@@ -360,8 +360,6 @@ C:/Users/Alumno/Paper-Please/gameplay.h
  mdp:C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wchar.h
  mdp:C:/Users/Alumno/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/PaperPlease_autogen/moc_predefs.h
  mdp:C:/Users/Alumno/Paper-Please/gameplay.h
-C:/Users/Alumno/Paper-Please/gameplay.cpp
- uic:ui_gameplay.h
 C:/Users/Alumno/Paper-Please/mainwindow.h
  mmc:Q_OBJECT
  mdp:C:/Qt/6.7.2/mingw_64/include/QtCore/QPropertyAnimation
@@ -742,6 +740,8 @@ C:/Users/Alumno/Paper-Please/mainwindow.h
  mdp:C:/Users/Alumno/Paper-Please/mainwindow.h
  mdp:C:/Users/Alumno/Paper-Please/menu.h
  mdp:C:/Users/Alumno/Paper-Please/puntos.h
+C:/Users/Alumno/Paper-Please/gameplay.cpp
+ uic:ui_gameplay.h
 C:/Users/Alumno/Paper-Please/menu.h
  mmc:Q_OBJECT
  mdp:C:/Qt/6.7.2/mingw_64/include/QtCore/QString
@@ -1104,6 +1104,7 @@ C:/Users/Alumno/Paper-Please/menu.h
  mdp:C:/Users/Alumno/Paper-Please/menu.h
  mdp:C:/Users/Alumno/Paper-Please/puntos.h
 C:/Users/Alumno/Paper-Please/persona.h
+C:/Users/Alumno/Paper-Please/puntos.h
 C:/Users/Alumno/Paper-Please/ventana_mariano.h
  mmc:Q_OBJECT
  mdp:C:/Qt/6.7.2/mingw_64/include/QtCore/QList
@@ -1494,7 +1495,6 @@ C:/Users/Alumno/Paper-Please/ventana_mariano.h
  mdp:C:/Users/Alumno/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/PaperPlease_autogen/moc_predefs.h
  mdp:C:/Users/Alumno/Paper-Please/persona.h
  mdp:C:/Users/Alumno/Paper-Please/ventana_mariano.h
-C:/Users/Alumno/Paper-Please/puntos.h
 C:/Users/Alumno/Paper-Please/main.cpp
 C:/Users/Alumno/Paper-Please/mainwindow.cpp
  uic:./ui_mainwindow.h
