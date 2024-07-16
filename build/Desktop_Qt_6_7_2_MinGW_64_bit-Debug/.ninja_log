@@ -1,25 +1,13 @@
 # ninja log v6
-<<<<<<< Updated upstream
-39	2997	7427970673418278	PaperPlease_autogen/timestamp	f76abf501b166286
-3449	40931	7427970680297324	CMakeFiles/PaperPlease.dir/PaperPlease_autogen/mocs_compilation.cpp.obj	fddbcda2f444d2d2
-40932	78940	7427971055130389	CMakeFiles/PaperPlease.dir/gameplay.cpp.obj	d37236053eb98133
-39	2997	7427970673418278	PaperPlease_autogen/mocs_compilation.cpp	f76abf501b166286
-3005	3448	7427970679441159	C:/Users/Alumno/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/PaperPlease_autogen/EWIEGA46WW/qrc_imagenes.cpp	4a42e91e1e1f27bd
-101928	104585	7427971665092088	PaperPlease.exe	8b9c156a973a5644
-3454	39827	7427970680347189	CMakeFiles/PaperPlease.dir/main.cpp.obj	c802278a49ff261d
-3458	38689	7427970680387152	CMakeFiles/PaperPlease.dir/mainwindow.cpp.obj	15e1f8482ecdc5d1
-38690	73998	7427971032706719	CMakeFiles/PaperPlease.dir/persona.cpp.obj	4962f42da02a2d18
-=======
-115	6102	7427824136149428	PaperPlease_autogen/timestamp	f76abf501b166286
 6497	24520	7427824142214457	CMakeFiles/PaperPlease.dir/PaperPlease_autogen/mocs_compilation.cpp.obj	fddbcda2f444d2d2
+115	6102	7427824136149428	PaperPlease_autogen/timestamp	f76abf501b166286
 24521	42323	7427824322454836	CMakeFiles/PaperPlease.dir/gameplay.cpp.obj	d37236053eb98133
 115	6102	7427824136149428	PaperPlease_autogen/mocs_compilation.cpp	f76abf501b166286
+6501	23426	7427824142244419	CMakeFiles/PaperPlease.dir/main.cpp.obj	c802278a49ff261d
 6111	6496	7427824141356189	C:/Users/Alumno/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/PaperPlease_autogen/EWIEGA46WW/qrc_imagenes.cpp	4a42e91e1e1f27bd
 53981	55549	7427824617047779	PaperPlease.exe	8b9c156a973a5644
-6501	23426	7427824142244419	CMakeFiles/PaperPlease.dir/main.cpp.obj	c802278a49ff261d
 6504	23596	7427824142284349	CMakeFiles/PaperPlease.dir/mainwindow.cpp.obj	15e1f8482ecdc5d1
 23427	39241	7427824311514779	CMakeFiles/PaperPlease.dir/persona.cpp.obj	4962f42da02a2d18
->>>>>>> Stashed changes
 20	2063	7427951575060805	C:/Users/thiag/OneDrive/Escritorio/TRABAJO PRACTICO POO ANASHE/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/PaperPlease_autogen/timestamp	8d74815c5f4fa48
 20	2063	7427951575060805	C:/Users/thiag/OneDrive/Escritorio/TRABAJO PRACTICO POO ANASHE/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/PaperPlease_autogen/mocs_compilation.cpp	8d74815c5f4fa48
 3005	3448	7427970679441159	PaperPlease_autogen/EWIEGA46WW/qrc_imagenes.cpp	4a42e91e1e1f27bd
