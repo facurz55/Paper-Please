@@ -7,8 +7,6 @@
 class Persona {
 public:
     Persona();
-    void Mostrar_Datos();
-
     void generarNombres();
     void generarFecha();
     void generarNacionalidad();
@@ -20,18 +18,16 @@ public:
     void retPop();
     int obtenerPop();
 
+    int obtenerFecha() const;
     QString obtenerGenero() const;
     QString obtenerNombre() const;
     QString obtenerApellido() const;
-    int obtenerFecha() const;
     QString obtenerNacionalidad() const;
     QString obtenerEstancia() const;
     QString getPersonaVisa() const;
     QString getPersonaEstCivil() const;
     QString obtenerPensamientos();
     QString obtenerNpc();
-
-    //Faltan Estancia, residencia, proposito del viaje, integrantes, antecedentes
 protected:
     QString tipoNpc;
     QString genero;

@@ -48,6 +48,7 @@ void MainWindow::ComenzarJuego() {
     // Cambia el widget actual del stackedWidget al widget del juego (game)
     stackedWidget->setCurrentWidget(game);
 
+    //Cuando se inicia la partida se llama esta funcion para que se Genere la primera entrada del NPC
     EntradaNPC();
 }
 
@@ -150,5 +151,8 @@ void MainWindow::SalirNPC() {
 
     // Conecta la señal finished() de la animación para reiniciar ComenzarJuego
     connect(animation, &QPropertyAnimation::finished, this, &MainWindow::EntradaNPC);
+
+    game->getBotonSiguiente_NPC()->hide();
+
 }
 
