@@ -20,4 +20,3 @@ QLabel* gameplay::getLabelNPC(){
 QPushButton* gameplay::getBotonSiguiente_NPC(){
     return ui->Siguiente_NPC;
 }
-

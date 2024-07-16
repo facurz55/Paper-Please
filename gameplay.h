@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QLabel>
 #include<QPushButton>
+#include <QLineEdit>
 
 namespace Ui {
 class gameplay;

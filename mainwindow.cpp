@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 #include <QPropertyAnimation>
+#include <QDebug>
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -151,8 +152,5 @@ void MainWindow::SalirNPC() {
 
     // Conecta la señal finished() de la animación para reiniciar ComenzarJuego
     connect(animation, &QPropertyAnimation::finished, this, &MainWindow::EntradaNPC);
-
-    game->getBotonSiguiente_NPC()->hide();
-
 }
 
