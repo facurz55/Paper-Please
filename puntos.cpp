@@ -1,4 +1,9 @@
 #include "puntos.h"
+#include "menu.h"
+
+///saquenlo cuando mariano tenga su parte de npc
+
+
 
 puntos::puntos() {}
 void puntos::puntaje(QString npc){
@@ -46,3 +51,4 @@ void puntos::puntaje2(QString npc){
     void puntos::puntuacion3_asignada3(){
         punto=0;
     }
+

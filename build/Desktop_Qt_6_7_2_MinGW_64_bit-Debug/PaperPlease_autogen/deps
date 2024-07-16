@@ -1,4 +1,8 @@
 PaperPlease_autogen/timestamp: \
+<<<<<<< HEAD
+	C:/Qt/6.7.2/mingw_64/include/QtCore/QString \
+	C:/Qt/6.7.2/mingw_64/include/QtCore/QStringList \
+=======
 	C:/Qt/6.7.2/mingw_64/include/QtCore/QList \
 	C:/Qt/6.7.2/mingw_64/include/QtCore/QObject \
 	C:/Qt/6.7.2/mingw_64/include/QtCore/QPropertyAnimation \
@@ -9,6 +13,7 @@ PaperPlease_autogen/timestamp: \
 	C:/Qt/6.7.2/mingw_64/include/QtCore/QStringList \
 	C:/Qt/6.7.2/mingw_64/include/QtCore/QTime \
 	C:/Qt/6.7.2/mingw_64/include/QtCore/QTimer \
+>>>>>>> main
 	C:/Qt/6.7.2/mingw_64/include/QtCore/q20functional.h \
 	C:/Qt/6.7.2/mingw_64/include/QtCore/q20memory.h \
 	C:/Qt/6.7.2/mingw_64/include/QtCore/q20type_traits.h \
@@ -187,14 +192,21 @@ PaperPlease_autogen/timestamp: \
 	C:/Qt/6.7.2/mingw_64/include/QtWidgets/QLabel \
 	C:/Qt/6.7.2/mingw_64/include/QtWidgets/QMainWindow \
 	C:/Qt/6.7.2/mingw_64/include/QtWidgets/QPushButton \
+<<<<<<< HEAD
+=======
 	C:/Qt/6.7.2/mingw_64/include/QtWidgets/QStackedWidget \
+>>>>>>> main
 	C:/Qt/6.7.2/mingw_64/include/QtWidgets/QVBoxLayout \
 	C:/Qt/6.7.2/mingw_64/include/QtWidgets/QWidget \
 	C:/Qt/6.7.2/mingw_64/include/QtWidgets/qabstractbutton.h \
 	C:/Qt/6.7.2/mingw_64/include/QtWidgets/qboxlayout.h \
+<<<<<<< HEAD
+	C:/Qt/6.7.2/mingw_64/include/QtWidgets/qgridlayout.h \
+=======
 	C:/Qt/6.7.2/mingw_64/include/QtWidgets/qframe.h \
 	C:/Qt/6.7.2/mingw_64/include/QtWidgets/qgridlayout.h \
 	C:/Qt/6.7.2/mingw_64/include/QtWidgets/qlabel.h \
+>>>>>>> main
 	C:/Qt/6.7.2/mingw_64/include/QtWidgets/qlayout.h \
 	C:/Qt/6.7.2/mingw_64/include/QtWidgets/qlayoutitem.h \
 	C:/Qt/6.7.2/mingw_64/include/QtWidgets/qmainwindow.h \
@@ -572,6 +584,29 @@ PaperPlease_autogen/timestamp: \
 	C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/time.h \
 	C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/vadefs.h \
 	C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wchar.h \
+<<<<<<< HEAD
+	C:/Users/thiag/OneDrive/Escritorio/TRABAJO\ PRACTICO\ POO\ ANASHE/Paper-Please/CMakeLists.txt \
+	C:/Users/thiag/OneDrive/Escritorio/TRABAJO\ PRACTICO\ POO\ ANASHE/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/.qtc/package-manager/auto-setup.cmake \
+	C:/Users/thiag/OneDrive/Escritorio/TRABAJO\ PRACTICO\ POO\ ANASHE/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/CMakeFiles/3.29.3/CMakeCXXCompiler.cmake \
+	C:/Users/thiag/OneDrive/Escritorio/TRABAJO\ PRACTICO\ POO\ ANASHE/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/CMakeFiles/3.29.3/CMakeRCCompiler.cmake \
+	C:/Users/thiag/OneDrive/Escritorio/TRABAJO\ PRACTICO\ POO\ ANASHE/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/CMakeFiles/3.29.3/CMakeSystem.cmake \
+	C:/Users/thiag/OneDrive/Escritorio/TRABAJO\ PRACTICO\ POO\ ANASHE/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/PaperPlease_autogen/moc_predefs.h \
+	C:/Users/thiag/OneDrive/Escritorio/TRABAJO\ PRACTICO\ POO\ ANASHE/Paper-Please/gameplay.cpp \
+	C:/Users/thiag/OneDrive/Escritorio/TRABAJO\ PRACTICO\ POO\ ANASHE/Paper-Please/gameplay.h \
+	C:/Users/thiag/OneDrive/Escritorio/TRABAJO\ PRACTICO\ POO\ ANASHE/Paper-Please/imagenes.qrc \
+	C:/Users/thiag/OneDrive/Escritorio/TRABAJO\ PRACTICO\ POO\ ANASHE/Paper-Please/main.cpp \
+	C:/Users/thiag/OneDrive/Escritorio/TRABAJO\ PRACTICO\ POO\ ANASHE/Paper-Please/mainwindow.cpp \
+	C:/Users/thiag/OneDrive/Escritorio/TRABAJO\ PRACTICO\ POO\ ANASHE/Paper-Please/mainwindow.h \
+	C:/Users/thiag/OneDrive/Escritorio/TRABAJO\ PRACTICO\ POO\ ANASHE/Paper-Please/menu.cpp \
+	C:/Users/thiag/OneDrive/Escritorio/TRABAJO\ PRACTICO\ POO\ ANASHE/Paper-Please/menu.h \
+	C:/Users/thiag/OneDrive/Escritorio/TRABAJO\ PRACTICO\ POO\ ANASHE/Paper-Please/persona.cpp \
+	C:/Users/thiag/OneDrive/Escritorio/TRABAJO\ PRACTICO\ POO\ ANASHE/Paper-Please/persona.h \
+	C:/Users/thiag/OneDrive/Escritorio/TRABAJO\ PRACTICO\ POO\ ANASHE/Paper-Please/puntos.cpp \
+	C:/Users/thiag/OneDrive/Escritorio/TRABAJO\ PRACTICO\ POO\ ANASHE/Paper-Please/puntos.h \
+	C:/Users/thiag/OneDrive/Escritorio/TRABAJO\ PRACTICO\ POO\ ANASHE/Paper-Please/gameplay.ui \
+	C:/Users/thiag/OneDrive/Escritorio/TRABAJO\ PRACTICO\ POO\ ANASHE/Paper-Please/mainwindow.ui \
+	C:/Users/thiag/OneDrive/Escritorio/TRABAJO\ PRACTICO\ POO\ ANASHE/Paper-Please/menu.ui \
+=======
 	C:/Users/Alumno/Paper-Please/CMakeLists.txt \
 	C:/Users/Alumno/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/.qtc/package-manager/auto-setup.cmake \
 	C:/Users/Alumno/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/CMakeFiles/3.29.3/CMakeCXXCompiler.cmake \
@@ -596,4 +631,5 @@ PaperPlease_autogen/timestamp: \
 	C:/Users/Alumno/Paper-Please/mainwindow.ui \
 	C:/Users/Alumno/Paper-Please/menu.ui \
 	C:/Users/Alumno/Paper-Please/ventana_mariano.ui \
+>>>>>>> main
 	C:/Qt/Tools/CMake_64/bin/cmake.exe
