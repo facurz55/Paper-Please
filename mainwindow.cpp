@@ -2,7 +2,7 @@
 #include "./ui_mainwindow.h"
 
 #include <QStackedWidget>
-=======
+
 #include <QPropertyAnimation>
 
 

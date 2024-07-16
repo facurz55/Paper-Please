@@ -1,5 +1,5 @@
 #include "puntos.h"
-
+#include "menu.h"
 ///saquenlo cuando mariano tenga su parte de npc
 
 
