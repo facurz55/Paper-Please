@@ -1,7 +1,6 @@
 #ifndef PUNTOS_H
 #define PUNTOS_H
 #include <QString>
-#include "multas.h"
 class puntos
 {
 public:
@@ -15,8 +14,6 @@ public:
     void puntuacion3_asignada3();//asignacion de puntos en dificultad 0  dificil
 
     int punto;//variable de puntos
-private:
-    multas multa2;
 };
 
 #endif // PUNTOS_H

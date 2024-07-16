@@ -1,33 +1,21 @@
 # ninja log v6
-21	2620	7428768186893374	PaperPlease_autogen/timestamp	55a37731393873db
-2622	7298	7428768189488422	CMakeFiles/PaperPlease.dir/PaperPlease_autogen/mocs_compilation.cpp.obj	b5dae9355d875e12
-4125	8934	7428768204511683	CMakeFiles/PaperPlease.dir/gameplay.cpp.obj	5768473224297a02
-21	2620	7428768186893374	PaperPlease_autogen/mocs_compilation.cpp	55a37731393873db
+6497	24520	7427824142214457	CMakeFiles/PaperPlease.dir/PaperPlease_autogen/mocs_compilation.cpp.obj	fddbcda2f444d2d2
+115	6102	7427824136149428	PaperPlease_autogen/timestamp	f76abf501b166286
+24521	42323	7427824322454836	CMakeFiles/PaperPlease.dir/gameplay.cpp.obj	d37236053eb98133
+115	6102	7427824136149428	PaperPlease_autogen/mocs_compilation.cpp	f76abf501b166286
+6501	23426	7427824142244419	CMakeFiles/PaperPlease.dir/main.cpp.obj	c802278a49ff261d
+6111	6496	7427824141356189	C:/Users/Alumno/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/PaperPlease_autogen/EWIEGA46WW/qrc_imagenes.cpp	4a42e91e1e1f27bd
 53981	55549	7427824617047779	PaperPlease.exe	8b9c156a973a5644
-2701	7216	7428768190284781	CMakeFiles/PaperPlease.dir/main.cpp.obj	7d4c2b3a415e253c
-2904	7470	7428768192310528	CMakeFiles/PaperPlease.dir/mainwindow.cpp.obj	928246fcb19cdd62
-4631	9615	7428762723335697	CMakeFiles/PaperPlease.dir/persona.cpp.obj	e4a7d6165fd15ff4
+6504	23596	7427824142284349	CMakeFiles/PaperPlease.dir/mainwindow.cpp.obj	15e1f8482ecdc5d1
+23427	39241	7427824311514779	CMakeFiles/PaperPlease.dir/persona.cpp.obj	4962f42da02a2d18
 20	2063	7427951575060805	C:/Users/thiag/OneDrive/Escritorio/TRABAJO PRACTICO POO ANASHE/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/PaperPlease_autogen/timestamp	8d74815c5f4fa48
 20	2063	7427951575060805	C:/Users/thiag/OneDrive/Escritorio/TRABAJO PRACTICO POO ANASHE/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/PaperPlease_autogen/mocs_compilation.cpp	8d74815c5f4fa48
-3507	3940	7428762716099340	PaperPlease_autogen/EWIEGA46WW/qrc_imagenes.cpp	9caee05c0cf813a5
+3005	3448	7427970679441159	PaperPlease_autogen/EWIEGA46WW/qrc_imagenes.cpp	4a42e91e1e1f27bd
 2065	2284	7427951578556711	C:/Users/thiag/OneDrive/Escritorio/TRABAJO PRACTICO POO ANASHE/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/PaperPlease_autogen/EWIEGA46WW/qrc_imagenes.cpp	1c1a6b958108b3ab
-8793	10974	7428762764957516	CMakeFiles/PaperPlease.dir/PaperPlease_autogen/EWIEGA46WW/qrc_imagenes.cpp.obj	4d9640020aaf83fc
-3534	8253	7428768198614338	CMakeFiles/PaperPlease.dir/menu.cpp.obj	2189e0ad08d7605c
-4574	9139	7428768209018468	CMakeFiles/PaperPlease.dir/puntos.cpp.obj	57549aaab0d07a25
-5279	9709	7428768216056866	CMakeFiles/PaperPlease.dir/ventana_mariano.cpp.obj	ad480cb003b81d1a
-38	2472	7428762007814812	build.ninja	2cfeb6ee4e0fb34d
-21	2620	7428768186893374	C:/Users/thiag/OneDrive/Escritorio/REPOSITORIO 2/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/PaperPlease_autogen/timestamp	55a37731393873db
-21	2620	7428768186893374	C:/Users/thiag/OneDrive/Escritorio/REPOSITORIO 2/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/PaperPlease_autogen/mocs_compilation.cpp	55a37731393873db
-3507	3940	7428762716099340	C:/Users/thiag/OneDrive/Escritorio/REPOSITORIO 2/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/PaperPlease_autogen/EWIEGA46WW/qrc_imagenes.cpp	9caee05c0cf813a5
-8230	9559	7428762759330054	CMakeFiles/PaperPlease.dir/multas.cpp.obj	7474598c957f8a11
-160	2867	7428768787425873	PaperPlease_autogen/timestamp	55a37731393873db
-160	2867	7428768787425873	PaperPlease_autogen/mocs_compilation.cpp	55a37731393873db
-160	2867	7428768787425873	C:/Users/thiag/OneDrive/Escritorio/REPOSITORIO 2/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/PaperPlease_autogen/timestamp	55a37731393873db
-160	2867	7428768787425873	C:/Users/thiag/OneDrive/Escritorio/REPOSITORIO 2/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/PaperPlease_autogen/mocs_compilation.cpp	55a37731393873db
-2869	7411	7428768789951411	CMakeFiles/PaperPlease.dir/PaperPlease_autogen/mocs_compilation.cpp.obj	b5dae9355d875e12
-2942	7706	7428768790666963	CMakeFiles/PaperPlease.dir/mainwindow.cpp.obj	928246fcb19cdd62
-2896	7750	7428768790198203	CMakeFiles/PaperPlease.dir/main.cpp.obj	7d4c2b3a415e253c
-3273	7932	7428768793882223	CMakeFiles/PaperPlease.dir/menu.cpp.obj	2189e0ad08d7605c
-4073	8446	7428768801894920	CMakeFiles/PaperPlease.dir/puntos.cpp.obj	57549aaab0d07a25
-3747	8651	7428768798589174	CMakeFiles/PaperPlease.dir/gameplay.cpp.obj	5768473224297a02
-4468	9089	7428768805941460	CMakeFiles/PaperPlease.dir/ventana_mariano.cpp.obj	ad480cb003b81d1a
+78940	90467	7427971435214470	CMakeFiles/PaperPlease.dir/PaperPlease_autogen/EWIEGA46WW/qrc_imagenes.cpp.obj	c3d8fe46c6c96097
+39828	78061	7427971044090388	CMakeFiles/PaperPlease.dir/menu.cpp.obj	39e07bad73d5dc0a
+78061	94957	7427971426426555	CMakeFiles/PaperPlease.dir/puntos.cpp.obj	b5203aa5ebe30ce
+73998	101927	7427971385798382	CMakeFiles/PaperPlease.dir/ventana_mariano.cpp.obj	56a6b91b8aad0a2c
+39	2997	7427970673418278	C:/Users/Alumno/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/PaperPlease_autogen/timestamp	f76abf501b166286
+39	2997	7427970673418278	C:/Users/Alumno/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/PaperPlease_autogen/mocs_compilation.cpp	f76abf501b166286
+38	2472	7427961245012296	build.ninja	2cfeb6ee4e0fb34d
