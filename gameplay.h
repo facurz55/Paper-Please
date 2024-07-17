@@ -28,6 +28,7 @@ private slots:
     void noPasa();
     void actualizarLabelConPersona();
     void mostrarD();
+    void mostrarVisa();
     void cerrarDatos();
 
     void vivaPeron();

@@ -119,7 +119,7 @@ void Persona::generarNombres() {
 
 void Persona::generarFecha() {
     int a = QRandomGenerator::global()->bounded(1970, 2003);
-    fecha = a;
+    fecha = QString::number(a);
 }
 
 void Persona::generarNacionalidad() {
@@ -211,7 +211,7 @@ QString Persona::obtenerApellido() const {
     return apellido;
 }
 
-int Persona::obtenerFecha() const {
+QString Persona::obtenerFecha() const {
     return fecha;
 }
 

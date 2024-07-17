@@ -8,7 +8,25 @@ gameplay::gameplay(QWidget *parent)
     ui->setupUi(this);
 
     ui->pasarDia->hide();
+    ui->genero->hide();
+    ui->generoD->hide();
+    ui->nombre->hide();
+    ui->nombreD->hide();
+    ui->apellido->hide();
+    ui->apellidoD->hide();
+    ui->nacimiento->hide();
+    ui->nacimientoD->hide();
+    ui->nacionalidad->hide();
+    ui->nacionalidadD->hide();
+    ui->visa_2->hide();
+    ui->visaD_2->hide();
+    ui->duracion->hide();
+    ui->duracionD->hide();
+    ui->estadoCIVIL->hide();
+    ui->estadoCIVILd->hide();
     ui->documento->hide();
+    ui->visa->hide();
+    ui->visaD->hide();
     ui->cerrar->hide();
     ui->datos->hide();
     ui->Siguiente_NPC->setDisabled(true);
@@ -24,6 +42,7 @@ gameplay::gameplay(QWidget *parent)
 
 
     connect(ui->documento, &QPushButton::clicked, this, &gameplay::actualizarLabelConPersona); //boton de generar npc
+    connect(ui->visaD, SIGNAL(clicked()), this, SLOT(mostrarVisa()));
     connect(ui->aceptar, SIGNAL(clicked()), this, SLOT(siPasa()));
     connect(ui->denegar, SIGNAL(clicked()), this, SLOT(noPasa()));
     connect(ui->cerrar, SIGNAL(clicked()), this, SLOT(cerrarDatos()));
@@ -67,41 +86,82 @@ void gameplay::vivaPeron()
 
 void gameplay::mostrarD()
 {
+    ui->papeles->setDisabled(true);
     ui->documento->show();
+    ui->visaD->show();
+    ui->cerrar->show();
 }
 
-
-
 void gameplay::actualizarLabelConPersona() //esta funcion muestra los datos cuando se presiona un boton
-{
-
-
-    QString datosPersona = QString("Genero: %1\nNombre: %2\nApellido: %3\nFecha de Nacimiento: %4\nNacionalidad: %5\nTipo de Visa: %6\nDuracion de la estancis: %7\nEstado Civil: %8")
-                               .arg(Persona.obtenerGenero())
-                               .arg(Persona.obtenerNombre())
-                               .arg(Persona.obtenerApellido())
-                               .arg(Persona.obtenerFecha())
-                               .arg(Persona.obtenerNacionalidad())
-                               .arg(Persona.getPersonaVisa())
-                               .arg(Persona.obtenerEstancia())
-                               .arg(Persona.getPersonaEstCivil());
-    //                                      <---- Aca pone lo que te di como ejemplo en ds Thiago.
-    //Los marcadores %1, %2, %3, etc., son marcadores de posición utilizados en una cadena QString en Qt.
-    //Estos marcadores se reemplazan por valores específicos cuando llamas al método arg().
-
-
-    ui->datos->setText(datosPersona); // Asegurarse de tener un QLabel llamado 'label' en el diseño.
+{ 
+    ui->generoD->setText(Persona.obtenerGenero());
+    ui->nombreD->setText(Persona.obtenerNombre());
+    ui->apellidoD->setText(Persona.obtenerApellido());
+    ui->nacimientoD->setText(Persona.obtenerFecha());
+    ui->nacionalidadD->setText(Persona.obtenerNacionalidad());
+    // Asegurarse de tener un QLabel llamado 'label' en el diseño.
 
     //manejo de labels y botones
     ui->datos->show();
-    ui->cerrar->show();
     ui->documento->hide();
+    ui->visaD->hide();
+
+    ui->genero->show();
+    ui->generoD->show();
+    ui->nombre->show();
+    ui->nombreD->show();
+    ui->apellido->show();
+    ui->apellidoD->show();
+    ui->nacimiento->show();
+    ui->nacimientoD->show();
+    ui->nacionalidad->show();
+    ui->nacionalidadD->show();
+}
+
+
+void gameplay::mostrarVisa()
+{   
+    ui->visaD_2->setText(Persona.getPersonaVisa());
+    ui->duracionD->setText(Persona.obtenerEstancia());
+    ui->estadoCIVILd->setText(Persona.getPersonaEstCivil());
+
+    ui->visaD->hide();
+    ui->documento->hide();
+    ui->visa->show();
+
+    ui->visa_2->show();
+    ui->visaD_2->show();
+    ui->duracion->show();
+    ui->duracionD->show();
+    ui->estadoCIVIL->show();
+    ui->estadoCIVILd->show();
 }
 
 void gameplay::cerrarDatos()
 {
+    ui->papeles->setEnabled(true);
+
     ui->datos->hide();
     ui->cerrar->hide();
+    ui->visa->hide();
+    ui->documento->hide();
+    ui->visaD->hide();
+    ui->genero->hide();
+    ui->generoD->hide();
+    ui->nombre->hide();
+    ui->nombreD->hide();
+    ui->apellido->hide();
+    ui->apellidoD->hide();
+    ui->nacimiento->hide();
+    ui->nacimientoD->hide();
+    ui->nacionalidad->hide();
+    ui->nacionalidadD->hide();
+    ui->visa_2->hide();
+    ui->visaD_2->hide();
+    ui->duracion->hide();
+    ui->duracionD->hide();
+    ui->estadoCIVIL->hide();
+    ui->estadoCIVILd->hide();
 }
 
 
@@ -126,6 +186,25 @@ void gameplay::siPasa()
     ui->documento->hide();
     ui->datos->hide();
     ui->cerrar->hide();
+    ui->visa->hide();
+
+    ui->genero->hide();
+    ui->generoD->hide();
+    ui->nombre->hide();
+    ui->nombreD->hide();
+    ui->apellido->hide();
+    ui->apellidoD->hide();
+    ui->nacimiento->hide();
+    ui->nacimientoD->hide();
+    ui->nacionalidad->hide();
+    ui->nacionalidadD->hide();
+    ui->visa_2->hide();
+    ui->visaD_2->hide();
+    ui->duracion->hide();
+    ui->duracionD->hide();
+    ui->estadoCIVIL->hide();
+    ui->estadoCIVILd->hide();
+
     ui->aceptar->setDisabled(true);
     ui->denegar->setDisabled(true);
     ui->papeles->setDisabled(true);
@@ -153,6 +232,25 @@ void gameplay::noPasa()
     ui->documento->hide();
     ui->datos->hide();
     ui->cerrar->hide();
+    ui->visa->hide();
+
+    ui->genero->hide();
+    ui->generoD->hide();
+    ui->nombre->hide();
+    ui->nombreD->hide();
+    ui->apellido->hide();
+    ui->apellidoD->hide();
+    ui->nacimiento->hide();
+    ui->nacimientoD->hide();
+    ui->nacionalidad->hide();
+    ui->nacionalidadD->hide();
+    ui->visa_2->hide();
+    ui->visaD_2->hide();
+    ui->duracion->hide();
+    ui->duracionD->hide();
+    ui->estadoCIVIL->hide();
+    ui->estadoCIVILd->hide();
+
     ui->aceptar->setDisabled(true);
     ui->denegar->setDisabled(true);
     ui->papeles->setDisabled(true);
@@ -196,6 +294,26 @@ void gameplay::actualizarCronometro()
         ui->datos->hide();
         ui->Siguiente_NPC->hide();
         ui->cerrar->hide();
+
+        ui->visa->hide();
+        ui->visaD->hide();
+
+        ui->genero->hide();
+        ui->generoD->hide();
+        ui->nombre->hide();
+        ui->nombreD->hide();
+        ui->apellido->hide();
+        ui->apellidoD->hide();
+        ui->nacimiento->hide();
+        ui->nacimientoD->hide();
+        ui->nacionalidad->hide();
+        ui->nacionalidadD->hide();
+        ui->visa_2->hide();
+        ui->visaD_2->hide();
+        ui->duracion->hide();
+        ui->duracionD->hide();
+        ui->estadoCIVIL->hide();
+        ui->estadoCIVILd->hide();
         return;
     }
 
