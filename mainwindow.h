@@ -26,6 +26,8 @@ public:
     ~MainWindow();
 
     void actualizarLabelConPersona(const Persona &persona);
+private slots:
+    //void Button();
 
 
 protected:
