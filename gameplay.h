@@ -21,7 +21,7 @@ public:
 
 private slots:
     //este boton tenemos que moverlo a la parte del nivel 1 el boton condicionales
-    void Boton_condiciones();//las condiciones para ver si perdiste o seguis al siguiente nivel
+    //void Boton_condiciones();//las condiciones para ver si perdiste o seguis al siguiente nivel
 
     void on_Boton_ReiniciarNivel_clicked();//reinicia el nivel para volver a jugar
 

@@ -27,7 +27,7 @@ public:
 
     void actualizarLabelConPersona(const Persona &persona);
 private slots:
-    void Button();
+    //void Button();
 
 
 protected:
@@ -46,11 +46,11 @@ private slots:
     void SalirNPC(); //Funcion para la salida del NPC
 
 
-    void pushButton_2();
+    //void pushButton_2();
 
-    void siPasa();
+    //void siPasa();
 
-    void noPasa();
+    //void noPasa();
 private:
     Ui::MainWindow *ui;
 
