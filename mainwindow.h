@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 #include "menu.h"
 #include "gameplay.h"
+#include "persona.h"
 #include <QMainWindow>
 #include <QStackedWidget>
 #include <QLabel>
@@ -41,6 +42,7 @@ private:
     Menu *menuPage;//Puntero de la clase
     gameplay *game;//Puntero para la pantalla donde jugamos
     QStackedWidget *stackedWidget; //Puntero para el StackedWidget
-    QWidget *page_2; // Placeholder para la página del juego
+    QWidget *page_2; // Placeholder para la página del
+    Persona* persona;//puntero a la clase persona para trabajar
 };
 #endif // MAINWINDOW_H

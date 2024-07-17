@@ -15,6 +15,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     menuPage = new Menu();
     game = new gameplay();
+    persona = new Persona();
     page_2 = menuPage->findChild<QWidget*>("page_2");
 
     stackedWidget->addWidget(menuPage); //añade la ventana del menu
@@ -52,9 +53,7 @@ void MainWindow::ComenzarJuego() {
     //Cuando se inicia la partida se llama esta funcion para que se Genere la primera entrada del NPC
     EntradaNPC();
 }
-
 void MainWindow::EntradaNPC(){
-
     // Obtiene el puntero al QLabel que contiene la imagen del NPC en el juego
     QLabel *labelNPC = game->getLabelNPC();
 

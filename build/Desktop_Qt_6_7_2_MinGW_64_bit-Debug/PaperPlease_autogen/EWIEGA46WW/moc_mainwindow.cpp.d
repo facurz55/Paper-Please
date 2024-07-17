@@ -2,6 +2,7 @@ C:/Users/Alumno/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/PaperPlea
   C:/Users/Alumno/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/PaperPlease_autogen/moc_predefs.h \
   C:/Qt/6.7.2/mingw_64/include/QtCore/QPropertyAnimation \
   C:/Qt/6.7.2/mingw_64/include/QtCore/QString \
+  C:/Qt/6.7.2/mingw_64/include/QtCore/QStringList \
   C:/Qt/6.7.2/mingw_64/include/QtCore/q20functional.h \
   C:/Qt/6.7.2/mingw_64/include/QtCore/q20memory.h \
   C:/Qt/6.7.2/mingw_64/include/QtCore/q20type_traits.h \
@@ -381,4 +382,6 @@ C:/Users/Alumno/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/PaperPlea
   C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wchar.h \
   C:/Users/Alumno/Paper-Please/gameplay.h \
   C:/Users/Alumno/Paper-Please/menu.h \
+  C:/Users/Alumno/Paper-Please/multas.h \
+  C:/Users/Alumno/Paper-Please/persona.h \
   C:/Users/Alumno/Paper-Please/puntos.h

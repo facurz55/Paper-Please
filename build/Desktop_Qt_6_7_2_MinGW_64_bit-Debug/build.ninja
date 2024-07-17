@@ -113,6 +113,14 @@ build CMakeFiles/PaperPlease.dir/puntos.cpp.obj: CXX_COMPILER__PaperPlease_unsca
   OBJECT_DIR = CMakeFiles\PaperPlease.dir
   OBJECT_FILE_DIR = CMakeFiles\PaperPlease.dir
 
+build CMakeFiles/PaperPlease.dir/multas.cpp.obj: CXX_COMPILER__PaperPlease_unscanned_Debug C$:/Users/Alumno/Paper-Please/multas.cpp || cmake_object_order_depends_target_PaperPlease
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\PaperPlease.dir\multas.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/Alumno/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/PaperPlease_autogen/include -isystem C:/Qt/6.7.2/mingw_64/include/QtCore -isystem C:/Qt/6.7.2/mingw_64/include -isystem C:/Qt/6.7.2/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.7.2/mingw_64/include/QtWidgets -isystem C:/Qt/6.7.2/mingw_64/include/QtGui
+  OBJECT_DIR = CMakeFiles\PaperPlease.dir
+  OBJECT_FILE_DIR = CMakeFiles\PaperPlease.dir
+
 build CMakeFiles/PaperPlease.dir/PaperPlease_autogen/EWIEGA46WW/qrc_imagenes.cpp.obj: CXX_COMPILER__PaperPlease_unscanned_Debug C$:/Users/Alumno/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/PaperPlease_autogen/EWIEGA46WW/qrc_imagenes.cpp || cmake_object_order_depends_target_PaperPlease
   DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
   DEP_FILE = CMakeFiles\PaperPlease.dir\PaperPlease_autogen\EWIEGA46WW\qrc_imagenes.cpp.obj.d
@@ -129,7 +137,7 @@ build CMakeFiles/PaperPlease.dir/PaperPlease_autogen/EWIEGA46WW/qrc_imagenes.cpp
 #############################################
 # Link the executable PaperPlease.exe
 
-build PaperPlease.exe: CXX_EXECUTABLE_LINKER__PaperPlease_Debug CMakeFiles/PaperPlease.dir/PaperPlease_autogen/mocs_compilation.cpp.obj CMakeFiles/PaperPlease.dir/main.cpp.obj CMakeFiles/PaperPlease.dir/mainwindow.cpp.obj CMakeFiles/PaperPlease.dir/persona.cpp.obj CMakeFiles/PaperPlease.dir/menu.cpp.obj CMakeFiles/PaperPlease.dir/gameplay.cpp.obj CMakeFiles/PaperPlease.dir/ventana_mariano.cpp.obj CMakeFiles/PaperPlease.dir/puntos.cpp.obj CMakeFiles/PaperPlease.dir/PaperPlease_autogen/EWIEGA46WW/qrc_imagenes.cpp.obj | C$:/Qt/6.7.2/mingw_64/lib/libQt6Widgets.a C$:/Qt/6.7.2/mingw_64/lib/libQt6Gui.a C$:/Qt/6.7.2/mingw_64/lib/libQt6Core.a C$:/Qt/6.7.2/mingw_64/lib/libQt6EntryPoint.a || PaperPlease_autogen PaperPlease_autogen_timestamp_deps
+build PaperPlease.exe: CXX_EXECUTABLE_LINKER__PaperPlease_Debug CMakeFiles/PaperPlease.dir/PaperPlease_autogen/mocs_compilation.cpp.obj CMakeFiles/PaperPlease.dir/main.cpp.obj CMakeFiles/PaperPlease.dir/mainwindow.cpp.obj CMakeFiles/PaperPlease.dir/persona.cpp.obj CMakeFiles/PaperPlease.dir/menu.cpp.obj CMakeFiles/PaperPlease.dir/gameplay.cpp.obj CMakeFiles/PaperPlease.dir/ventana_mariano.cpp.obj CMakeFiles/PaperPlease.dir/puntos.cpp.obj CMakeFiles/PaperPlease.dir/multas.cpp.obj CMakeFiles/PaperPlease.dir/PaperPlease_autogen/EWIEGA46WW/qrc_imagenes.cpp.obj | C$:/Qt/6.7.2/mingw_64/lib/libQt6Widgets.a C$:/Qt/6.7.2/mingw_64/lib/libQt6Gui.a C$:/Qt/6.7.2/mingw_64/lib/libQt6Core.a C$:/Qt/6.7.2/mingw_64/lib/libQt6EntryPoint.a || PaperPlease_autogen PaperPlease_autogen_timestamp_deps
   FLAGS = -DQT_QML_DEBUG -g
   LINK_FLAGS = -mwindows
   LINK_LIBRARIES = C:/Qt/6.7.2/mingw_64/lib/libQt6Widgets.a  C:/Qt/6.7.2/mingw_64/lib/libQt6Gui.a  C:/Qt/6.7.2/mingw_64/lib/libQt6Core.a  -lmpr  -luserenv  -lmingw32  C:/Qt/6.7.2/mingw_64/lib/libQt6EntryPoint.a  -lshell32  -ld3d11  -ldxgi  -ldxguid  -ld3d12  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
@@ -233,7 +241,7 @@ build PaperPlease_autogen/timestamp PaperPlease_autogen/mocs_compilation.cpp | $
 #############################################
 # Custom command for PaperPlease_autogen\EWIEGA46WW\qrc_imagenes.cpp
 
-build PaperPlease_autogen/EWIEGA46WW/qrc_imagenes.cpp | ${cmake_ninja_workdir}PaperPlease_autogen/EWIEGA46WW/qrc_imagenes.cpp: CUSTOM_COMMAND C$:/Users/Alumno/Paper-Please/imagenes.qrc CMakeFiles/PaperPlease_autogen.dir/AutoRcc_imagenes_EWIEGA46WW_Info.json C$:/Users/Alumno/Paper-Please/_025fe56e-7f50-405f-b902-336be60dd152.jfif C$:/Users/Alumno/Paper-Please/pixil-frame-0$ (2).png C$:/Users/Alumno/Paper-Please/pngwing.com.png C$:/Users/Alumno/Paper-Please/mesa.png C$:/Users/Alumno/Paper-Please/pngwing.com$ (2).png C$:/Users/Alumno/Paper-Please/pngwing.com$ (3).png C$:/Users/Alumno/Paper-Please/pngwing.com$ (1).png C$:/Users/Alumno/Paper-Please/wallpaperbetter.jpg C$:/Qt/6.7.2/mingw_64/./bin/rcc.exe C$:/Qt/6.7.2/mingw_64/./bin/rcc.exe || PaperPlease_autogen PaperPlease_autogen_timestamp_deps
+build PaperPlease_autogen/EWIEGA46WW/qrc_imagenes.cpp | ${cmake_ninja_workdir}PaperPlease_autogen/EWIEGA46WW/qrc_imagenes.cpp: CUSTOM_COMMAND C$:/Users/Alumno/Paper-Please/imagenes.qrc CMakeFiles/PaperPlease_autogen.dir/AutoRcc_imagenes_EWIEGA46WW_Info.json C$:/Users/Alumno/Paper-Please/_025fe56e-7f50-405f-b902-336be60dd152.jfif C$:/Users/Alumno/Paper-Please/pngwing.com.png C$:/Users/Alumno/Paper-Please/mesa.png C$:/Users/Alumno/Paper-Please/pngwing.coom.png C$:/Users/Alumno/Paper-Please/pngwing.comm.png C$:/Users/Alumno/Paper-Please/wallpaperbetter.jpg C$:/Users/Alumno/Paper-Please/pngwing.cccom.png C$:/Qt/6.7.2/mingw_64/./bin/rcc.exe C$:/Qt/6.7.2/mingw_64/./bin/rcc.exe || PaperPlease_autogen PaperPlease_autogen_timestamp_deps
   COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Users\Alumno\Paper-Please\build\Desktop_Qt_6_7_2_MinGW_64_bit-Debug && C:\Qt\Tools\CMake_64\bin\cmake.exe -E cmake_autorcc C:/Users/Alumno/Paper-Please/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/CMakeFiles/PaperPlease_autogen.dir/AutoRcc_imagenes_EWIEGA46WW_Info.json Debug"
   DESC = Automatic RCC for imagenes.qrc
   restat = 1

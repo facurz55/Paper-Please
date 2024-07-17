@@ -276,6 +276,12 @@
 			null
 		],
 		[
+			"C:/Users/Alumno/Paper-Please/multas.h",
+			"MU",
+			"EWIEGA46WW/moc_multas.cpp",
+			null
+		],
+		[
 			"C:/Users/Alumno/Paper-Please/persona.h",
 			"MU",
 			"EWIEGA46WW/moc_persona.cpp",
@@ -369,6 +375,7 @@
 		[ "C:/Users/Alumno/Paper-Please/main.cpp", "MU", null ],
 		[ "C:/Users/Alumno/Paper-Please/mainwindow.cpp", "MU", null ],
 		[ "C:/Users/Alumno/Paper-Please/menu.cpp", "MU", null ],
+		[ "C:/Users/Alumno/Paper-Please/multas.cpp", "MU", null ],
 		[ "C:/Users/Alumno/Paper-Please/persona.cpp", "MU", null ],
 		[ "C:/Users/Alumno/Paper-Please/puntos.cpp", "MU", null ],
 		[ "C:/Users/Alumno/Paper-Please/ventana_mariano.cpp", "MU", null ]

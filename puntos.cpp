@@ -1,4 +1,5 @@
 #include "puntos.h"
+#include "multas.h"
 
 puntos::puntos() {}
 void puntos::puntaje(QString npc){
@@ -13,10 +14,12 @@ void puntos::puntaje(QString npc){
     if(npc=="Diplomático")
     {
         punto=punto-25;
+        multa->incrementar();
     }
     if(npc=="Revolucionario")
     {
         punto=punto-25;
+        multa->incrementar();
     }
 }
 void puntos::puntaje2(QString npc){
