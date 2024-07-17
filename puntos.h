@@ -16,7 +16,7 @@ public:
 
 private:
     int punto;//variable de puntos
-     multas multa2;
+     multas *multa2;
 };
 
 #endif // PUNTOS_H
