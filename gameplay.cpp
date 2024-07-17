@@ -103,8 +103,14 @@ void gameplay::actualizarLabelConPersona() //esta funcion muestra los datos cuan
 
     //manejo de labels y botones
     ui->datos->show();
-    ui->documento->hide();
-    ui->visaD->hide();
+    ui->visa->hide();
+
+    ui->visa_2->hide();
+    ui->visaD_2->hide();
+    ui->duracion->hide();
+    ui->duracionD->hide();
+    ui->estadoCIVIL->hide();
+    ui->estadoCIVILd->hide();
 
     ui->genero->show();
     ui->generoD->show();
@@ -125,9 +131,19 @@ void gameplay::mostrarVisa()
     ui->duracionD->setText(Persona.obtenerEstancia());
     ui->estadoCIVILd->setText(Persona.getPersonaEstCivil());
 
-    ui->visaD->hide();
-    ui->documento->hide();
+    ui->datos->hide();
     ui->visa->show();
+
+    ui->genero->hide();
+    ui->generoD->hide();
+    ui->nombre->hide();
+    ui->nombreD->hide();
+    ui->apellido->hide();
+    ui->apellidoD->hide();
+    ui->nacimiento->hide();
+    ui->nacimientoD->hide();
+    ui->nacionalidad->hide();
+    ui->nacionalidadD->hide();
 
     ui->visa_2->show();
     ui->visaD_2->show();
