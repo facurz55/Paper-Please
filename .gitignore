@@ -1,8 +1,12 @@
 /build
+build/
 /backup
 *.exe
 /.vscode
 /output
+/build-TP2-Desktop_Qt_6_6_2_MinGW_64_bit-Debug
+build-TP2-Desktop_Qt_6_6_2_MinGW_64_bit-Debug/
+/build*/
 
 # Ignorar archivos de CMake #
 CMakeCache.txt
@@ -14,6 +18,7 @@ CMakeCache.txt.prev
 # This file is used to ignore files which are generated
 # ----------------------------------------------------------------------------
 
+*.log
 *~
 *.autosave
 *.a
