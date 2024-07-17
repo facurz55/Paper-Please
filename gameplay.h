@@ -4,6 +4,8 @@
 #include <QWidget>
 #include <QLabel>
 #include<QPushButton>
+#include <QPropertyAnimation>
+
 //#include "puntos.h"
 namespace Ui {
 class gameplay;
@@ -16,8 +18,13 @@ class gameplay : public QWidget
 public:
     explicit gameplay(QWidget *parent = nullptr);
     ~gameplay();
-    QLabel* getLabelNPC();
+    void EntrarNPC();
+    void SalirNPC();
     QPushButton* getBotonSiguiente_NPC();
+    QLabel *getLabelNPC();
+
+signals:
+    void SalioElNPC();
 
 private slots:
     //este boton tenemos que moverlo a la parte del nivel 1 el boton condicionales
@@ -28,6 +35,12 @@ private slots:
     void on_Boton_SiguienteDia_clicked();//permite ingresar al siguiente nivel
 private:
     Ui::gameplay *ui;
+    QPropertyAnimation * animacionEntrada;
+    void PrepararAnimacion();
+
+    QPropertyAnimation * animacionSalida;
+    void PrepararAnimacionSalida();
+    void emitSalioNPC();
     //hay que llamar a la clase de puntos y multas para ver cuanto hicieron
     //  puntos punto;
     // multas multa;

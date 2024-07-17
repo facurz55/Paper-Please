@@ -56,39 +56,7 @@ void MainWindow::ComenzarJuego() {
 }
 
 void MainWindow::EntradaNPC(){
-
-    // Obtiene el puntero al QLabel que contiene la imagen del NPC en el juego
-    QLabel *labelNPC = game->getLabelNPC();
-
-    // Crea una animación de propiedad para el QLabel, animando su geometría
-    QPropertyAnimation *animation = new QPropertyAnimation(labelNPC, "geometry");
-
-    // Calcula la coordenada X central para el labelNPC
-    int centerX = (game->width() - labelNPC->width()) / 2;
-
-    // Calcula la coordenada Y central para el labelNPC y ajusta 35 píxeles hacia arriba
-    int centerY = (game->height() - labelNPC->height()) / 2 - 35;
-
-    // Define el rectángulo inicial fuera de la vista a la izquierda
-    QRect startRect(-labelNPC->width(), centerY, labelNPC->width(), labelNPC->height());
-
-    // Define el rectángulo final centrado en la ventana del juego
-    QRect endRect(centerX, centerY, labelNPC->width(), labelNPC->height());
-
-    // Establece la duración de la animación en milisegundos
-    animation->setDuration(1000);
-
-    // Establece el valor inicial de la animación (posición inicial del labelNPC)
-    animation->setStartValue(startRect);
-
-    // Establece el valor final de la animación (posición final del labelNPC)
-    animation->setEndValue(endRect);
-
-    // Establece la curva de animación para que sea suave y desacelerada al final
-    animation->setEasingCurve(QEasingCurve::OutExpo);
-
-    // Inicia la animación y la configura para eliminarse automáticamente cuando se detenga
-    animation->start(QPropertyAnimation::DeleteWhenStopped);
+    game->EntrarNPC();
 }
 
 void MainWindow::resizeEvent(QResizeEvent *event)
@@ -119,40 +87,9 @@ void MainWindow::resizeEvent(QResizeEvent *event)
 }
 
 void MainWindow::SalirNPC() {
-    // Obtiene el puntero al QLabel que contiene la imagen del NPC en el juego
-    QLabel *labelNPC = game->getLabelNPC();
-
-    // Crea una animación de propiedad para el QLabel, animando su geometría
-    QPropertyAnimation *animation = new QPropertyAnimation(labelNPC, "geometry");
-
-    // Calcula la coordenada Y central para el labelNPC y ajusta 35 píxeles hacia arriba
-    int centerY = (game->height() - labelNPC->height()) / 2 - 35;
-
-    // Calcula la coordenada X para que el labelNPC salga completamente de la vista a la derecha
-    int endX = game->width();
-
-    // Obtiene el rectángulo de geometría actual del labelNPC (posición actual del NPC)
-    QRect startRect = labelNPC->geometry();
-
-    // Define el rectángulo final fuera de la vista a la derecha, manteniendo la altura y ancho del labelNPC
-    QRect endRect(endX, centerY, labelNPC->width(), labelNPC->height());
-
-    // Establece la duración de la animación en milisegundos
-    animation->setDuration(1000);
-
-    // Establece el valor inicial de la animación (posición actual del labelNPC)
-    animation->setStartValue(startRect);
-
-    // Establece el valor final de la animación (rectángulo fuera de la vista a la derecha)
-    animation->setEndValue(endRect);
-
-    // Establece la curva de animación para que sea suave al inicio y desacelerada al final
-    animation->setEasingCurve(QEasingCurve::InExpo);
-
-    // Inicia la animación y la configura para eliminarse automáticamente cuando se detenga
-    animation->start(QPropertyAnimation::DeleteWhenStopped);
+    game->SalirNPC();
 
     // Conecta la señal finished() de la animación para reiniciar ComenzarJuego
-    connect(animation, &QPropertyAnimation::finished, this, &MainWindow::EntradaNPC);
+    connect(game, &gameplay::SalioElNPC, this, &MainWindow::EntradaNPC);
 }
 
