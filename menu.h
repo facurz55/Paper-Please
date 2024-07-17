@@ -29,6 +29,7 @@ private slots:
 
 private:
     Ui::Menu *ui;
+    int Puntos;//validar con cuanto empieza los puntos
     puntos puntos2;
 };
 
