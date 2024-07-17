@@ -1,6 +1,6 @@
 #include "menu.h"
 #include "ui_menu.h"
-#include "puntos.cpp"
+#include "puntos.h"
 
 #include <QVBoxLayout>
 Menu::Menu(QWidget *parent)
@@ -8,9 +8,10 @@ Menu::Menu(QWidget *parent)
     , ui(new Ui::Menu)
 
 {
+    ui->setupUi(this);
     // Ocultar el botón Siguiente al inicio
     ui->BotonContinuar->setVisible(false);
-    ui->setupUi(this);
+
     connect(ui->BotonAlta, &QPushButton::clicked,this, &Menu::DificultadAlta);
     connect(ui->BotonMedia, &QPushButton::clicked,this, &Menu::DificultadMedia);
     connect(ui->BotonAlta, &QPushButton::clicked,this, &Menu::DificultadBaja);

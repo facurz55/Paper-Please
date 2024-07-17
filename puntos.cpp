@@ -3,8 +3,6 @@
 #include "multas.h"
 ///saquenlo cuando mariano tenga su parte de npc
 
-
-
 puntos::puntos() {}
 void puntos::puntaje(QString npc){
     if(npc=="aldeano")
