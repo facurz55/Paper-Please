@@ -7,10 +7,10 @@ gameplay::gameplay(QWidget *parent)
 {
     ui->setupUi(this);
     ui->Boton_ReiniciarNivel->setVisible(false);
+    ui->Boton_SiguienteDia->setVisible(false);
+    ui->labelMultas->setVisible(false);
     ui->labelPerdiste->setVisible(false);
     ui->labelPuntos->setVisible(false);
-    ui->labelMultas->setVisible(false);
-    ui->Boton_SiguienteDia->setVisible(false);
 
     // Crea una animación de propiedad para el QLabel, animando su geometría
     animacionEntrada = new QPropertyAnimation(ui->Label_NPC, "pos");
@@ -27,6 +27,13 @@ gameplay::~gameplay()
     delete ui;
 }
 
+QPushButton* gameplay::getReiniciarDia(){
+    return ui->Boton_ReiniciarNivel;
+}
+
+QPushButton* gameplay::getBotonSiguienteDia(){
+    return ui->Boton_SiguienteDia;
+}
 
 QPushButton* gameplay::getBotonSiguiente_NPC(){
     return ui->Siguiente_NPC;
@@ -61,17 +68,6 @@ void gameplay::on_Boton_SiguienteDia_clicked() {//ver como configurarlo
 
 }
 */
-
-void gameplay::on_Boton_ReiniciarNivel_clicked()
-{
-
-}
-
-
-void gameplay::on_Boton_SiguienteDia_clicked()
-{
-
-}
 
 void gameplay::EntrarNPC()
 {
@@ -123,4 +119,5 @@ void gameplay::emitSalioNPC()
 {
     emit SalioElNPC();
 }
+
 
