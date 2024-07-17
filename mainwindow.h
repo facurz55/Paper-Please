@@ -46,6 +46,7 @@ private slots:
     void SalirNPC(); //Funcion para la salida del NPC
     void ReinciarElNivel();//funcion para reinciar el nivel perdido
     void ComenzarSiguieneDia();//Funcion para avanzar al siguiente nivel
+    void PantallaPuntos();//funcion para ir a la pantalla puntos
 
 
     //void pushButton_2();

@@ -32,6 +32,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(game->getBotonSiguiente_NPC(), &QPushButton::clicked, this, &MainWindow::SalirNPC);
     connect(game->getBotonSiguienteDia(), &QPushButton::clicked, this, &MainWindow::ComenzarSiguieneDia);
     connect(game->getReiniciarDia(), &QPushButton::clicked, this, &MainWindow::ReinciarElNivel);
+    connect(game->getFinalizarTurno(), &QPushButton::clicked, this, &MainWindow::PantallaPuntos);
 
 
     stackedWidget->setCurrentWidget(menuPage);
@@ -42,14 +43,18 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::ComenzarSiguieneDia(){
+void MainWindow::ComenzarSiguieneDia(){//<----------------------ACA SE COMIENZA EL SIGUEINTE DIA.
     stackedWidget->setCurrentWidget(game);
     EntradaNPC();
 }
 
-void MainWindow::ReinciarElNivel(){
+void MainWindow::ReinciarElNivel(){//<----------------------ACA SE REINCIA EL NIVEL
     stackedWidget->setCurrentWidget(game);
     EntradaNPC();
+}
+
+void MainWindow::PantallaPuntos(){//<----------------------ACA SE INCIA LA PANTALLA PUNTOS CUANDO SE PRESIONA EL BOTON FINALIZAR TURNO
+    stackedWidget->setCurrentWidget(game_2);
 }
 
 void MainWindow::CambiarPagina()

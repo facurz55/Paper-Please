@@ -27,20 +27,25 @@ gameplay::~gameplay()
     delete ui;
 }
 
-QPushButton* gameplay::getReiniciarDia(){
+
+//TODA FUNCION QUE EMPIECE CON GET EN ESTA HOJA ES PARA USARLA EN LA CLASE MAINWINDOW
+QPushButton* gameplay::getReiniciarDia(){//<-MW
     return ui->Boton_ReiniciarNivel;
 }
 
-QPushButton* gameplay::getBotonSiguienteDia(){
+QPushButton* gameplay::getBotonSiguienteDia(){//<-MW
     return ui->Boton_SiguienteDia;
 }
 
-QPushButton* gameplay::getBotonSiguiente_NPC(){
+QPushButton* gameplay::getFinalizarTurno(){//<-MW
+    return ui->botonFinalizarTurno;
+}
+
+QPushButton* gameplay::getBotonSiguiente_NPC(){//<-MW
     return ui->Siguiente_NPC;
 }
 
-QLabel *gameplay::getLabelNPC()
-{
+QLabel *gameplay::getLabelNPC(){//<-MW
     return ui->Label_NPC;
 }
 //esto hay que verlo en lo del nivel 1 del boton terminar jornada

@@ -183,6 +183,19 @@
              <string>SIGUIENTE NPC</string>
             </property>
            </widget>
+           <widget class="QPushButton" name="botonFinalizarTurno">
+            <property name="geometry">
+             <rect>
+              <x>570</x>
+              <y>130</y>
+              <width>171</width>
+              <height>24</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>FINALIZAR TUNRO</string>
+            </property>
+           </widget>
           </widget>
          </item>
         </layout>
