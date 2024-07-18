@@ -12,7 +12,7 @@ Menu::Menu(QWidget *parent)
     // Ocultar el botón Siguiente al inicio
     ui->BotonContinuar->setVisible(false);
 
-    connect(ui->BotonAlta, &QPushButton::clicked,this, &Menu::DificultadAlta);
+    connect(ui->BotonBaja, &QPushButton::clicked,this, &Menu::DificultadAlta);
     connect(ui->BotonMedia, &QPushButton::clicked,this, &Menu::DificultadMedia);
     connect(ui->BotonAlta, &QPushButton::clicked,this, &Menu::DificultadBaja);
 

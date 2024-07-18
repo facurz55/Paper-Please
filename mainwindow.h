@@ -44,6 +44,9 @@ private slots:
     void ComenzarJuego();//Muesta la pantalla gameplay
     void EntradaNPC();//Funcion para la entrada del NPC
     void SalirNPC(); //Funcion para la salida del NPC
+    void ReinciarElNivel();//funcion para reinciar el nivel perdido
+    void ComenzarSiguieneDia();//Funcion para avanzar al siguiente nivel
+    void PantallaPuntos();//funcion para ir a la pantalla puntos
 
 
     //void pushButton_2();
@@ -58,6 +61,7 @@ private:
     gameplay *game;//Puntero para la pantalla donde jugamos
     QStackedWidget *stackedWidget; //Puntero para el StackedWidget
     QWidget *page_2; // Placeholder para la página del juego
+    QWidget *game_2;// Placeholder para la página del gameplay
 
 };
 #endif // MAINWINDOW_H
