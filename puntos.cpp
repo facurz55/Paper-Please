@@ -16,12 +16,12 @@ void puntos::puntaje(QString npc){
     if(npc=="Diplomático")
     {
         punto=punto-25;
-        multa2->incrementar();
+        //multa2->incrementar();
     }
     if(npc=="Revolucionario")
     {
         punto=punto-25;
-        multa2->incrementar();
+        //multa2->incrementar();
     }
 }
 void puntos::puntaje2(QString npc){
