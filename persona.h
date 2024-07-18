@@ -23,7 +23,7 @@ public:
     QString obtenerGenero() const;
     QString obtenerNombre() const;
     QString obtenerApellido() const;
-    QString obtenerFecha() const;
+    int obtenerFecha() const;
     QString obtenerNacionalidad() const;
     QString obtenerEstancia() const;
     QString getPersonaVisa() const;
@@ -37,7 +37,7 @@ protected:
     QString genero;
     QString nombre;
     QString apellido;
-    QString fecha;
+    int fecha;
     QString nacionalidad;
     QString Visa;
     QString Estadocivil;

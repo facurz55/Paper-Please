@@ -1,7 +1,5 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
-#include <QPropertyAnimation>
-
 
 #include <QStackedWidget>
 
