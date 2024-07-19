@@ -6,11 +6,11 @@ gameplay::gameplay(QWidget *parent)
     , ui(new Ui::gameplay)
 {
     ui->setupUi(this);
-    ui->Boton_ReiniciarNivel->setVisible(false);
+    /*ui->Boton_ReiniciarNivel->setVisible(false);
     ui->Boton_SiguienteDia->setVisible(false);
     ui->labelMultas->setVisible(false);
     ui->labelPerdiste->setVisible(false);
-    ui->labelPuntos->setVisible(false);
+    ui->labelPuntos->setVisible(false);*/
 
     ui->botonFinalizarTurno->hide();
 
@@ -310,6 +310,7 @@ void gameplay::siPasa()
     ui->datos->hide();
     ui->cerrar->hide();
     ui->visa->hide();
+    ui->visaD->hide();
 
 
     ui->genero->hide();
