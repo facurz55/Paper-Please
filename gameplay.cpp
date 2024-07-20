@@ -5,6 +5,8 @@ gameplay::gameplay(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::gameplay)
 {
+    condicion = new condiciones();
+
     ui->setupUi(this);
     ui->Boton_ReiniciarNivel->setVisible(false);
     ui->Boton_SiguienteDia->setVisible(false);
@@ -64,6 +66,7 @@ gameplay::gameplay(QWidget *parent)
     PrepararAnimacionSalida();
 
     connect(animacionSalida, &QAbstractAnimation::finished, this, &gameplay::emitSalioNPC);
+    MostrarCondiciones();
 }
 
 gameplay::~gameplay()
@@ -71,6 +74,10 @@ gameplay::~gameplay()
     delete ui;
 }
 
+
+QPushButton* gameplay::getBotonCondiciones(){
+    return ui->mostrar_req;
+}
 
 //TODA FUNCION QUE EMPIECE CON GET EN ESTA HOJA ES PARA USARLA EN LA CLASE MAINWINDOW
 QPushButton* gameplay::getReiniciarDia(){//<-MW
@@ -460,3 +467,10 @@ void gameplay::preguntar()
 }
 
 
+void gameplay::MostrarCondiciones(){
+    ui->RNacionalidad->setText(condicion->obtenerNacionalidad());
+    ui->REstancia->setText(condicion->obtenerEstancia());
+    ui->REstCivil->setText(condicion->obtenerEstCivil());
+    ui->RFecha->setText(condicion->obtenerFecha());
+    ui->RTipoVisita->setText(condicion->obtenerTipoVisita());
+}

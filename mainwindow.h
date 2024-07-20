@@ -47,6 +47,7 @@ private slots:
     void ReinciarElNivel();//funcion para reinciar el nivel perdido
     void ComenzarSiguieneDia();//Funcion para avanzar al siguiente nivel
     void PantallaPuntos();//funcion para ir a la pantalla puntos
+    void PantallaCondiciones();//funcion para mostrar la pantalla de las condiciones
 
 
     //void pushButton_2();
@@ -62,6 +63,6 @@ private:
     QStackedWidget *stackedWidget; //Puntero para el StackedWidget
     QWidget *page_2; // Placeholder para la página del juego
     QWidget *game_2;// Placeholder para la página del gameplay
-
+    QWidget *game_3;
 };
 #endif // MAINWINDOW_H

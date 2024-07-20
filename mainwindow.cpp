@@ -20,11 +20,13 @@ MainWindow::MainWindow(QWidget *parent)
     game = new gameplay();
     page_2 = menuPage->findChild<QWidget*>("page_2");
     game_2 = game->findChild<QWidget*>("game_2");
+    game_3 = game->findChild<QWidget*>("game_3");
 
     stackedWidget->addWidget(menuPage); //añade la ventana del menu
     stackedWidget->addWidget(page_2);  // Añade page_2 al stackedWidget
     stackedWidget->addWidget(game); //añade la ventana donde jugamos
     stackedWidget->addWidget(game_2);
+    stackedWidget->addWidget(game_3);
 
     connect(menuPage->getBotonJugar(), &QPushButton::clicked, this, &MainWindow::CambiarPagina);
     connect(menuPage->getBotonAtras(), &QPushButton::clicked, this, &MainWindow::Volver);
@@ -33,7 +35,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(game->getBotonSiguienteDia(), &QPushButton::clicked, this, &MainWindow::ComenzarSiguieneDia);
     connect(game->getReiniciarDia(), &QPushButton::clicked, this, &MainWindow::ReinciarElNivel);
     connect(game->getFinalizarTurno(), &QPushButton::clicked, this, &MainWindow::PantallaPuntos);
-
+    connect(game->getBotonCondiciones(), &QPushButton::clicked, this, &MainWindow::PantallaCondiciones);
 
     stackedWidget->setCurrentWidget(menuPage);
 }
@@ -41,6 +43,10 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::PantallaCondiciones(){
+    stackedWidget->setCurrentWidget(game_3);
 }
 
 void MainWindow::ComenzarSiguieneDia(){//<----------------------ACA SE COMIENZA EL SIGUEINTE DIA.
