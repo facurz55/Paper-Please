@@ -19,15 +19,20 @@ MainWindow::MainWindow(QWidget *parent)
     menuPage = new Menu();
     game = new gameplay();
     page_2 = menuPage->findChild<QWidget*>("page_2");
+    game_2 = game->findChild<QWidget*>("game_2");
 
     stackedWidget->addWidget(menuPage); //añade la ventana del menu
     stackedWidget->addWidget(page_2);  // Añade page_2 al stackedWidget
     stackedWidget->addWidget(game); //añade la ventana donde jugamos
+    stackedWidget->addWidget(game_2);
 
     connect(menuPage->getBotonJugar(), &QPushButton::clicked, this, &MainWindow::CambiarPagina);
     connect(menuPage->getBotonAtras(), &QPushButton::clicked, this, &MainWindow::Volver);
     connect(menuPage->getBotonContinuar(), &QPushButton::clicked, this, &MainWindow::ComenzarJuego);
     connect(game->getBotonSiguiente_NPC(), &QPushButton::clicked, this, &MainWindow::SalirNPC);
+    connect(game->getBotonSiguienteDia(), &QPushButton::clicked, this, &MainWindow::ComenzarSiguieneDia);
+    connect(game->getReiniciarDia(), &QPushButton::clicked, this, &MainWindow::ReinciarElNivel);
+    connect(game->getFinalizarTurno(), &QPushButton::clicked, this, &MainWindow::PantallaPuntos);
 
 
     stackedWidget->setCurrentWidget(menuPage);
@@ -36,6 +41,20 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::ComenzarSiguieneDia(){//<----------------------ACA SE COMIENZA EL SIGUEINTE DIA.
+    stackedWidget->setCurrentWidget(game);
+    EntradaNPC();
+}
+
+void MainWindow::ReinciarElNivel(){//<----------------------ACA SE REINCIA EL NIVEL
+    stackedWidget->setCurrentWidget(game);
+    EntradaNPC();
+}
+
+void MainWindow::PantallaPuntos(){//<----------------------ACA SE INCIA LA PANTALLA PUNTOS CUANDO SE PRESIONA EL BOTON FINALIZAR TURNO
+    stackedWidget->setCurrentWidget(game_2);
 }
 
 void MainWindow::CambiarPagina()
@@ -92,4 +111,3 @@ void MainWindow::SalirNPC() {
     // Conecta la señal finished() de la animación para reiniciar ComenzarJuego
     connect(game, &gameplay::SalioElNPC, this, &MainWindow::EntradaNPC);
 }
-

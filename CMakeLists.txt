@@ -32,6 +32,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         ventana_mariano.cpp
         ventana_mariano.ui
         puntos.h puntos.cpp
+        condiciones.cpp condiciones.h
 
     )
 # Define target properties for Android with Qt 6 as:
