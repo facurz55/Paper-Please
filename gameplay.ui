@@ -939,6 +939,19 @@
              <string>-</string>
             </property>
            </widget>
+           <widget class="QLabel" name="informarerror">
+            <property name="geometry">
+             <rect>
+              <x>580</x>
+              <y>170</y>
+              <width>101</width>
+              <height>81</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
           </widget>
          </item>
         </layout>

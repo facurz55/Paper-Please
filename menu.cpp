@@ -12,9 +12,9 @@ Menu::Menu(QWidget *parent)
     // Ocultar el botón Siguiente al inicio
     ui->BotonContinuar->setVisible(false);
 
-    connect(ui->BotonBaja, &QPushButton::clicked,this, &Menu::DificultadAlta);
+    connect(ui->BotonBaja, &QPushButton::clicked,this, &Menu::DificultadBaja);
     connect(ui->BotonMedia, &QPushButton::clicked,this, &Menu::DificultadMedia);
-    connect(ui->BotonAlta, &QPushButton::clicked,this, &Menu::DificultadBaja);
+    connect(ui->BotonAlta, &QPushButton::clicked,this, &Menu::DificultadAlta);
 
 }
 
@@ -36,18 +36,21 @@ void Menu::DificultadBaja(){//Aca tiene que ir el codigo de cada dificultad
 //puntos=100
 puntos2.puntuacion_asignada1();//asigna los puntos
 ui->BotonContinuar->setVisible(true);
+ui->DIFICULTAD_PUNTOS->setText(QString("seleccionar la dificultad \n Puntos : 100"));
 }
 
 void Menu::DificultadMedia(){//Aca tiene que ir el codigo de cada dificultad
 //puntos=50
 puntos2.puntuacion2_asignada2();//asigna los puntos
 ui->BotonContinuar->setVisible(true);
+ui->DIFICULTAD_PUNTOS->setText(QString("seleccionar la dificultad \n Puntos : 50"));
 }
 
 void Menu::DificultadAlta(){//Aca tiene que ir el codigo de cada dificultad
 //puntos=0;
 puntos2.puntuacion3_asignada3();//asigna los puntos
 ui->BotonContinuar->setVisible(true);
+ui->DIFICULTAD_PUNTOS->setText(QString("seleccionar la dificultad \n Puntos : 0"));
 }
 
 void Menu::Exit(){//Cierra la aplicacion

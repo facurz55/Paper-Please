@@ -296,6 +296,7 @@ void gameplay::siPasa()
     {
         //en este caso se debe restar puntos
         puntos.puntaje(tipo);
+        ui->informarerror->setText(QString ("Esta mal"));
     }
     else
     {

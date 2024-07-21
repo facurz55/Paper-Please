@@ -126,7 +126,7 @@ border-image: url(:/_025fe56e-7f50-405f-b902-336be60dd152.jfif);
           <number>100</number>
          </property>
          <item>
-          <widget class="QLabel" name="label">
+          <widget class="QLabel" name="DIFICULTAD_PUNTOS">
            <property name="minimumSize">
             <size>
              <width>100</width>
