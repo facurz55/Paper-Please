@@ -75,6 +75,10 @@ gameplay::~gameplay()
 }
 
 
+QPushButton* gameplay::getBotonVolver(){
+    return ui->BotonVolver;
+}
+
 QPushButton* gameplay::getBotonCondiciones(){
     return ui->mostrar_req;
 }
@@ -125,8 +129,24 @@ void gameplay::on_Boton_SiguienteDia_clicked() {//ver como configurarlo
 }
 */
 
+void gameplay::cambiarSkinNPC(){
+    condicion1 = Persona.obtenerNpc();
+
+    if(condicion1=="aldeano"){
+        ui->Label_NPC->setStyleSheet(ALDEANO);
+    }else if(condicion1=="refugiado politico"){
+        ui->Label_NPC->setStyleSheet(REFUGIADOPOLITICO);
+    }else if(condicion1=="diplomatico"){
+        ui->Label_NPC->setStyleSheet(DIPLOMATICO);
+    }else if(condicion1=="revolucionario"){
+        ui->Label_NPC->setStyleSheet(REVOLUCIONARIO);
+    }
+}
+
 void gameplay::EntrarNPC()
 {
+    cambiarSkinNPC();
+
     // Calcula la coordenada X central para el labelNPC
     int centerX = (width() - ui->Label_NPC->width()) / 2;
 

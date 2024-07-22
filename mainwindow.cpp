@@ -36,6 +36,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(game->getReiniciarDia(), &QPushButton::clicked, this, &MainWindow::ReinciarElNivel);
     connect(game->getFinalizarTurno(), &QPushButton::clicked, this, &MainWindow::PantallaPuntos);
     connect(game->getBotonCondiciones(), &QPushButton::clicked, this, &MainWindow::PantallaCondiciones);
+    connect(game->getBotonVolver(), &QPushButton::clicked, this, &MainWindow::VolverALaMesa);
 
     stackedWidget->setCurrentWidget(menuPage);
 }
@@ -43,6 +44,10 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::VolverALaMesa(){
+    stackedWidget->setCurrentWidget(game);
 }
 
 void MainWindow::PantallaCondiciones(){

@@ -48,6 +48,7 @@ private slots:
     void ComenzarSiguieneDia();//Funcion para avanzar al siguiente nivel
     void PantallaPuntos();//funcion para ir a la pantalla puntos
     void PantallaCondiciones();//funcion para mostrar la pantalla de las condiciones
+    void VolverALaMesa();//funcion para regresar a la mesa desde las condiciones
 
 
     //void pushButton_2();
