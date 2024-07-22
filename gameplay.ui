@@ -254,8 +254,40 @@
               <x>250</x>
               <y>0</y>
               <width>311</width>
-              <height>291</height>
+              <height>301</height>
              </rect>
+            </property>
+            <property name="palette">
+             <palette>
+              <active>
+               <colorrole role="WindowText">
+                <brush brushstyle="SolidPattern">
+                 <color alpha="255">
+                  <red>0</red>
+                  <green>0</green>
+                  <blue>0</blue>
+                 </color>
+                </brush>
+               </colorrole>
+              </active>
+              <inactive>
+               <colorrole role="WindowText">
+                <brush brushstyle="SolidPattern">
+                 <color alpha="255">
+                  <red>0</red>
+                  <green>0</green>
+                  <blue>0</blue>
+                 </color>
+                </brush>
+               </colorrole>
+              </inactive>
+              <disabled/>
+             </palette>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>11</pointsize>
+             </font>
             </property>
             <property name="styleSheet">
              <string notr="true">#datos
@@ -270,11 +302,43 @@
            <widget class="QLabel" name="visaD">
             <property name="geometry">
              <rect>
-              <x>100</x>
+              <x>280</x>
               <y>0</y>
               <width>241</width>
               <height>291</height>
              </rect>
+            </property>
+            <property name="palette">
+             <palette>
+              <active>
+               <colorrole role="WindowText">
+                <brush brushstyle="SolidPattern">
+                 <color alpha="255">
+                  <red>0</red>
+                  <green>0</green>
+                  <blue>0</blue>
+                 </color>
+                </brush>
+               </colorrole>
+              </active>
+              <inactive>
+               <colorrole role="WindowText">
+                <brush brushstyle="SolidPattern">
+                 <color alpha="255">
+                  <red>0</red>
+                  <green>0</green>
+                  <blue>0</blue>
+                 </color>
+                </brush>
+               </colorrole>
+              </inactive>
+              <disabled/>
+             </palette>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>11</pointsize>
+             </font>
             </property>
             <property name="styleSheet">
              <string notr="true">#visaD
@@ -285,205 +349,8 @@
             <property name="text">
              <string/>
             </property>
-           </widget>
-           <widget class="QLabel" name="genero">
-            <property name="geometry">
-             <rect>
-              <x>290</x>
-              <y>60</y>
-              <width>63</width>
-              <height>20</height>
-             </rect>
-            </property>
-            <property name="palette">
-             <palette>
-              <active>
-               <colorrole role="WindowText">
-                <brush brushstyle="SolidPattern">
-                 <color alpha="255">
-                  <red>0</red>
-                  <green>0</green>
-                  <blue>0</blue>
-                 </color>
-                </brush>
-               </colorrole>
-              </active>
-              <inactive>
-               <colorrole role="WindowText">
-                <brush brushstyle="SolidPattern">
-                 <color alpha="255">
-                  <red>0</red>
-                  <green>0</green>
-                  <blue>0</blue>
-                 </color>
-                </brush>
-               </colorrole>
-              </inactive>
-              <disabled/>
-             </palette>
-            </property>
-            <property name="text">
-             <string>Genero:</string>
-            </property>
-           </widget>
-           <widget class="QLabel" name="nombre">
-            <property name="geometry">
-             <rect>
-              <x>290</x>
-              <y>100</y>
-              <width>63</width>
-              <height>20</height>
-             </rect>
-            </property>
-            <property name="palette">
-             <palette>
-              <active>
-               <colorrole role="WindowText">
-                <brush brushstyle="SolidPattern">
-                 <color alpha="255">
-                  <red>0</red>
-                  <green>0</green>
-                  <blue>0</blue>
-                 </color>
-                </brush>
-               </colorrole>
-              </active>
-              <inactive>
-               <colorrole role="WindowText">
-                <brush brushstyle="SolidPattern">
-                 <color alpha="255">
-                  <red>0</red>
-                  <green>0</green>
-                  <blue>0</blue>
-                 </color>
-                </brush>
-               </colorrole>
-              </inactive>
-              <disabled/>
-             </palette>
-            </property>
-            <property name="text">
-             <string>Nombre:</string>
-            </property>
-           </widget>
-           <widget class="QLabel" name="apellido">
-            <property name="geometry">
-             <rect>
-              <x>290</x>
-              <y>140</y>
-              <width>63</width>
-              <height>20</height>
-             </rect>
-            </property>
-            <property name="palette">
-             <palette>
-              <active>
-               <colorrole role="WindowText">
-                <brush brushstyle="SolidPattern">
-                 <color alpha="255">
-                  <red>0</red>
-                  <green>0</green>
-                  <blue>0</blue>
-                 </color>
-                </brush>
-               </colorrole>
-              </active>
-              <inactive>
-               <colorrole role="WindowText">
-                <brush brushstyle="SolidPattern">
-                 <color alpha="255">
-                  <red>0</red>
-                  <green>0</green>
-                  <blue>0</blue>
-                 </color>
-                </brush>
-               </colorrole>
-              </inactive>
-              <disabled/>
-             </palette>
-            </property>
-            <property name="text">
-             <string>Apellido:</string>
-            </property>
-           </widget>
-           <widget class="QLabel" name="nacimiento">
-            <property name="geometry">
-             <rect>
-              <x>290</x>
-              <y>180</y>
-              <width>81</width>
-              <height>20</height>
-             </rect>
-            </property>
-            <property name="palette">
-             <palette>
-              <active>
-               <colorrole role="WindowText">
-                <brush brushstyle="SolidPattern">
-                 <color alpha="255">
-                  <red>0</red>
-                  <green>0</green>
-                  <blue>0</blue>
-                 </color>
-                </brush>
-               </colorrole>
-              </active>
-              <inactive>
-               <colorrole role="WindowText">
-                <brush brushstyle="SolidPattern">
-                 <color alpha="255">
-                  <red>0</red>
-                  <green>0</green>
-                  <blue>0</blue>
-                 </color>
-                </brush>
-               </colorrole>
-              </inactive>
-              <disabled/>
-             </palette>
-            </property>
-            <property name="text">
-             <string>Nacido en:</string>
-            </property>
-           </widget>
-           <widget class="QLabel" name="nacionalidad">
-            <property name="geometry">
-             <rect>
-              <x>290</x>
-              <y>220</y>
-              <width>91</width>
-              <height>20</height>
-             </rect>
-            </property>
-            <property name="palette">
-             <palette>
-              <active>
-               <colorrole role="WindowText">
-                <brush brushstyle="SolidPattern">
-                 <color alpha="255">
-                  <red>0</red>
-                  <green>0</green>
-                  <blue>0</blue>
-                 </color>
-                </brush>
-               </colorrole>
-              </active>
-              <inactive>
-               <colorrole role="WindowText">
-                <brush brushstyle="SolidPattern">
-                 <color alpha="255">
-                  <red>0</red>
-                  <green>0</green>
-                  <blue>0</blue>
-                 </color>
-                </brush>
-               </colorrole>
-              </inactive>
-              <disabled/>
-             </palette>
-            </property>
-            <property name="text">
-             <string>Naconalidad:</string>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
             </property>
            </widget>
            <widget class="QLabel" name="timer">
@@ -497,446 +364,6 @@
             </property>
             <property name="text">
              <string/>
-            </property>
-           </widget>
-           <widget class="QLabel" name="generoD">
-            <property name="geometry">
-             <rect>
-              <x>450</x>
-              <y>60</y>
-              <width>63</width>
-              <height>20</height>
-             </rect>
-            </property>
-            <property name="palette">
-             <palette>
-              <active>
-               <colorrole role="WindowText">
-                <brush brushstyle="SolidPattern">
-                 <color alpha="255">
-                  <red>0</red>
-                  <green>0</green>
-                  <blue>0</blue>
-                 </color>
-                </brush>
-               </colorrole>
-              </active>
-              <inactive>
-               <colorrole role="WindowText">
-                <brush brushstyle="SolidPattern">
-                 <color alpha="255">
-                  <red>0</red>
-                  <green>0</green>
-                  <blue>0</blue>
-                 </color>
-                </brush>
-               </colorrole>
-              </inactive>
-              <disabled/>
-             </palette>
-            </property>
-            <property name="text">
-             <string>-</string>
-            </property>
-           </widget>
-           <widget class="QLabel" name="nombreD">
-            <property name="geometry">
-             <rect>
-              <x>450</x>
-              <y>100</y>
-              <width>63</width>
-              <height>20</height>
-             </rect>
-            </property>
-            <property name="palette">
-             <palette>
-              <active>
-               <colorrole role="WindowText">
-                <brush brushstyle="SolidPattern">
-                 <color alpha="255">
-                  <red>0</red>
-                  <green>0</green>
-                  <blue>0</blue>
-                 </color>
-                </brush>
-               </colorrole>
-              </active>
-              <inactive>
-               <colorrole role="WindowText">
-                <brush brushstyle="SolidPattern">
-                 <color alpha="255">
-                  <red>0</red>
-                  <green>0</green>
-                  <blue>0</blue>
-                 </color>
-                </brush>
-               </colorrole>
-              </inactive>
-              <disabled/>
-             </palette>
-            </property>
-            <property name="text">
-             <string>-</string>
-            </property>
-           </widget>
-           <widget class="QLabel" name="apellidoD">
-            <property name="geometry">
-             <rect>
-              <x>450</x>
-              <y>140</y>
-              <width>63</width>
-              <height>20</height>
-             </rect>
-            </property>
-            <property name="palette">
-             <palette>
-              <active>
-               <colorrole role="WindowText">
-                <brush brushstyle="SolidPattern">
-                 <color alpha="255">
-                  <red>0</red>
-                  <green>0</green>
-                  <blue>0</blue>
-                 </color>
-                </brush>
-               </colorrole>
-              </active>
-              <inactive>
-               <colorrole role="WindowText">
-                <brush brushstyle="SolidPattern">
-                 <color alpha="255">
-                  <red>0</red>
-                  <green>0</green>
-                  <blue>0</blue>
-                 </color>
-                </brush>
-               </colorrole>
-              </inactive>
-              <disabled/>
-             </palette>
-            </property>
-            <property name="text">
-             <string>-</string>
-            </property>
-           </widget>
-           <widget class="QLabel" name="nacimientoD">
-            <property name="geometry">
-             <rect>
-              <x>450</x>
-              <y>180</y>
-              <width>63</width>
-              <height>20</height>
-             </rect>
-            </property>
-            <property name="palette">
-             <palette>
-              <active>
-               <colorrole role="WindowText">
-                <brush brushstyle="SolidPattern">
-                 <color alpha="255">
-                  <red>0</red>
-                  <green>0</green>
-                  <blue>0</blue>
-                 </color>
-                </brush>
-               </colorrole>
-              </active>
-              <inactive>
-               <colorrole role="WindowText">
-                <brush brushstyle="SolidPattern">
-                 <color alpha="255">
-                  <red>0</red>
-                  <green>0</green>
-                  <blue>0</blue>
-                 </color>
-                </brush>
-               </colorrole>
-              </inactive>
-              <disabled/>
-             </palette>
-            </property>
-            <property name="text">
-             <string>-</string>
-            </property>
-           </widget>
-           <widget class="QLabel" name="nacionalidadD">
-            <property name="geometry">
-             <rect>
-              <x>450</x>
-              <y>220</y>
-              <width>91</width>
-              <height>20</height>
-             </rect>
-            </property>
-            <property name="palette">
-             <palette>
-              <active>
-               <colorrole role="WindowText">
-                <brush brushstyle="SolidPattern">
-                 <color alpha="255">
-                  <red>0</red>
-                  <green>0</green>
-                  <blue>0</blue>
-                 </color>
-                </brush>
-               </colorrole>
-              </active>
-              <inactive>
-               <colorrole role="WindowText">
-                <brush brushstyle="SolidPattern">
-                 <color alpha="255">
-                  <red>0</red>
-                  <green>0</green>
-                  <blue>0</blue>
-                 </color>
-                </brush>
-               </colorrole>
-              </inactive>
-              <disabled/>
-             </palette>
-            </property>
-            <property name="text">
-             <string>-</string>
-            </property>
-           </widget>
-           <widget class="QLabel" name="visa_2">
-            <property name="geometry">
-             <rect>
-              <x>180</x>
-              <y>10</y>
-              <width>91</width>
-              <height>20</height>
-             </rect>
-            </property>
-            <property name="palette">
-             <palette>
-              <active>
-               <colorrole role="WindowText">
-                <brush brushstyle="SolidPattern">
-                 <color alpha="255">
-                  <red>0</red>
-                  <green>0</green>
-                  <blue>0</blue>
-                 </color>
-                </brush>
-               </colorrole>
-              </active>
-              <inactive>
-               <colorrole role="WindowText">
-                <brush brushstyle="SolidPattern">
-                 <color alpha="255">
-                  <red>0</red>
-                  <green>0</green>
-                  <blue>0</blue>
-                 </color>
-                </brush>
-               </colorrole>
-              </inactive>
-              <disabled/>
-             </palette>
-            </property>
-            <property name="text">
-             <string>Tipo de visa</string>
-            </property>
-           </widget>
-           <widget class="QLabel" name="visaD_2">
-            <property name="geometry">
-             <rect>
-              <x>162</x>
-              <y>40</y>
-              <width>121</width>
-              <height>20</height>
-             </rect>
-            </property>
-            <property name="palette">
-             <palette>
-              <active>
-               <colorrole role="WindowText">
-                <brush brushstyle="SolidPattern">
-                 <color alpha="255">
-                  <red>0</red>
-                  <green>0</green>
-                  <blue>0</blue>
-                 </color>
-                </brush>
-               </colorrole>
-              </active>
-              <inactive>
-               <colorrole role="WindowText">
-                <brush brushstyle="SolidPattern">
-                 <color alpha="255">
-                  <red>0</red>
-                  <green>0</green>
-                  <blue>0</blue>
-                 </color>
-                </brush>
-               </colorrole>
-              </inactive>
-              <disabled/>
-             </palette>
-            </property>
-            <property name="text">
-             <string>-</string>
-            </property>
-           </widget>
-           <widget class="QLabel" name="duracion">
-            <property name="geometry">
-             <rect>
-              <x>142</x>
-              <y>80</y>
-              <width>161</width>
-              <height>20</height>
-             </rect>
-            </property>
-            <property name="palette">
-             <palette>
-              <active>
-               <colorrole role="WindowText">
-                <brush brushstyle="SolidPattern">
-                 <color alpha="255">
-                  <red>0</red>
-                  <green>0</green>
-                  <blue>0</blue>
-                 </color>
-                </brush>
-               </colorrole>
-              </active>
-              <inactive>
-               <colorrole role="WindowText">
-                <brush brushstyle="SolidPattern">
-                 <color alpha="255">
-                  <red>0</red>
-                  <green>0</green>
-                  <blue>0</blue>
-                 </color>
-                </brush>
-               </colorrole>
-              </inactive>
-              <disabled/>
-             </palette>
-            </property>
-            <property name="text">
-             <string>Duracion de la estancia</string>
-            </property>
-           </widget>
-           <widget class="QLabel" name="duracionD">
-            <property name="geometry">
-             <rect>
-              <x>182</x>
-              <y>110</y>
-              <width>81</width>
-              <height>20</height>
-             </rect>
-            </property>
-            <property name="palette">
-             <palette>
-              <active>
-               <colorrole role="WindowText">
-                <brush brushstyle="SolidPattern">
-                 <color alpha="255">
-                  <red>0</red>
-                  <green>0</green>
-                  <blue>0</blue>
-                 </color>
-                </brush>
-               </colorrole>
-              </active>
-              <inactive>
-               <colorrole role="WindowText">
-                <brush brushstyle="SolidPattern">
-                 <color alpha="255">
-                  <red>0</red>
-                  <green>0</green>
-                  <blue>0</blue>
-                 </color>
-                </brush>
-               </colorrole>
-              </inactive>
-              <disabled/>
-             </palette>
-            </property>
-            <property name="text">
-             <string>-</string>
-            </property>
-           </widget>
-           <widget class="QLabel" name="estadoCIVIL">
-            <property name="geometry">
-             <rect>
-              <x>110</x>
-              <y>170</y>
-              <width>81</width>
-              <height>20</height>
-             </rect>
-            </property>
-            <property name="palette">
-             <palette>
-              <active>
-               <colorrole role="WindowText">
-                <brush brushstyle="SolidPattern">
-                 <color alpha="255">
-                  <red>0</red>
-                  <green>0</green>
-                  <blue>0</blue>
-                 </color>
-                </brush>
-               </colorrole>
-              </active>
-              <inactive>
-               <colorrole role="WindowText">
-                <brush brushstyle="SolidPattern">
-                 <color alpha="255">
-                  <red>0</red>
-                  <green>0</green>
-                  <blue>0</blue>
-                 </color>
-                </brush>
-               </colorrole>
-              </inactive>
-              <disabled/>
-             </palette>
-            </property>
-            <property name="text">
-             <string>Estado civil:</string>
-            </property>
-           </widget>
-           <widget class="QLabel" name="estadoCIVILd">
-            <property name="geometry">
-             <rect>
-              <x>200</x>
-              <y>170</y>
-              <width>63</width>
-              <height>20</height>
-             </rect>
-            </property>
-            <property name="palette">
-             <palette>
-              <active>
-               <colorrole role="WindowText">
-                <brush brushstyle="SolidPattern">
-                 <color alpha="255">
-                  <red>0</red>
-                  <green>0</green>
-                  <blue>0</blue>
-                 </color>
-                </brush>
-               </colorrole>
-              </active>
-              <inactive>
-               <colorrole role="WindowText">
-                <brush brushstyle="SolidPattern">
-                 <color alpha="255">
-                  <red>0</red>
-                  <green>0</green>
-                  <blue>0</blue>
-                 </color>
-                </brush>
-               </colorrole>
-              </inactive>
-              <disabled/>
-             </palette>
-            </property>
-            <property name="text">
-             <string>-</string>
             </property>
            </widget>
           </widget>

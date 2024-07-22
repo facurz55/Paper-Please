@@ -13,23 +13,6 @@ gameplay::gameplay(QWidget *parent)
     ui->labelPuntos->setVisible(false);*/
 
     ui->botonFinalizarTurno->hide();
-
-    ui->genero->hide();
-    ui->generoD->hide();
-    ui->nombre->hide();
-    ui->nombreD->hide();
-    ui->apellido->hide();
-    ui->apellidoD->hide();
-    ui->nacimiento->hide();
-    ui->nacimientoD->hide();
-    ui->nacionalidad->hide();
-    ui->nacionalidadD->hide();
-    ui->visa_2->hide();
-    ui->visaD_2->hide();
-    ui->duracion->hide();
-    ui->duracionD->hide();
-    ui->estadoCIVIL->hide();
-    ui->estadoCIVILd->hide();
     ui->documento->hide();
     ui->visa->hide();
     ui->visaD->hide();
@@ -201,62 +184,31 @@ void gameplay::mostrarD()
 
 void gameplay::actualizarLabelConPersona() //esta funcion muestra los datos cuando se presiona un boton
 {
-    ui->generoD->setText(Persona.obtenerGenero());
-    ui->nombreD->setText(Persona.obtenerNombre());
-    ui->apellidoD->setText(Persona.obtenerApellido());
-    ui->nacimientoD->setText(Persona.obtenerFecha());
-    ui->nacionalidadD->setText(Persona.obtenerNacionalidad());
-    // Asegurarse de tener un QLabel llamado 'label' en el diseño.
+    QString datosMostrar = QString("\n\n\n      Genero:                          %1\n\n      Nombre:                         %2\n\n      Apellido:                         %3\n\n      Nacido/a el:                   %4\n\n      Nacionalidad:                 %5\n\n")
+                            .arg(Persona.obtenerGenero())
+                            .arg(Persona.obtenerNombre())
+                            .arg(Persona.obtenerApellido())
+                            .arg(Persona.obtenerFecha())
+                            .arg(Persona.obtenerNacionalidad());
 
+    ui->datos->setText(datosMostrar);
     ui->datos->show();
     ui->visaD->hide();
-
-    ui->visa_2->hide();
-    ui->visaD_2->hide();
-    ui->duracion->hide();
-    ui->duracionD->hide();
-    ui->estadoCIVIL->hide();
-    ui->estadoCIVILd->hide();
-
-    ui->genero->show();
-    ui->generoD->show();
-    ui->nombre->show();
-    ui->nombreD->show();
-    ui->apellido->show();
-    ui->apellidoD->show();
-    ui->nacimiento->show();
-    ui->nacimientoD->show();
-    ui->nacionalidad->show();
-    ui->nacionalidadD->show();
 }
 
 
 void gameplay::mostrarVisa()
 {
-    ui->visaD_2->setText(Persona.getPersonaVisa());
-    ui->duracionD->setText(Persona.obtenerEstancia());
-    ui->estadoCIVILd->setText(Persona.getPersonaEstCivil());
+
+    QString datosMostrarVisa = QString("Tipo de visa\n%1\n\nDuracion de la estancia\n%2\n\n Estado civil\n%3\n\n\n\n\n\n")
+                                .arg(Persona.getPersonaVisa())
+                                .arg(Persona.obtenerEstancia())
+                                .arg(Persona.getPersonaEstCivil());
+
+    ui->visaD->setText(datosMostrarVisa);
 
     ui->datos->hide();
     ui->visaD->show();
-
-    ui->genero->hide();
-    ui->generoD->hide();
-    ui->nombre->hide();
-    ui->nombreD->hide();
-    ui->apellido->hide();
-    ui->apellidoD->hide();
-    ui->nacimiento->hide();
-    ui->nacimientoD->hide();
-    ui->nacionalidad->hide();
-    ui->nacionalidadD->hide();
-
-    ui->visa_2->show();
-    ui->visaD_2->show();
-    ui->duracion->show();
-    ui->duracionD->show();
-    ui->estadoCIVIL->show();
-    ui->estadoCIVILd->show();
 }
 
 void gameplay::cerrarDatos()
@@ -268,22 +220,6 @@ void gameplay::cerrarDatos()
     ui->visa->hide();
     ui->documento->hide();
     ui->visaD->hide();
-    ui->genero->hide();
-    ui->generoD->hide();
-    ui->nombre->hide();
-    ui->nombreD->hide();
-    ui->apellido->hide();
-    ui->apellidoD->hide();
-    ui->nacimiento->hide();
-    ui->nacimientoD->hide();
-    ui->nacionalidad->hide();
-    ui->nacionalidadD->hide();
-    ui->visa_2->hide();
-    ui->visaD_2->hide();
-    ui->duracion->hide();
-    ui->duracionD->hide();
-    ui->estadoCIVIL->hide();
-    ui->estadoCIVILd->hide();
 }
 
 
@@ -311,24 +247,6 @@ void gameplay::siPasa()
     ui->cerrar->hide();
     ui->visa->hide();
     ui->visaD->hide();
-
-
-    ui->genero->hide();
-    ui->generoD->hide();
-    ui->nombre->hide();
-    ui->nombreD->hide();
-    ui->apellido->hide();
-    ui->apellidoD->hide();
-    ui->nacimiento->hide();
-    ui->nacimientoD->hide();
-    ui->nacionalidad->hide();
-    ui->nacionalidadD->hide();
-    ui->visa_2->hide();
-    ui->visaD_2->hide();
-    ui->duracion->hide();
-    ui->duracionD->hide();
-    ui->estadoCIVIL->hide();
-    ui->estadoCIVILd->hide();
 
     ui->aceptar->setDisabled(true);
     ui->denegar->setDisabled(true);
@@ -359,23 +277,6 @@ void gameplay::noPasa()
     ui->datos->hide();
     ui->cerrar->hide();
     ui->visa->hide();
-
-    ui->genero->hide();
-    ui->generoD->hide();
-    ui->nombre->hide();
-    ui->nombreD->hide();
-    ui->apellido->hide();
-    ui->apellidoD->hide();
-    ui->nacimiento->hide();
-    ui->nacimientoD->hide();
-    ui->nacionalidad->hide();
-    ui->nacionalidadD->hide();
-    ui->visa_2->hide();
-    ui->visaD_2->hide();
-    ui->duracion->hide();
-    ui->duracionD->hide();
-    ui->estadoCIVIL->hide();
-    ui->estadoCIVILd->hide();
 
     ui->aceptar->setDisabled(true);
     ui->denegar->setDisabled(true);
@@ -422,23 +323,6 @@ void gameplay::actualizarCronometro()
 
         ui->visa->hide();
         ui->visaD->hide();
-
-        ui->genero->hide();
-        ui->generoD->hide();
-        ui->nombre->hide();
-        ui->nombreD->hide();
-        ui->apellido->hide();
-        ui->apellidoD->hide();
-        ui->nacimiento->hide();
-        ui->nacimientoD->hide();
-        ui->nacionalidad->hide();
-        ui->nacionalidadD->hide();
-        ui->visa_2->hide();
-        ui->visaD_2->hide();
-        ui->duracion->hide();
-        ui->duracionD->hide();
-        ui->estadoCIVIL->hide();
-        ui->estadoCIVILd->hide();
 
         ui->botonFinalizarTurno->show();
 
