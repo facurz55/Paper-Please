@@ -5,6 +5,8 @@ gameplay::gameplay(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::gameplay)
 {
+    condicion = new condiciones();
+
     ui->setupUi(this);
     /*ui->Boton_ReiniciarNivel->setVisible(false);
     ui->Boton_SiguienteDia->setVisible(false);
@@ -47,6 +49,7 @@ gameplay::gameplay(QWidget *parent)
     PrepararAnimacionSalida();
 
     connect(animacionSalida, &QAbstractAnimation::finished, this, &gameplay::emitSalioNPC);
+    MostrarCondiciones();
 }
 
 gameplay::~gameplay()
@@ -54,6 +57,14 @@ gameplay::~gameplay()
     delete ui;
 }
 
+
+QPushButton* gameplay::getBotonVolver(){
+    return ui->BotonVolver;
+}
+
+QPushButton* gameplay::getBotonCondiciones(){
+    return ui->mostrar_req;
+}
 
 //TODA FUNCION QUE EMPIECE CON GET EN ESTA HOJA ES PARA USARLA EN LA CLASE MAINWINDOW
 QPushButton* gameplay::getReiniciarDia(){//<-MW
@@ -101,8 +112,24 @@ void gameplay::on_Boton_SiguienteDia_clicked() {//ver como configurarlo
 }
 */
 
+void gameplay::cambiarSkinNPC(){
+    condicion1 = Persona.obtenerNpc();
+
+    if(condicion1=="aldeano"){
+        ui->Label_NPC->setStyleSheet(ALDEANO);
+    }else if(condicion1=="refugiado politico"){
+        ui->Label_NPC->setStyleSheet(REFUGIADOPOLITICO);
+    }else if(condicion1=="diplomatico"){
+        ui->Label_NPC->setStyleSheet(DIPLOMATICO);
+    }else if(condicion1=="revolucionario"){
+        ui->Label_NPC->setStyleSheet(REVOLUCIONARIO);
+    }
+}
+
 void gameplay::EntrarNPC()
 {
+    cambiarSkinNPC();
+
     // Calcula la coordenada X central para el labelNPC
     int centerX = (width() - ui->Label_NPC->width()) / 2;
 
@@ -345,3 +372,10 @@ void gameplay::preguntar()
 }
 
 
+void gameplay::MostrarCondiciones(){
+    ui->RNacionalidad->setText(condicion->obtenerNacionalidad());
+    ui->REstancia->setText(condicion->obtenerEstancia());
+    ui->REstCivil->setText(condicion->obtenerEstCivil());
+    ui->RFecha->setText(condicion->obtenerFecha());
+    ui->RTipoVisita->setText(condicion->obtenerTipoVisita());
+}
