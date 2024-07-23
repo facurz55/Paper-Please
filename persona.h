@@ -1,8 +1,8 @@
 #ifndef PERSONA_H
 #define PERSONA_H
-
 #include <QString>
 #include <QStringList>
+
 
 class Persona {
 public:

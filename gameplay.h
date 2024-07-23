@@ -9,6 +9,7 @@
 #include <QTime>
 #include "persona.h"
 #include "puntos.h"
+#include "condiciones.h"
 
 namespace Ui {
 class gameplay;
@@ -28,6 +29,9 @@ public:
     QPushButton* getBotonSiguienteDia();//Ventana de Thiago
     QPushButton* getReiniciarDia();//ventana de thiago
     QPushButton* getFinalizarTurno();//ventana game
+    QPushButton* getBotonCondiciones();//boton para condiciones
+    QPushButton* getBotonVolver();
+    void MostrarCondiciones();
 
 signals:
     void SalioElNPC();
@@ -47,7 +51,7 @@ private slots:
     void cerrarDatos();
 
     void vivaPeron();
-
+    void cambiarSkinNPC();
     void iniciarCronometro();
     void detenerCronometro();
     void actualizarCronometro();
@@ -71,6 +75,12 @@ private:
     QTime tiempoInicio;
     QTime tiempoActual;
     QTime horaFin;
+    condiciones* condicion;
+    QString condicion1;
+    const QString ALDEANO = "image:url(:/pngwing.com.png);";
+    const QString REFUGIADOPOLITICO = "image:url(/pngwing.com (2).png)";
+    const QString REVOLUCIONARIO = "image:url(:/pngwing.com (3).png)";
+    const QString DIPLOMATICO = "image:url(:/pngwing.com (1).png)";
 };
 
 #endif // GAMEPLAY_H
