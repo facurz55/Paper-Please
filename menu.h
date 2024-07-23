@@ -27,10 +27,11 @@ private slots:
     void Exit();
     void Continuar();
 
+
 private:
     Ui::Menu *ui;
     int Puntos;//validar con cuanto empieza los puntos
-    puntos puntos2;
+    puntos* puntos2;
 };
 
 #endif // MENU_H
