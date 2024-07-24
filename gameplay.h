@@ -80,9 +80,9 @@ private:
     condiciones* condicion;
     QString condicion1;
     const QString ALDEANO = "image:url(:/pngwing.com.png);";
-    const QString REFUGIADOPOLITICO = "image:url(/pngwing.com (2).png)";
-    const QString REVOLUCIONARIO = "image:url(:/pngwing.com (3).png)";
-    const QString DIPLOMATICO = "image:url(:/pngwing.com (1).png)";
+    const QString REFUGIADOPOLITICO = "image:url(:/pngwing.com (2).png);";
+    const QString REVOLUCIONARIO = "image:url(:/pngwing.com (3).png);";
+    const QString DIPLOMATICO = "image:url(:/pngwing.com (1).png);";
 };
 
 #endif // GAMEPLAY_H
