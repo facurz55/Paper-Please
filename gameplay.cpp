@@ -6,6 +6,7 @@ gameplay::gameplay(QWidget *parent)
     , ui(new Ui::gameplay)
 {
     condicion = new condiciones();
+    multa = new multas();
 
     ui->setupUi(this);
     /*ui->Boton_ReiniciarNivel->setVisible(false);
@@ -39,6 +40,7 @@ gameplay::gameplay(QWidget *parent)
     connect(ui->cerrar, SIGNAL(clicked()), this, SLOT(cerrarDatos()));
     connect(ui->Siguiente_NPC, SIGNAL(clicked()), this, SLOT(vivaPeron()));
     connect(ui->papeles, SIGNAL(clicked()), this, SLOT(mostrarD()));
+    connect(ui->botonFinalizarTurno, SIGNAL(clicked()), this, SLOT(DatosFinalizar()));
     //connect(ui->pensar, SIGNAL(clicked()), SLOT(preguntar()));
 
     // Crea una animación de propiedad para el QLabel, animando su geometría
@@ -111,6 +113,26 @@ void gameplay::on_Boton_SiguienteDia_clicked() {//ver como configurarlo
 
 }
 */
+
+void gameplay::DatosFinalizar() {//esto para verificar si perdiste, en caso que no se muestran los puntos y mupunt
+    int puntaje = puntos.obtener_puntos();
+    int multaa = multa->obtenerMultas();
+    if ((multaa > 4) || (puntaje < 0)) {
+        ui->labelPerdiste->setVisible(true);//muestra un label con mensaje de perdiste
+        ui->Boton_ReiniciarNivel->setVisible(true);//boton de reiniciar el juego
+        ui->labelPuntos->setVisible(false);//se esconde los puntos, multas y el boton de siguiente dia
+        ui->labelMultas->setVisible(false);
+        ui->Boton_SiguienteDia->setVisible(false);
+    } else {//en caso de que se siga el juego se muestra lo siguiente
+        ui->labelPerdiste->setVisible(false);//no perdiste asi que no muestra esto
+        ui->Boton_ReiniciarNivel->setVisible(false);
+        ui->labelPuntos->setText(QString("Puntos: %1").arg(puntaje));//se muestran los puntos (arg es paraa mostrar los puntos
+        ui->labelPuntos->setVisible(true);//se abre el label de puntos
+        ui->labelMultas->setText(QString("Multas: %1").arg(multaa));//lo mismo para multas
+        ui->labelMultas->setVisible(true);
+        ui->Boton_SiguienteDia->setVisible(true);//se muestra el boton del siguiente dia
+    }
+}
 
 void gameplay::cambiarSkinNPC(){
     condicion1 = Persona.obtenerNpc();

@@ -10,6 +10,7 @@
 #include "persona.h"
 #include "puntos.h"
 #include "condiciones.h"
+#include "multas.h"
 
 namespace Ui {
 class gameplay;
@@ -49,7 +50,7 @@ private slots:
     void mostrarD();
     void mostrarVisa();
     void cerrarDatos();
-
+    void DatosFinalizar();
     void vivaPeron();
     void cambiarSkinNPC();
     void iniciarCronometro();
@@ -71,6 +72,7 @@ private:
     // multas multa;
     Persona Persona;
     puntos puntos;
+    multas* multa;
     QTimer *cronometro;
     QTime tiempoInicio;
     QTime tiempoActual;
