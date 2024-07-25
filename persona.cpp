@@ -134,13 +134,13 @@ void Persona::generarVisa() {
     if (vi <= 10)
     {
         Visa = Visas[1];
-        tipoNpc = "diplomatico";
+        tipoNpc = "diplomático";
     }
     if ((vi > 10)&&(vi <= 40))
     {
         Visa = Visas[0];
         int tipo = QRandomGenerator::global()->bounded(100);
-        tipoNpc = "aldeno";
+        tipoNpc = "aldeano";
         if (tipo > 90)
         {
             tipoNpc = "revolucionario";
@@ -152,7 +152,7 @@ void Persona::generarVisa() {
     {
         Visa = Visas[2];
         int tipo1 = QRandomGenerator::global()->bounded(100);
-        tipoNpc = "aldeno";
+        tipoNpc = "aldeano";
         if (tipo1 > 90)
         {
             tipoNpc = "revolucionario";
@@ -164,7 +164,7 @@ void Persona::generarVisa() {
     {
         Visa = Visas[3];
         int tipo2 = QRandomGenerator::global()->bounded(100);
-        tipoNpc = "aldeno";
+        tipoNpc = "aldeano";
         if (tipo2 > 90)
         {
             tipoNpc = "revolucionario";
@@ -175,7 +175,7 @@ void Persona::generarVisa() {
     if (vi > 90)
     {
         Visa = Visas[4];
-        tipoNpc = "refugiado politico";
+        tipoNpc = "refugiado político";
     }
 }
 

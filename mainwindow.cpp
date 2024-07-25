@@ -18,6 +18,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     menuPage = new Menu();
     game = new gameplay();
+    game->setUpPuntos(menuPage->getPuntos2());
     page_2 = menuPage->findChild<QWidget*>("page_2");
     game_2 = game->findChild<QWidget*>("game_2");
     game_3 = game->findChild<QWidget*>("game_3");
@@ -87,6 +88,7 @@ void MainWindow::ComenzarJuego() {
 
 void MainWindow::EntradaNPC(){
     game->EntrarNPC();
+
 }
 
 void MainWindow::resizeEvent(QResizeEvent *event)

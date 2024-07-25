@@ -22,6 +22,7 @@ class gameplay : public QWidget
 
 public:
     explicit gameplay(QWidget *parent = nullptr);
+    void setUpPuntos(puntos *newpuntos);
     ~gameplay();
     void EntrarNPC();
     void SalirNPC();
@@ -71,7 +72,7 @@ private:
     //  puntos punto;
     // multas multa;
     Persona Persona;
-    puntos puntos;
+    puntos *Puntos;
     multas* multa;
     QTimer *cronometro;
     QTime tiempoInicio;

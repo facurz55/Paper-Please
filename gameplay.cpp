@@ -1,6 +1,6 @@
 #include "gameplay.h"
 #include "ui_gameplay.h"
-
+#include <QDebug>
 gameplay::gameplay(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::gameplay)
@@ -52,6 +52,11 @@ gameplay::gameplay(QWidget *parent)
 
     connect(animacionSalida, &QAbstractAnimation::finished, this, &gameplay::emitSalioNPC);
     MostrarCondiciones();
+}
+
+void gameplay::setUpPuntos(puntos *newpuntos)
+{
+    Puntos=newpuntos;
 }
 
 gameplay::~gameplay()
@@ -115,7 +120,7 @@ void gameplay::on_Boton_SiguienteDia_clicked() {//ver como configurarlo
 */
 
 void gameplay::DatosFinalizar() {//esto para verificar si perdiste, en caso que no se muestran los puntos y mupunt
-    int puntaje = puntos.obtener_puntos();
+    int puntaje = Puntos->obtener_puntos();
     int multaa = multa->obtenerMultas();
     if ((multaa > 4) || (puntaje < 0)) {
         ui->labelPerdiste->setVisible(true);//muestra un label con mensaje de perdiste
@@ -151,7 +156,7 @@ void gameplay::cambiarSkinNPC(){
 void gameplay::EntrarNPC()
 {
     cambiarSkinNPC();
-
+    qDebug()<<"punto inciar:"<<Puntos->obtener_puntos();
     // Calcula la coordenada X central para el labelNPC
     int centerX = (width() - ui->Label_NPC->width()) / 2;
 
@@ -249,10 +254,11 @@ void gameplay::actualizarLabelConPersona() //esta funcion muestra los datos cuan
 void gameplay::mostrarVisa()
 {
 
-    QString datosMostrarVisa = QString("Tipo de visa\n%1\n\nDuracion de la estancia\n%2\n\n Estado civil\n%3\n\n\n\n\n\n")
+    QString datosMostrarVisa = QString("Tipo de visa\n%1\n\nDuracion de la estancia\n%2\n\n Estado civil\n%3\n %4\n\n\n\n\n")
                                 .arg(Persona.getPersonaVisa())
                                 .arg(Persona.obtenerEstancia())
-                                .arg(Persona.getPersonaEstCivil());
+                                .arg(Persona.getPersonaEstCivil())
+                                .arg(Persona.obtenerNpc());
 
     ui->visaD->setText(datosMostrarVisa);
 
@@ -280,12 +286,12 @@ void gameplay::siPasa()
     if (p1 == 1)
     {
         //en este caso se debe restar puntos
-        puntos.puntaje(tipo);
+        Puntos->puntaje(tipo);
     }
     else
     {
         //en este caso se deben sumar puntos
-        puntos.puntaje2(tipo);
+        Puntos->puntaje2(tipo);
     }
     Persona.retPop();
 
@@ -312,12 +318,12 @@ void gameplay::noPasa()
     if (p1 == 0)
     {
         //en este caso se debe restar puntos
-        puntos.puntaje(tipo);
+        Puntos->puntaje(tipo);
     }
     else
     {
         //en este caso se deben sumar puntos
-        puntos.puntaje2(tipo);
+        Puntos->puntaje2(tipo);
     }
     Persona.retPop();
 
@@ -326,6 +332,7 @@ void gameplay::noPasa()
     ui->datos->hide();
     ui->cerrar->hide();
     ui->visa->hide();
+    ui->visaD->hide();
 
     ui->aceptar->setDisabled(true);
     ui->denegar->setDisabled(true);
@@ -352,7 +359,7 @@ void gameplay::detenerCronometro()
 //en esta funcion se actualiza el reloj y permite que el mismo avance 10 minutos en 1 segundo (despues lo cambio a 5 min por segundo para que no sea tan rapido)
 void gameplay::actualizarCronometro()
 {
-    tiempoActual = tiempoActual.addSecs(600);
+    tiempoActual = tiempoActual.addSecs(150);
 
     // Verificar si ha llegado a la hora de fin
     if (tiempoActual >= horaFin)

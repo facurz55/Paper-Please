@@ -9,13 +9,14 @@ Menu::Menu(QWidget *parent)
 
 {
     puntos2 = new puntos();
+
     ui->setupUi(this);
     // Ocultar el botón Siguiente al inicio
     ui->BotonContinuar->setVisible(false);
 
-    connect(ui->BotonBaja, &QPushButton::clicked,this, &Menu::DificultadAlta);
+    connect(ui->BotonBaja, &QPushButton::clicked,this, &Menu::DificultadBaja);
     connect(ui->BotonMedia, &QPushButton::clicked,this, &Menu::DificultadMedia);
-    connect(ui->BotonAlta, &QPushButton::clicked,this, &Menu::DificultadBaja);
+    connect(ui->BotonAlta, &QPushButton::clicked,this, &Menu::DificultadAlta);
     connect(ui->BotonSalir, &QPushButton::clicked,this,&Menu::Exit);
 }
 
@@ -58,6 +59,11 @@ void Menu::Exit(){//Cierra la aplicacion
 void Menu::Continuar(){//Boton para comenzar el juego(debe irse a la pantalla del juego)
 
 
+}
+
+puntos *Menu::getPuntos2() const
+{
+    return puntos2;
 }
 
 QPushButton* Menu::getBotonContinuar(){

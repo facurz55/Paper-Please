@@ -1,6 +1,6 @@
 #include "puntos.h"
 #include "menu.h"
-
+#include <QDebug>
 ///saquenlo cuando mariano tenga su parte de npc
 
 puntos::puntos() {}
@@ -9,17 +9,19 @@ void puntos::puntaje(QString npc){
     {
         punto=punto-15;
     }
-    if(npc=="Refugiado político")
+    if(npc=="refugiado político")
     {
         punto=punto-25;
     }
-    if(npc=="Diplomático")
+    if(npc=="diplomático")
     {
         punto=punto-25;
+        multa3->incrementar();
     }
-    if(npc=="Revolucionario")
+    if(npc=="revolucionario")
     {
         punto=punto-25;
+        multa3->incrementar();
     }
 }
 void puntos::puntaje2(QString npc){
@@ -27,26 +29,30 @@ void puntos::puntaje2(QString npc){
     {
         punto=punto+10;
     }
-    if(npc=="Refugiado político")
+    if(npc=="refugiado político")
     {
         punto=punto+15;
     }
-    if(npc=="Diplomático")
+    if(npc=="diplomático")
     {
         punto=punto+25;
     }
+
 }
-    int puntos::obtener_puntos() const
+    int puntos::obtener_puntos()
     {
         return punto;
     }
     void puntos::puntuacion_asignada1(){
         punto=100;
+        qDebug()<<"puntos "<<punto;
     }
     void puntos::puntuacion2_asignada2(){
         punto=50;
+        qDebug()<<"puntos "<<punto;
     }
     void puntos::puntuacion3_asignada3(){
         punto=0;
+        qDebug()<<"puntos "<<punto;
     }
 
