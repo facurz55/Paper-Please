@@ -227,13 +227,14 @@ void gameplay::actualizarLabelConPersona() //esta funcion muestra los datos cuan
 void gameplay::mostrarVisa()
 {
 
-    QString datosMostrarVisa = QString("Tipo de visa\n%1\n\nDuracion de la estancia\n%2\n\n Estado civil\n%3\n\n\n\n\n\n")
+    QString datosMostrarVisa = QString("Tipo de visa\n%1\n\nDuracion de la estancia\n%2\n\n Estado civil\n%3\n%4\n%5\n\n\n")
                                 .arg(Persona.getPersonaVisa())
                                 .arg(Persona.obtenerEstancia())
-                                .arg(Persona.getPersonaEstCivil());
+                                .arg(Persona.getPersonaEstCivil())
+                                .arg(Persona.obtenerNpc())
+                                .arg(puntos.obtener_puntos());
 
     ui->visaD->setText(datosMostrarVisa);
-
     ui->datos->hide();
     ui->visaD->show();
 }
@@ -304,6 +305,7 @@ void gameplay::noPasa()
     ui->datos->hide();
     ui->cerrar->hide();
     ui->visa->hide();
+    ui->visaD->hide();
 
     ui->aceptar->setDisabled(true);
     ui->denegar->setDisabled(true);

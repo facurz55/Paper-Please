@@ -9,15 +9,15 @@ void puntos::puntaje(QString npc){
     {
         punto=punto-15;
     }
-    if(npc=="Refugiado político")
+    if(npc=="refugiado politico")
     {
         punto=punto-25;
     }
-    if(npc=="Diplomático")
+    if(npc=="diplomatico")
     {
         punto=punto-25;
     }
-    if(npc=="Revolucionario")
+    if(npc=="revolucionario")
     {
         punto=punto-25;
     }
@@ -27,16 +27,16 @@ void puntos::puntaje2(QString npc){
     {
         punto=punto+10;
     }
-    if(npc=="Refugiado político")
+    if(npc=="refugiado politico")
     {
         punto=punto+15;
     }
-    if(npc=="Diplomático")
+    if(npc=="diplomatico")
     {
         punto=punto+25;
     }
 }
-    int puntos::obtener_puntos() const
+    int puntos::obtener_puntos()
     {
         return punto;
     }
