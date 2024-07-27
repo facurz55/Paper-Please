@@ -1,9 +1,17 @@
 #include "puntos.h"
-#include "menu.h"
 #include <QDebug>
+
 ///saquenlo cuando mariano tenga su parte de npc
 
-puntos::puntos() {}
+puntos::puntos() {
+
+}
+
+void puntos::setUpMultas(multas *newMultas)
+{
+    multa3 = newMultas;
+}
+
 void puntos::puntaje(QString npc){
     if(npc=="aldeano")
     {

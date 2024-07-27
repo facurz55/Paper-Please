@@ -1,8 +1,4 @@
 #include "persona.h"
-#include <QDebug>
-#include <QRandomGenerator>
-#include <stdlib.h>
-#include <time.h>
 
 Persona::Persona() {
     // Inicializar los datos del pasaporte de forma aleatoria

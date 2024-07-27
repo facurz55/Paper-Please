@@ -1,14 +1,16 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-#include "persona.h"
-#include <QMainWindow>
 
-#include "menu.h"
-#include "gameplay.h"
 #include <QMainWindow>
 #include <QStackedWidget>
 #include <QLabel>
 #include<QPropertyAnimation>
+#include <QMainWindow>
+
+#include "persona.h"
+#include "menu.h"
+#include "gameplay.h"
+
 
 
 QT_BEGIN_NAMESPACE

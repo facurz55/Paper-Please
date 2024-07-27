@@ -1,6 +1,5 @@
 #include "menu.h"
 #include "ui_menu.h"
-#include "puntos.h"
 
 #include <QVBoxLayout>
 Menu::Menu(QWidget *parent)

@@ -2,7 +2,11 @@
 #define PERSONA_H
 #include <QString>
 #include <QStringList>
+#include <QDebug>
+#include <QRandomGenerator>
+#include <time.h>
 
+// #include "gameplay.h"
 
 class Persona {
 public:

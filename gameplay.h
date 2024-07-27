@@ -7,6 +7,7 @@
 #include <QPropertyAnimation>
 #include <QTimer>
 #include <QTime>
+
 #include "persona.h"
 #include "puntos.h"
 #include "condiciones.h"
@@ -72,12 +73,12 @@ private:
     // multas multa;
     Persona Persona;
     puntos *Puntos;
-    multas* multa;
+    multas multa;
     QTimer *Reloj;
     QTime tiempoInicio;
     QTime tiempoActual;
     QTime horaFin;
-    condiciones* condicion;
+     condiciones* condicion;
     QString condicion1;
     const QString ALDEANO = "image:url(:/pngwing.com.png);";
     const QString REFUGIADOPOLITICO = "image:url(:/pngwing.com (2).png);";

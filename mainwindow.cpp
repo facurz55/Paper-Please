@@ -1,12 +1,6 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 
-#include <QStackedWidget>
-
-#include <QPropertyAnimation>
-
-
-
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)

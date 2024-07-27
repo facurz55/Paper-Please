@@ -1,12 +1,12 @@
 #include "gameplay.h"
 #include "ui_gameplay.h"
 #include <QDebug>
+
 gameplay::gameplay(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::gameplay)
 {
     condicion = new condiciones();
-    multa = new multas();
 
     ui->setupUi(this);
     /*ui->Boton_ReiniciarNivel->setVisible(false);
@@ -57,6 +57,7 @@ gameplay::gameplay(QWidget *parent)
 void gameplay::setUpPuntos(puntos *newpuntos)
 {
     Puntos=newpuntos;
+    Puntos->setUpMultas(&multa);
 }
 
 gameplay::~gameplay()
@@ -121,7 +122,7 @@ void gameplay::on_Boton_SiguienteDia_clicked() {//ver como configurarlo
 
 void gameplay::DatosFinalizar() {//esto para verificar si perdiste, en caso que no se muestran los puntos y mupunt
     int puntaje = Puntos->obtener_puntos();
-    int multaa = multa->obtenerMultas();
+    int multaa = multa.obtenerMultas();
     if ((multaa > 4) || (puntaje < 0)) {
         ui->labelPerdiste->setVisible(true);//muestra un label con mensaje de perdiste
         ui->Boton_ReiniciarNivel->setVisible(true);//boton de reiniciar el juego
@@ -141,14 +142,19 @@ void gameplay::DatosFinalizar() {//esto para verificar si perdiste, en caso que 
 
 void gameplay::cambiarSkinNPC(){
     condicion1 = Persona.obtenerNpc();
+    qDebug() << "Tipo de npc:" << condicion1;
 
     if(condicion1=="aldeano"){
+        qDebug() << "skin aldeano";
         ui->Label_NPC->setStyleSheet(ALDEANO);
-    }else if(condicion1=="refugiado politico"){
+    }else if(condicion1=="refugiado político"){
+        qDebug() << "skin refugiado politico";
         ui->Label_NPC->setStyleSheet(REFUGIADOPOLITICO);
-    }else if(condicion1=="diplomatico"){
+    }else if(condicion1=="diplomático"){
+        qDebug() << "skin diplomatico";
         ui->Label_NPC->setStyleSheet(DIPLOMATICO);
     }else if(condicion1=="revolucionario"){
+        qDebug() << "skin revolucionario";
         ui->Label_NPC->setStyleSheet(REVOLUCIONARIO);
     }
 }
@@ -205,11 +211,6 @@ void gameplay::emitSalioNPC()
 {
     emit SalioElNPC();
 }
-
-
-
-
-
 
 void gameplay::generarNpc()
 {

@@ -1,7 +1,4 @@
 #include "condiciones.h"
-#include <QRandomGenerator>
-#include "persona.h"
-#include <QString>
 
 condiciones::condiciones() {
     NPC = new Persona();  // Inicializar el puntero

@@ -5,6 +5,7 @@
 #include <QVBoxLayout>
 #include <QPushButton>
 #include "puntos.h"
+
 namespace Ui {
 class Menu;
 }

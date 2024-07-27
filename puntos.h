@@ -2,10 +2,12 @@
 #define PUNTOS_H
 #include <QString>
 #include "multas.h"
+
 class puntos
 {
 public:
     puntos();
+    void setUpMultas(multas * newMultas);
     void puntaje(QString  );//puntajes negativo de verificacion equivocada
     void puntaje2(QString  );//puntajes positivo de verificacion positiva
 
