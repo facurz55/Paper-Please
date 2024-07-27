@@ -123,7 +123,7 @@ void Persona::generarFecha() {
 }
 
 void Persona::generarNacionalidad() {
-    QStringList nacionalidades = {"Bolita", "Paragua", "Brazuk", "Ario(argentino)"};
+    QStringList nacionalidades = {"boliviano/a", "paraguayo/a", "brasileño/a", "argentino/a"};
     int ns = QRandomGenerator::global()->bounded(nacionalidades.size());
     nacionalidad = nacionalidades[ns];
 }

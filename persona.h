@@ -17,7 +17,8 @@ public:
     void generar_Estancia();
     void pensamientos();
 
-    void retPop();
+    //Pop indica que el documento tiene almenos un error
+    void retPop(); //hace que "Pop" vuelva a valer 0 luego de ser utilizado
     int obtenerPop();
 
     QString obtenerGenero() const;

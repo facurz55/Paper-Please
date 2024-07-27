@@ -47,17 +47,16 @@ private slots:
     //void on_Boton_SiguienteDia_clicked();//permite ingresar al siguiente nivel
     void siPasa();
     void noPasa();
-    void actualizarLabelConPersona();
-    void mostrarD();
-    void mostrarVisa();
-    void cerrarDatos();
+    void actualizarLabelDocumento();
+    void actualizarLabelVisa();
+    void mostrarDocumentos();
+    void cerrarDocumentos();
     void DatosFinalizar();
-    void vivaPeron();
+    void generarNpc();
     void cambiarSkinNPC();
-    void iniciarCronometro();
-    void detenerCronometro();
-    void actualizarCronometro();
-    void pasarDia();
+    void iniciarReloj();
+    void detenerReloj();
+    void actualizarReloj();
     void preguntar();
 
 private:
@@ -74,7 +73,7 @@ private:
     Persona Persona;
     puntos *Puntos;
     multas* multa;
-    QTimer *cronometro;
+    QTimer *Reloj;
     QTime tiempoInicio;
     QTime tiempoActual;
     QTime horaFin;
