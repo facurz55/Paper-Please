@@ -35,7 +35,7 @@
       <string notr="true"/>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>2</number>
      </property>
      <widget class="QWidget" name="game">
       <layout class="QVBoxLayout" name="verticalLayout_13">
@@ -1687,12 +1687,15 @@
         <rect>
          <x>410</x>
          <y>140</y>
-         <width>49</width>
+         <width>151</width>
          <height>16</height>
         </rect>
        </property>
        <property name="text">
         <string>TextLabel</string>
+       </property>
+       <property name="wordWrap">
+        <bool>true</bool>
        </property>
       </widget>
       <widget class="QLabel" name="labelMultas">
@@ -1700,12 +1703,15 @@
         <rect>
          <x>410</x>
          <y>160</y>
-         <width>49</width>
+         <width>161</width>
          <height>16</height>
         </rect>
        </property>
        <property name="text">
         <string>TextLabel</string>
+       </property>
+       <property name="wordWrap">
+        <bool>true</bool>
        </property>
       </widget>
      </widget>

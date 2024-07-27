@@ -10,6 +10,7 @@
 #include "persona.h"
 #include "puntos.h"
 #include "condiciones.h"
+#include "multas.h"
 
 namespace Ui {
 class gameplay;
@@ -21,6 +22,7 @@ class gameplay : public QWidget
 
 public:
     explicit gameplay(QWidget *parent = nullptr);
+    void setUpPuntos(puntos *newpuntos);
     ~gameplay();
     void EntrarNPC();
     void SalirNPC();
@@ -49,7 +51,7 @@ private slots:
     void mostrarD();
     void mostrarVisa();
     void cerrarDatos();
-
+    void DatosFinalizar();
     void vivaPeron();
     void cambiarSkinNPC();
     void iniciarCronometro();
@@ -70,7 +72,8 @@ private:
     //  puntos punto;
     // multas multa;
     Persona Persona;
-    puntos puntos;
+    puntos *Puntos;
+    multas* multa;
     QTimer *cronometro;
     QTime tiempoInicio;
     QTime tiempoActual;
@@ -78,9 +81,9 @@ private:
     condiciones* condicion;
     QString condicion1;
     const QString ALDEANO = "image:url(:/pngwing.com.png);";
-    const QString REFUGIADOPOLITICO = "image:url(/pngwing.com (2).png)";
-    const QString REVOLUCIONARIO = "image:url(:/pngwing.com (3).png)";
-    const QString DIPLOMATICO = "image:url(:/pngwing.com (1).png)";
+    const QString REFUGIADOPOLITICO = "image:url(:/pngwing.com (2).png);";
+    const QString REVOLUCIONARIO = "image:url(:/pngwing.com (3).png);";
+    const QString DIPLOMATICO = "image:url(:/pngwing.com (1).png);";
 };
 
 #endif // GAMEPLAY_H

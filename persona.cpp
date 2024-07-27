@@ -134,7 +134,7 @@ void Persona::generarVisa() {
     if (vi <= 10)
     {
         Visa = Visas[1];
-        tipoNpc = "diplomatico";
+        tipoNpc = "diplomático";
     }
     if ((vi > 10)&&(vi <= 40))
     {
@@ -175,7 +175,7 @@ void Persona::generarVisa() {
     if (vi > 90)
     {
         Visa = Visas[4];
-        tipoNpc = "refugiado politico";
+        tipoNpc = "refugiado político";
     }
 }
 
