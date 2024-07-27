@@ -30,16 +30,16 @@ gameplay::gameplay(QWidget *parent)
     //esto se del reloj
     tiempoInicio = QTime(13, 0);  //inicia a las 13
     horaFin = QTime(22, 0);       //termina a las 22
-    iniciarCronometro();          //el reloj comienza cuando arranca el programa
+    iniciarReloj();          //el reloj comienza cuando arranca el programa
 
 
-    connect(ui->documento, &QPushButton::clicked, this, &gameplay::actualizarLabelConPersona); //boton de generar npc
-    connect(ui->visa, SIGNAL(clicked()), this, SLOT(mostrarVisa()));
+    connect(ui->documento, &QPushButton::clicked, this, &gameplay::actualizarLabelDocumento); //boton de generar npc
+    connect(ui->visa, SIGNAL(clicked()), this, SLOT(actualizarLabelVisa()));
     connect(ui->aceptar, SIGNAL(clicked()), this, SLOT(siPasa()));
     connect(ui->denegar, SIGNAL(clicked()), this, SLOT(noPasa()));
-    connect(ui->cerrar, SIGNAL(clicked()), this, SLOT(cerrarDatos()));
-    connect(ui->Siguiente_NPC, SIGNAL(clicked()), this, SLOT(vivaPeron()));
-    connect(ui->papeles, SIGNAL(clicked()), this, SLOT(mostrarD()));
+    connect(ui->cerrar, SIGNAL(clicked()), this, SLOT(cerrarDocumentos()));
+    connect(ui->Siguiente_NPC, SIGNAL(clicked()), this, SLOT(generarNpc()));
+    connect(ui->papeles, SIGNAL(clicked()), this, SLOT(mostrarDocumentos()));
     connect(ui->botonFinalizarTurno, SIGNAL(clicked()), this, SLOT(DatosFinalizar()));
     //connect(ui->pensar, SIGNAL(clicked()), SLOT(preguntar()));
 
@@ -211,7 +211,7 @@ void gameplay::emitSalioNPC()
 
 
 
-void gameplay::vivaPeron()
+void gameplay::generarNpc()
 {
     Persona.generarFecha();
     Persona.generarNacionalidad();
@@ -228,7 +228,7 @@ void gameplay::vivaPeron()
     ui->Siguiente_NPC->setDisabled(true);
 }
 
-void gameplay::mostrarD()
+void gameplay::mostrarDocumentos()
 {
     ui->papeles->setDisabled(true);
     ui->documento->show();
@@ -236,7 +236,7 @@ void gameplay::mostrarD()
     ui->cerrar->show();
 }
 
-void gameplay::actualizarLabelConPersona() //esta funcion muestra los datos cuando se presiona un boton
+void gameplay::actualizarLabelDocumento() //esta funcion muestra los datos cuando se presiona un boton
 {
     QString datosMostrar = QString("\n\n\n      Genero:                          %1\n\n      Nombre:                         %2\n\n      Apellido:                         %3\n\n      Nacido/a el:                   %4\n\n      Nacionalidad:                 %5\n\n")
                             .arg(Persona.obtenerGenero())
@@ -251,7 +251,7 @@ void gameplay::actualizarLabelConPersona() //esta funcion muestra los datos cuan
 }
 
 
-void gameplay::mostrarVisa()
+void gameplay::actualizarLabelVisa()
 {
 
     QString datosMostrarVisa = QString("Tipo de visa\n%1\n\nDuracion de la estancia\n%2\n\n Estado civil\n%3\n %4\n\n\n\n\n")
@@ -266,7 +266,7 @@ void gameplay::mostrarVisa()
     ui->visaD->show();
 }
 
-void gameplay::cerrarDatos()
+void gameplay::cerrarDocumentos()
 {
     ui->papeles->setEnabled(true);
 
@@ -278,25 +278,21 @@ void gameplay::cerrarDatos()
 }
 
 
-//aca se determina si la decision del jugador esta bien o no dependiendo de que eligiera
+//aca se determina si la decision del jugador esta bien o no dependiendo de lo que elija
 void gameplay::siPasa()
 {
     int p1 = Persona.obtenerPop();
     QString tipo = Persona.obtenerNpc();
     if (p1 == 1)
     {
-        //en este caso se debe restar puntos
         Puntos->puntaje(tipo);
     }
     else
     {
-        //en este caso se deben sumar puntos
         Puntos->puntaje2(tipo);
     }
     Persona.retPop();
 
-
-    //en este caso se debe restar puntos
     ui->documento->hide();
     ui->datos->hide();
     ui->cerrar->hide();
@@ -317,17 +313,14 @@ void gameplay::noPasa()
     QString tipo = Persona.obtenerNpc();
     if (p1 == 0)
     {
-        //en este caso se debe restar puntos
         Puntos->puntaje(tipo);
     }
     else
     {
-        //en este caso se deben sumar puntos
         Puntos->puntaje2(tipo);
     }
     Persona.retPop();
 
-    //manejo de labels y botones
     ui->documento->hide();
     ui->datos->hide();
     ui->cerrar->hide();
@@ -342,29 +335,28 @@ void gameplay::noPasa()
 }
 
 
-void gameplay::iniciarCronometro() //funcion de inicio del reloj
+void gameplay::iniciarReloj() //funcion de inicio del reloj
 {
-    cronometro = new QTimer(this);
-    connect(cronometro, &QTimer::timeout, this, &gameplay::actualizarCronometro);
-    cronometro->start(1000); // Emitir la señal timeout cada 1 segundo
+    Reloj = new QTimer(this);
+    connect(Reloj, &QTimer::timeout, this, &gameplay::actualizarReloj);
+    Reloj->start(1000); // Emitir la señal timeout cada 1 segundo
     tiempoActual = tiempoInicio;
 }
 
-void gameplay::detenerCronometro()
+void gameplay::detenerReloj()
 {
-    cronometro->stop();
-    delete cronometro;
+    Reloj->stop();
+    delete Reloj;
 }
 
-//en esta funcion se actualiza el reloj y permite que el mismo avance 10 minutos en 1 segundo (despues lo cambio a 5 min por segundo para que no sea tan rapido)
-void gameplay::actualizarCronometro()
+void gameplay::actualizarReloj()
 {
     tiempoActual = tiempoActual.addSecs(150);
 
-    // Verificar si ha llegado a la hora de fin
+    // Verificar si ha llegado a la hora de finalizar el turno 22:00
     if (tiempoActual >= horaFin)
     {
-        detenerCronometro(); //cuando el tiempo se cumlpe detiene el reloj
+        detenerReloj(); //cuando el tiempo se cumlpe detiene el reloj
 
         //cuando el tiempo acaba se muestra el boton de pasar de dia y se ocultan el resto de cosas
         ui->aceptar->hide();
@@ -388,12 +380,6 @@ void gameplay::actualizarCronometro()
     ui->timer->setText(tiempoActual.toString("hh:mm:ss"));
 }
 
-
-//en esta funcion se debe conectar en cambio de ventana
-void gameplay::pasarDia()
-{
-
-}
 
 void gameplay::preguntar()
 {

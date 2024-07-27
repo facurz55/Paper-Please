@@ -123,7 +123,7 @@ void Persona::generarFecha() {
 }
 
 void Persona::generarNacionalidad() {
-    QStringList nacionalidades = {"Bolita", "Paragua", "Brazuk", "Ario(argentino)"};
+    QStringList nacionalidades = {"boliviano/a", "paraguayo/a", "brasileño/a", "argentino/a"};
     int ns = QRandomGenerator::global()->bounded(nacionalidades.size());
     nacionalidad = nacionalidades[ns];
 }
@@ -195,7 +195,7 @@ void Persona::pensamientos()
     pensamiento = ideas[pens];
     if (tipoNpc == "revolucionario")
     {
-        QStringList ideasmalas = {"Viva peron", "Cuba es no es verdadero comunismo", "Evo Morales"};
+        QStringList ideasmalas = {"En Cuba el pueblo es feliz", "Venezuela no es verdadero comunismo", "Evo Morales <3"};
         int pens = QRandomGenerator::global()->bounded(ideasmalas.size());
         pensamiento = ideasmalas[pens];
     }
@@ -253,16 +253,6 @@ QString Persona::obtenerPensamientos()
 QString Persona::obtenerNpc()
 {
     return tipoNpc;
-}
-
-void Persona::Mostrar_Datos() {
-    qDebug() << "Genero: " << this->obtenerGenero();
-    qDebug() << "Nombre: " << this->obtenerNombre();
-    qDebug() << "Apellido: " << this->obtenerApellido();
-    qDebug() << "Fecha de Nacimiento: " << this->obtenerFecha();
-    qDebug() << "Nacionalidad: " << this->obtenerNacionalidad();
-    qDebug() << "Tipo de Visa: " << this->getPersonaVisa();
-    qDebug() << "Estado Civil: " << this->getPersonaEstCivil();
 }
 
 

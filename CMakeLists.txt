@@ -28,9 +28,9 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         imagenes.qrc
         gameplay.h gameplay.cpp gameplay.ui
         puntos.h puntos.cpp
-        ventana_mariano.h
-        ventana_mariano.cpp
-        ventana_mariano.ui
+
+
+
         puntos.h puntos.cpp
         condiciones.cpp condiciones.h
         multas.cpp multas.h
