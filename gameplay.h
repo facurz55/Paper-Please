@@ -39,6 +39,9 @@ public:
 signals:
     void SalioElNPC();
 
+public slots:
+    void iniciarReloj();
+
 private slots:
     //este boton tenemos que moverlo a la parte del nivel 1 el boton condicionales
     //void Boton_condiciones();//las condiciones para ver si perdiste o seguis al siguiente nivel
@@ -55,7 +58,6 @@ private slots:
     void DatosFinalizar();
     void generarNpc();
     void cambiarSkinNPC();
-    void iniciarReloj();
     void detenerReloj();
     void actualizarReloj();
     void preguntar();

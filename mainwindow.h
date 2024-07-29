@@ -61,6 +61,7 @@ private slots:
 private:
     Ui::MainWindow *ui;
 
+
     Menu *menuPage;//Puntero de la clase
     gameplay *game;//Puntero para la pantalla donde jugamos
     QStackedWidget *stackedWidget; //Puntero para el StackedWidget
