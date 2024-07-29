@@ -30,8 +30,6 @@ gameplay::gameplay(QWidget *parent)
     //esto se del reloj
     tiempoInicio = QTime(13, 0);  //inicia a las 13
     horaFin = QTime(22, 0);       //termina a las 22
-    iniciarReloj();          //el reloj comienza cuando arranca el programa
-
 
     connect(ui->documento, &QPushButton::clicked, this, &gameplay::actualizarLabelDocumento); //boton de generar npc
     connect(ui->visa, SIGNAL(clicked()), this, SLOT(actualizarLabelVisa()));
@@ -142,19 +140,14 @@ void gameplay::DatosFinalizar() {//esto para verificar si perdiste, en caso que 
 
 void gameplay::cambiarSkinNPC(){
     condicion1 = Persona.obtenerNpc();
-    qDebug() << "Tipo de npc:" << condicion1;
 
     if(condicion1=="aldeano"){
-        qDebug() << "skin aldeano";
         ui->Label_NPC->setStyleSheet(ALDEANO);
     }else if(condicion1=="refugiado político"){
-        qDebug() << "skin refugiado politico";
         ui->Label_NPC->setStyleSheet(REFUGIADOPOLITICO);
     }else if(condicion1=="diplomático"){
-        qDebug() << "skin diplomatico";
         ui->Label_NPC->setStyleSheet(DIPLOMATICO);
     }else if(condicion1=="revolucionario"){
-        qDebug() << "skin revolucionario";
         ui->Label_NPC->setStyleSheet(REVOLUCIONARIO);
     }
 }
@@ -162,7 +155,6 @@ void gameplay::cambiarSkinNPC(){
 void gameplay::EntrarNPC()
 {
     cambiarSkinNPC();
-    qDebug()<<"punto inciar:"<<Puntos->obtener_puntos();
     // Calcula la coordenada X central para el labelNPC
     int centerX = (width() - ui->Label_NPC->width()) / 2;
 
@@ -255,11 +247,10 @@ void gameplay::actualizarLabelDocumento() //esta funcion muestra los datos cuand
 void gameplay::actualizarLabelVisa()
 {
 
-    QString datosMostrarVisa = QString("Tipo de visa\n%1\n\nDuracion de la estancia\n%2\n\n Estado civil\n%3\n %4\n\n\n\n\n")
+    QString datosMostrarVisa = QString("Tipo de visa\n%1\n\nDuracion de la estancia\n%2\n\n Estado civil\n%3\n\n\n\n\n\n")
                                 .arg(Persona.getPersonaVisa())
                                 .arg(Persona.obtenerEstancia())
-                                .arg(Persona.getPersonaEstCivil())
-                                .arg(Persona.obtenerNpc());
+                                .arg(Persona.getPersonaEstCivil());
 
     ui->visaD->setText(datosMostrarVisa);
 

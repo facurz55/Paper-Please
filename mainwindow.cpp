@@ -77,6 +77,8 @@ void MainWindow::ComenzarJuego() {
     // Cambia el widget actual del stackedWidget al widget del juego (game)
     stackedWidget->setCurrentWidget(game);
 
+    game->iniciarReloj(); //el reloj comienza cuando se produse el cambio de ventana
+
     EntradaNPC();
 }
 
