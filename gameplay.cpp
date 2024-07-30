@@ -9,12 +9,8 @@ gameplay::gameplay(QWidget *parent)
     condicion = new condiciones();
 
     ui->setupUi(this);
-    /*ui->Boton_ReiniciarNivel->setVisible(false);
-    ui->Boton_SiguienteDia->setVisible(false);
-    ui->labelMultas->setVisible(false);
-    ui->labelPerdiste->setVisible(false);
-    ui->labelPuntos->setVisible(false);*/
 
+    //WIDGET DE LA PANTALLA
     ui->botonFinalizarTurno->hide();
     ui->documento->hide();
     ui->visa->hide();
@@ -22,15 +18,13 @@ gameplay::gameplay(QWidget *parent)
     ui->cerrar->hide();
     ui->datos->hide();
     ui->Siguiente_NPC->setDisabled(true);
-    //ui->aceptar->setDisabled(true);
-    //ui->denegar->setDisabled(true);
-    //ui->mostrar_req->setDisabled(true);
-    //ui->papeles->setDisabled(true);
 
-    //esto se del reloj
+
+    //TIMER
     tiempoInicio = QTime(13, 0);  //inicia a las 13
     horaFin = QTime(22, 0);       //termina a las 22
 
+    //CONEXIONES
     connect(ui->documento, &QPushButton::clicked, this, &gameplay::actualizarLabelDocumento); //boton de generar npc
     connect(ui->visa, SIGNAL(clicked()), this, SLOT(actualizarLabelVisa()));
     connect(ui->aceptar, SIGNAL(clicked()), this, SLOT(siPasa()));
@@ -39,9 +33,8 @@ gameplay::gameplay(QWidget *parent)
     connect(ui->Siguiente_NPC, SIGNAL(clicked()), this, SLOT(generarNpc()));
     connect(ui->papeles, SIGNAL(clicked()), this, SLOT(mostrarDocumentos()));
     connect(ui->botonFinalizarTurno, SIGNAL(clicked()), this, SLOT(DatosFinalizar()));
-    //connect(ui->pensar, SIGNAL(clicked()), SLOT(preguntar()));
 
-    // Crea una animación de propiedad para el QLabel, animando su geometría
+    //ANIMACIONES
     animacionEntrada = new QPropertyAnimation(ui->Label_NPC, "pos");
     PrepararAnimacion();
 
@@ -49,6 +42,8 @@ gameplay::gameplay(QWidget *parent)
     PrepararAnimacionSalida();
 
     connect(animacionSalida, &QAbstractAnimation::finished, this, &gameplay::emitSalioNPC);
+
+    //FUNCIONES
     MostrarCondiciones();
 }
 
@@ -63,16 +58,16 @@ gameplay::~gameplay()
     delete ui;
 }
 
-
-QPushButton* gameplay::getBotonVolver(){
+//TODA FUNCION QUE EMPIECE CON GET EN ESTA HOJA ES PARA USARLA EN LA CLASE MAINWINDOW
+QPushButton* gameplay::getBotonVolver(){//<-MW
     return ui->BotonVolver;
 }
 
-QPushButton* gameplay::getBotonCondiciones(){
+QPushButton* gameplay::getBotonCondiciones(){//<-MW
     return ui->mostrar_req;
 }
 
-//TODA FUNCION QUE EMPIECE CON GET EN ESTA HOJA ES PARA USARLA EN LA CLASE MAINWINDOW
+
 QPushButton* gameplay::getReiniciarDia(){//<-MW
     return ui->Boton_ReiniciarNivel;
 }
@@ -92,31 +87,6 @@ QPushButton* gameplay::getBotonSiguiente_NPC(){//<-MW
 QLabel *gameplay::getLabelNPC(){//<-MW
     return ui->Label_NPC;
 }
-//esto hay que verlo en lo del nivel 1 del boton terminar jornada
-/*void gameplay::Boton_condiciones() {//esto para verificar si perdiste, en caso que no se muestran los puntos y multas
-    if ((multas > 4) || (puntos < 0)) {
-        ui->labelPerdiste->setVisible(true);//muestra un label con mensaje de perdiste
-        ui->Boton_ReiniciarNivel->setVisible(true);//boton de reiniciar el juego
-        ui->labelPuntos->setVisible(false);//se esconde los puntos, multas y el boton de siguiente dia
-        ui->labelMultas->setVisible(false);
-        ui->Boton_SiguienteDia->setVisible(false);
-    } else {//en caso de que se siga el juego se muestra lo siguiente
-        ui->labelPerdiste->setVisible(false);//no perdiste asi que no muestra esto
-        ui->Boton_ReiniciarNivel->setVisible(false);
-        ui->labelPuntos->setText(QString("Puntos: %1").arg(puntos));//se muestran los puntos (arg es paraa mostrar los puntos
-        ui->labelPuntos->setVisible(true);//se abre el label de puntos
-        ui->labelMultas->setText(QString("Multas: %1").arg(multas));//lo mismo para multas
-        ui->labelMultas->setVisible(true);
-        ui->Boton_SiguienteDia->setVisible(true);//se muestra el boton del siguiente dia
-    }
-}
-void gameplay::on_Boton_ReiniciarNivel_clicked() {//ver como configurarlo
-    resetear_nivel();
-}
-void gameplay::on_Boton_SiguienteDia_clicked() {//ver como configurarlo
-
-}
-*/
 
 void gameplay::DatosFinalizar() {//esto para verificar si perdiste, en caso que no se muestran los puntos y mupunt
     int puntaje = Puntos->obtener_puntos();

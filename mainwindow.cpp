@@ -7,6 +7,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
+    //STACKEDWIDGET
     stackedWidget = new QStackedWidget;
     setCentralWidget(stackedWidget);
 
@@ -23,6 +24,9 @@ MainWindow::MainWindow(QWidget *parent)
     stackedWidget->addWidget(game_2);
     stackedWidget->addWidget(game_3);
 
+    stackedWidget->setCurrentWidget(menuPage);
+
+    //CONEXIONES
     connect(menuPage->getBotonJugar(), &QPushButton::clicked, this, &MainWindow::CambiarPagina);
     connect(menuPage->getBotonAtras(), &QPushButton::clicked, this, &MainWindow::Volver);
     connect(menuPage->getBotonContinuar(), &QPushButton::clicked, this, &MainWindow::ComenzarJuego);
@@ -32,8 +36,6 @@ MainWindow::MainWindow(QWidget *parent)
     connect(game->getFinalizarTurno(), &QPushButton::clicked, this, &MainWindow::PantallaPuntos);
     connect(game->getBotonCondiciones(), &QPushButton::clicked, this, &MainWindow::PantallaCondiciones);
     connect(game->getBotonVolver(), &QPushButton::clicked, this, &MainWindow::VolverALaMesa);
-
-    stackedWidget->setCurrentWidget(menuPage);
 }
 
 MainWindow::~MainWindow()

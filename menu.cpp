@@ -10,9 +10,11 @@ Menu::Menu(QWidget *parent)
     puntos2 = new puntos();
 
     ui->setupUi(this);
-    // Ocultar el botón Siguiente al inicio
+
+    //WIDGETS
     ui->BotonContinuar->setVisible(false);
 
+    //CONEXIONES
     connect(ui->BotonBaja, &QPushButton::clicked,this, &Menu::DificultadBaja);
     connect(ui->BotonMedia, &QPushButton::clicked,this, &Menu::DificultadMedia);
     connect(ui->BotonAlta, &QPushButton::clicked,this, &Menu::DificultadAlta);
@@ -24,12 +26,12 @@ Menu::~Menu()
     delete ui;
 }
 
-
-QPushButton* Menu::getBotonJugar() {//esto es para llamar en el qstaked
+//TODA FUNCION QUE EMPIECE CON GET EN ESTA HOJA ES PARA USARLA EN LA CLASE MAINWINDOW
+QPushButton* Menu::getBotonJugar() {//<-MW esto es para llamar en el qstaked
     return ui->BotonJugar;
 }
 
-QPushButton* Menu::getBotonAtras() {//esto es para llamr en el qstaked
+QPushButton* Menu::getBotonAtras() {//<-MW esto es para llamr en el qstaked
     return ui->BotonAtras;
 }
 

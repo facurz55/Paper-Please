@@ -45,9 +45,7 @@ public slots:
 private slots:
     //este boton tenemos que moverlo a la parte del nivel 1 el boton condicionales
     //void Boton_condiciones();//las condiciones para ver si perdiste o seguis al siguiente nivel
-    //CAMBIEN EL NOMBRE DE ESTAS FUNCIONES POR FAVOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOR
     //void on_Boton_ReiniciarNivel_clicked();//reinicia el nivel para volver a jugar
-
     //void on_Boton_SiguienteDia_clicked();//permite ingresar al siguiente nivel
     void siPasa();
     void noPasa();
@@ -61,18 +59,14 @@ private slots:
     void detenerReloj();
     void actualizarReloj();
     void preguntar();
+    void PrepararAnimacion();
+    void PrepararAnimacionSalida();
+    void emitSalioNPC();
 
 private:
     Ui::gameplay *ui;
     QPropertyAnimation * animacionEntrada;
-    void PrepararAnimacion();
-
     QPropertyAnimation * animacionSalida;
-    void PrepararAnimacionSalida();
-    void emitSalioNPC();
-    //hay que llamar a la clase de puntos y multas para ver cuanto hicieron
-    //  puntos punto;
-    // multas multa;
     Persona Persona;
     puntos *Puntos;
     multas multa;
@@ -80,7 +74,7 @@ private:
     QTime tiempoInicio;
     QTime tiempoActual;
     QTime horaFin;
-     condiciones* condicion;
+    condiciones* condicion;
     QString condicion1;
     const QString ALDEANO = "image:url(:/pngwing.com.png);";
     const QString REFUGIADOPOLITICO = "image:url(:/pngwing.com (2).png);";
