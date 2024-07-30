@@ -12,7 +12,7 @@ class Persona {
 public:
     Persona();
     void Mostrar_Datos();
-
+    //PERRA CACHONDA
     void generarNombres();
     void generarFecha();
     void generarNacionalidad();
