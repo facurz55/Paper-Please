@@ -53,14 +53,11 @@ void puntos::puntaje2(QString npc){
     }
     void puntos::puntuacion_asignada1(){
         punto=100;
-        qDebug()<<"puntos "<<punto;
     }
     void puntos::puntuacion2_asignada2(){
         punto=50;
-        qDebug()<<"puntos "<<punto;
     }
     void puntos::puntuacion3_asignada3(){
         punto=0;
-        qDebug()<<"puntos "<<punto;
     }
 
