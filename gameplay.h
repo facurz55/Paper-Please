@@ -29,15 +29,15 @@ public:
     void SalirNPC();
     QPushButton* getBotonSiguiente_NPC();
     QLabel *getLabelNPC();
-    QPushButton* getBotonSiguienteDia();//Ventana de Thiago
-    QPushButton* getReiniciarDia();//ventana de thiago
-    QPushButton* getFinalizarTurno();//ventana game
-    QPushButton* getBotonCondiciones();//boton para condiciones
-    QPushButton* getBotonVolver();
     void MostrarCondiciones();
 
 signals:
     void SalioElNPC();
+    void ClickeoSiguienteDia();
+    void clickedReiniciar();
+    void clickedFinalizar();
+    void clickedCondiciones();
+    void clickedVolverMesa();
 
 public slots:
     void iniciarReloj();
@@ -47,6 +47,9 @@ private slots:
     //void Boton_condiciones();//las condiciones para ver si perdiste o seguis al siguiente nivel
     //void on_Boton_ReiniciarNivel_clicked();//reinicia el nivel para volver a jugar
     //void on_Boton_SiguienteDia_clicked();//permite ingresar al siguiente nivel
+    void ReiniciarNivel();
+    void CondicionesNivel();
+
     void siPasa();
     void noPasa();
     void actualizarLabelDocumento();
@@ -61,7 +64,6 @@ private slots:
     void preguntar();
     void PrepararAnimacion();
     void PrepararAnimacionSalida();
-    void emitSalioNPC();
 
 private:
     Ui::gameplay *ui;
