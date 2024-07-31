@@ -32,6 +32,7 @@ void puntos::puntaje(QString npc){
         multa3->incrementar();
     }
 }
+
 void puntos::puntaje2(QString npc){
     if(npc=="aldeano")
     {
@@ -47,17 +48,17 @@ void puntos::puntaje2(QString npc){
     }
 
 }
-    int puntos::obtener_puntos()
-    {
-        return punto;
-    }
-    void puntos::puntuacion_asignada1(){
-        punto=100;
-    }
-    void puntos::puntuacion2_asignada2(){
-        punto=50;
-    }
-    void puntos::puntuacion3_asignada3(){
-        punto=0;
-    }
+int puntos::obtener_puntos()
+{
+    return punto;
+}
+void puntos::puntuacion_asignada1(){
+    punto=100;
+}
+void puntos::puntuacion2_asignada2(){
+    punto=50;
+}
+void puntos::puntuacion3_asignada3(){
+    punto=0;
+}
 

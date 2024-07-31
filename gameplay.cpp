@@ -6,9 +6,10 @@ gameplay::gameplay(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::gameplay)
 {
-    condicion = new condiciones();
-
     ui->setupUi(this);
+
+    condicion = new condiciones;
+    Puntos = new puntos;
 
     //WIDGET DE LA PANTALLA
     ui->botonFinalizarTurno->hide();
@@ -47,10 +48,18 @@ gameplay::gameplay(QWidget *parent)
     MostrarCondiciones();
 }
 
-void gameplay::setUpPuntos(puntos *newpuntos)
+void gameplay::setUpPuntos(int Dificultad)
 {
-    Puntos=newpuntos;
-    Puntos->setUpMultas(&multa);
+    switch (Dificultad){
+    case 0: Puntos->puntuacion_asignada1();
+        break;
+    case 1: Puntos->puntuacion2_asignada2();
+        break;
+    default: Puntos->puntuacion3_asignada3();
+        break;
+    }
+
+    qDebug() << Puntos->obtener_puntos();
 }
 
 gameplay::~gameplay()

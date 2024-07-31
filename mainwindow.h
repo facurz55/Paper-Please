@@ -41,9 +41,8 @@ protected:
 
 
 private slots:
-    void CambiarPagina();//Pasar a page_2
     void Volver();//volver a page
-    void ComenzarJuego();//Muesta la pantalla gameplay
+    void ComenzarJuego(int Dificultad);//Muesta la pantalla gameplay
     void EntradaNPC();//Funcion para la entrada del NPC
     void SalirNPC(); //Funcion para la salida del NPC
     void ReinciarElNivel();//funcion para reinciar el nivel perdido
@@ -64,8 +63,7 @@ private:
 
     Menu *menuPage;//Puntero de la clase
     gameplay *game;//Puntero para la pantalla donde jugamos
-    QStackedWidget *stackedWidget; //Puntero para el StackedWidget
-    QWidget *page_2; // Placeholder para la página del juego
+    QStackedWidget * stackedWidget; //Puntero para el StackedWidget
     QWidget *game_2;// Placeholder para la página del gameplay
     QWidget *game_3;
 };

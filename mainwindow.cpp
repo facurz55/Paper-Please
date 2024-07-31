@@ -8,28 +8,25 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
 
     //STACKEDWIDGET
-    stackedWidget = new QStackedWidget;
-    setCentralWidget(stackedWidget);
+    stackedWidget = new QStackedWidget(this);
 
-    menuPage = new Menu();
-    game = new gameplay();
-    game->setUpPuntos(menuPage->getPuntos2());
-    page_2 = menuPage->findChild<QWidget*>("page_2");
+    setCentralWidget(stackedWidget);
+    menuPage = new Menu(this);
+    game = new gameplay(this);
+
     game_2 = game->findChild<QWidget*>("game_2");
     game_3 = game->findChild<QWidget*>("game_3");
 
-    stackedWidget->addWidget(menuPage); //añade la ventana del menu
-    stackedWidget->addWidget(page_2);  // Añade page_2 al stackedWidget
-    stackedWidget->addWidget(game); //añade la ventana donde jugamos
+    stackedWidget->addWidget(menuPage);     //añade la ventana del menu
+    stackedWidget->addWidget(game);         //añade la ventana donde jugamos
     stackedWidget->addWidget(game_2);
     stackedWidget->addWidget(game_3);
 
     stackedWidget->setCurrentWidget(menuPage);
 
     //CONEXIONES
-    connect(menuPage->getBotonJugar(), &QPushButton::clicked, this, &MainWindow::CambiarPagina);
-    connect(menuPage->getBotonAtras(), &QPushButton::clicked, this, &MainWindow::Volver);
-    connect(menuPage->getBotonContinuar(), &QPushButton::clicked, this, &MainWindow::ComenzarJuego);
+    connect(menuPage, &Menu::clickedJugar, this, &MainWindow::ComenzarJuego);
+
     connect(game->getBotonSiguiente_NPC(), &QPushButton::clicked, this, &MainWindow::SalirNPC);
     connect(game->getBotonSiguienteDia(), &QPushButton::clicked, this, &MainWindow::ComenzarSiguieneDia);
     connect(game->getReiniciarDia(), &QPushButton::clicked, this, &MainWindow::ReinciarElNivel);
@@ -65,28 +62,22 @@ void MainWindow::PantallaPuntos(){//<----------------------ACA SE INCIA LA PANTA
     stackedWidget->setCurrentWidget(game_2);
 }
 
-void MainWindow::CambiarPagina()
-{
-    stackedWidget->setCurrentWidget(page_2);
-}
-
 void MainWindow::Volver(){
     stackedWidget->setCurrentWidget(menuPage);
 }
 
-void MainWindow::ComenzarJuego() {
+void MainWindow::ComenzarJuego(int Dificultad) {
 
     // Cambia el widget actual del stackedWidget al widget del juego (game)
     stackedWidget->setCurrentWidget(game);
 
+    game->setUpPuntos(Dificultad);
     game->iniciarReloj(); //el reloj comienza cuando se produse el cambio de ventana
-
-    EntradaNPC();
+    game->EntrarNPC();
 }
 
 void MainWindow::EntradaNPC(){
     game->EntrarNPC();
-
 }
 
 void MainWindow::resizeEvent(QResizeEvent *event)
@@ -120,5 +111,5 @@ void MainWindow::SalirNPC() {
     game->SalirNPC();
 
     // Conecta la señal finished() de la animación para reiniciar ComenzarJuego
-    connect(game, &gameplay::SalioElNPC, this, &MainWindow::EntradaNPC);
+    connect(game, &gameplay::SalioElNPC, this, &MainWindow::EntradaNPC, Qt::UniqueConnection);
 }
