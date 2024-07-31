@@ -23,7 +23,7 @@ class gameplay : public QWidget
 
 public:
     explicit gameplay(QWidget *parent = nullptr);
-    void setUpPuntos(puntos *newpuntos);
+    void setUpPuntos(int Dificultad);
     ~gameplay();
     void EntrarNPC();
     void SalirNPC();

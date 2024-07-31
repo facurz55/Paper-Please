@@ -17,24 +17,24 @@ class Menu : public QWidget
 public:
     explicit Menu(QWidget *parent = nullptr);
     ~Menu();
-    QPushButton* getBotonJugar();
-    QPushButton* getBotonAtras();
-    QPushButton* getBotonContinuar();
 
-    puntos *getPuntos2() const;
+signals:
+    void clickedJugar(int dificultad);
 
 private slots:
+    void SeleccionarDif();
+    void MenuPrincipal();
+    void clickeoJugar();
+
     void DificultadBaja();
     void DificultadMedia();
     void DificultadAlta();
     void Exit();
-    void Continuar();
 
 
 private:
     Ui::Menu *ui;
     int Puntos;//validar con cuanto empieza los puntos
-    puntos *puntos2;
 };
 
 #endif // MENU_H
