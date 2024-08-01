@@ -33,7 +33,7 @@ public:
 
 signals:
     void SalioElNPC();
-    void ClickeoSiguienteDia();
+    void clickedSiguienteDia();
     void clickedReiniciar();
     void clickedFinalizar();
     void clickedCondiciones();
@@ -49,6 +49,8 @@ private slots:
     //void on_Boton_SiguienteDia_clicked();//permite ingresar al siguiente nivel
     void ReiniciarNivel();
     void CondicionesNivel();
+    void VolverMesa();
+    void ComenzarSiguienteDia();
 
     void siPasa();
     void noPasa();
@@ -70,13 +72,13 @@ private:
     QPropertyAnimation * animacionEntrada;
     QPropertyAnimation * animacionSalida;
     Persona Persona;
-    puntos *Puntos;
+    puntos Puntos;
     multas multa;
     QTimer *Reloj;
     QTime tiempoInicio;
     QTime tiempoActual;
     QTime horaFin;
-    condiciones* condicion;
+    condiciones condicion;
     QString condicion1;
     const QString ALDEANO = "image:url(:/pngwing.com.png);";
     const QString REFUGIADOPOLITICO = "image:url(:/pngwing.com (2).png);";

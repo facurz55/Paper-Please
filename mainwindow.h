@@ -43,8 +43,6 @@ protected:
 private slots:
     void Volver();//volver a page
     void ComenzarJuego(int Dificultad);//Muesta la pantalla gameplay
-    void ComenzarSiguieneDia();//Funcion para avanzar al siguiente nivel
-    void VolverALaMesa();//funcion para regresar a la mesa desde las condiciones
 
 
     //void pushButton_2();

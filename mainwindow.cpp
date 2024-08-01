@@ -21,22 +21,11 @@ MainWindow::MainWindow(QWidget *parent)
 
     //CONEXIONES de botones.
     connect(menuPage, &Menu::clickedJugar, this, &MainWindow::ComenzarJuego);
-    connect(game, &gameplay::ClickeoSiguienteDia, this, &MainWindow::ComenzarSiguieneDia);
-    connect(game, &gameplay::clickedVolverMesa, this, &MainWindow::VolverALaMesa);
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
-}
-
-void MainWindow::VolverALaMesa(){
-    stackedWidget->setCurrentWidget(game);
-}
-
-void MainWindow::ComenzarSiguieneDia(){//<----------------------ACA SE COMIENZA EL SIGUEINTE DIA.
-    stackedWidget->setCurrentWidget(game);
-    game->EntrarNPC();
 }
 
 void MainWindow::Volver(){

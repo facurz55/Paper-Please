@@ -7,9 +7,7 @@ gameplay::gameplay(QWidget *parent)
     , ui(new Ui::gameplay)
 {
     ui->setupUi(this);
-
-    condicion = new condiciones;
-    Puntos = new puntos;
+    Puntos.setUpMultas(&multa);
 
     //WIDGET DE LA PANTALLA
     ui->botonFinalizarTurno->hide();
@@ -26,12 +24,12 @@ gameplay::gameplay(QWidget *parent)
     horaFin = QTime(22, 0);       //termina a las 22
 
     // Conexiones de botones
-    connect(ui->Boton_SiguienteDia, &QPushButton::clicked,  this, &gameplay::ClickeoSiguienteDia);
+    connect(ui->Boton_SiguienteDia, &QPushButton::clicked,  this, &gameplay::ComenzarSiguienteDia);
     connect(ui->documento, &QPushButton::clicked,  this, &gameplay::actualizarLabelDocumento); //boton de generar npc
     connect(ui->Boton_ReiniciarNivel, &QPushButton::clicked,  this, &gameplay::ReiniciarNivel);
     connect(ui->botonFinalizarTurno, &QPushButton::clicked,  this, &gameplay::DatosFinalizar);
     connect(ui->mostrar_req, &QPushButton::clicked,  this, &gameplay::CondicionesNivel);
-    connect(ui->BotonVolver, &QPushButton::clicked,  this, &gameplay::clickedVolverMesa);
+    connect(ui->BotonVolver, &QPushButton::clicked,  this, &gameplay::VolverMesa);
 
     connect(ui->visa, SIGNAL(clicked()), this, SLOT(actualizarLabelVisa()));
     connect(ui->aceptar, SIGNAL(clicked()), this, SLOT(siPasa()));
@@ -50,24 +48,25 @@ gameplay::gameplay(QWidget *parent)
     connect(ui->Siguiente_NPC, SIGNAL(clicked()), this, SLOT(generarNpc()));
     connect(animacionSalida, &QAbstractAnimation::finished, this, &gameplay::EntrarNPC);
 
-
-
     //FUNCIONES
     MostrarCondiciones();
+
+    // Seteamos como widget principal donde se mostrara el juego:
+    ui->stackedWidget->setCurrentWidget(ui->game);
 }
 
 void gameplay::setUpPuntos(int Dificultad)
 {
     switch (Dificultad){
-    case 0: Puntos->puntuacion_asignada1();
+    case 0: Puntos.puntuacion_asignada1();
         break;
-    case 1: Puntos->puntuacion2_asignada2();
+    case 1: Puntos.puntuacion2_asignada2();
         break;
-    default: Puntos->puntuacion3_asignada3();
+    default: Puntos.puntuacion3_asignada3();
         break;
     }
 
-    qDebug() << Puntos->obtener_puntos();
+    qDebug() << Puntos.obtener_puntos();
 }
 
 gameplay::~gameplay()
@@ -85,7 +84,7 @@ QLabel *gameplay::getLabelNPC(){//<-MW
 }
 
 void gameplay::DatosFinalizar() {//esto para verificar si perdiste, en caso que no se muestran los puntos y mupunt
-    int puntaje = Puntos->obtener_puntos();
+    int puntaje = Puntos.obtener_puntos();
     int multaa = multa.obtenerMultas();
     if ((multaa > 4) || (puntaje < 0)) {
         ui->labelPerdiste->setVisible(true);//muestra un label con mensaje de perdiste
@@ -244,11 +243,11 @@ void gameplay::siPasa()
     QString tipo = Persona.obtenerNpc();
     if (p1 == 1)
     {
-        Puntos->puntaje(tipo);
+        Puntos.puntaje(tipo);
     }
     else
     {
-        Puntos->puntaje2(tipo);
+        Puntos.puntaje2(tipo);
     }
     Persona.retPop();
 
@@ -272,11 +271,11 @@ void gameplay::noPasa()
     QString tipo = Persona.obtenerNpc();
     if (p1 == 0)
     {
-        Puntos->puntaje(tipo);
+        Puntos.puntaje(tipo);
     }
     else
     {
-        Puntos->puntaje2(tipo);
+        Puntos.puntaje2(tipo);
     }
     Persona.retPop();
 
@@ -313,6 +312,18 @@ void gameplay::CondicionesNivel()
 {
     emit clickedCondiciones();
     ui->stackedWidget->setCurrentWidget(ui->game_3);
+}
+
+void gameplay::VolverMesa()
+{
+    ui->stackedWidget->setCurrentWidget(ui->game);
+    emit clickedVolverMesa();
+}
+
+void gameplay::ComenzarSiguienteDia()
+{
+    ui->stackedWidget->setCurrentWidget(ui->game);
+    emit clickedSiguienteDia();
 }
 
 void gameplay::detenerReloj()
@@ -360,9 +371,9 @@ void gameplay::preguntar()
 
 
 void gameplay::MostrarCondiciones(){
-    ui->RNacionalidad->setText(condicion->obtenerNacionalidad());
-    ui->REstancia->setText(condicion->obtenerEstancia());
-    ui->REstCivil->setText(condicion->obtenerEstCivil());
-    ui->RFecha->setText(condicion->obtenerFecha());
-    ui->RTipoVisita->setText(condicion->obtenerTipoVisita());
+    ui->RNacionalidad->setText(condicion.obtenerNacionalidad());
+    ui->REstancia->setText(condicion.obtenerEstancia());
+    ui->REstCivil->setText(condicion.obtenerEstCivil());
+    ui->RFecha->setText(condicion.obtenerFecha());
+    ui->RTipoVisita->setText(condicion.obtenerTipoVisita());
 }
