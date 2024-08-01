@@ -35,7 +35,7 @@
       <string notr="true"/>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>2</number>
      </property>
      <widget class="QWidget" name="game">
       <layout class="QVBoxLayout" name="verticalLayout_13">
@@ -629,7 +629,7 @@
        </item>
       </layout>
      </widget>
-     <widget class="QWidget" name="game_2">
+     <widget class="QWidget" name="PantallaPuntuacion">
       <property name="styleSheet">
        <string notr="true">#game_2{
 	border-image: url(:/mesa.png);}
