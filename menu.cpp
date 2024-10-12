@@ -3,16 +3,25 @@
 
 #include <QVBoxLayout>
 Menu::Menu(QWidget *parent)
-    : QWidget(parent) ,Puntos(0)
+    : QWidget(parent)
     , ui(new Ui::Menu)
 
 {
-    puntos2 = new puntos();
-
+    Puntos = 0;
     ui->setupUi(this);
-    // Ocultar el botón Siguiente al inicio
+
+    //WIDGETS
     ui->BotonContinuar->setVisible(false);
 
+    // Conexiones pantalla principal
+    // Locura rareza dijo facu
+    connect(ui->BotonJugar, &QPushButton::clicked, this, &Menu::SeleccionarDif);
+    connect(ui->BotonAtras, &QPushButton::clicked, this, &Menu::MenuPrincipal);
+
+    // Conectamos el boton de jugar:
+    connect(ui->BotonContinuar, &QPushButton::clicked, this, &Menu::clickeoJugar);
+
+    //CONEXIONES
     connect(ui->BotonBaja, &QPushButton::clicked,this, &Menu::DificultadBaja);
     connect(ui->BotonMedia, &QPushButton::clicked,this, &Menu::DificultadMedia);
     connect(ui->BotonAlta, &QPushButton::clicked,this, &Menu::DificultadAlta);
@@ -24,47 +33,39 @@ Menu::~Menu()
     delete ui;
 }
 
-
-QPushButton* Menu::getBotonJugar() {//esto es para llamar en el qstaked
-    return ui->BotonJugar;
-}
-
-QPushButton* Menu::getBotonAtras() {//esto es para llamr en el qstaked
-    return ui->BotonAtras;
+void Menu::clickeoJugar()
+{
+    emit clickedJugar(Puntos);
 }
 
 void Menu::DificultadBaja(){//Aca tiene que ir el codigo de cada dificultad
 //puntos=100
-    puntos2->puntuacion_asignada1();//asigna los puntos
-ui->BotonContinuar->setVisible(true);
+    Puntos = 0;
+    ui->BotonContinuar->setVisible(true);
 }
 
 void Menu::DificultadMedia(){//Aca tiene que ir el codigo de cada dificultad
 //puntos=50
-    puntos2->puntuacion2_asignada2();//asigna los puntos
-ui->BotonContinuar->setVisible(true);
+    Puntos = 1;
+    ui->BotonContinuar->setVisible(true);
 }
 
 void Menu::DificultadAlta(){//Aca tiene que ir el codigo de cada dificultad
 //puntos=0;
-    puntos2->puntuacion3_asignada3();//asigna los puntos
-ui->BotonContinuar->setVisible(true);
+    Puntos = 2;
+    ui->BotonContinuar->setVisible(true);
 }
 
 void Menu::Exit(){//Cierra la aplicacion
     QApplication::quit();
 }
 
-void Menu::Continuar(){//Boton para comenzar el juego(debe irse a la pantalla del juego)
-
-
-}
-
-puntos *Menu::getPuntos2() const
+void Menu::SeleccionarDif()
 {
-    return puntos2;
+    ui->MenuStacked->setCurrentIndex(1);
 }
 
-QPushButton* Menu::getBotonContinuar(){
-    return ui->BotonContinuar;
+void Menu::MenuPrincipal()
+{
+    ui->MenuStacked->setCurrentIndex(0);
 }

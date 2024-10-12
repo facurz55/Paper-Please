@@ -7,33 +7,20 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    stackedWidget = new QStackedWidget;
+    //STACKEDWIDGET
+    stackedWidget = new QStackedWidget(this);
+
     setCentralWidget(stackedWidget);
+    menuPage = new Menu(this);
+    game = new gameplay(this);
 
-    menuPage = new Menu();
-    game = new gameplay();
-    game->setUpPuntos(menuPage->getPuntos2());
-    page_2 = menuPage->findChild<QWidget*>("page_2");
-    game_2 = game->findChild<QWidget*>("game_2");
-    game_3 = game->findChild<QWidget*>("game_3");
-
-    stackedWidget->addWidget(menuPage); //añade la ventana del menu
-    stackedWidget->addWidget(page_2);  // Añade page_2 al stackedWidget
-    stackedWidget->addWidget(game); //añade la ventana donde jugamos
-    stackedWidget->addWidget(game_2);
-    stackedWidget->addWidget(game_3);
-
-    connect(menuPage->getBotonJugar(), &QPushButton::clicked, this, &MainWindow::CambiarPagina);
-    connect(menuPage->getBotonAtras(), &QPushButton::clicked, this, &MainWindow::Volver);
-    connect(menuPage->getBotonContinuar(), &QPushButton::clicked, this, &MainWindow::ComenzarJuego);
-    connect(game->getBotonSiguiente_NPC(), &QPushButton::clicked, this, &MainWindow::SalirNPC);
-    connect(game->getBotonSiguienteDia(), &QPushButton::clicked, this, &MainWindow::ComenzarSiguieneDia);
-    connect(game->getReiniciarDia(), &QPushButton::clicked, this, &MainWindow::ReinciarElNivel);
-    connect(game->getFinalizarTurno(), &QPushButton::clicked, this, &MainWindow::PantallaPuntos);
-    connect(game->getBotonCondiciones(), &QPushButton::clicked, this, &MainWindow::PantallaCondiciones);
-    connect(game->getBotonVolver(), &QPushButton::clicked, this, &MainWindow::VolverALaMesa);
+    stackedWidget->addWidget(menuPage);     //añade la ventana del menu
+    stackedWidget->addWidget(game);         //añade la ventana donde jugamos
 
     stackedWidget->setCurrentWidget(menuPage);
+
+    //CONEXIONES de botones.
+    connect(menuPage, &Menu::clickedJugar, this, &MainWindow::ComenzarJuego);
 }
 
 MainWindow::~MainWindow()
@@ -41,50 +28,18 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::VolverALaMesa(){
-    stackedWidget->setCurrentWidget(game);
-}
-
-void MainWindow::PantallaCondiciones(){
-    stackedWidget->setCurrentWidget(game_3);
-}
-
-void MainWindow::ComenzarSiguieneDia(){//<----------------------ACA SE COMIENZA EL SIGUEINTE DIA.
-    stackedWidget->setCurrentWidget(game);
-    EntradaNPC();
-}
-
-void MainWindow::ReinciarElNivel(){//<----------------------ACA SE REINCIA EL NIVEL
-    stackedWidget->setCurrentWidget(game);
-    EntradaNPC();
-}
-
-void MainWindow::PantallaPuntos(){//<----------------------ACA SE INCIA LA PANTALLA PUNTOS CUANDO SE PRESIONA EL BOTON FINALIZAR TURNO
-    stackedWidget->setCurrentWidget(game_2);
-}
-
-void MainWindow::CambiarPagina()
-{
-    stackedWidget->setCurrentWidget(page_2);
-}
-
 void MainWindow::Volver(){
     stackedWidget->setCurrentWidget(menuPage);
 }
 
-void MainWindow::ComenzarJuego() {
+void MainWindow::ComenzarJuego(int Dificultad) {
 
     // Cambia el widget actual del stackedWidget al widget del juego (game)
     stackedWidget->setCurrentWidget(game);
 
+    game->setUpPuntos(Dificultad);
     game->iniciarReloj(); //el reloj comienza cuando se produse el cambio de ventana
-
-    EntradaNPC();
-}
-
-void MainWindow::EntradaNPC(){
     game->EntrarNPC();
-
 }
 
 void MainWindow::resizeEvent(QResizeEvent *event)
@@ -112,11 +67,4 @@ void MainWindow::resizeEvent(QResizeEvent *event)
         // Establece la nueva geometría del labelNPC con el rectángulo calculado
         labelNPC->setGeometry(newRect);
     }
-}
-
-void MainWindow::SalirNPC() {
-    game->SalirNPC();
-
-    // Conecta la señal finished() de la animación para reiniciar ComenzarJuego
-    connect(game, &gameplay::SalioElNPC, this, &MainWindow::EntradaNPC);
 }
