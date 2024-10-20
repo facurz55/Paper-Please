@@ -1,7 +1,8 @@
 #include "menu.h"
 #include "ui_menu.h"
-
 #include <QVBoxLayout>
+#include "guardarpartida/guardarpartida.h"
+
 Menu::Menu(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::Menu)
@@ -9,6 +10,8 @@ Menu::Menu(QWidget *parent)
 {
     Puntos = 0;
     ui->setupUi(this);
+
+    guardarpartida Guardar;
 
     //WIDGETS
     ui->BotonContinuar->setVisible(false);
