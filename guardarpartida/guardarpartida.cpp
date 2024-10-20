@@ -14,9 +14,6 @@ void guardarpartida::guardar(DatosJugador datos, int slot)
         return;
 
     archivo.write(reinterpret_cast<char*>(&datos), sizeof(DatosJugador));
-
-    //QDataStream info(&archivo);
-    //info << datos.nombre << datos.puntuacion << datos.multas << datos.nivel;
     archivo.close();
 }
 
