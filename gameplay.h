@@ -12,6 +12,7 @@
 #include "puntos.h"
 #include "condiciones.h"
 #include "multas.h"
+#include "guardarpartida/datosjugador.h"
 
 namespace Ui {
 class gameplay;
@@ -23,6 +24,9 @@ class gameplay : public QWidget
 
 public:
     explicit gameplay(QWidget *parent = nullptr);
+    void Empezar(int Dificultad);
+    void Empezar(DatosJugador datos);
+
     void setUpPuntos(int Dificultad);
     ~gameplay();
     void EntrarNPC();
@@ -38,6 +42,7 @@ signals:
     void clickedFinalizar();
     void clickedCondiciones();
     void clickedVolverMesa();
+    void GuardarDatos(DatosJugador);
 
 public slots:
     void iniciarReloj();
@@ -68,6 +73,7 @@ private slots:
     void PrepararAnimacionSalida();
 
 private:
+    int Nivel;
     Ui::gameplay *ui;
     QPropertyAnimation * animacionEntrada;
     QPropertyAnimation * animacionSalida;

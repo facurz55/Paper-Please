@@ -55,6 +55,23 @@ gameplay::gameplay(QWidget *parent)
     ui->stackedWidget->setCurrentWidget(ui->game);
 }
 
+void gameplay::Empezar(int Dificultad)
+{
+    Nivel = 1;
+
+    setUpPuntos(Dificultad);
+    iniciarReloj(); //el reloj comienza cuando se produse el cambio de ventana
+    EntrarNPC();
+}
+
+void gameplay::Empezar(DatosJugador datos)
+{
+    Nivel = datos.nivel;
+    Puntos.setPunto(datos.puntuacion);
+
+
+}
+
 void gameplay::setUpPuntos(int Dificultad)
 {
     switch (Dificultad){
@@ -92,6 +109,11 @@ void gameplay::DatosFinalizar() {//esto para verificar si perdiste, en caso que 
         ui->labelPuntos->setVisible(false);//se esconde los puntos, multas y el boton de siguiente dia
         ui->labelMultas->setVisible(false);
         ui->Boton_SiguienteDia->setVisible(false);
+
+        DatosJugador jugador;
+        jugador.multas = multaa; jugador.puntuacion = puntaje;
+        jugador.nivel = Nivel;
+        emit (jugador);
     } else {//en caso de que se siga el juego se muestra lo siguiente
         ui->labelPerdiste->setVisible(false);//no perdiste asi que no muestra esto
         ui->Boton_ReiniciarNivel->setVisible(false);

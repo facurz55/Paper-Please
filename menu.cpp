@@ -5,7 +5,7 @@
 
 Menu::Menu(QWidget *parent)
     : QWidget(parent)
-    , ui(new Ui::Menu)
+    , ui(new Ui::Menu), slot(0)
 
 {
     Puntos = 0;
@@ -29,6 +29,13 @@ Menu::Menu(QWidget *parent)
     connect(ui->BotonMedia, &QPushButton::clicked,this, &Menu::DificultadMedia);
     connect(ui->BotonAlta, &QPushButton::clicked,this, &Menu::DificultadAlta);
     connect(ui->BotonSalir, &QPushButton::clicked,this,&Menu::Exit);
+
+    ui->MenuStacked->setCurrentIndex(0);
+}
+
+void Menu::guardarPartida(DatosJugador datos)
+{
+    guardar.guardar(datos, slot);
 }
 
 Menu::~Menu()

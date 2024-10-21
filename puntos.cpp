@@ -62,3 +62,8 @@ void puntos::puntuacion3_asignada3(){
     punto=0;
 }
 
+void puntos::setPunto(int newPunto)
+{
+    punto = newPunto;
+}
+

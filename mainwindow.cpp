@@ -21,6 +21,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     //CONEXIONES de botones.
     connect(menuPage, &Menu::clickedJugar, this, &MainWindow::ComenzarJuego);
+    connect(game, &gameplay::GuardarDatos, menuPage, &Menu::guardarPartida);
 }
 
 MainWindow::~MainWindow()
@@ -36,10 +37,7 @@ void MainWindow::ComenzarJuego(int Dificultad) {
 
     // Cambia el widget actual del stackedWidget al widget del juego (game)
     stackedWidget->setCurrentWidget(game);
-
-    game->setUpPuntos(Dificultad);
-    game->iniciarReloj(); //el reloj comienza cuando se produse el cambio de ventana
-    game->EntrarNPC();
+    game->Empezar(Dificultad);
 }
 
 void MainWindow::resizeEvent(QResizeEvent *event)
