@@ -6,6 +6,7 @@
 #include <QLabel>
 #include<QPropertyAnimation>
 #include <QMainWindow>
+#include <QSoundEffect>
 
 #include "persona.h"
 #include "menu.h"
@@ -53,7 +54,7 @@ private slots:
 private:
     Ui::MainWindow *ui;
 
-
+    QSoundEffect sonido;
     Menu *menuPage;//Puntero de la clase
     gameplay *game;//Puntero para la pantalla donde jugamos
     QStackedWidget * stackedWidget; //Puntero para el StackedWidget
