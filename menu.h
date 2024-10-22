@@ -5,6 +5,7 @@
 #include <QVBoxLayout>
 #include <QPushButton>
 #include "puntos.h"
+#include "guardarpartida/guardarpartida.h"
 
 namespace Ui {
 class Menu;
@@ -17,6 +18,9 @@ class Menu : public QWidget
 public:
     explicit Menu(QWidget *parent = nullptr);
     ~Menu();
+
+public slots:
+    void guardarPartida(DatosJugador datos);
 
 signals:
     void clickedJugar(int dificultad);
@@ -33,8 +37,10 @@ private slots:
 
 
 private:
+    guardarpartida guardar;
     Ui::Menu *ui;
     int Puntos;//validar con cuanto empieza los puntos
+    int slot;
 };
 
 #endif // MENU_H
