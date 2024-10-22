@@ -9,6 +9,7 @@ Persona::Persona() {
     generar_Estado_civil();
     generar_Estancia();
     pensamientos();
+    datosArchivo();
 }
 
 // Métodos de generación de datos
@@ -82,35 +83,89 @@ void Persona::generar_Estancia()
     }
 }
 
+
+
+
+void Persona::datosArchivo() {
+    QDebug<<"aiaghjakuafafusb}}}}}";
+
+    QFile archivoNomMale("C:/Users/maria/OneDrive/Documentos/GitHub/Paper-Please/Archivos de texto/nombres masculinos.txt");
+    QFile archivoNomFem("C:\Users\maria\OneDrive\Documentos\GitHub\Paper-Please\Archivos de texto\nombres femeninos.txt");
+    QFile archivoAp("C:\Users\maria\OneDrive\Documentos\GitHub\Paper-Please\Archivos de texto\apellidos.txt");
+    if (!archivoNomMale.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        qWarning() << "No se pudo abrir el archivo de nombres masculinos 1";
+        return;
+    }
+    if (!archivoNomFem.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        qWarning() << "No se pudo abrir el archivo de nombres masculinos 2";
+        return;
+    }
+    if (!archivoAp.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        qWarning() << "No se pudo abrir el archivo de nombres masculinos 3";
+        return;
+    }
+
+    QTextStream in1(&archivoNomMale);
+    while (!in1.atEnd()) {
+        QString nombreMale = in1.readLine().trimmed();
+        if (!nombreMale.isEmpty()) {
+            vectorNombresMale.append(nombreMale);
+        }
+    }
+    QTextStream in2(&archivoNomFem);
+    while (!in2.atEnd()) {
+        QString nombreFem = in2.readLine().trimmed();
+        if (!nombreFem.isEmpty()) {
+            vectorNombresFem.append(nombreFem);
+        }
+    }
+    QTextStream in3(&archivoAp);
+    while (!in3.atEnd()) {
+        QString apellidos = in3.readLine().trimmed();
+        if (!apellidos.isEmpty()) {
+            vectorApellidos.append(apellidos);
+        }
+    }
+
+    archivoNomMale.close();
+    archivoNomFem.close();
+    archivoAp.close();
+    return;
+}
+
+
 void Persona::generarNombres() {
     QStringList generos = {"masculino", "femenino"};
     int gen = QRandomGenerator::global()->bounded(generos.size());
     genero = generos[gen];
-    QStringList nombresM = {"Gabriel", "Andrés", "Diego", "Ricardo", "Mario", "Fernando", "Javier", "Daniel", "Emilio", "Sebastián"};
-    QStringList nombresF = {"María", "Ana", "Laura", "Sofía", "Carmen", "Isabel", "Patricia", "Julia", "Elena", "Marta"};
+
+    /*QStringList nombresM = {"Gabriel", "Andrés", "Diego", "Ricardo", "Mario", "Fernando", "Javier", "Daniel", "Emilio", "Sebastián"};
+    QStringList nombresF = {"María", "Ana", "Laura", "Sofía", "Carmen", "Isabel", "Patricia", "Julia", "Elena", "Marta"};*/
     int ran = QRandomGenerator::global()->bounded(0, 100);
     if (gen == 0) {
-        int nbm = QRandomGenerator::global()->bounded(nombresM.size());
-        nombre = nombresM[nbm];
+        int nbm = QRandomGenerator::global()->bounded(vectorNombresMale.size());
+        nombre = vectorNombresMale[nbm];
         if (ran < 10)
         {
-            int nbf = QRandomGenerator::global()->bounded(nombresF.size());
-            nombre = nombresF[nbf];
+            int nbf = QRandomGenerator::global()->bounded(vectorNombresFem.size());
+            nombre = vectorNombresFem[nbf];
             pop = 1;
         }
     } else {
-        int nbf = QRandomGenerator::global()->bounded(nombresF.size());
-        nombre = nombresF[nbf];
+        int nbf = QRandomGenerator::global()->bounded(vectorNombresFem.size());
+        nombre = vectorNombresFem[nbf];
         if (ran < 10)
         {
-            int nbm = QRandomGenerator::global()->bounded(nombresM.size());
-            nombre = nombresM[nbm];
+            int nbm = QRandomGenerator::global()->bounded(vectorNombresMale.size());
+            nombre = vectorNombresMale[nbm];
             pop = 1;
         }
     }
-    QStringList apellidos = {"García", "Rodríguez", "López", "Martínez", "González", "Gomez", "Sánchez", "Ramírez", "Torres", "Flores", "Navarro", "Molina"};
-    int na = QRandomGenerator::global()->bounded(apellidos.size());
-    apellido = apellidos[na];
+
+
+    //QStringList apellidos = {"García", "Rodríguez", "López", "Martínez", "González", "Gomez", "Sánchez", "Ramírez", "Torres", "Flores", "Navarro", "Molina"};
+    int na = QRandomGenerator::global()->bounded(vectorApellidos.size());
+    apellido = vectorApellidos[na];
 }
 
 void Persona::generarFecha() {
