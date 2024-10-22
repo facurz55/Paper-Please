@@ -89,19 +89,16 @@ void Persona::generar_Estancia()
 void Persona::datosArchivo() {
     QDebug<<"aiaghjakuafafusb}}}}}";
 
-    QFile archivoNomMale("C:/Users/maria/OneDrive/Documentos/GitHub/Paper-Please/Archivos de texto/nombres masculinos.txt");
+    QFile archivoNomMale("C:\Users\maria\OneDrive\Documentos\GitHub\Paper-Please\Archivos de texto\nombres masculinos.txt");
     QFile archivoNomFem("C:\Users\maria\OneDrive\Documentos\GitHub\Paper-Please\Archivos de texto\nombres femeninos.txt");
     QFile archivoAp("C:\Users\maria\OneDrive\Documentos\GitHub\Paper-Please\Archivos de texto\apellidos.txt");
-    if (!archivoNomMale.open(QIODevice::ReadOnly | QIODevice::Text)) {
-        qWarning() << "No se pudo abrir el archivo de nombres masculinos 1";
+    if (!archivoNomMale.open()) {
         return;
     }
-    if (!archivoNomFem.open(QIODevice::ReadOnly | QIODevice::Text)) {
-        qWarning() << "No se pudo abrir el archivo de nombres masculinos 2";
+    if (!archivoNomFem.open()) {
         return;
     }
-    if (!archivoAp.open(QIODevice::ReadOnly | QIODevice::Text)) {
-        qWarning() << "No se pudo abrir el archivo de nombres masculinos 3";
+    if (!archivoAp.open()) {
         return;
     }
 
