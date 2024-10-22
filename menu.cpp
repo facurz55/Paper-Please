@@ -1,6 +1,8 @@
 #include "menu.h"
 #include "ui_menu.h"
 #include <QVBoxLayout>
+#include <QMediaPlayer>
+#include <QAudioDevice>
 #include "guardarpartida/guardarpartida.h"
 
 Menu::Menu(QWidget *parent)
@@ -15,6 +17,22 @@ Menu::Menu(QWidget *parent)
 
     //WIDGETS
     ui->BotonContinuar->setVisible(false);
+
+    // Inicializa el reproductor de música
+    backgroundMusic = new QMediaPlayer(this);
+
+    // Inicializa QAudioOutput para controlar el volumen
+    audioOutput = new QAudioOutput(this);
+    backgroundMusic->setAudioOutput(audioOutput);  // Asigna el audio output al reproductor
+
+    // Establece el archivo de música
+    backgroundMusic->setSource(QUrl::fromLocalFile("C:/Users/LORD FACUNDINHO/Desktop/Paper-Please/counter16.wav"));
+
+    // Configura el volumen a través de QAudioOutput
+    audioOutput->setVolume(0.5);  // Volumen en rango de 0.0 a 1.0
+    backgroundMusic->setLoops(QMediaPlayer::Infinite); // Hacer que la música loopee
+    // Reproduce la música
+    backgroundMusic->play();
 
     // Conexiones pantalla principal
     // Locura rareza dijo facu
@@ -43,8 +61,15 @@ Menu::~Menu()
     delete ui;
 }
 
+// Método para detener la música
+void Menu::stopMusic()
+{
+    backgroundMusic->stop(); // Detener la música
+}
+
 void Menu::clickeoJugar()
 {
+    stopMusic(); // Detener la música al jugar
     emit clickedJugar(Puntos);
 }
 

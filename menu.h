@@ -4,6 +4,9 @@
 #include <QWidget>
 #include <QVBoxLayout>
 #include <QPushButton>
+#include <QMediaPlayer>
+#include <QAudioOutput>
+#include <QAudioDevice>
 #include "puntos.h"
 #include "guardarpartida/guardarpartida.h"
 
@@ -21,6 +24,7 @@ public:
 
 public slots:
     void guardarPartida(DatosJugador datos);
+    void stopMusic(); // Método para detener la música
 
 signals:
     void clickedJugar(int dificultad);
@@ -41,6 +45,9 @@ private:
     Ui::Menu *ui;
     int Puntos;//validar con cuanto empieza los puntos
     int slot;
+
+    QMediaPlayer *backgroundMusic;
+    QAudioOutput *audioOutput;      // Puntero a QAudioOutput
 };
 
 #endif // MENU_H

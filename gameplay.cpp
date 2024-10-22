@@ -1,6 +1,5 @@
 #include "gameplay.h"
 #include "ui_gameplay.h"
-#include <QDebug>
 
 gameplay::gameplay(QWidget *parent)
     : QWidget(parent)
