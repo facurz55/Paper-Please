@@ -2,6 +2,7 @@
 
 Persona::Persona() {
     // Inicializar los datos del pasaporte de forma aleatoria
+    datosArchivo();
     generarNombres();  // para generar el nombre
     generarFecha();
     generarNacionalidad();
@@ -9,7 +10,7 @@ Persona::Persona() {
     generar_Estado_civil();
     generar_Estancia();
     pensamientos();
-    datosArchivo();
+
 }
 
 // Métodos de generación de datos
@@ -84,21 +85,55 @@ void Persona::generar_Estancia()
 }
 
 
-
-
 void Persona::datosArchivo() {
-    QDebug<<"aiaghjakuafafusb}}}}}";
 
-    QFile archivoNomMale("C:\Users\maria\OneDrive\Documentos\GitHub\Paper-Please\Archivos de texto\nombres masculinos.txt");
-    QFile archivoNomFem("C:\Users\maria\OneDrive\Documentos\GitHub\Paper-Please\Archivos de texto\nombres femeninos.txt");
-    QFile archivoAp("C:\Users\maria\OneDrive\Documentos\GitHub\Paper-Please\Archivos de texto\apellidos.txt");
-    if (!archivoNomMale.open()) {
+    std::ifstream archivoMale("C:/Users/maria/OneDrive/Documentos/GitHub/Paper-Please/Archivos de texto/nombres masculinos.txt");
+    std::ifstream archivoFem("C:/Users/maria/OneDrive/Documentos/GitHub/Paper-Please/Archivos de texto/nombres femeninos.txt");
+    std::ifstream archivoApellidos("C:/Users/maria/OneDrive/Documentos/GitHub/Paper-Please/Archivos de texto/apellidos.txt");
+    if (!archivoMale.is_open()) {
         return;
     }
-    if (!archivoNomFem.open()) {
+    if (!archivoFem.is_open()) {
         return;
     }
-    if (!archivoAp.open()) {
+    if (!archivoApellidos.is_open()) {
+        return;
+    }
+
+    std::string nombreM;
+    std::string nombreF;
+    std::string apellido;
+    while (std::getline(archivoMale, nombreM)) {
+        if (!nombreM.empty()) {
+            VnombresMale.push_back(nombreM);
+        }
+    }
+    while (std::getline(archivoMale, nombreF)) {
+        if (!nombreF.empty()) {
+            VnombresFem.push_back(nombreF);
+        }
+    }
+    while (std::getline(archivoMale, apellido)) {
+        if (!apellido.empty()) {
+            Vapellidos.push_back(apellido);
+        }
+    }
+    archivoMale.close();
+    archivoFem.close();
+    archivoApellidos.close();
+
+
+
+    /*QFile archivoNomMale("C:/Users/maria/OneDrive/Documentos/GitHub/Paper-Please/Archivos de texto/nombres masculinos.txt");
+    QFile archivoNomFem("C:/Users/maria/OneDrive/Documentos/GitHub/Paper-Please/Archivos de texto/nombres femeninos.txt");
+    QFile archivoAp("C:/Users/maria/OneDrive/Documentos/GitHub/Paper-Please/Archivos de texto/apellidos.txt");
+    if (!archivoNomMale.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        return;
+    }
+    if (!archivoNomFem.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        return;
+    }
+    if (!archivoAp.open(QIODevice::ReadOnly | QIODevice::Text)) {
         return;
     }
 
@@ -109,6 +144,7 @@ void Persona::datosArchivo() {
             vectorNombresMale.append(nombreMale);
         }
     }
+
     QTextStream in2(&archivoNomFem);
     while (!in2.atEnd()) {
         QString nombreFem = in2.readLine().trimmed();
@@ -116,6 +152,7 @@ void Persona::datosArchivo() {
             vectorNombresFem.append(nombreFem);
         }
     }
+
     QTextStream in3(&archivoAp);
     while (!in3.atEnd()) {
         QString apellidos = in3.readLine().trimmed();
@@ -126,8 +163,7 @@ void Persona::datosArchivo() {
 
     archivoNomMale.close();
     archivoNomFem.close();
-    archivoAp.close();
-    return;
+    archivoAp.close();*/
 }
 
 
@@ -140,29 +176,34 @@ void Persona::generarNombres() {
     QStringList nombresF = {"María", "Ana", "Laura", "Sofía", "Carmen", "Isabel", "Patricia", "Julia", "Elena", "Marta"};*/
     int ran = QRandomGenerator::global()->bounded(0, 100);
     if (gen == 0) {
-        int nbm = QRandomGenerator::global()->bounded(vectorNombresMale.size());
-        nombre = vectorNombresMale[nbm];
+        int nbm = QRandomGenerator::global()->bounded(VnombresMale.size());
+        QString Male = QString::fromStdString(VnombresMale[nbm]);
+        nombre = Male;
         if (ran < 10)
         {
-            int nbf = QRandomGenerator::global()->bounded(vectorNombresFem.size());
-            nombre = vectorNombresFem[nbf];
+            int nbf = QRandomGenerator::global()->bounded(VnombresFem.size());
+            QString Fem = QString::fromStdString(VnombresFem[nbf]);
+            nombre = Fem;
             pop = 1;
         }
     } else {
-        int nbf = QRandomGenerator::global()->bounded(vectorNombresFem.size());
-        nombre = vectorNombresFem[nbf];
+        int nbf = QRandomGenerator::global()->bounded(VnombresFem.size());
+        QString Fem = QString::fromStdString(VnombresFem[nbf]);
+        nombre = Fem;
         if (ran < 10)
         {
-            int nbm = QRandomGenerator::global()->bounded(vectorNombresMale.size());
-            nombre = vectorNombresMale[nbm];
+            int nbm = QRandomGenerator::global()->bounded(VnombresMale.size());
+            QString Male = QString::fromStdString(VnombresMale[nbm]);
+            nombre = Male;
             pop = 1;
         }
     }
 
 
     //QStringList apellidos = {"García", "Rodríguez", "López", "Martínez", "González", "Gomez", "Sánchez", "Ramírez", "Torres", "Flores", "Navarro", "Molina"};
-    int na = QRandomGenerator::global()->bounded(vectorApellidos.size());
-    apellido = vectorApellidos[na];
+    int na = QRandomGenerator::global()->bounded(Vapellidos.size());
+    QString APE = QString::fromStdString(Vapellidos[na]);
+    apellido = APE;
 }
 
 void Persona::generarFecha() {

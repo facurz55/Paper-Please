@@ -4,9 +4,16 @@
 #include <QStringList>
 #include <QDebug>
 #include <QRandomGenerator>
+
 #include <QFile>
 #include <QTextStream>
 #include <QVector>
+
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <string>
+
 #include <time.h>
 
 // #include "gameplay.h"
@@ -42,9 +49,13 @@ public:
 
     //Faltan Estancia, residencia, proposito del viaje, integrantes, antecedentes
 protected:
-    QVector<QString> vectorApellidos;
     QVector<QString> vectorNombresMale;
     QVector<QString> vectorNombresFem;
+    QVector<QString> vectorApellidos;
+    std::vector<std::string> VnombresMale;
+    std::vector<std::string> VnombresFem;
+    std::vector<std::string> Vapellidos;
+
     QString tipoNpc;
     QString genero;
     QString nombre;
