@@ -89,53 +89,60 @@ void Persona::generar_Estancia()
 
 void Persona::datosArchivo() {
 
-    std::ifstream archivoMale("C:/Users/maria/OneDrive/Documentos/GitHub/Paper-Please/Archivos de texto/nombres masculinos.txt");
-    std::ifstream archivoFem("C:/Users/maria/OneDrive/Documentos/GitHub/Paper-Please/Archivos de texto/nombres femeninos.txt");
-    std::ifstream archivoApellidos("C:/Users/maria/OneDrive/Documentos/GitHub/Paper-Please/Archivos de texto/apellidos.txt");
-    if (!archivoMale.is_open()) {
+    QFile archivoNomMale("qrc:/Archivos de texto/nombres masculinos.txt");
+    QFile archivoNomFem("qrc:/Archivos de texto/nombres femeninos.txt");
+    QFile archivoAp("qrc:/Archivos de texto/apellidos.txt");
+    if (!archivoNomMale.open(QFile::WriteOnly)){
         return;
     }
-    if (!archivoFem.is_open()) {
+    if (!archivoNomFem.open(QFile::WriteOnly)) {
         return;
     }
-    if (!archivoApellidos.is_open()) {
+    if (!archivoAp.open(QFile::WriteOnly)) {
         return;
     }
 
-    std::string nombreM;
-    std::string nombreF;
-    std::string apellido;
-    while (std::getline(archivoMale, nombreM)) {
-        if (!nombreM.empty()) {
-            VnombresMale.push_back(nombreM);
+    QTextStream in1(&archivoNomMale);
+    while (!in1.atEnd()) {
+        QString nombreMale = in1.readLine().trimmed();
+        if (!nombreMale.isEmpty()) {
+            vectorNombresMale.append(nombreMale);
         }
     }
-    while (std::getline(archivoMale, nombreF)) {
-        if (!nombreF.empty()) {
-            VnombresFem.push_back(nombreF);
+    QTextStream in2(&archivoNomFem);
+    while (!in2.atEnd()) {
+        QString nombreFem = in2.readLine().trimmed();
+        if (!nombreFem.isEmpty()) {
+            vectorNombresFem.append(nombreFem);
         }
     }
-    while (std::getline(archivoMale, apellido)) {
-        if (!apellido.empty()) {
-            Vapellidos.push_back(apellido);
+    QTextStream in3(&archivoAp);
+    while (!in3.atEnd()) {
+        QString apellidos = in3.readLine().trimmed();
+        if (!apellidos.isEmpty()) {
+            vectorApellidos.append(apellidos);
         }
     }
-    archivoMale.close();
-    archivoFem.close();
-    archivoApellidos.close();
+
+    archivoNomMale.close();
+    archivoNomFem.close();
+    archivoAp.close();
+    return;
+}
 
 
 
-    /*QFile archivoNomMale("C:/Users/maria/OneDrive/Documentos/GitHub/Paper-Please/Archivos de texto/nombres masculinos.txt");
-    QFile archivoNomFem("C:/Users/maria/OneDrive/Documentos/GitHub/Paper-Please/Archivos de texto/nombres femeninos.txt");
-    QFile archivoAp("C:/Users/maria/OneDrive/Documentos/GitHub/Paper-Please/Archivos de texto/apellidos.txt");
-    if (!archivoNomMale.open(QIODevice::ReadOnly | QIODevice::Text)) {
+
+    /*QFile archivoNomMale(":/Archivos de texto/nombres masculinos.txt");
+    QFile archivoNomFem(":/Archivos de texto/nombres femeninos.txt");
+    QFile archivoAp(":/Archivos de texto/apellidos.txt");
+    if (!archivoNomMale.open(QFile::WriteOnly)){
         return;
     }
-    if (!archivoNomFem.open(QIODevice::ReadOnly | QIODevice::Text)) {
+    if (!archivoNomFem.open(QFile::WriteOnly)) {
         return;
     }
-    if (!archivoAp.open(QIODevice::ReadOnly | QIODevice::Text)) {
+    if (!archivoAp.open(QFile::WriteOnly)) {
         return;
     }
 
@@ -165,8 +172,8 @@ void Persona::datosArchivo() {
 
     archivoNomMale.close();
     archivoNomFem.close();
-    archivoAp.close();*/
-}
+    archivoAp.close();
+}*/
 
 
 void Persona::generarNombres() {
