@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>768</width>
-    <height>603</height>
+    <width>831</width>
+    <height>659</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,7 +16,7 @@
   <property name="styleSheet">
    <string notr="true"/>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout_2">
+  <layout class="QHBoxLayout" name="horizontalLayout_2">
    <property name="spacing">
     <number>0</number>
    </property>
@@ -33,7 +33,16 @@
     <number>0</number>
    </property>
    <item>
-    <widget class="QStackedWidget" name="stackedWidget">
+    <widget class="QStackedWidget" name="MenuStacked">
+     <property name="styleSheet">
+      <string notr="true">#page_3{
+	
+	border-image: url(:/_025fe56e-7f50-405f-b902-336be60dd152.jfif);
+}</string>
+     </property>
+     <property name="currentIndex">
+      <number>2</number>
+     </property>
      <widget class="QWidget" name="page">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -44,12 +53,11 @@
       <property name="styleSheet">
        <string notr="true">#page{
 border-image: url(:/_025fe56e-7f50-405f-b902-336be60dd152.jfif);
-aligment: AlignHCenter;
 }</string>
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout_3">
        <item>
-        <layout class="QVBoxLayout" name="verticalLayout_3" stretch="0,0">
+        <layout class="QVBoxLayout" name="verticalLayout_3" stretch="0,0,0">
          <property name="spacing">
           <number>0</number>
          </property>
@@ -75,6 +83,19 @@ aligment: AlignHCenter;
            </property>
            <property name="text">
             <string>JUGAR</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="BotonCargarPartida">
+           <property name="minimumSize">
+            <size>
+             <width>50</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>CARGAR PARTIDA</string>
            </property>
           </widget>
          </item>
@@ -145,7 +166,7 @@ border-image: url(:/_025fe56e-7f50-405f-b902-336be60dd152.jfif);
             <string>seleccionar la dificultad</string>
            </property>
            <property name="alignment">
-            <set>Qt::AlignCenter</set>
+            <set>Qt::AlignmentFlag::AlignCenter</set>
            </property>
            <property name="margin">
             <number>0</number>
@@ -251,6 +272,94 @@ border-image: url(:/_025fe56e-7f50-405f-b902-336be60dd152.jfif);
             <string>CONTINUAR</string>
            </property>
           </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="page_3">
+      <layout class="QHBoxLayout" name="horizontalLayout_4">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_6">
+         <property name="spacing">
+          <number>0</number>
+         </property>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_12">
+           <item>
+            <widget class="QLabel" name="SeleccionarSLot">
+             <property name="styleSheet">
+              <string notr="true">#SeleccionarSLot{
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(0, 0, 0, 255), stop:0.33 rgba(0, 0, 0, 255), stop:0.34 rgba(255, 30, 30, 255), stop:0.66 rgba(255, 0, 0, 255), stop:0.67 rgba(255, 255, 0, 255), stop:1 rgba(255, 255, 0, 255));
+}</string>
+             </property>
+             <property name="text">
+              <string>SELECCIONA LA DEFICULTAD</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_11">
+           <item>
+            <widget class="QPushButton" name="Slot1">
+             <property name="text">
+              <string>SLOT 1</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="Slot3">
+             <property name="text">
+              <string>SLOT 2</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="Slot2">
+             <property name="text">
+              <string>SLOT 3</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_6">
+           <property name="spacing">
+            <number>6</number>
+           </property>
+           <item>
+            <widget class="QPushButton" name="atrasMenu">
+             <property name="text">
+              <string>ATRAS</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="botonContinua">
+             <property name="text">
+              <string>CONTINUAR</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
         </layout>
        </item>

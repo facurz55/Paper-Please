@@ -1,8 +1,5 @@
 #include "condiciones.h"
-#include <QRandomGenerator>
-#include "persona.h"
-#include <QString>
-
+//antonela pane
 condiciones::condiciones() {
     NPC = new Persona();  // Inicializar el puntero
     generarCondicionesNivel1();
@@ -59,49 +56,6 @@ void condiciones::generarCondicionesNivel1(){
         estCivil = "CUALQUIERA";
     }
 }
-
-/*void condiciones::generarCondiciones2(){
-    int numeroIF = generarNumero();
-    int numeroIF2 = generarNumero2();
-
-    if(numeroIF == 1 || numeroIF2 == 1){
-        nacionalidad = Persona.obtenerNacionalidad();
-    }else{
-        nacionalidad = "CUALQUIERA";
-    }
-
-    if(numeroIF == 2 || numeroIF2 == 2){
-        fecha = Persona.obtenerFecha();
-    }else{
-        fecha = "CUALQUIERA";
-    }
-
-    if(numeroIF == 3 || numeroIF2 == 3){
-        tipoVisita = Persona.getPersonaVisa();
-    }else{
-        tipoVisita = "CUALQUIERA";
-    }
-
-    if(numeroIF == 4 || nuemerIF2 == 4){
-        estancia = Persona.obtenerEstancia();
-    }else{
-        estancia = "CUALQUIERA";
-    }
-
-    if(numeroIF == 5 || numeroIF2 == 5){
-        estCivil = Persona.getPersonaEstCivil();
-    }else{
-        estCivil = "CUALQUIERA";
-    }
-
-    if(numeroIF== 6 || numeroIF2 == 6){
-        proposito = Persona.getPersonaVisa();
-    }
-
-    if(numeroIF == 7 || numeroIF2 == 7){
-        compania = Persona.
-    }
-}*/
 
 QString condiciones::obtenerEstancia(){
     return estancia;

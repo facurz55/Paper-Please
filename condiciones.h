@@ -1,6 +1,8 @@
 #ifndef CONDICIONES_H
 #define CONDICIONES_H
 #include <QString>
+#include <QRandomGenerator>
+
 #include "persona.h"
 
 class condiciones

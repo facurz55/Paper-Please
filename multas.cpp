@@ -1,9 +1,10 @@
 #include "multas.h"
 
-multas::multas() : multa(0)
-{
-}
 
+multas::multas()
+{
+    multa = 0;
+}
 
 void multas::incrementar()
 {

@@ -2,13 +2,17 @@
 #define PERSONA_H
 #include <QString>
 #include <QStringList>
+#include <QDebug>
+#include <QRandomGenerator>
+#include <time.h>
 
+// #include "gameplay.h"
 
 class Persona {
 public:
     Persona();
     void Mostrar_Datos();
-
+    //PERRA CACHONDA
     void generarNombres();
     void generarFecha();
     void generarNacionalidad();
@@ -17,7 +21,8 @@ public:
     void generar_Estancia();
     void pensamientos();
 
-    void retPop();
+    //Pop indica que el documento tiene almenos un error
+    void retPop(); //hace que "Pop" vuelva a valer 0 luego de ser utilizado
     int obtenerPop();
 
     QString obtenerGenero() const;

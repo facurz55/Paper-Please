@@ -1,8 +1,4 @@
 #include "persona.h"
-#include <QDebug>
-#include <QRandomGenerator>
-#include <stdlib.h>
-#include <time.h>
 
 Persona::Persona() {
     // Inicializar los datos del pasaporte de forma aleatoria
@@ -123,7 +119,7 @@ void Persona::generarFecha() {
 }
 
 void Persona::generarNacionalidad() {
-    QStringList nacionalidades = {"Bolita", "Paragua", "Brazuk", "Ario(argentino)"};
+    QStringList nacionalidades = {"boliviano/a", "paraguayo/a", "brasileño/a", "argentino/a"};
     int ns = QRandomGenerator::global()->bounded(nacionalidades.size());
     nacionalidad = nacionalidades[ns];
 }
@@ -134,13 +130,13 @@ void Persona::generarVisa() {
     if (vi <= 10)
     {
         Visa = Visas[1];
-        tipoNpc = "diplomatico";
+        tipoNpc = "diplomático";
     }
     if ((vi > 10)&&(vi <= 40))
     {
         Visa = Visas[0];
         int tipo = QRandomGenerator::global()->bounded(100);
-        tipoNpc = "aldeno";
+        tipoNpc = "aldeano";
         if (tipo > 90)
         {
             tipoNpc = "revolucionario";
@@ -152,7 +148,7 @@ void Persona::generarVisa() {
     {
         Visa = Visas[2];
         int tipo1 = QRandomGenerator::global()->bounded(100);
-        tipoNpc = "aldeno";
+        tipoNpc = "aldeano";
         if (tipo1 > 90)
         {
             tipoNpc = "revolucionario";
@@ -164,7 +160,7 @@ void Persona::generarVisa() {
     {
         Visa = Visas[3];
         int tipo2 = QRandomGenerator::global()->bounded(100);
-        tipoNpc = "aldeno";
+        tipoNpc = "aldeano";
         if (tipo2 > 90)
         {
             tipoNpc = "revolucionario";
@@ -175,7 +171,7 @@ void Persona::generarVisa() {
     if (vi > 90)
     {
         Visa = Visas[4];
-        tipoNpc = "refugiado politico";
+        tipoNpc = "refugiado político";
     }
 }
 
@@ -195,7 +191,7 @@ void Persona::pensamientos()
     pensamiento = ideas[pens];
     if (tipoNpc == "revolucionario")
     {
-        QStringList ideasmalas = {"Viva peron", "Cuba es no es verdadero comunismo", "Evo Morales"};
+        QStringList ideasmalas = {"En Cuba el pueblo es feliz", "Venezuela no es verdadero comunismo", "Evo Morales <3"};
         int pens = QRandomGenerator::global()->bounded(ideasmalas.size());
         pensamiento = ideasmalas[pens];
     }
@@ -253,16 +249,6 @@ QString Persona::obtenerPensamientos()
 QString Persona::obtenerNpc()
 {
     return tipoNpc;
-}
-
-void Persona::Mostrar_Datos() {
-    qDebug() << "Genero: " << this->obtenerGenero();
-    qDebug() << "Nombre: " << this->obtenerNombre();
-    qDebug() << "Apellido: " << this->obtenerApellido();
-    qDebug() << "Fecha de Nacimiento: " << this->obtenerFecha();
-    qDebug() << "Nacionalidad: " << this->obtenerNacionalidad();
-    qDebug() << "Tipo de Visa: " << this->getPersonaVisa();
-    qDebug() << "Estado Civil: " << this->getPersonaEstCivil();
 }
 
 
