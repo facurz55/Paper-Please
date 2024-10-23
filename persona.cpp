@@ -130,52 +130,6 @@ void Persona::datosArchivo() {
     return;
 }
 
-
-
-
-    /*QFile archivoNomMale(":/Archivos de texto/nombres masculinos.txt");
-    QFile archivoNomFem(":/Archivos de texto/nombres femeninos.txt");
-    QFile archivoAp(":/Archivos de texto/apellidos.txt");
-    if (!archivoNomMale.open(QFile::WriteOnly)){
-        return;
-    }
-    if (!archivoNomFem.open(QFile::WriteOnly)) {
-        return;
-    }
-    if (!archivoAp.open(QFile::WriteOnly)) {
-        return;
-    }
-
-    QTextStream in1(&archivoNomMale);
-    while (!in1.atEnd()) {
-        QString nombreMale = in1.readLine().trimmed();
-        if (!nombreMale.isEmpty()) {
-            vectorNombresMale.append(nombreMale);
-        }
-    }
-
-    QTextStream in2(&archivoNomFem);
-    while (!in2.atEnd()) {
-        QString nombreFem = in2.readLine().trimmed();
-        if (!nombreFem.isEmpty()) {
-            vectorNombresFem.append(nombreFem);
-        }
-    }
-
-    QTextStream in3(&archivoAp);
-    while (!in3.atEnd()) {
-        QString apellidos = in3.readLine().trimmed();
-        if (!apellidos.isEmpty()) {
-            vectorApellidos.append(apellidos);
-        }
-    }
-
-    archivoNomMale.close();
-    archivoNomFem.close();
-    archivoAp.close();
-}*/
-
-
 void Persona::generarNombres() {
     QStringList generos = {"masculino", "femenino"};
     int gen = generador.bounded(generos.size());
