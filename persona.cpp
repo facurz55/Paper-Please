@@ -87,12 +87,10 @@ void Persona::generar_Estancia()
 
 
 void Persona::datosArchivo() {
-    QDebug<<"aiaghjakuafafusb}}}}}";
-
-    QFile archivoNomMale("C:\Users\maria\OneDrive\Documentos\GitHub\Paper-Please\Archivos de texto\nombres masculinos.txt");
-    QFile archivoNomFem("C:\Users\maria\OneDrive\Documentos\GitHub\Paper-Please\Archivos de texto\nombres femeninos.txt");
-    QFile archivoAp("C:\Users\maria\OneDrive\Documentos\GitHub\Paper-Please\Archivos de texto\apellidos.txt");
-    if (!archivoNomMale.open()) {
+    QFile archivoNomMale(":/Archivos de texto/nombres masculinos.txt");
+    QFile archivoNomFem(":/Archivos de texto/nombres femeninos.txt");
+    QFile archivoAp(":/Archivos de texto/apellidos.txt");
+    if (!archivoNomMale.open(QFile::WriteOnly)){
         return;
     }
     if (!archivoNomFem.open()) {

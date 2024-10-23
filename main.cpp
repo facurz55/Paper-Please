@@ -1,6 +1,5 @@
 #include "mainwindow.h"
 #include <QApplication>
-#include "ventana_mariano.h"
 
 int main(int argc, char *argv[])
 {
