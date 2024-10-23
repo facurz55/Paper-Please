@@ -93,7 +93,7 @@ private:
     condiciones condicion;
     char nombrePartida[50];
     QString condicion1;
-    const QString ALDEANO = "image:url(:/pngwing.com.png);";
+    const QString ALDEANO = "image:url(:/elprimooo.png);";
     const QString REFUGIADOPOLITICO = "image:url(:/pngwing.com (2).png);";
     const QString REVOLUCIONARIO = "image:url(:/pngwing.com (3).png);";
     const QString DIPLOMATICO = "image:url(:/pngwing.com (1).png);";
