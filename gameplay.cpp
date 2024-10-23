@@ -379,6 +379,7 @@ void gameplay::ReiniciarNivel()
 {
     emit clickedReiniciar();
     ui->stackedWidget->setCurrentWidget(ui->game);
+    iniciarReloj();
     EntrarNPC();
 }
 
@@ -397,6 +398,7 @@ void gameplay::VolverMesa()
 void gameplay::ComenzarSiguienteDia()
 {
     ui->stackedWidget->setCurrentWidget(ui->game);
+    iniciarReloj();
     emit clickedSiguienteDia();
 }
 
