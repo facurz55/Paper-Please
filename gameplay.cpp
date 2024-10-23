@@ -8,6 +8,37 @@ gameplay::gameplay(QWidget *parent)
     ui->setupUi(this);
     Puntos.setUpMultas(&multa);
 
+    //MURMULLO DEL GAMEPLAY (CON EASTER EGG MARIANO =O)
+    MusicaGameplay = new QMediaPlayer(this);
+    audioOutputGameplay = new QAudioOutput(this);
+    MusicaGameplay->setAudioOutput(audioOutputGameplay);
+    MusicaGameplay->setSource(QUrl("qrc:/murmullomarianito.wav"));
+    audioOutputGameplay->setVolume(0.8); // Ajusta el volumen según sea necesario
+    MusicaGameplay->setLoops(QMediaPlayer::Infinite);
+
+    //SONIDO AL DENEGAR PASO
+    SonidoDenegar = new QMediaPlayer(this);
+    audioOutputDenegar = new QAudioOutput(this);
+    SonidoDenegar->setAudioOutput(audioOutputDenegar);
+    SonidoDenegar->setSource(QUrl("qrc:/denegado.wav"));
+    // Conectar el botón denegar al slot
+    connect(ui->denegar, &QPushButton::clicked, this, &gameplay::noPasa);
+
+    //SONIDO AL PERMITIR PASO
+    SonidoAceptar = new QMediaPlayer(this);
+    audioOutputAceptar = new QAudioOutput(this);
+    SonidoAceptar->setAudioOutput(audioOutputAceptar);
+    SonidoAceptar->setSource(QUrl("qrc:/checki.wav"));
+    audioOutputAceptar->setVolume(0.3);
+    connect(ui->aceptar, &QPushButton::clicked, this, &gameplay::siPasa);
+
+    //SONIDO AL PEDIR PAPELES
+    SonidoPapel = new QMediaPlayer(this);
+    audioOutputPapel = new QAudioOutput(this);
+    SonidoPapel->setAudioOutput(audioOutputPapel);
+    SonidoPapel->setSource(QUrl("qrc:/papelsound.wav"));
+    connect(ui->papeles, &QPushButton::clicked, this, &gameplay::mostrarDocumentos);
+
     //WIDGET DE LA PANTALLA
     ui->botonFinalizarTurno->hide();
     ui->documento->hide();
@@ -57,7 +88,7 @@ gameplay::gameplay(QWidget *parent)
 void gameplay::Empezar(int Dificultad)
 {
     Nivel = 1;
-
+    MusicaGameplay->play();
     setUpPuntos(Dificultad);
     iniciarReloj(); //el reloj comienza cuando se produse el cambio de ventana
     EntrarNPC();
@@ -102,6 +133,8 @@ QLabel *gameplay::getLabelNPC(){//<-MW
 void gameplay::DatosFinalizar() {//esto para verificar si perdiste, en caso que no se muestran los puntos y mupunt
     int puntaje = Puntos.obtener_puntos();
     int multaa = multa.obtenerMultas();
+    MusicaGameplay->stop();
+
     if ((multaa > 4) || (puntaje < 0)) {
         ui->labelPerdiste->setVisible(true);//muestra un label con mensaje de perdiste
         ui->Boton_ReiniciarNivel->setVisible(true);//boton de reiniciar el juego
@@ -149,7 +182,7 @@ void gameplay::EntrarNPC()
     int centerX = (width() - ui->Label_NPC->width()) / 2;
 
     // Calcula la coordenada Y central para el labelNPC y ajusta 35 píxeles hacia arriba
-    int centerY = (height() - ui->Label_NPC->height()) / 2 - 35;
+    int centerY = (height() - ui->Label_NPC->height()) / 2 - 60;
 
     animacionEntrada->setStartValue(QPoint(-(ui->Label_NPC->width()),centerY));
     animacionEntrada->setEndValue(QPoint(centerX, centerY));
@@ -163,7 +196,7 @@ void gameplay::SalirNPC()
     int centerX = (width() - ui->Label_NPC->width()) / 2;
 
     // Calcula la coordenada Y central para el labelNPC y ajusta 35 píxeles hacia arriba
-    int centerY = (height() - ui->Label_NPC->height()) / 2 - 35;
+    int centerY = (height() - ui->Label_NPC->height()) / 2 - 60;
 
     animacionSalida->setStartValue(QPoint(centerX, centerY));
     animacionSalida->setEndValue(QPoint(width() + ui->Label_NPC->height(), centerY));
@@ -210,6 +243,7 @@ void gameplay::generarNpc()
 
 void gameplay::mostrarDocumentos()
 {
+    SonidoPapel->play();
     ui->papeles->setDisabled(true);
     ui->documento->show();
     ui->visa->show();
@@ -260,6 +294,7 @@ void gameplay::cerrarDocumentos()
 //aca se determina si la decision del jugador esta bien o no dependiendo de lo que elija
 void gameplay::siPasa()
 {
+    SonidoAceptar->play();
     int p1 = Persona.obtenerPop();
     QString tipo = Persona.obtenerNpc();
     if (p1 == 1)
@@ -288,6 +323,7 @@ void gameplay::siPasa()
 
 void gameplay::noPasa()
 {
+    SonidoDenegar->play();
     int p1 = Persona.obtenerPop();
     QString tipo = Persona.obtenerNpc();
     if (p1 == 0)

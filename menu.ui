@@ -35,7 +35,7 @@
    <item>
     <widget class="QStackedWidget" name="MenuStacked">
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="page">
       <property name="sizePolicy">
@@ -160,7 +160,7 @@ border-image: url(:/_025fe56e-7f50-405f-b902-336be60dd152.jfif);
             <string>seleccionar la dificultad</string>
            </property>
            <property name="alignment">
-            <set>Qt::AlignCenter</set>
+            <set>Qt::AlignmentFlag::AlignCenter</set>
            </property>
            <property name="margin">
             <number>0</number>

@@ -26,10 +26,10 @@ Menu::Menu(QWidget *parent)
     backgroundMusic->setAudioOutput(audioOutput);  // Asigna el audio output al reproductor
 
     // Establece el archivo de música
-    backgroundMusic->setSource(QUrl::fromLocalFile("C:/Users/LORD FACUNDINHO/Desktop/Paper-Please/counter16.wav"));
+    backgroundMusic->setSource(QUrl("qrc:/counter16.wav"));
 
     // Configura el volumen a través de QAudioOutput
-    audioOutput->setVolume(0.5);  // Volumen en rango de 0.0 a 1.0
+    audioOutput->setVolume(0.1);  // Volumen en rango de 0.0 a 1.0
     backgroundMusic->setLoops(QMediaPlayer::Infinite); // Hacer que la música loopee
     // Reproduce la música
     backgroundMusic->play();
