@@ -46,7 +46,7 @@ signals:
     void clickedVolverMesa();
     void enviarChar(char* v);
     void GuardarDatos(DatosJugador);
-
+    void volverAlMenuClicked();
 
 public slots:
     void iniciarReloj();

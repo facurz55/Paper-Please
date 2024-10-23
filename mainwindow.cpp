@@ -22,6 +22,7 @@ MainWindow::MainWindow(QWidget *parent)
     //CONEXIONES de botones.
     connect(menuPage, &Menu::clickedJugar, this, &MainWindow::ComenzarJuego);
     connect(game, &gameplay::GuardarDatos, menuPage, &Menu::guardarPartida);
+    connect(game, &gameplay::volverAlMenuClicked, this, &MainWindow::volverAlMenu);
 }
 
 MainWindow::~MainWindow()
@@ -68,5 +69,8 @@ void MainWindow::resizeEvent(QResizeEvent *event)
 }
 
 void MainWindow::volverAMenu(){
+    stackedWidget->setCurrentWidget(menuPage);
+}
+void MainWindow::volverAlMenu() {
     stackedWidget->setCurrentWidget(menuPage);
 }
