@@ -30,7 +30,11 @@ public:
     void generar_Estado_civil();
     void generar_Estancia();
     void pensamientos();
+
     void datosArchivo();
+
+    void generarResidencia();
+    void generarProposito();
 
     //Pop indica que el documento tiene almenos un error
     void retPop(); //hace que "Pop" vuelva a valer 0 luego de ser utilizado
@@ -68,6 +72,11 @@ protected:
     int pop = 0;
     int multa = 0;
     QString pensamiento;
+
+    QString residencia;
+    QString proposito;
+
+    QRandomGenerator generador;
 };
 
 #endif // PERSONA_H
