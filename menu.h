@@ -23,9 +23,13 @@ public:
 public slots:
     void guardarPartida(DatosJugador datos);
     void textoUser(char newChar);
-
 signals:
     void clickedJugar(int dificultad);
+
+
+
+
+
 
 private slots:
     void SeleccionarDif();
