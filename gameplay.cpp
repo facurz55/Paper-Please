@@ -17,11 +17,15 @@ gameplay::gameplay(QWidget *parent)
     ui->cerrar->hide();
     ui->datos->hide();
     ui->Siguiente_NPC->setDisabled(true);
-
+    ui->confirmar->hide();
+    ui->cancelar->hide();
+    ui->nombrePartida->hide();
+    ui->mensajePG->hide();
+    ui->volverAlMenu->hide();
 
     //TIMER
     tiempoInicio = QTime(13, 0);  //inicia a las 13
-    horaFin = QTime(22, 0);       //termina a las 22
+    horaFin = QTime(13.2, 0);       //termina a las 22
 
     // Conexiones de botones
     connect(ui->Boton_SiguienteDia, &QPushButton::clicked,  this, &gameplay::ComenzarSiguienteDia);
@@ -30,6 +34,9 @@ gameplay::gameplay(QWidget *parent)
     connect(ui->botonFinalizarTurno, &QPushButton::clicked,  this, &gameplay::DatosFinalizar);
     connect(ui->mostrar_req, &QPushButton::clicked,  this, &gameplay::CondicionesNivel);
     connect(ui->BotonVolver, &QPushButton::clicked,  this, &gameplay::VolverMesa);
+    connect(ui->guardarPartida, &QPushButton::clicked, this, &gameplay::clikedGuardarPartida);
+    connect(ui->cancelar, &QPushButton::clicked, this, &gameplay::clikedCancelarGuardar);
+    connect(ui->confirmar, &QPushButton::clicked, this, &gameplay::clikedConfirmarGuardar);
 
     connect(ui->visa, SIGNAL(clicked()), this, SLOT(actualizarLabelVisa()));
     connect(ui->aceptar, SIGNAL(clicked()), this, SLOT(siPasa()));
@@ -53,6 +60,51 @@ gameplay::gameplay(QWidget *parent)
 
     // Seteamos como widget principal donde se mostrara el juego:
     ui->stackedWidget->setCurrentWidget(ui->game);
+}
+
+void gameplay::clikedGuardarPartida(){
+    ui->nombrePartida->show();
+    ui->confirmar->show();
+    ui->cancelar->show();
+    ui->guardarPartida->hide();
+}
+
+void gameplay::clikedCancelarGuardar(){
+    ui->nombrePartida->clear();
+    ui->nombrePartida->hide();
+    ui->confirmar->hide();
+    ui->cancelar->hide();
+    ui->guardarPartida->show();
+}
+
+void gameplay::clikedConfirmarGuardar(){
+    // Obtener el texto del QLineEdit
+    QString texto = ui->nombrePartida->text();
+
+    // Convertir el QString a un QByteArray
+    QByteArray byteArray = texto.toLatin1(); // o .toUtf8() si necesitas UTF-8
+
+    // Copiar el contenido a 'nombrePartida', asegurando que no exceda el tamaño
+    strncpy(nombrePartida, byteArray.data(), sizeof(nombrePartida) - 1);
+
+    // Asegurarse de que la cadena esté terminada en nulo
+    nombrePartida[sizeof(nombrePartida) - 1] = '\0';
+
+    qDebug() << nombrePartida;
+    // Ahora tienes el texto del QLineEdit en nombrePartida como char[]
+
+    emit enviarChar(nombrePartida);
+
+    ui->mensajePG->show();
+    ui->guardarPartida->hide();
+    ui->confirmar->hide();
+    ui->cancelar->hide();
+    ui->nombrePartida->hide();
+    ui->volverAlMenu->show();
+}
+
+char* gameplay::getNombrePartida(){
+    return nombrePartida;
 }
 
 void gameplay::Empezar(int Dificultad)
