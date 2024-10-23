@@ -21,6 +21,7 @@ gameplay::gameplay(QWidget *parent)
     audioOutputDenegar = new QAudioOutput(this);
     SonidoDenegar->setAudioOutput(audioOutputDenegar);
     SonidoDenegar->setSource(QUrl("qrc:/denegado.wav"));
+    audioOutputDenegar->setVolume(0.3);
     // Conectar el botón denegar al slot
     connect(ui->denegar, &QPushButton::clicked, this, &gameplay::noPasa);
 
