@@ -17,9 +17,25 @@ Menu::Menu(QWidget *parent)
 
     //WIDGETS
     ui->BotonContinuar->setVisible(false);
-
-
     ui->botonContinua->hide();
+
+    // Inicializa el reproductor de música
+    backgroundMusic = new QMediaPlayer(this);
+
+    // Inicializa QAudioOutput para controlar el volumen
+    audioOutput = new QAudioOutput(this);
+    backgroundMusic->setAudioOutput(audioOutput);  // Asigna el audio output al reproductor
+
+    // Establece el archivo de música
+    backgroundMusic->setSource(QUrl("qrc:/counter16.wav"));
+
+    // Configura el volumen a través de QAudioOutput
+    audioOutput->setVolume(0.1);  // Volumen en rango de 0.0 a 1.0
+    backgroundMusic->setLoops(QMediaPlayer::Infinite); // Hacer que la música loopee
+
+    // Reproduce la música
+    backgroundMusic->play();
+
 
     // Conexiones pantalla principal
     // Locura rareza dijo facu
@@ -56,19 +72,21 @@ void Menu::textoUser(char newChar){
     ui->Slot1->setText(QString::fromUtf8(&newChar, 1));
 }
 
-void Menu::clickeoJugar()
-{
+// Método para detener la música
+void Menu::stopMusic(){
+    backgroundMusic->stop(); // Detener la música
+}
+
+void Menu::clickeoJugar(){
     stopMusic(); // Detener la música al jugar
     emit clickedJugar(Puntos);
 }
 
-void Menu::clikeoCargarPartida()
-{
+void Menu::clikeoCargarPartida(){
     ui->MenuStacked->setCurrentIndex(2);
 }
 
-void Menu::clikeoBotonSlot()
-{
+void Menu::clikeoBotonSlot(){
     ui->botonContinua->show();
 }
 

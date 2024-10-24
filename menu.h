@@ -40,6 +40,7 @@ private slots:
     void DificultadMedia();
     void DificultadAlta();
     void Exit();
+    void stopMusic(); // Método para detener la música*/
 
 private:
     guardarpartida guardar;
