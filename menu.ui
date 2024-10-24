@@ -41,7 +41,7 @@
 }</string>
      </property>
      <property name="currentIndex">
-      <number>2</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="page">
       <property name="sizePolicy">
@@ -166,7 +166,7 @@ border-image: url(:/_025fe56e-7f50-405f-b902-336be60dd152.jfif);
             <string>seleccionar la dificultad</string>
            </property>
            <property name="alignment">
-            <set>Qt::AlignmentFlag::AlignCenter</set>
+            <set>Qt::AlignCenter</set>
            </property>
            <property name="margin">
             <number>0</number>

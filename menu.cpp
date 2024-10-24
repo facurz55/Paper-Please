@@ -55,6 +55,7 @@ void Menu::textoUser(char newChar){
 void Menu::clickeoJugar()
 {
     emit clickedJugar(Puntos);
+    ui->BotonContinuar->setVisible(false);
 }
 
 void Menu::clikeoCargarPartida()

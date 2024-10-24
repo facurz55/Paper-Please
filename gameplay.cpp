@@ -25,7 +25,7 @@ gameplay::gameplay(QWidget *parent)
 
     //TIMER
     tiempoInicio = QTime(13, 0);  //inicia a las 13
-    horaFin = QTime(13.2, 0);       //termina a las 22
+    horaFin = QTime(14, 0);       //termina a las 22
 
     // Conexiones de botones
     connect(ui->Boton_SiguienteDia, &QPushButton::clicked,  this, &gameplay::ComenzarSiguienteDia);
@@ -380,6 +380,7 @@ void gameplay::ReiniciarNivel()
     emit clickedReiniciar();
     ui->stackedWidget->setCurrentWidget(ui->game);
     EntrarNPC();
+
 }
 
 void gameplay::CondicionesNivel()
@@ -397,6 +398,7 @@ void gameplay::VolverMesa()
 void gameplay::ComenzarSiguienteDia()
 {
     ui->stackedWidget->setCurrentWidget(ui->game);
+
     emit clickedSiguienteDia();
 }
 
