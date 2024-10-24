@@ -9,6 +9,7 @@
 #include <QAudioDevice>
 #include "puntos.h"
 #include "guardarpartida/guardarpartida.h"
+#include "gameplay.h"
 
 namespace Ui {
 class Menu;
@@ -24,7 +25,7 @@ public:
 
 public slots:
     void guardarPartida(DatosJugador datos);
-    void stopMusic(); // Método para detener la música
+    void textoUser(char newChar);
 
 signals:
     void clickedJugar(int dificultad);
@@ -33,12 +34,12 @@ private slots:
     void SeleccionarDif();
     void MenuPrincipal();
     void clickeoJugar();
-
+    void clikeoCargarPartida();
+    void clikeoBotonSlot();
     void DificultadBaja();
     void DificultadMedia();
     void DificultadAlta();
     void Exit();
-
 
 private:
     guardarpartida guardar;

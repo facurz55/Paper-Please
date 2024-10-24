@@ -1758,6 +1758,84 @@
         <bool>true</bool>
        </property>
       </widget>
+      <widget class="QPushButton" name="guardarPartida">
+       <property name="geometry">
+        <rect>
+         <x>120</x>
+         <y>240</y>
+         <width>151</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>GUARDAR PARTIDA</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="nombrePartida">
+       <property name="geometry">
+        <rect>
+         <x>320</x>
+         <y>240</y>
+         <width>113</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="confirmar">
+       <property name="geometry">
+        <rect>
+         <x>440</x>
+         <y>240</y>
+         <width>80</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>CONFIRMAR</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="cancelar">
+       <property name="geometry">
+        <rect>
+         <x>530</x>
+         <y>240</y>
+         <width>80</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>CANCELAR</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="mensajePG">
+       <property name="geometry">
+        <rect>
+         <x>330</x>
+         <y>390</y>
+         <width>331</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>PARTIDA GUARDADA CON EXITO QUERID@!!!!!!!</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="volverAlMenu">
+       <property name="geometry">
+        <rect>
+         <x>39</x>
+         <y>370</y>
+         <width>171</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>VOLVER AL MENU PRINCIPAL</string>
+       </property>
+      </widget>
      </widget>
     </widget>
    </item>

@@ -15,6 +15,7 @@
 #include "condiciones.h"
 #include "multas.h"
 #include "guardarpartida/datosjugador.h"
+#include "menu.h"
 
 namespace Ui {
 class gameplay;
@@ -33,6 +34,7 @@ public:
     ~gameplay();
     void EntrarNPC();
     void SalirNPC();
+    char *getNombrePartida();
     QPushButton* getBotonSiguiente_NPC();
     QLabel *getLabelNPC();
     void MostrarCondiciones();
@@ -44,7 +46,9 @@ signals:
     void clickedFinalizar();
     void clickedCondiciones();
     void clickedVolverMesa();
+    void enviarChar(char* v);
     void GuardarDatos(DatosJugador);
+
 
 public slots:
     void iniciarReloj();
@@ -58,7 +62,9 @@ private slots:
     void CondicionesNivel();
     void VolverMesa();
     void ComenzarSiguienteDia();
-
+    void clikedCancelarGuardar();
+    void clikedGuardarPartida();
+    void clikedConfirmarGuardar();
     void siPasa();
     void noPasa();
     void actualizarLabelDocumento();
@@ -87,6 +93,7 @@ private:
     QTime tiempoActual;
     QTime horaFin;
     condiciones condicion;
+    char nombrePartida[50];
     QString condicion1;
     const QString ALDEANO = "image:url(:/elprimooo.png);";
     const QString REFUGIADOPOLITICO = "image:url(:/pngwing.com (2).png);";
