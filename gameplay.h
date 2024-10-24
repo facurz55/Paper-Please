@@ -46,8 +46,8 @@ signals:
     void clickedFinalizar();
     void clickedCondiciones();
     void clickedVolverMesa();
-    void enviarChar(char* v);
     void GuardarDatos(DatosJugador);
+    void nombrePartidaActualizado(const QString &nombre);
 
 
 public slots:

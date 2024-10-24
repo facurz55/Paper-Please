@@ -112,6 +112,8 @@ void gameplay::clikedConfirmarGuardar(){
     // Obtener el texto del QLineEdit
     QString texto = ui->nombrePartida->text();
 
+    emit nombrePartidaActualizado(texto);
+
     // Convertir el QString a un QByteArray
     QByteArray byteArray = texto.toLatin1(); // o .toUtf8() si necesitas UTF-8
 
@@ -124,7 +126,7 @@ void gameplay::clikedConfirmarGuardar(){
     qDebug() << nombrePartida;
     // Ahora tienes el texto del QLineEdit en nombrePartida como char[]
 
-    emit enviarChar(nombrePartida);
+
 
     ui->mensajePG->show();
     ui->guardarPartida->hide();
