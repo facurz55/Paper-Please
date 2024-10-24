@@ -18,25 +18,6 @@ Menu::Menu(QWidget *parent)
 
     ui->botonContinua->hide();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     // Conexiones pantalla principal
     // Locura rareza dijo facu
     connect(ui->BotonJugar, &QPushButton::clicked, this, &Menu::SeleccionarDif);
@@ -66,18 +47,6 @@ Menu::~Menu()
 {
     delete ui;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 void Menu::textoUser(char newChar){
     ui->Slot1->setText(QString::fromUtf8(&newChar, 1));
