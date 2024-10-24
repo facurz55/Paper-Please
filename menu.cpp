@@ -80,6 +80,8 @@ void Menu::stopMusic(){
 void Menu::clickeoJugar(){
     stopMusic(); // Detener la música al jugar
     emit clickedJugar(Puntos);
+    ui->BotonContinuar->setVisible(false);
+     ui->MenuStacked->setCurrentIndex(0);
 }
 
 void Menu::clikeoCargarPartida(){

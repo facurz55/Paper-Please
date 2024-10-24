@@ -68,7 +68,7 @@ gameplay::gameplay(QWidget *parent)
     connect(ui->guardarPartida, &QPushButton::clicked, this, &gameplay::clikedGuardarPartida);
     connect(ui->cancelar, &QPushButton::clicked, this, &gameplay::clikedCancelarGuardar);
     connect(ui->confirmar, &QPushButton::clicked, this, &gameplay::clikedConfirmarGuardar);
-
+    connect(ui->volverAlMenu, &QPushButton::clicked, this, &gameplay::volverAlMenuClicked);
     connect(ui->visa, SIGNAL(clicked()), this, SLOT(actualizarLabelVisa()));
     connect(ui->aceptar, SIGNAL(clicked()), this, SLOT(siPasa()));
     connect(ui->denegar, SIGNAL(clicked()), this, SLOT(noPasa()));
