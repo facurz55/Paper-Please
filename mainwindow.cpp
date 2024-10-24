@@ -72,5 +72,5 @@ void MainWindow::volverAMenu(){
     stackedWidget->setCurrentWidget(menuPage);
 }
 void MainWindow::volverAlMenu() {
-    stackedWidget->setCurrentIndex(0);
+     stackedWidget->setCurrentWidget(Page);
 }
