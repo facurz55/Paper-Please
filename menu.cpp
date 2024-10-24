@@ -1,6 +1,8 @@
 #include "menu.h"
 #include "ui_menu.h"
 #include <QVBoxLayout>
+#include <QMediaPlayer>
+#include <QAudioDevice>
 #include "guardarpartida/guardarpartida.h"
 
 Menu::Menu(QWidget *parent)
@@ -15,6 +17,7 @@ Menu::Menu(QWidget *parent)
 
     //WIDGETS
     ui->BotonContinuar->setVisible(false);
+
 
     ui->botonContinua->hide();
 
@@ -48,12 +51,14 @@ Menu::~Menu()
     delete ui;
 }
 
+
 void Menu::textoUser(char newChar){
     ui->Slot1->setText(QString::fromUtf8(&newChar, 1));
 }
 
 void Menu::clickeoJugar()
 {
+    stopMusic(); // Detener la música al jugar
     emit clickedJugar(Puntos);
 }
 
