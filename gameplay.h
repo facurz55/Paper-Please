@@ -7,6 +7,8 @@
 #include <QPropertyAnimation>
 #include <QTimer>
 #include <QTime>
+#include <QMediaPlayer>
+#include <QAudioOutput>
 
 #include "persona.h"
 #include "puntos.h"
@@ -44,9 +46,9 @@ signals:
     void clickedFinalizar();
     void clickedCondiciones();
     void clickedVolverMesa();
-    void enviarChar(char* v);
     void GuardarDatos(DatosJugador);
-    void volverAlMenuClicked();
+    void nombrePartidaActualizado(const QString &nombre);
+
 
 public slots:
     void iniciarReloj();
@@ -95,8 +97,17 @@ private:
     QString condicion1;
     const QString ALDEANO = "image:url(:/elprimooo.png);";
     const QString REFUGIADOPOLITICO = "image:url(:/pngwing.com (2).png);";
-    const QString REVOLUCIONARIO = "image:url(:/pngwing.com (3).png);";
-    const QString DIPLOMATICO = "image:url(:/pngwing.com (1).png);";
+    const QString REVOLUCIONARIO = "image:url(:/negritopix.png);";
+    const QString DIPLOMATICO = "image:url(:/momardo.png);";
+    QMediaPlayer *SonidoDenegar;
+    QMediaPlayer *SonidoAceptar;
+    QMediaPlayer *SonidoPapel;
+    QMediaPlayer *MusicaGameplay;
+    QAudioOutput *audioOutputPapel;
+    QAudioOutput *audioOutputDenegar;
+    QAudioOutput *audioOutputAceptar;
+    QAudioOutput *audioOutputGameplay;
+
 };
 
 #endif // GAMEPLAY_H
