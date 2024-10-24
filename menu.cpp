@@ -72,6 +72,11 @@ void Menu::textoUser(char newChar){
     ui->Slot1->setText(QString::fromUtf8(&newChar, 1));
 }
 
+void Menu::cambiarNombreBoton(const QString &nombre)
+{
+    ui->Slot1->setText(nombre);
+}
+
 // Método para detener la música
 void Menu::stopMusic(){
     backgroundMusic->stop(); // Detener la música

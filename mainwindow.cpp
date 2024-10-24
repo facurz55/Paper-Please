@@ -23,6 +23,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(menuPage, &Menu::clickedJugar, this, &MainWindow::ComenzarJuego);
     connect(game, &gameplay::GuardarDatos, menuPage, &Menu::guardarPartida);
     connect(game, &gameplay::volverAlMenuClicked, this, &MainWindow::volverAlMenu);
+    connect(game, &gameplay::nombrePartidaActualizado, menuPage, &Menu::cambiarNombreBoton);
 }
 
 MainWindow::~MainWindow()
