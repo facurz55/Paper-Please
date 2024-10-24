@@ -25,7 +25,6 @@ public:
 
 public slots:
     void guardarPartida(DatosJugador datos);
-    void textoUser(char newChar);
     void cambiarNombreBoton(const QString &nombre);
 
 signals:
