@@ -47,7 +47,9 @@ signals:
     void clickedCondiciones();
     void clickedVolverMesa();
     void GuardarDatos(DatosJugador);
+    void volverAlMenuClicked();
     void nombrePartidaActualizado(const QString &nombre);
+
 
 
 public slots:
