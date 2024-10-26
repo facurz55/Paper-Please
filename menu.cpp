@@ -16,19 +16,24 @@ Menu::Menu(QWidget *parent)
     //WIDGETS
     ui->BotonContinuar->setVisible(false);
 
+    ui->botonContinua->hide();
+
     // Conexiones pantalla principal
     // Locura rareza dijo facu
     connect(ui->BotonJugar, &QPushButton::clicked, this, &Menu::SeleccionarDif);
     connect(ui->BotonAtras, &QPushButton::clicked, this, &Menu::MenuPrincipal);
-
-    // Conectamos el boton de jugar:
     connect(ui->BotonContinuar, &QPushButton::clicked, this, &Menu::clickeoJugar);
-
-    //CONEXIONES
     connect(ui->BotonBaja, &QPushButton::clicked,this, &Menu::DificultadBaja);
     connect(ui->BotonMedia, &QPushButton::clicked,this, &Menu::DificultadMedia);
     connect(ui->BotonAlta, &QPushButton::clicked,this, &Menu::DificultadAlta);
     connect(ui->BotonSalir, &QPushButton::clicked,this,&Menu::Exit);
+    connect(ui->BotonCargarPartida,&QPushButton::clicked,this,&Menu::clikeoCargarPartida);
+    connect(ui->atrasMenu, &QPushButton::clicked, this, &Menu::MenuPrincipal);
+    connect(ui->Slot1, &QPushButton::clicked, this, &Menu::clikeoBotonSlot);
+    connect(ui->Slot2, &QPushButton::clicked, this, &Menu::clikeoBotonSlot);
+    connect(ui->Slot3, &QPushButton::clicked, this, &Menu::clikeoBotonSlot);
+    connect(ui->botonContinua, &QPushButton::clicked, this, &Menu::clickeoJugar);
+
 
     ui->MenuStacked->setCurrentIndex(0);
 }
@@ -43,9 +48,23 @@ Menu::~Menu()
     delete ui;
 }
 
+void Menu::textoUser(char newChar){
+    ui->Slot1->setText(QString::fromUtf8(&newChar, 1));
+}
+
 void Menu::clickeoJugar()
 {
     emit clickedJugar(Puntos);
+}
+
+void Menu::clikeoCargarPartida()
+{
+    ui->MenuStacked->setCurrentIndex(2);
+}
+
+void Menu::clikeoBotonSlot()
+{
+    ui->botonContinua->show();
 }
 
 void Menu::DificultadBaja(){//Aca tiene que ir el codigo de cada dificultad
@@ -78,4 +97,5 @@ void Menu::SeleccionarDif()
 void Menu::MenuPrincipal()
 {
     ui->MenuStacked->setCurrentIndex(0);
+    ui->botonContinua->hide();
 }

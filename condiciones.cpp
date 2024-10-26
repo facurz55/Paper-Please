@@ -1,5 +1,5 @@
 #include "condiciones.h"
-
+//antonela pane
 condiciones::condiciones() {
     NPC = new Persona();  // Inicializar el puntero
     generarCondicionesNivel1();

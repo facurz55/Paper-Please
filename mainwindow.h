@@ -44,7 +44,7 @@ protected:
 private slots:
     void Volver();//volver a page
     void ComenzarJuego(int Dificultad);//Muesta la pantalla gameplay
-
+    void volverAMenu();
 
     //void pushButton_2();
 

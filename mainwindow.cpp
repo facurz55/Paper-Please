@@ -66,3 +66,7 @@ void MainWindow::resizeEvent(QResizeEvent *event)
         labelNPC->setGeometry(newRect);
     }
 }
+
+void MainWindow::volverAMenu(){
+    stackedWidget->setCurrentWidget(menuPage);
+}

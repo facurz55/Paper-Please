@@ -10,21 +10,24 @@ Persona::Persona() {
     generar_Estado_civil();
     generar_Estancia();
     pensamientos();
+
+    generarResidencia();
+    generarProposito();
 }
 
 // Métodos de generación de datos
 void Persona::generar_Estancia()
 {
-    int fallo = QRandomGenerator::global()->bounded(100);
+    int fallo = generador.bounded(100);
     if (Visa == "Turista")
     {
-        int ran1 = QRandomGenerator::global()->bounded(1, 3);
+        int ran1 = generador.bounded(1, 3);
         QString est = QString("%1 semanas")
             .arg(QString::number(ran1));
         Estancia = est;
         if (fallo < 10)
         {
-            int rand1 = QRandomGenerator::global()->bounded(4, 10);
+            int rand1 = generador.bounded(4, 10);
             QString est = QString("%1 semanas")
                 .arg(QString::number(rand1));
             Estancia = est;
@@ -33,13 +36,13 @@ void Persona::generar_Estancia()
     }
     if (Visa == "diplomatico")
     {
-        int ran2 = QRandomGenerator::global()->bounded(2, 4);
+        int ran2 = generador.bounded(2, 4);
         QString est = QString("%1 años")
             .arg(QString::number(ran2));
         Estancia = est;
         if (fallo < 5)
         {
-            int rand2 = QRandomGenerator::global()->bounded(6, 18);
+            int rand2 = generador.bounded(6, 18);
             QString est = QString("%1 meses")
                 .arg(QString::number(rand2));
             Estancia = est;
@@ -47,7 +50,7 @@ void Persona::generar_Estancia()
         }
         if (fallo > 95)
         {
-            int rand2 = QRandomGenerator::global()->bounded(5, 10);
+            int rand2 = generador.bounded(5, 10);
             QString est = QString("%1 años")
                 .arg(QString::number(rand2));
             Estancia = est;
@@ -56,13 +59,13 @@ void Persona::generar_Estancia()
     }
     if (Visa == "Trabajo")
     {
-        int ran3 = QRandomGenerator::global()->bounded(6, 18);
+        int ran3 = generador.bounded(6, 18);
         QString est = QString("%1 meses")
             .arg(QString::number(ran3));
         Estancia = est;
         if (fallo < 10)
         {
-            int rand3 = QRandomGenerator::global()->bounded(19, 26);
+            int rand3 = generador.bounded(19, 26);
             QString est = QString("%1 meses")
                 .arg(QString::number(rand3));
             Estancia = est;
@@ -74,7 +77,7 @@ void Persona::generar_Estancia()
         Estancia = "indefinido";
         if (fallo < 10)
         {
-            int rand1 = QRandomGenerator::global()->bounded(2, 100);
+            int rand1 = generador.bounded(2, 100);
             QString est = QString("%1 años")
             .arg(QString::number(rand1));
             Estancia = est;
@@ -84,19 +87,18 @@ void Persona::generar_Estancia()
 }
 
 
-
-
 void Persona::datosArchivo() {
-    QFile archivoNomMale(":/Archivos de texto/nombres masculinos.txt");
-    QFile archivoNomFem(":/Archivos de texto/nombres femeninos.txt");
-    QFile archivoAp(":/Archivos de texto/apellidos.txt");
-    if (!archivoNomMale.open(QIODevice::ReadOnly)){
+
+    QFile archivoNomMale("qrc:/Archivos de texto/nombres masculinos.txt");
+    QFile archivoNomFem("qrc:/Archivos de texto/nombres femeninos.txt");
+    QFile archivoAp("qrc:/Archivos de texto/apellidos.txt");
+    if (!archivoNomMale.open(QFile::WriteOnly)){
         return;
     }
-    if (!archivoNomFem.open(QIODevice::ReadOnly)) {
+    if (!archivoNomFem.open(QFile::WriteOnly)) {
         return;
     }
-    if (!archivoAp.open(QIODevice::ReadOnly)) {
+    if (!archivoAp.open(QFile::WriteOnly)) {
         return;
     }
 
@@ -121,55 +123,59 @@ void Persona::datosArchivo() {
     return;
 }
 
-
 void Persona::generarNombres() {
     QStringList generos = {"masculino", "femenino"};
-    int gen = QRandomGenerator::global()->bounded(generos.size());
+    int gen = generador.bounded(generos.size());
     genero = generos[gen];
 
     /*QStringList nombresM = {"Gabriel", "Andrés", "Diego", "Ricardo", "Mario", "Fernando", "Javier", "Daniel", "Emilio", "Sebastián"};
     QStringList nombresF = {"María", "Ana", "Laura", "Sofía", "Carmen", "Isabel", "Patricia", "Julia", "Elena", "Marta"};*/
-    int ran = QRandomGenerator::global()->bounded(0, 100);
+    int ran = generador.bounded(0, 100);
     if (gen == 0) {
-        int nbm = QRandomGenerator::global()->bounded(vectorNombresMale.size());
-        nombre = vectorNombresMale[nbm];
+        int nbm = generador.bounded(VnombresMale.size());
+        QString Male = QString::fromStdString(VnombresMale[nbm]);
+        nombre = Male;
         if (ran < 10)
         {
-            int nbf = QRandomGenerator::global()->bounded(vectorNombresFem.size());
-            nombre = vectorNombresFem[nbf];
+            int nbf = generador.bounded(VnombresFem.size());
+            QString Fem = QString::fromStdString(VnombresFem[nbf]);
+            nombre = Fem;
             pop = 1;
         }
     } else {
-        int nbf = QRandomGenerator::global()->bounded(vectorNombresFem.size());
-        nombre = vectorNombresFem[nbf];
+        int nbf = generador.bounded(VnombresFem.size());
+        QString Fem = QString::fromStdString(VnombresFem[nbf]);
+        nombre = Fem;
         if (ran < 10)
         {
-            int nbm = QRandomGenerator::global()->bounded(vectorNombresMale.size());
-            nombre = vectorNombresMale[nbm];
+            int nbm = generador.bounded(VnombresMale.size());
+            QString Male = QString::fromStdString(VnombresMale[nbm]);
+            nombre = Male;
             pop = 1;
         }
     }
 
 
     //QStringList apellidos = {"García", "Rodríguez", "López", "Martínez", "González", "Gomez", "Sánchez", "Ramírez", "Torres", "Flores", "Navarro", "Molina"};
-    int na = QRandomGenerator::global()->bounded(vectorApellidos.size());
-    apellido = vectorApellidos[na];
+    int na = generador.bounded(Vapellidos.size());
+    QString APE = QString::fromStdString(Vapellidos[na]);
+    apellido = APE;
 }
 
 void Persona::generarFecha() {
-    int a = QRandomGenerator::global()->bounded(1970, 2003);
+    int a = generador.bounded(1970, 2003);
     fecha = QString::number(a);
 }
 
 void Persona::generarNacionalidad() {
     QStringList nacionalidades = {"boliviano/a", "paraguayo/a", "brasileño/a", "argentino/a"};
-    int ns = QRandomGenerator::global()->bounded(nacionalidades.size());
+    int ns = generador.bounded(nacionalidades.size());
     nacionalidad = nacionalidades[ns];
 }
 
 void Persona::generarVisa() {
     QStringList Visas = {"Turista", "diplomatico", "Trabajo", "Residente", "refugiado politico"};
-    int vi = QRandomGenerator::global()->bounded(100);
+    int vi = generador.bounded(100);
     if (vi <= 10)
     {
         Visa = Visas[1];
@@ -178,7 +184,7 @@ void Persona::generarVisa() {
     if ((vi > 10)&&(vi <= 40))
     {
         Visa = Visas[0];
-        int tipo = QRandomGenerator::global()->bounded(100);
+        int tipo = generador.bounded(100);
         tipoNpc = "aldeano";
         if (tipo > 90)
         {
@@ -190,7 +196,7 @@ void Persona::generarVisa() {
     if ((vi > 40)&&(vi <= 70))
     {
         Visa = Visas[2];
-        int tipo1 = QRandomGenerator::global()->bounded(100);
+        int tipo1 = generador.bounded(100);
         tipoNpc = "aldeano";
         if (tipo1 > 90)
         {
@@ -202,7 +208,7 @@ void Persona::generarVisa() {
     if ((vi > 70)&&(vi <= 90))
     {
         Visa = Visas[3];
-        int tipo2 = QRandomGenerator::global()->bounded(100);
+        int tipo2 = generador.bounded(100);
         tipoNpc = "aldeano";
         if (tipo2 > 90)
         {
@@ -230,15 +236,107 @@ void Persona::generar_Estado_civil() {
 void Persona::pensamientos()
 {
     QStringList ideas = {"Que lindo dia", "Tengo hambre", "vamos Messi"};
-    int pens = QRandomGenerator::global()->bounded(ideas.size());
+    int pens = generador.bounded(ideas.size());
     pensamiento = ideas[pens];
     if (tipoNpc == "revolucionario")
     {
         QStringList ideasmalas = {"En Cuba el pueblo es feliz", "Venezuela no es verdadero comunismo", "Evo Morales <3"};
-        int pens = QRandomGenerator::global()->bounded(ideasmalas.size());
+        int pens = generador.bounded(ideasmalas.size());
         pensamiento = ideasmalas[pens];
     }
 }
+
+void Persona::generarResidencia(){
+    int out = generador.bounded(100);
+    if(nacionalidad == "boliviano/a"){
+        residencia = "Bolivia";
+        if(out < 10){
+            QStringList pais = {"Paraguay", "Brasil", "Argentina"};
+            int pai = generador.bounded(pais.size());
+            residencia = pais[pai];
+        }
+    }
+    if(nacionalidad == "paraguayo/a"){
+        residencia = "Paraguay";
+        if(out < 10){
+            QStringList pais = {"Bolivia", "Brasil", "Argentina"};
+            int pai = generador.bounded(pais.size());
+            residencia = pais[pai];
+        }
+    }
+    if(nacionalidad == "brasileño/a"){
+        residencia = "Brasil";
+        if(out < 10){
+            QStringList pais = {"Bolivia", "Paraguay", "Argentina"};
+            int pai = generador.bounded(pais.size());
+            residencia = pais[pai];
+        }
+    }
+    if(nacionalidad == "argentino/a"){
+        residencia = "Argentina";
+        if(out < 10){
+            QStringList pais = {"Bolivia", "Paraguay", "Brasil"};
+            int pai = generador.bounded(pais.size());
+            residencia = pais[pai];
+        }
+    }
+}
+
+void Persona::generarProposito(){
+    int mal = generador.bounded(100);
+    if(Visa == "Turista"){
+        QStringList propositos = {"Turismo", "visitar a un familiar"};
+        int prop = generador.bounded(propositos.size());
+        proposito = propositos[prop];
+        if(mal < 10){
+            QStringList malProposito = {"trabajo", "residencia", "estereotipo no convencional de peruano"};
+            int prop = generador.bounded(malProposito.size());
+            residencia = malProposito[prop];
+        }
+    }
+    if(Visa == "diplomatico"){
+        QStringList propositos = {"negociaciones internacionales", "relaciones internacionales"};
+        int prop = generador.bounded(propositos.size());
+        proposito = propositos[prop];
+            if(mal < 10){
+            QStringList malProposito = {"trabajo", "residencia", "estereotipo no convencional de peruano", "se ma quedo la motora"};
+            int prop = generador.bounded(malProposito.size());
+            residencia = malProposito[prop];
+        }
+    }
+    if(Visa == "Trabajo"){
+        QStringList propositos = {"trabajo"};
+        int prop = generador.bounded(propositos.size());
+        proposito = propositos[prop];
+            if(mal < 10){
+            QStringList malProposito = {"residencia", "estereotipo no convencional de boliguayo", "string.h"};
+            int prop = generador.bounded(malProposito.size());
+            residencia = malProposito[prop];
+        }
+    }
+    if(Visa == "Residente"){
+        QStringList propositos = {"residencia"};
+        int prop = generador.bounded(propositos.size());
+        proposito = propositos[prop];
+            if(mal < 10){
+            QStringList malProposito = {"trabajo", "estereotipo no convencional de somali", "estoy buscando a Rusher King"};
+            int prop = generador.bounded(malProposito.size());
+            residencia = malProposito[prop];
+        }
+    }
+    if(Visa == "refugiado politico"){
+        QStringList propositos = {"asilo politico"};
+        int prop = generador.bounded(propositos.size());
+        proposito = propositos[prop];
+            if(mal < 10){
+            QStringList malProposito = {"trabajo", "recidencia", "estereotipo no convencional de peruano", "si mi nacionalidad es boliviano pido disculpas"};
+            int prop = generador.bounded(malProposito.size());
+            residencia = malProposito[prop];
+        }
+    }
+
+}
+
 
 // Métodos para obtener los datos
 QString Persona::obtenerGenero() const {
