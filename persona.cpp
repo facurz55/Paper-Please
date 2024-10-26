@@ -2,6 +2,7 @@
 
 Persona::Persona() {
     // Inicializar los datos del pasaporte de forma aleatoria
+    datosArchivo();
     generarNombres();  // para generar el nombre
     generarFecha();
     generarNacionalidad();
@@ -9,7 +10,6 @@ Persona::Persona() {
     generar_Estado_civil();
     generar_Estancia();
     pensamientos();
-    datosArchivo();
 }
 
 // Métodos de generación de datos
@@ -90,38 +90,31 @@ void Persona::datosArchivo() {
     QFile archivoNomMale(":/Archivos de texto/nombres masculinos.txt");
     QFile archivoNomFem(":/Archivos de texto/nombres femeninos.txt");
     QFile archivoAp(":/Archivos de texto/apellidos.txt");
-    if (!archivoNomMale.open(QFile::WriteOnly)){
+    if (!archivoNomMale.open(QIODevice::ReadOnly)){
         return;
     }
-    if (!archivoNomFem.open()) {
+    if (!archivoNomFem.open(QIODevice::ReadOnly)) {
         return;
     }
-    if (!archivoAp.open()) {
+    if (!archivoAp.open(QIODevice::ReadOnly)) {
         return;
     }
 
     QTextStream in1(&archivoNomMale);
     while (!in1.atEnd()) {
-        QString nombreMale = in1.readLine().trimmed();
-        if (!nombreMale.isEmpty()) {
-            vectorNombresMale.append(nombreMale);
-        }
+        vectorNombresMale.append(in1.readLine());
     }
     QTextStream in2(&archivoNomFem);
     while (!in2.atEnd()) {
-        QString nombreFem = in2.readLine().trimmed();
-        if (!nombreFem.isEmpty()) {
-            vectorNombresFem.append(nombreFem);
-        }
-    }
-    QTextStream in3(&archivoAp);
-    while (!in3.atEnd()) {
-        QString apellidos = in3.readLine().trimmed();
-        if (!apellidos.isEmpty()) {
-            vectorApellidos.append(apellidos);
-        }
+        vectorNombresFem.append(in2.readLine());
     }
 
+    QTextStream in3(&archivoAp);
+    while (!in3.atEnd()) {
+        vectorApellidos.append(in3.readLine());
+    }
+
+    qDebug() << vectorNombresMale.size();
     archivoNomMale.close();
     archivoNomFem.close();
     archivoAp.close();

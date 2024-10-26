@@ -66,7 +66,6 @@ private slots:
     void DatosFinalizar();
     void generarNpc();
     void cambiarSkinNPC();
-    void detenerReloj();
     void actualizarReloj();
     void preguntar();
     void PrepararAnimacion();
@@ -80,7 +79,7 @@ private:
     Persona Persona;
     puntos Puntos;
     multas multa;
-    QTimer *Reloj;
+    QTimer Reloj;
     QTime tiempoInicio;
     QTime tiempoActual;
     QTime horaFin;

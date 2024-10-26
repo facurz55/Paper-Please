@@ -4,7 +4,7 @@
 
 gameplay::gameplay(QWidget *parent)
     : QWidget(parent)
-    , ui(new Ui::gameplay)
+    , ui(new Ui::gameplay), Reloj(this)
 {
     ui->setupUi(this);
     Puntos.setUpMultas(&multa);
@@ -47,6 +47,8 @@ gameplay::gameplay(QWidget *parent)
     //CONEXIONES de NPC
     connect(ui->Siguiente_NPC, SIGNAL(clicked()), this, SLOT(generarNpc()));
     connect(animacionSalida, &QAbstractAnimation::finished, this, &gameplay::EntrarNPC);
+
+    connect(&Reloj, &QTimer::timeout, this, &gameplay::actualizarReloj);
 
     //FUNCIONES
     MostrarCondiciones();
@@ -317,9 +319,7 @@ void gameplay::noPasa()
 
 void gameplay::iniciarReloj() //funcion de inicio del reloj
 {
-    Reloj = new QTimer(this);
-    connect(Reloj, &QTimer::timeout, this, &gameplay::actualizarReloj);
-    Reloj->start(1000); // Emitir la señal timeout cada 1 segundo
+    Reloj.start(1000); // Emitir la señal timeout cada 1 segundor
     tiempoActual = tiempoInicio;
 }
 
@@ -348,12 +348,6 @@ void gameplay::ComenzarSiguienteDia()
     emit clickedSiguienteDia();
 }
 
-void gameplay::detenerReloj()
-{
-    Reloj->stop();
-    delete Reloj;
-}
-
 void gameplay::actualizarReloj()
 {
     tiempoActual = tiempoActual.addSecs(150);
@@ -361,7 +355,7 @@ void gameplay::actualizarReloj()
     // Verificar si ha llegado a la hora de finalizar el turno 22:00
     if (tiempoActual >= horaFin)
     {
-        detenerReloj(); //cuando el tiempo se cumlpe detiene el reloj
+        Reloj.stop(); //cuando el tiempo se cumlpe detiene el reloj
 
         //cuando el tiempo acaba se muestra el boton de pasar de dia y se ocultan el resto de cosas
         ui->aceptar->hide();
