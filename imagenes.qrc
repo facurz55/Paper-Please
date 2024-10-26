@@ -21,5 +21,8 @@
         <file>murmullomarianito.wav</file>
         <file>negritopix.png</file>
         <file>momardo.png</file>
+        <file>Archivos de texto/apellidos.txt</file>
+        <file>Archivos de texto/nombres femeninos.txt</file>
+        <file>Archivos de texto/nombres masculinos.txt</file>
     </qresource>
 </RCC>
