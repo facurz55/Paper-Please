@@ -104,26 +104,19 @@ void Persona::datosArchivo() {
 
     QTextStream in1(&archivoNomMale);
     while (!in1.atEnd()) {
-        QString nombreMale = in1.readLine().trimmed();
-        if (!nombreMale.isEmpty()) {
-            vectorNombresMale.append(nombreMale);
-        }
+        vectorNombresMale.append(in1.readLine());
     }
     QTextStream in2(&archivoNomFem);
     while (!in2.atEnd()) {
-        QString nombreFem = in2.readLine().trimmed();
-        if (!nombreFem.isEmpty()) {
-            vectorNombresFem.append(nombreFem);
-        }
-    }
-    QTextStream in3(&archivoAp);
-    while (!in3.atEnd()) {
-        QString apellidos = in3.readLine().trimmed();
-        if (!apellidos.isEmpty()) {
-            vectorApellidos.append(apellidos);
-        }
+        vectorNombresFem.append(in2.readLine());
     }
 
+    QTextStream in3(&archivoAp);
+    while (!in3.atEnd()) {
+        vectorApellidos.append(in3.readLine());
+    }
+
+    qDebug() << vectorNombresMale.size();
     archivoNomMale.close();
     archivoNomFem.close();
     archivoAp.close();
