@@ -25,7 +25,7 @@ gameplay::gameplay(QWidget *parent)
 
     //TIMER
     tiempoInicio = QTime(13, 0);  //inicia a las 13
-    horaFin = QTime(13.2, 0);       //termina a las 22
+    horaFin = QTime(14, 0);       //termina a las 22
 
     // Conexiones de botones
     connect(ui->Boton_SiguienteDia, &QPushButton::clicked,  this, &gameplay::ComenzarSiguienteDia);
@@ -366,20 +366,10 @@ void gameplay::noPasa()
     ui->Siguiente_NPC->setEnabled(true);
 }
 
-
-void gameplay::iniciarReloj() //funcion de inicio del reloj
-{
-    Reloj = new QTimer(this);
-    connect(Reloj, &QTimer::timeout, this, &gameplay::actualizarReloj);
-    Reloj->start(1000); // Emitir la señal timeout cada 1 segundo
-    tiempoActual = tiempoInicio;
-}
-
 void gameplay::ReiniciarNivel()
 {
     emit clickedReiniciar();
     ui->stackedWidget->setCurrentWidget(ui->game);
-    iniciarReloj();
     EntrarNPC();
 }
 
@@ -398,7 +388,7 @@ void gameplay::VolverMesa()
 void gameplay::ComenzarSiguienteDia()
 {
     ui->stackedWidget->setCurrentWidget(ui->game);
-    iniciarReloj();
+    reiniciarReloj();
     emit clickedSiguienteDia();
 }
 
@@ -408,9 +398,17 @@ void gameplay::detenerReloj()
     delete Reloj;
 }
 
+void gameplay::iniciarReloj() //funcion de inicio del reloj
+{
+    Reloj = new QTimer(this);
+    connect(Reloj, &QTimer::timeout, this, &gameplay::actualizarReloj);
+    Reloj->start(1000); // Emitir la señal timeout cada 1 segundo
+    tiempoActual = tiempoInicio;
+}
+
 void gameplay::actualizarReloj()
 {
-    tiempoActual = tiempoActual.addSecs(150);
+    tiempoActual = tiempoActual.addSecs(300);
 
     // Verificar si ha llegado a la hora de finalizar el turno 22:00
     if (tiempoActual >= horaFin)
@@ -438,7 +436,12 @@ void gameplay::actualizarReloj()
 
     ui->timer->setText(tiempoActual.toString("hh:mm:ss"));
 }
-
+void gameplay::reiniciarReloj()
+{
+    tiempoActual = tiempoInicio;
+    ui->timer->setText(tiempoActual.toString("hh:mm:ss"));
+    Reloj->start(1000);
+}
 
 void gameplay::preguntar()
 {
