@@ -406,16 +406,12 @@ void gameplay::noPasa()
     ui->Siguiente_NPC->setEnabled(true);
 }
 
-<<<<<<< HEAD
-=======
-
 void gameplay::iniciarReloj() //funcion de inicio del reloj
 {
     Reloj.start(1000); // Emitir la señal timeout cada 1 segundor
     tiempoActual = tiempoInicio;
 }
 
->>>>>>> main
 void gameplay::ReiniciarNivel()
 {
     emit clickedReiniciar();
@@ -442,23 +438,6 @@ void gameplay::ComenzarSiguienteDia()
     emit clickedSiguienteDia();
 }
 
-<<<<<<< HEAD
-void gameplay::detenerReloj()
-{
-    Reloj->stop();
-    delete Reloj;
-}
-
-void gameplay::iniciarReloj() //funcion de inicio del reloj
-{
-    Reloj = new QTimer(this);
-    connect(Reloj, &QTimer::timeout, this, &gameplay::actualizarReloj);
-    Reloj->start(1000); // Emitir la señal timeout cada 1 segundo
-    tiempoActual = tiempoInicio;
-}
-
-=======
->>>>>>> main
 void gameplay::actualizarReloj()
 {
     tiempoActual = tiempoActual.addSecs(300);
