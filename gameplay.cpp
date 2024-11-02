@@ -53,19 +53,16 @@ gameplay::gameplay(QWidget *parent)
     ui->nombrePartida->hide();
     ui->mensajePG->hide();
     ui->volverAlMenu->hide();
-<<<<<<< HEAD
     ui->MaletaPeso->hide();
     ui->compania->hide();
     ui->ocupacion->hide();
     ui->proposito->hide();
     ui->residencia->hide();
 
-=======
     ui->mensajePG_2->hide();
     ui->SLOT1->hide();
     ui->SLOT2->hide();
     ui->SLOT3->hide();
->>>>>>> main
 
     //TIMER
     tiempoInicio = QTime(13, 0);  //inicia a las 13
