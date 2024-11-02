@@ -59,7 +59,7 @@ void puntos::puntuacion2_asignada2(){
     punto=50;
 }
 void puntos::puntuacion3_asignada3(){
-    punto=0;
+    punto=-15;
 }
 
 void puntos::setPunto(int newPunto)

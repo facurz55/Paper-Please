@@ -81,6 +81,8 @@ private slots:
     void PrepararAnimacion();
     void PrepararAnimacionSalida();
 
+    void on_volverAlMenu_clicked();
+
 private:
     int Nivel;
     Ui::gameplay *ui;

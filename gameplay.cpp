@@ -56,7 +56,7 @@ gameplay::gameplay(QWidget *parent)
 
     //TIMER
     tiempoInicio = QTime(13, 0);  //inicia a las 13
-    horaFin = QTime(13.2, 0);       //termina a las 22
+    horaFin = QTime(13.3, 0);       //termina a las 22
 
     // Conexiones de botones
     connect(ui->Boton_SiguienteDia, &QPushButton::clicked,  this, &gameplay::ComenzarSiguienteDia);
@@ -148,6 +148,7 @@ void gameplay::Empezar(int Dificultad)
     setUpPuntos(Dificultad);
     iniciarReloj(); //el reloj comienza cuando se produse el cambio de ventana
     EntrarNPC();
+
 }
 
 void gameplay::Empezar(DatosJugador datos)
@@ -408,8 +409,8 @@ void gameplay::noPasa()
 
 void gameplay::iniciarReloj() //funcion de inicio del reloj
 {
+     tiempoActual = tiempoInicio;
     Reloj.start(1000); // Emitir la señal timeout cada 1 segundor
-    tiempoActual = tiempoInicio;
 }
 
 void gameplay::ReiniciarNivel()
@@ -418,6 +419,20 @@ void gameplay::ReiniciarNivel()
     ui->stackedWidget->setCurrentWidget(ui->game);
     iniciarReloj();
     EntrarNPC();
+    ui->aceptar->show();
+    ui->denegar->show();
+    ui->mostrar_req->show();
+    ui->papeles->show();
+
+    ui->timer->show();
+
+    ui->Siguiente_NPC->show();
+
+
+
+
+    ui->botonFinalizarTurno->hide();
+
 
 }
 
@@ -441,7 +456,22 @@ void gameplay::ComenzarSiguienteDia()
     iniciarReloj();
 
     emit clickedSiguienteDia();
+    EntrarNPC();
+    ui->aceptar->show();
+    ui->denegar->show();
+    ui->mostrar_req->show();
+    ui->papeles->show();
+
+    ui->timer->show();
+
+    ui->Siguiente_NPC->show();
+
+
+
+
+    ui->botonFinalizarTurno->hide();
 }
+
 
 void gameplay::actualizarReloj()
 {
@@ -451,7 +481,8 @@ void gameplay::actualizarReloj()
     if (tiempoActual >= horaFin)
     {
         Reloj.stop(); //cuando el tiempo se cumlpe detiene el reloj
-
+        tiempoActual = tiempoInicio;
+        ui->timer->setText(tiempoActual.toString("hh:mm:ss"));
         //cuando el tiempo acaba se muestra el boton de pasar de dia y se ocultan el resto de cosas
         ui->aceptar->hide();
         ui->denegar->hide();
@@ -488,3 +519,24 @@ void gameplay::MostrarCondiciones(){
     ui->RFecha->setText(condicion.obtenerFecha());
     ui->RTipoVisita->setText(condicion.obtenerTipoVisita());
 }
+
+void gameplay::on_volverAlMenu_clicked()
+{
+    ui->stackedWidget->setCurrentWidget(ui->game);
+
+
+    ui->aceptar->show();
+    ui->denegar->show();
+    ui->mostrar_req->show();
+    ui->papeles->show();
+
+    ui->timer->show();
+
+    ui->Siguiente_NPC->show();
+
+
+
+
+    ui->botonFinalizarTurno->hide();
+}
+
