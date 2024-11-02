@@ -113,7 +113,9 @@ private:
     QAudioOutput *audioOutputDenegar;
     QAudioOutput *audioOutputAceptar;
     QAudioOutput *audioOutputGameplay;
-    int indexSLOT = 0;
+    int indexSLOT = -1;
+    DatosJugador jugador;
+    guardarpartida partida;
 };
 
 #endif // GAMEPLAY_H
