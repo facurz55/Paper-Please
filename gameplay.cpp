@@ -288,12 +288,28 @@ void gameplay::generarNpc()
     Persona.generar_Estado_civil();
     Persona.generar_Estancia();
     Persona.pensamientos();
+    if (Nivel >= 2){
+        Persona.generarResidencia();
+        Persona.generarProposito();
+        if (Nivel >= 3){
+            Persona.generarCompania();
+            if (Nivel == 4){
+                Persona.generarPesoMaleta();
+                if (Persona.getPersonaVisa() == "Trabajo" || Persona.getPersonaVisa() == "diplomatico"){
+                    Persona.generarOcupacion();
+                }
+            }
+        }
+    }
 
     ui->aceptar->setEnabled(true);
     ui->denegar->setEnabled(true);
     ui->papeles->setEnabled(true);
     ui->mostrar_req->setEnabled(true);
     ui->Siguiente_NPC->setDisabled(true);
+    if (Persona.getCompania() != 0){
+      // boton de compania
+    }
 
     SalirNPC();
 }
@@ -408,8 +424,8 @@ void gameplay::noPasa()
 
 void gameplay::iniciarReloj() //funcion de inicio del reloj
 {
-    Reloj.start(1000); // Emitir la señal timeout cada 1 segundor
     tiempoActual = tiempoInicio;
+    Reloj.start(1000); // Emitir la señal timeout cada 1 segundor
 }
 
 void gameplay::ReiniciarNivel()
@@ -434,7 +450,7 @@ void gameplay::VolverMesa()
 void gameplay::ComenzarSiguienteDia()
 {
     ui->stackedWidget->setCurrentWidget(ui->game);
-    reiniciarReloj();
+    iniciarReloj();
     emit clickedSiguienteDia();
 }
 
@@ -467,12 +483,6 @@ void gameplay::actualizarReloj()
     }
 
     ui->timer->setText(tiempoActual.toString("hh:mm:ss"));
-}
-void gameplay::reiniciarReloj()
-{
-    tiempoActual = tiempoInicio;
-    ui->timer->setText(tiempoActual.toString("hh:mm:ss"));
-    Reloj->start(1000);
 }
 
 void gameplay::preguntar()
