@@ -35,7 +35,7 @@
       <string notr="true"/>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>2</number>
      </property>
      <widget class="QWidget" name="game">
       <layout class="QVBoxLayout" name="verticalLayout_13">
@@ -1813,8 +1813,8 @@
       <widget class="QLabel" name="mensajePG">
        <property name="geometry">
         <rect>
-         <x>330</x>
-         <y>390</y>
+         <x>40</x>
+         <y>450</y>
          <width>331</width>
          <height>16</height>
         </rect>
@@ -1834,6 +1834,58 @@
        </property>
        <property name="text">
         <string>VOLVER AL MENU PRINCIPAL</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="SLOT1">
+       <property name="geometry">
+        <rect>
+         <x>460</x>
+         <y>300</y>
+         <width>80</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>SLOT 1</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="SLOT2">
+       <property name="geometry">
+        <rect>
+         <x>460</x>
+         <y>350</y>
+         <width>80</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>SLOT  2</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="SLOT3">
+       <property name="geometry">
+        <rect>
+         <x>460</x>
+         <y>390</y>
+         <width>80</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>SLOT 3</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="mensajePG_2">
+       <property name="geometry">
+        <rect>
+         <x>360</x>
+         <y>450</y>
+         <width>331</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>SELECCIONA UN SLOT!!!!!!!!!!!</string>
        </property>
       </widget>
      </widget>

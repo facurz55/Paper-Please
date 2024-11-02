@@ -82,6 +82,9 @@ private slots:
     void preguntar();
     void PrepararAnimacion();
     void PrepararAnimacionSalida();
+    void setIndexSlot1();
+    void setIndexSlot2();
+    void setIndexSlot3();
 
 private:
     int Nivel;
@@ -110,7 +113,7 @@ private:
     QAudioOutput *audioOutputDenegar;
     QAudioOutput *audioOutputAceptar;
     QAudioOutput *audioOutputGameplay;
-
+    int indexSLOT = 0;
 };
 
 #endif // GAMEPLAY_H

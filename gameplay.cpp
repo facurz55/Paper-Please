@@ -53,6 +53,10 @@ gameplay::gameplay(QWidget *parent)
     ui->nombrePartida->hide();
     ui->mensajePG->hide();
     ui->volverAlMenu->hide();
+    ui->mensajePG_2->hide();
+    ui->SLOT1->hide();
+    ui->SLOT2->hide();
+    ui->SLOT3->hide();
 
     //TIMER
     tiempoInicio = QTime(13, 0);  //inicia a las 13
@@ -69,6 +73,9 @@ gameplay::gameplay(QWidget *parent)
     connect(ui->cancelar, &QPushButton::clicked, this, &gameplay::clikedCancelarGuardar);
     connect(ui->confirmar, &QPushButton::clicked, this, &gameplay::clikedConfirmarGuardar);
     connect(ui->volverAlMenu, &QPushButton::clicked, this, &gameplay::volverAlMenuClicked);
+    connect(ui->SLOT1, &QPushButton::clicked, this, &gameplay::setIndexSlot1);
+    connect(ui->SLOT2, &QPushButton::clicked, this, &gameplay::setIndexSlot2);
+    connect(ui->SLOT3, &QPushButton::clicked, this, &gameplay::setIndexSlot3);
     connect(ui->visa, SIGNAL(clicked()), this, SLOT(actualizarLabelVisa()));
     connect(ui->aceptar, SIGNAL(clicked()), this, SLOT(siPasa()));
     connect(ui->denegar, SIGNAL(clicked()), this, SLOT(noPasa()));
@@ -95,11 +102,24 @@ gameplay::gameplay(QWidget *parent)
     ui->stackedWidget->setCurrentWidget(ui->game);
 }
 
+void gameplay::setIndexSlot1(){
+    indexSLOT = 1;
+}
+void gameplay::setIndexSlot2(){
+    indexSLOT = 2;
+}
+void gameplay::setIndexSlot3(){
+    indexSLOT = 3;
+}
+
 void gameplay::clikedGuardarPartida(){
     ui->nombrePartida->show();
     ui->confirmar->show();
     ui->cancelar->show();
     ui->guardarPartida->hide();
+    ui->SLOT1->show();
+     ui->SLOT2->show();
+     ui->SLOT3->show();
 }
 
 void gameplay::clikedCancelarGuardar(){
@@ -111,6 +131,14 @@ void gameplay::clikedCancelarGuardar(){
 }
 
 void gameplay::clikedConfirmarGuardar(){
+
+    if(indexSLOT == 0){
+        ui->mensajePG_2->show();
+        return;
+    }
+
+    ui->mensajePG_2->hide();
+
     // Obtener el texto del QLineEdit
     QString texto = ui->nombrePartida->text();
 
