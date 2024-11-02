@@ -87,7 +87,6 @@ gameplay::gameplay(QWidget *parent)
     connect(animacionSalida, &QAbstractAnimation::finished, this, &gameplay::EntrarNPC);
 
     //FUNCIONES
-    MostrarCondiciones();
 
     // Seteamos como widget principal donde se mostrara el juego:
     ui->stackedWidget->setCurrentWidget(ui->game);
@@ -435,6 +434,7 @@ void gameplay::VolverMesa()
 
 void gameplay::ComenzarSiguienteDia()
 {
+    iniciarReloj();
     ui->stackedWidget->setCurrentWidget(ui->game);
 
     emit clickedSiguienteDia();
