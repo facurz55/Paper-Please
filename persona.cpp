@@ -369,22 +369,22 @@ void Persona::generarPesoMaleta(){
 void Persona::generarOcupacion(){
     if (Visa == "Trabajo"){
         if (nacionalidad == "argentino/a"){
-            QStringList auxO = {"Desarrollador de software", "Especialista en ciberseguridad", "Médico", "Profesor/a universitario/a", "Gerente de ventas"};
+            QStringList auxO = {"Desarrollador de software", "Especialista en ciberseguridad", "Médico", "Profesor/a universitario/a", "Gerente de ventas","piquetero"};
             int ocu = generador.bounded(auxO.size());
             ocupacion = auxO[ocu];
         }
         if (nacionalidad == "brasileño/a"){
-            QStringList auxO = {"Analista de datos", "Fisioterapeuta", "Recursos humanos", "bailarin", "Estilista"};
+            QStringList auxO = {"Analista de datos", "Fisioterapeuta", "Recursos humanos", "bailarin", "Estilista","futbolista"};
             int ocu = generador.bounded(auxO.size());
             ocupacion = auxO[ocu];
         }
         if (nacionalidad == "paraguayo/a"){
-            QStringList auxO = {"Maestro/a", "Educador/a infantil", "Especialista en marketing", "albañil"};
+            QStringList auxO = {"Maestro/a", "Educador/a infantil", "Especialista en marketing", "albañil","ingeniero"};
             int ocu = generador.bounded(auxO.size());
             ocupacion = auxO[ocu];
         }
         if (nacionalidad == "boliviano/a"){
-            QStringList auxO = {"Tutor/a", "verdulero", "Enfermero/a", "Chef", "Ingeniero/a civil"};
+            QStringList auxO = {"Tutor/a", "verdulero", "Enfermero/a", "Chef", "Ingeniero/a civil","camionero"};
             int ocu = generador.bounded(auxO.size());
             ocupacion = auxO[ocu];
         }

@@ -309,21 +309,18 @@ void gameplay::generarNpc()
         }
     }
 
-    Persona.generarResidencia();
+    /*Persona.generarResidencia();
     Persona.generarProposito();
 
     Persona.generarPesoMaleta();
     Persona.generarCompania();
-    Persona.generarOcupacion();
+    Persona.generarOcupacion();*/
 
     ui->aceptar->setEnabled(true);
     ui->denegar->setEnabled(true);
     ui->papeles->setEnabled(true);
     ui->mostrar_req->setEnabled(true);
     ui->Siguiente_NPC->setDisabled(true);
-    if (Persona.getCompania() != 0){
-      // boton de compania
-    }
 
     SalirNPC();
 }
@@ -335,7 +332,7 @@ void gameplay::mostrarDocumentos()
     ui->documento->show();
     ui->visa->show();
     ui->cerrar->show();
-    ui->proposito->show();
+    if (Nivel >= 2){ui->proposito->show();}
 }
 
 void gameplay::actualizarLabelDocumento() //esta funcion muestra los datos cuando se presiona un boton
