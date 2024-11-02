@@ -81,6 +81,34 @@ border-image: url(:/_025fe56e-7f50-405f-b902-336be60dd152.jfif);
              <height>50</height>
             </size>
            </property>
+           <property name="cursor">
+            <cursorShape>PointingHandCursor</cursorShape>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+    font-family: &quot;Bahnschrift SemiBold&quot;;  /* Fuente moderna y estilizada */
+    font-size: 26px;                      /* Tamaño de la letra: más grande */
+    color: rgba(255, 215, 0, 1);          /* Color de la letra: dorado */
+    background-color: rgba(0, 0, 0, 0.9); /* Color de fondo: negro semi-transparente */
+    border: 2px solid rgba(255, 215, 0, 1); /* Borde: dorado */
+    border-radius: 10px;                  /* Bordes redondeados */
+    padding: 12px 20px;                   /* Espaciado interno para un botón más grande */
+    text-transform: uppercase;             /* Texto en mayúsculas para un efecto de fuerza */
+}
+
+QPushButton:hover {
+    background-color: rgba(51, 51, 51, 0.8); /* Fondo gris semi-transparente al pasar el mouse */
+    border: 2px solid rgba(255, 215, 0, 1);  /* Borde dorado al pasar el mouse */
+    color: rgba(255, 215, 0, 1);             /* Letra dorada al pasar el mouse */
+}
+
+QPushButton:pressed {
+    background-color: transparent;         /* Sin color de fondo al presionar */
+    border: 2px solid rgba(255, 215, 0, 1); /* Borde dorado al presionar */
+    color: rgba(255, 215, 0, 1);            /* Letra dorada al presionar */
+}
+</string>
+           </property>
            <property name="text">
             <string>JUGAR</string>
            </property>
@@ -94,6 +122,34 @@ border-image: url(:/_025fe56e-7f50-405f-b902-336be60dd152.jfif);
              <height>50</height>
             </size>
            </property>
+           <property name="cursor">
+            <cursorShape>PointingHandCursor</cursorShape>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+    font-family: &quot;Bahnschrift SemiBold&quot;;  /* Fuente moderna y estilizada */
+    font-size: 26px;                      /* Tamaño de la letra: más grande */
+    color: rgba(255, 215, 0, 1);          /* Color de la letra: dorado */
+    background-color: rgba(0, 0, 0, 0.9); /* Color de fondo: negro semi-transparente */
+    border: 2px solid rgba(255, 215, 0, 1); /* Borde: dorado */
+    border-radius: 10px;                  /* Bordes redondeados */
+    padding: 12px 20px;                   /* Espaciado interno para un botón más grande */
+    text-transform: uppercase;             /* Texto en mayúsculas para un efecto de fuerza */
+}
+
+QPushButton:hover {
+    background-color: rgba(51, 51, 51, 0.8); /* Fondo gris semi-transparente al pasar el mouse */
+    border: 2px solid rgba(255, 215, 0, 1);  /* Borde dorado al pasar el mouse */
+    color: rgba(255, 215, 0, 1);             /* Letra dorada al pasar el mouse */
+}
+
+QPushButton:pressed {
+    background-color: transparent;         /* Sin color de fondo al presionar */
+    border: 2px solid rgba(255, 215, 0, 1); /* Borde dorado al presionar */
+    color: rgba(255, 215, 0, 1);            /* Letra dorada al presionar */
+}
+</string>
+           </property>
            <property name="text">
             <string>CARGAR PARTIDA</string>
            </property>
@@ -106,6 +162,34 @@ border-image: url(:/_025fe56e-7f50-405f-b902-336be60dd152.jfif);
              <width>50</width>
              <height>50</height>
             </size>
+           </property>
+           <property name="cursor">
+            <cursorShape>PointingHandCursor</cursorShape>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+    font-family: &quot;Bahnschrift SemiBold&quot;;  /* Fuente moderna y estilizada */
+    font-size: 26px;                      /* Tamaño de la letra: más grande */
+    color: rgba(255, 215, 0, 1);          /* Color de la letra: dorado */
+    background-color: rgba(0, 0, 0, 0.9); /* Color de fondo: negro semi-transparente */
+    border: 2px solid rgba(255, 215, 0, 1); /* Borde: dorado */
+    border-radius: 10px;                  /* Bordes redondeados */
+    padding: 12px 20px;                   /* Espaciado interno para un botón más grande */
+    text-transform: uppercase;             /* Texto en mayúsculas para un efecto de fuerza */
+}
+
+QPushButton:hover {
+    background-color: rgba(51, 51, 51, 0.8); /* Fondo gris semi-transparente al pasar el mouse */
+    border: 2px solid rgba(255, 215, 0, 1);  /* Borde dorado al pasar el mouse */
+    color: rgba(255, 215, 0, 1);             /* Letra dorada al pasar el mouse */
+}
+
+QPushButton:pressed {
+    background-color: transparent;         /* Sin color de fondo al presionar */
+    border: 2px solid rgba(255, 215, 0, 1); /* Borde dorado al presionar */
+    color: rgba(255, 215, 0, 1);            /* Letra dorada al presionar */
+}
+</string>
            </property>
            <property name="text">
             <string>SALIR</string>
@@ -144,7 +228,7 @@ border-image: url(:/_025fe56e-7f50-405f-b902-336be60dd152.jfif);
           <number>0</number>
          </property>
          <property name="topMargin">
-          <number>100</number>
+          <number>150</number>
          </property>
          <item>
           <widget class="QLabel" name="label">
@@ -156,14 +240,26 @@ border-image: url(:/_025fe56e-7f50-405f-b902-336be60dd152.jfif);
            </property>
            <property name="font">
             <font>
-             <pointsize>20</pointsize>
+             <family>Press Start 2P</family>
+             <pointsize>-1</pointsize>
+             <bold>true</bold>
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">color: rgb(0, 0, 0);</string>
+            <string notr="true">QLabel {
+    font-family: &quot;Press Start 2P&quot;;            /* Fuente estilo gamer */
+    font-size: 22px;                          /* Tamaño de la letra */
+    color: rgba(255, 255, 255, 1);            /* Color de la letra: blanco */
+    background-color: rgba(0, 0, 0, 0.8);     /* Fondo semi-transparente negro */
+    border: none;                              /* Sin borde */
+    border-radius: 5px;                       /* Bordes redondeados más sutiles */
+    padding: 4px;                             /* Espaciado interno más pequeño */
+    text-align: center;                        /* Centrar el texto */
+}
+</string>
            </property>
            <property name="text">
-            <string>seleccionar la dificultad</string>
+            <string>SELECCIONAR LA DIFICULTAD</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -195,6 +291,34 @@ border-image: url(:/_025fe56e-7f50-405f-b902-336be60dd152.jfif);
                <height>50</height>
               </size>
              </property>
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+    font-family: &quot;Bahnschrift SemiBold&quot;;  /* Fuente moderna y estilizada */
+    font-size: 24px;                      /* Tamaño de la letra: más pequeño */
+    color: white;                         /* Color de la letra: blanco */
+    background-color: rgba(0, 128, 0, 0.7); /* Color de fondo: verde semi-transparente */
+    border: 2px solid white;               /* Borde: blanco */
+    border-radius: 10px;                  /* Bordes redondeados */
+    padding: 12px 20px;                   /* Espaciado interno para un botón más grande */
+    text-transform: uppercase;             /* Texto en mayúsculas para un efecto de fuerza */
+}
+
+QPushButton:hover {
+    background-color: rgba(0, 100, 0, 0.8); /* Fondo verde oscuro semi-transparente al pasar el mouse */
+    border: 2px solid white;                /* Borde blanco al pasar el mouse */
+    color: white;                          /* Letra blanca al pasar el mouse */
+}
+
+QPushButton:pressed {
+    background-color: transparent;         /* Sin color de fondo al presionar */
+    border: 2px solid white;               /* Borde blanco al presionar */
+    color: white;                          /* Letra blanca al presionar */
+}
+</string>
+             </property>
              <property name="text">
               <string>BAJA</string>
              </property>
@@ -208,6 +332,34 @@ border-image: url(:/_025fe56e-7f50-405f-b902-336be60dd152.jfif);
                <height>50</height>
               </size>
              </property>
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+    font-family: &quot;Bahnschrift SemiBold&quot;;  /* Fuente moderna y estilizada */
+    font-size: 24px;                      /* Tamaño de la letra: más pequeño */
+    color: black;                          /* Color de la letra: negro */
+    background-color: rgba(255, 255, 0, 0.7); /* Color de fondo: amarillo semi-transparente */
+    border: 2px solid black;               /* Borde: negro */
+    border-radius: 10px;                  /* Bordes redondeados */
+    padding: 12px 20px;                   /* Espaciado interno para un botón más grande */
+    text-transform: uppercase;             /* Texto en mayúsculas para un efecto de fuerza */
+}
+
+QPushButton:hover {
+    background-color: rgba(255, 215, 0, 0.8); /* Fondo dorado semi-transparente al pasar el mouse */
+    border: 2px solid black;                /* Borde negro al pasar el mouse */
+    color: black;                          /* Letra negra al pasar el mouse */
+}
+
+QPushButton:pressed {
+    background-color: transparent;         /* Sin color de fondo al presionar */
+    border: 2px solid black;               /* Borde negro al presionar */
+    color: black;                          /* Letra negra al presionar */
+}
+</string>
+             </property>
              <property name="text">
               <string>MEDIA</string>
              </property>
@@ -220,6 +372,34 @@ border-image: url(:/_025fe56e-7f50-405f-b902-336be60dd152.jfif);
                <width>50</width>
                <height>50</height>
               </size>
+             </property>
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+    font-family: &quot;Bahnschrift SemiBold&quot;;  /* Fuente moderna y estilizada */
+    font-size: 24px;                      /* Tamaño de la letra: más pequeño */
+    color: white;                          /* Color de la letra: blanco */
+    background-color: rgba(255, 0, 0, 0.7); /* Color de fondo: rojo semi-transparente */
+    border: 2px solid white;               /* Borde: blanco */
+    border-radius: 10px;                  /* Bordes redondeados */
+    padding: 12px 20px;                   /* Espaciado interno para un botón más grande */
+    text-transform: uppercase;             /* Texto en mayúsculas para un efecto de fuerza */
+}
+
+QPushButton:hover {
+    background-color: rgba(200, 0, 0, 0.8); /* Fondo rojo oscuro semi-transparente al pasar el mouse */
+    border: 2px solid white;                /* Borde blanco al pasar el mouse */
+    color: white;                          /* Letra blanca al pasar el mouse */
+}
+
+QPushButton:pressed {
+    background-color: transparent;         /* Sin color de fondo al presionar */
+    border: 2px solid white;               /* Borde blanco al presionar */
+    color: white;                          /* Letra blanca al presionar */
+}
+</string>
              </property>
              <property name="text">
               <string>ALTA</string>
@@ -255,6 +435,34 @@ border-image: url(:/_025fe56e-7f50-405f-b902-336be60dd152.jfif);
              <height>50</height>
             </size>
            </property>
+           <property name="cursor">
+            <cursorShape>PointingHandCursor</cursorShape>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+    font-family: &quot;Bahnschrift SemiBold&quot;;  /* Fuente moderna y estilizada */
+    font-size: 23px;                      /* Tamaño de la letra: más grande */
+    color: rgba(255, 215, 0, 1);          /* Color de la letra: dorado */
+    background-color: rgba(0, 0, 0, 0.9); /* Color de fondo: negro semi-transparente */
+    border: 2px solid rgba(255, 215, 0, 1); /* Borde: dorado */
+    border-radius: 10px;                  /* Bordes redondeados */
+    padding: 12px 20px;                   /* Espaciado interno para un botón más grande */
+    text-transform: uppercase;             /* Texto en mayúsculas para un efecto de fuerza */
+}
+
+QPushButton:hover {
+    background-color: rgba(51, 51, 51, 0.8); /* Fondo gris semi-transparente al pasar el mouse */
+    border: 2px solid rgba(255, 215, 0, 1);  /* Borde dorado al pasar el mouse */
+    color: rgba(255, 215, 0, 1);             /* Letra dorada al pasar el mouse */
+}
+
+QPushButton:pressed {
+    background-color: transparent;         /* Sin color de fondo al presionar */
+    border: 2px solid rgba(255, 215, 0, 1); /* Borde dorado al presionar */
+    color: rgba(255, 215, 0, 1);            /* Letra dorada al presionar */
+}
+</string>
+           </property>
            <property name="text">
             <string>ATRAS</string>
            </property>
@@ -268,6 +476,34 @@ border-image: url(:/_025fe56e-7f50-405f-b902-336be60dd152.jfif);
              <height>50</height>
             </size>
            </property>
+           <property name="cursor">
+            <cursorShape>PointingHandCursor</cursorShape>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+    font-family: &quot;Bahnschrift SemiBold&quot;;  /* Fuente moderna y estilizada */
+    font-size: 23px;                      /* Tamaño de la letra: más grande */
+    color: rgba(255, 215, 0, 1);          /* Color de la letra: dorado */
+    background-color: rgba(0, 0, 0, 0.9); /* Color de fondo: negro semi-transparente */
+    border: 2px solid rgba(255, 215, 0, 1); /* Borde: dorado */
+    border-radius: 10px;                  /* Bordes redondeados */
+    padding: 12px 20px;                   /* Espaciado interno para un botón más grande */
+    text-transform: uppercase;             /* Texto en mayúsculas para un efecto de fuerza */
+}
+
+QPushButton:hover {
+    background-color: rgba(51, 51, 51, 0.8); /* Fondo gris semi-transparente al pasar el mouse */
+    border: 2px solid rgba(255, 215, 0, 1);  /* Borde dorado al pasar el mouse */
+    color: rgba(255, 215, 0, 1);             /* Letra dorada al pasar el mouse */
+}
+
+QPushButton:pressed {
+    background-color: transparent;         /* Sin color de fondo al presionar */
+    border: 2px solid rgba(255, 215, 0, 1); /* Borde dorado al presionar */
+    color: rgba(255, 215, 0, 1);            /* Letra dorada al presionar */
+}
+</string>
+           </property>
            <property name="text">
             <string>CONTINUAR</string>
            </property>
@@ -278,6 +514,9 @@ border-image: url(:/_025fe56e-7f50-405f-b902-336be60dd152.jfif);
       </layout>
      </widget>
      <widget class="QWidget" name="page_3">
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
       <layout class="QHBoxLayout" name="horizontalLayout_4">
        <property name="spacing">
         <number>0</number>
@@ -303,13 +542,14 @@ border-image: url(:/_025fe56e-7f50-405f-b902-336be60dd152.jfif);
           <layout class="QVBoxLayout" name="verticalLayout_12">
            <item>
             <widget class="QLabel" name="SeleccionarSLot">
+             <property name="layoutDirection">
+              <enum>Qt::LayoutDirection::LeftToRight</enum>
+             </property>
              <property name="styleSheet">
-              <string notr="true">#SeleccionarSLot{
-	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(0, 0, 0, 255), stop:0.33 rgba(0, 0, 0, 255), stop:0.34 rgba(255, 30, 30, 255), stop:0.66 rgba(255, 0, 0, 255), stop:0.67 rgba(255, 255, 0, 255), stop:1 rgba(255, 255, 0, 255));
-}</string>
+              <string notr="true">border-image: url(:/guardar_partida.jfif);</string>
              </property>
              <property name="text">
-              <string>SELECCIONA LA DEFICULTAD</string>
+              <string/>
              </property>
             </widget>
            </item>
@@ -319,6 +559,34 @@ border-image: url(:/_025fe56e-7f50-405f-b902-336be60dd152.jfif);
           <layout class="QVBoxLayout" name="verticalLayout_11">
            <item>
             <widget class="QPushButton" name="Slot1">
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+    font-family: &quot;Bahnschrift SemiBold&quot;;          /* Fuente moderna y estilizada */
+    font-size: 20px;                             /* Tamaño de la letra: un poco más pequeño */
+    color: rgba(255, 255, 255, 1);               /* Color de la letra: blanco */
+    background-color: rgba(0, 0, 0, 1);          /* Color de fondo: negro opaco */
+    border: 2px solid rgba(255, 255, 255, 1);    /* Borde: blanco */
+    border-radius: 10px;                         /* Bordes redondeados */
+    padding: 12px 20px;                          /* Espaciado interno para un botón más grande */
+    text-transform: uppercase;                    /* Texto en mayúsculas para un efecto de fuerza */
+}
+
+QPushButton:hover {
+    background-color: rgba(51, 51, 51, 1);       /* Fondo gris opaco al pasar el mouse */
+    border: 2px solid rgba(255, 255, 255, 1);     /* Borde blanco al pasar el mouse */
+    color: rgba(255, 255, 255, 1);                /* Letra blanca al pasar el mouse */
+}
+
+QPushButton:pressed {
+    background-color: rgba(100, 100, 100, 1);    /* Fondo gris oscuro al presionar */
+    border: 2px solid rgba(255, 255, 255, 1);     /* Borde blanco al presionar */
+    color: rgba(255, 255, 255, 1);                /* Letra blanca al presionar */
+}
+</string>
+             </property>
              <property name="text">
               <string>SLOT 1</string>
              </property>
@@ -326,6 +594,34 @@ border-image: url(:/_025fe56e-7f50-405f-b902-336be60dd152.jfif);
            </item>
            <item>
             <widget class="QPushButton" name="Slot3">
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+    font-family: &quot;Bahnschrift SemiBold&quot;;          /* Fuente moderna y estilizada */
+    font-size: 20px;                             /* Tamaño de la letra: un poco más pequeño */
+    color: rgba(255, 255, 255, 1);               /* Color de la letra: blanco */
+    background-color: rgba(0, 0, 0, 1);          /* Color de fondo: negro opaco */
+    border: 2px solid rgba(255, 255, 255, 1);    /* Borde: blanco */
+    border-radius: 10px;                         /* Bordes redondeados */
+    padding: 12px 20px;                          /* Espaciado interno para un botón más grande */
+    text-transform: uppercase;                    /* Texto en mayúsculas para un efecto de fuerza */
+}
+
+QPushButton:hover {
+    background-color: rgba(51, 51, 51, 1);       /* Fondo gris opaco al pasar el mouse */
+    border: 2px solid rgba(255, 255, 255, 1);     /* Borde blanco al pasar el mouse */
+    color: rgba(255, 255, 255, 1);                /* Letra blanca al pasar el mouse */
+}
+
+QPushButton:pressed {
+    background-color: rgba(100, 100, 100, 1);    /* Fondo gris oscuro al presionar */
+    border: 2px solid rgba(255, 255, 255, 1);     /* Borde blanco al presionar */
+    color: rgba(255, 255, 255, 1);                /* Letra blanca al presionar */
+}
+</string>
+             </property>
              <property name="text">
               <string>SLOT 2</string>
              </property>
@@ -333,6 +629,34 @@ border-image: url(:/_025fe56e-7f50-405f-b902-336be60dd152.jfif);
            </item>
            <item>
             <widget class="QPushButton" name="Slot2">
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+    font-family: &quot;Bahnschrift SemiBold&quot;;          /* Fuente moderna y estilizada */
+    font-size: 20px;                             /* Tamaño de la letra: un poco más pequeño */
+    color: rgba(255, 255, 255, 1);               /* Color de la letra: blanco */
+    background-color: rgba(0, 0, 0, 1);          /* Color de fondo: negro opaco */
+    border: 2px solid rgba(255, 255, 255, 1);    /* Borde: blanco */
+    border-radius: 10px;                         /* Bordes redondeados */
+    padding: 12px 20px;                          /* Espaciado interno para un botón más grande */
+    text-transform: uppercase;                    /* Texto en mayúsculas para un efecto de fuerza */
+}
+
+QPushButton:hover {
+    background-color: rgba(51, 51, 51, 1);       /* Fondo gris opaco al pasar el mouse */
+    border: 2px solid rgba(255, 255, 255, 1);     /* Borde blanco al pasar el mouse */
+    color: rgba(255, 255, 255, 1);                /* Letra blanca al pasar el mouse */
+}
+
+QPushButton:pressed {
+    background-color: rgba(100, 100, 100, 1);    /* Fondo gris oscuro al presionar */
+    border: 2px solid rgba(255, 255, 255, 1);     /* Borde blanco al presionar */
+    color: rgba(255, 255, 255, 1);                /* Letra blanca al presionar */
+}
+</string>
+             </property>
              <property name="text">
               <string>SLOT 3</string>
              </property>
@@ -347,6 +671,34 @@ border-image: url(:/_025fe56e-7f50-405f-b902-336be60dd152.jfif);
            </property>
            <item>
             <widget class="QPushButton" name="atrasMenu">
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+    font-family: &quot;Bahnschrift SemiBold&quot;;          /* Fuente moderna y estilizada */
+    font-size: 23px;                             /* Tamaño de la letra: más grande */
+    color: rgba(255, 215, 0, 1);                  /* Color de la letra: dorado */
+    background-color: rgba(0, 0, 0, 1);          /* Color de fondo: negro opaco */
+    border: 2px solid rgba(255, 215, 0, 1);       /* Borde: dorado */
+    border-radius: 10px;                         /* Bordes redondeados */
+    padding: 12px 20px;                          /* Espaciado interno para un botón más grande */
+    text-transform: uppercase;                    /* Texto en mayúsculas para un efecto de fuerza */
+}
+
+QPushButton:hover {
+    background-color: rgba(51, 51, 51, 1);       /* Fondo gris opaco al pasar el mouse */
+    border: 2px solid rgba(255, 215, 0, 1);       /* Borde dorado al pasar el mouse */
+    color: rgba(255, 215, 0, 1);                  /* Letra dorada al pasar el mouse */
+}
+
+QPushButton:pressed {
+    background-color: rgba(100, 100, 0, 1);      /* Fondo gris oscuro al presionar */
+    border: 2px solid rgba(255, 215, 0, 1);       /* Borde dorado al presionar */
+    color: rgba(255, 215, 0, 1);                  /* Letra dorada al presionar */
+}
+</string>
+             </property>
              <property name="text">
               <string>ATRAS</string>
              </property>
@@ -354,6 +706,34 @@ border-image: url(:/_025fe56e-7f50-405f-b902-336be60dd152.jfif);
            </item>
            <item>
             <widget class="QPushButton" name="botonContinua">
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+    font-family: &quot;Bahnschrift SemiBold&quot;;          /* Fuente moderna y estilizada */
+    font-size: 23px;                             /* Tamaño de la letra: más grande */
+    color: rgba(255, 215, 0, 1);                  /* Color de la letra: dorado */
+    background-color: rgba(0, 0, 0, 1);          /* Color de fondo: negro opaco */
+    border: 2px solid rgba(255, 215, 0, 1);       /* Borde: dorado */
+    border-radius: 10px;                         /* Bordes redondeados */
+    padding: 12px 20px;                          /* Espaciado interno para un botón más grande */
+    text-transform: uppercase;                    /* Texto en mayúsculas para un efecto de fuerza */
+}
+
+QPushButton:hover {
+    background-color: rgba(51, 51, 51, 1);       /* Fondo gris opaco al pasar el mouse */
+    border: 2px solid rgba(255, 215, 0, 1);       /* Borde dorado al pasar el mouse */
+    color: rgba(255, 215, 0, 1);                  /* Letra dorada al pasar el mouse */
+}
+
+QPushButton:pressed {
+    background-color: rgba(100, 100, 0, 1);      /* Fondo gris oscuro al presionar */
+    border: 2px solid rgba(255, 215, 0, 1);       /* Borde dorado al presionar */
+    color: rgba(255, 215, 0, 1);                  /* Letra dorada al presionar */
+}
+</string>
+             </property>
              <property name="text">
               <string>CONTINUAR</string>
              </property>

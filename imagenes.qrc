@@ -24,5 +24,7 @@
         <file>Archivos de texto/apellidos.txt</file>
         <file>Archivos de texto/nombres femeninos.txt</file>
         <file>Archivos de texto/nombres masculinos.txt</file>
+        <file>puntuacion.png</file>
+        <file>guardar_partida.jfif</file>
     </qresource>
 </RCC>
