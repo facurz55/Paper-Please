@@ -38,6 +38,7 @@ public:
     QPushButton* getBotonSiguiente_NPC();
     QLabel *getLabelNPC();
     void MostrarCondiciones();
+    void reiniciarReloj();
 
 signals:
     void SalioElNPC();
@@ -49,6 +50,7 @@ signals:
     void GuardarDatos(DatosJugador);
     void volverAlMenuClicked();
     void nombrePartidaActualizado(const QString &nombre);
+
 
 
 

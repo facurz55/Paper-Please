@@ -56,7 +56,7 @@ gameplay::gameplay(QWidget *parent)
 
     //TIMER
     tiempoInicio = QTime(13, 0);  //inicia a las 13
-    horaFin = QTime(13.2, 0);       //termina a las 22
+    horaFin = QTime(14, 0);       //termina a las 22
 
     // Conexiones de botones
     connect(ui->Boton_SiguienteDia, &QPushButton::clicked,  this, &gameplay::ComenzarSiguienteDia);
@@ -288,12 +288,28 @@ void gameplay::generarNpc()
     Persona.generar_Estado_civil();
     Persona.generar_Estancia();
     Persona.pensamientos();
+    if (Nivel >= 2){
+        Persona.generarResidencia();
+        Persona.generarProposito();
+        if (Nivel >= 3){
+            Persona.generarCompania();
+            if (Nivel == 4){
+                Persona.generarPesoMaleta();
+                if (Persona.getPersonaVisa() == "Trabajo" || Persona.getPersonaVisa() == "diplomatico"){
+                    Persona.generarOcupacion();
+                }
+            }
+        }
+    }
 
     ui->aceptar->setEnabled(true);
     ui->denegar->setEnabled(true);
     ui->papeles->setEnabled(true);
     ui->mostrar_req->setEnabled(true);
     ui->Siguiente_NPC->setDisabled(true);
+    if (Persona.getCompania() != 0){
+      // boton de compania
+    }
 
     SalirNPC();
 }
@@ -406,18 +422,16 @@ void gameplay::noPasa()
     ui->Siguiente_NPC->setEnabled(true);
 }
 
-
 void gameplay::iniciarReloj() //funcion de inicio del reloj
 {
-    Reloj.start(1000); // Emitir la señal timeout cada 1 segundor
     tiempoActual = tiempoInicio;
+    Reloj.start(1000); // Emitir la señal timeout cada 1 segundor
 }
 
 void gameplay::ReiniciarNivel()
 {
     emit clickedReiniciar();
     ui->stackedWidget->setCurrentWidget(ui->game);
-    iniciarReloj();
     EntrarNPC();
 }
 
@@ -442,7 +456,7 @@ void gameplay::ComenzarSiguienteDia()
 
 void gameplay::actualizarReloj()
 {
-    tiempoActual = tiempoActual.addSecs(150);
+    tiempoActual = tiempoActual.addSecs(300);
 
     // Verificar si ha llegado a la hora de finalizar el turno 22:00
     if (tiempoActual >= horaFin)
@@ -470,7 +484,6 @@ void gameplay::actualizarReloj()
 
     ui->timer->setText(tiempoActual.toString("hh:mm:ss"));
 }
-
 
 void gameplay::preguntar()
 {

@@ -89,16 +89,16 @@ void Persona::generar_Estancia()
 
 void Persona::datosArchivo() {
 
-    QFile archivoNomMale("qrc:/Archivos de texto/nombres masculinos.txt");
-    QFile archivoNomFem("qrc:/Archivos de texto/nombres femeninos.txt");
-    QFile archivoAp("qrc:/Archivos de texto/apellidos.txt");
-    if (!archivoNomMale.open(QFile::WriteOnly)){
+    QFile archivoNomMale(":/Archivos de texto/nombres masculinos.txt");
+    QFile archivoNomFem(":/Archivos de texto/nombres femeninos.txt");
+    QFile archivoAp(":/Archivos de texto/apellidos.txt");
+    if (!archivoNomMale.open(QFile::ReadOnly | QFile::Text)){
         return;
     }
-    if (!archivoNomFem.open(QFile::WriteOnly)) {
+    if (!archivoNomFem.open(QFile::ReadOnly | QFile::Text)) {
         return;
     }
-    if (!archivoAp.open(QFile::WriteOnly)) {
+    if (!archivoAp.open(QFile::ReadOnly | QFile::Text)) {
         return;
     }
 
@@ -127,39 +127,35 @@ void Persona::generarNombres() {
     QStringList generos = {"masculino", "femenino"};
     int gen = generador.bounded(generos.size());
     genero = generos[gen];
-
-    /*QStringList nombresM = {"Gabriel", "Andrés", "Diego", "Ricardo", "Mario", "Fernando", "Javier", "Daniel", "Emilio", "Sebastián"};
-    QStringList nombresF = {"María", "Ana", "Laura", "Sofía", "Carmen", "Isabel", "Patricia", "Julia", "Elena", "Marta"};*/
     int ran = generador.bounded(0, 100);
     if (gen == 0) {
-        int nbm = generador.bounded(VnombresMale.size());
-        QString Male = QString::fromStdString(VnombresMale[nbm]);
-        nombre = Male;
+        if (!vectorNombresMale.isEmpty()) {
+        int nbm = generador.bounded(vectorNombresMale.size());
+        nombre = vectorNombresMale[nbm];
+
         if (ran < 10)
         {
-            int nbf = generador.bounded(VnombresFem.size());
-            QString Fem = QString::fromStdString(VnombresFem[nbf]);
-            nombre = Fem;
+            int nbf = generador.bounded(vectorNombresFem.size());
+            nombre = vectorNombresFem[nbf];
             pop = 1;
+        }
         }
     } else {
-        int nbf = generador.bounded(VnombresFem.size());
-        QString Fem = QString::fromStdString(VnombresFem[nbf]);
-        nombre = Fem;
+        if (!vectorNombresFem.isEmpty()) {
+        int nbf = generador.bounded(vectorNombresFem.size());
+        nombre = vectorNombresFem[nbf];
         if (ran < 10)
         {
-            int nbm = generador.bounded(VnombresMale.size());
-            QString Male = QString::fromStdString(VnombresMale[nbm]);
-            nombre = Male;
+            int nbm = generador.bounded(vectorNombresMale.size());
+            nombre = vectorNombresMale[nbm];
             pop = 1;
         }
+        }
     }
-
-
-    //QStringList apellidos = {"García", "Rodríguez", "López", "Martínez", "González", "Gomez", "Sánchez", "Ramírez", "Torres", "Flores", "Navarro", "Molina"};
-    int na = generador.bounded(Vapellidos.size());
-    QString APE = QString::fromStdString(Vapellidos[na]);
-    apellido = APE;
+    if (!vectorApellidos.isEmpty()) {
+    int na = generador.bounded(vectorApellidos.size());
+    apellido = vectorApellidos[na];
+    }
 }
 
 void Persona::generarFecha() {
@@ -337,6 +333,59 @@ void Persona::generarProposito(){
 
 }
 
+void Persona::generarCompania(){
+    int comp = generador.bounded(100);
+    if (comp < 10){
+        int companiaAux = generador.bounded(1, 5);
+        compania = companiaAux;
+    }
+}
+
+void Persona::generarPesoMaleta(){
+    int auxP = generador.bounded(100);
+    if (auxP < 40){
+        tipoMaleta = "ligero";
+        int peso = generador.bounded(2, 7);
+        maleta = peso;
+    }
+    if (auxP > 60){
+        tipoMaleta = "intermedio";
+        int peso = generador.bounded(8, 20);
+        maleta = peso;
+    }else{
+        tipoMaleta = "pesado";
+        int peso = generador.bounded(21, 40);
+        maleta = peso;
+    }
+}
+
+void Persona::generarOcupacion(){
+    if (Visa == "Trabajo"){
+        if (nacionalidad == "argentino/a"){
+            QStringList auxO = {"Desarrollador de software", "Especialista en ciberseguridad", "Médico", "Profesor/a universitario/a", "Gerente de ventas"};
+            int ocu = generador.bounded(auxO.size());
+            ocupacion = auxO[ocu];
+        }
+        if (nacionalidad == "brasileño/a"){
+            QStringList auxO = {"Analista de datos", "Fisioterapeuta", "Recursos humanos", "bailarin", "Estilista"};
+            int ocu = generador.bounded(auxO.size());
+            ocupacion = auxO[ocu];
+        }
+        if (nacionalidad == "paraguayo/a"){
+            QStringList auxO = {"Maestro/a", "Educador/a infantil", "Especialista en marketing", "albañil"};
+            int ocu = generador.bounded(auxO.size());
+            ocupacion = auxO[ocu];
+        }
+        if (nacionalidad == "boliviano/a"){
+            QStringList auxO = {"Tutor/a", "verdulero", "Enfermero/a", "Chef", "Ingeniero/a civil"};
+            int ocu = generador.bounded(auxO.size());
+            ocupacion = auxO[ocu];
+        }
+    }
+    else{
+        ocupacion = "diplomatico";
+    }
+}
 
 // Métodos para obtener los datos
 QString Persona::obtenerGenero() const {
@@ -391,6 +440,22 @@ QString Persona::obtenerNpc()
 {
     return tipoNpc;
 }
-
-
+QString Persona::getResidencia(){
+    return residencia;
+}
+QString Persona::getProposito(){
+    return proposito;
+}
+int Persona::getCompania(){
+    return compania;
+}
+int Persona::getMaleta(){
+    return maleta;
+}
+QString Persona::getTipoMaleta(){
+    return tipoMaleta;
+}
+QString Persona::getOcupacion(){
+    return ocupacion;
+}
 
