@@ -9,10 +9,7 @@
 #include <QTextStream>
 #include <QVector>
 
-#include <iostream>
-#include <fstream>
-#include <vector>
-#include <string>
+#include <QDateTime>
 
 #include <time.h>
 
@@ -64,6 +61,7 @@ public:
     int getMaleta();
     QString getTipoMaleta();
     QString getOcupacion();
+    bool getBoolComp();
 
     //Faltan Estancia, residencia, proposito del viaje, integrantes, antecedentes
 protected:
@@ -87,13 +85,15 @@ protected:
     QString residencia;
     QString proposito;
 
-    int compania = 0;
+    int compania;
+    bool compBool = false;
 
     int maleta;
     QString tipoMaleta;
     QString ocupacion;
 
     QRandomGenerator generador;
+    qint64 seed = QDateTime::currentMSecsSinceEpoch();
 };
 
 #endif // PERSONA_H

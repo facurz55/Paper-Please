@@ -83,6 +83,12 @@ private slots:
     void PrepararAnimacion();
     void PrepararAnimacionSalida();
 
+    void actualizarMaleta();
+    void actualizarCompania();
+    void actualizarOcupacion();
+    void actualizarResidencia();
+
+
 private:
     int Nivel;
     Ui::gameplay *ui;
