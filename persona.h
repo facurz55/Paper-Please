@@ -4,6 +4,16 @@
 #include <QStringList>
 #include <QDebug>
 #include <QRandomGenerator>
+
+#include <QFile>
+#include <QTextStream>
+#include <QVector>
+
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <string>
+
 #include <time.h>
 
 // #include "gameplay.h"
@@ -20,6 +30,11 @@ public:
     void generar_Estado_civil();
     void generar_Estancia();
     void pensamientos();
+
+    void datosArchivo();
+
+    void generarResidencia();
+    void generarProposito();
 
     //Pop indica que el documento tiene almenos un error
     void retPop(); //hace que "Pop" vuelva a valer 0 luego de ser utilizado
@@ -38,6 +53,13 @@ public:
 
     //Faltan Estancia, residencia, proposito del viaje, integrantes, antecedentes
 protected:
+    QVector<QString> vectorNombresMale;
+    QVector<QString> vectorNombresFem;
+    QVector<QString> vectorApellidos;
+    std::vector<std::string> VnombresMale;
+    std::vector<std::string> VnombresFem;
+    std::vector<std::string> Vapellidos;
+
     QString tipoNpc;
     QString genero;
     QString nombre;
@@ -50,6 +72,11 @@ protected:
     int pop = 0;
     int multa = 0;
     QString pensamiento;
+
+    QString residencia;
+    QString proposito;
+
+    QRandomGenerator generador;
 };
 
 #endif // PERSONA_H
