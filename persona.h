@@ -56,9 +56,7 @@ protected:
     QVector<QString> vectorNombresMale;
     QVector<QString> vectorNombresFem;
     QVector<QString> vectorApellidos;
-    std::vector<std::string> VnombresMale;
-    std::vector<std::string> VnombresFem;
-    std::vector<std::string> Vapellidos;
+
 
     QString tipoNpc;
     QString genero;

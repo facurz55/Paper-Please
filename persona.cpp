@@ -89,16 +89,16 @@ void Persona::generar_Estancia()
 
 void Persona::datosArchivo() {
 
-    QFile archivoNomMale("qrc:/Archivos de texto/nombres masculinos.txt");
-    QFile archivoNomFem("qrc:/Archivos de texto/nombres femeninos.txt");
-    QFile archivoAp("qrc:/Archivos de texto/apellidos.txt");
-    if (!archivoNomMale.open(QFile::WriteOnly)){
+    QFile archivoNomMale(":/Archivos de texto/nombres masculinos.txt");
+    QFile archivoNomFem(":/Archivos de texto/nombres femeninos.txt");
+    QFile archivoAp(":/Archivos de texto/apellidos.txt");
+    if (!archivoNomMale.open(QFile::ReadOnly)){
         return;
     }
-    if (!archivoNomFem.open(QFile::WriteOnly)) {
+    if (!archivoNomFem.open(QFile::ReadOnly)) {
         return;
     }
-    if (!archivoAp.open(QFile::WriteOnly)) {
+    if (!archivoAp.open(QFile::ReadOnly)) {
         return;
     }
 
@@ -132,24 +132,24 @@ void Persona::generarNombres() {
     QStringList nombresF = {"María", "Ana", "Laura", "Sofía", "Carmen", "Isabel", "Patricia", "Julia", "Elena", "Marta"};*/
     int ran = generador.bounded(0, 100);
     if (gen == 0) {
-        int nbm = generador.bounded(VnombresMale.size());
-        QString Male = QString::fromStdString(VnombresMale[nbm]);
+        int nbm = generador.bounded(vectorNombresMale.size());
+        QString Male = vectorNombresMale[nbm];
         nombre = Male;
         if (ran < 10)
         {
-            int nbf = generador.bounded(VnombresFem.size());
-            QString Fem = QString::fromStdString(VnombresFem[nbf]);
+            int nbf = generador.bounded(vectorNombresFem.size());
+            QString Fem = vectorNombresFem[nbf];
             nombre = Fem;
             pop = 1;
         }
     } else {
-        int nbf = generador.bounded(VnombresFem.size());
-        QString Fem = QString::fromStdString(VnombresFem[nbf]);
+        int nbf = generador.bounded(vectorNombresFem.size());
+        QString Fem = vectorNombresFem[nbf];
         nombre = Fem;
         if (ran < 10)
         {
-            int nbm = generador.bounded(VnombresMale.size());
-            QString Male = QString::fromStdString(VnombresMale[nbm]);
+            int nbm = generador.bounded(vectorNombresMale.size());
+            QString Male = vectorNombresMale[nbm];
             nombre = Male;
             pop = 1;
         }
@@ -157,8 +157,8 @@ void Persona::generarNombres() {
 
 
     //QStringList apellidos = {"García", "Rodríguez", "López", "Martínez", "González", "Gomez", "Sánchez", "Ramírez", "Torres", "Flores", "Navarro", "Molina"};
-    int na = generador.bounded(Vapellidos.size());
-    QString APE = QString::fromStdString(Vapellidos[na]);
+    int na = generador.bounded(vectorApellidos.size());
+    QString APE = vectorApellidos[na];
     apellido = APE;
 }
 

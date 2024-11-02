@@ -1,4 +1,4 @@
-#include "gameplay.h"
+    #include "gameplay.h"
 #include "ui_gameplay.h"
 
 gameplay::gameplay(QWidget *parent)
@@ -437,11 +437,9 @@ void gameplay::ComenzarSiguienteDia()
 {
     iniciarReloj();
     ui->stackedWidget->setCurrentWidget(ui->game);
-<<<<<<< HEAD
 
-=======
     iniciarReloj();
->>>>>>> main
+
     emit clickedSiguienteDia();
 }
 
