@@ -9,11 +9,6 @@
 #include <QTextStream>
 #include <QVector>
 
-#include <iostream>
-#include <fstream>
-#include <vector>
-#include <string>
-
 #include <time.h>
 
 // #include "gameplay.h"
@@ -36,6 +31,11 @@ public:
     void generarResidencia();
     void generarProposito();
 
+    void generarCompania();
+
+    void generarPesoMaleta();
+    void generarOcupacion();
+
     //Pop indica que el documento tiene almenos un error
     void retPop(); //hace que "Pop" vuelva a valer 0 luego de ser utilizado
     int obtenerPop();
@@ -50,6 +50,15 @@ public:
     QString getPersonaEstCivil() const;
     QString obtenerPensamientos();
     QString obtenerNpc();
+
+    QString getResidencia();
+    QString getProposito();
+
+    int getCompania();
+
+    int getMaleta();
+    QString getTipoMaleta();
+    QString getOcupacion();
 
     //Faltan Estancia, residencia, proposito del viaje, integrantes, antecedentes
 protected:
@@ -73,6 +82,12 @@ protected:
 
     QString residencia;
     QString proposito;
+
+    int compania = 0;
+
+    int maleta;
+    QString tipoMaleta;
+    QString ocupacion;
 
     QRandomGenerator generador;
 };
