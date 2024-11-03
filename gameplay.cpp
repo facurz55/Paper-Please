@@ -635,7 +635,11 @@ void gameplay::ComenzarSiguienteDia()
     ui->guardarPartida->show();
     ui->volverAlMenu->show();
     ui->timer->show();
-
+    ui->mostrar_req->setDisabled(false);
+    ui->papeles->setDisabled(false);
+    ui->aceptar->setDisabled(true);
+    ui->denegar->setDisabled(true);
+    ui->Siguiente_NPC->setEnabled(true);
     ui->Siguiente_NPC->show();
 
     Nivel++;
