@@ -74,4 +74,5 @@ void MainWindow::volverAMenu(){
 }
 void MainWindow::volverAlMenu() {
     stackedWidget->setCurrentWidget(menuPage);
+    menuPage->startMusic();
 }

@@ -34,7 +34,7 @@ Menu::Menu(QWidget *parent)
     backgroundMusic->setLoops(QMediaPlayer::Infinite); // Hacer que la música loopee
 
     // Reproduce la música
-    backgroundMusic->play();
+    startMusic();
 
 
     // Conexiones pantalla principal
@@ -88,6 +88,12 @@ void Menu::cambiarNombreBoton(const QString &nombre)
 // Método para detener la música
 void Menu::stopMusic(){
     backgroundMusic->stop(); // Detener la música
+}
+
+void Menu::startMusic() {
+    if (backgroundMusic->playbackState() != QMediaPlayer::PlayingState) {
+        backgroundMusic->play();
+    }
 }
 
 void Menu::clickeoJugar(){
