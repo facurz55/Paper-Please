@@ -24,6 +24,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(game, &gameplay::volverAlMenuClicked, this, &MainWindow::volverAlMenu);
     connect(game, &gameplay::nombrePartidaActualizado, menuPage, &Menu::cambiarNombreBoton);
     connect(game, &gameplay::GuardarDatos, menuPage, &Menu::guardarPartida);
+    connect(menuPage, &Menu::enviarJugador, game, &gameplay::cargarJugardor);
 }
 
 MainWindow::~MainWindow()
@@ -36,8 +37,6 @@ void MainWindow::Volver(){
 }
 
 void MainWindow::ComenzarJuego(int Dificultad) {
-
-    // Cambia el widget actual del stackedWidget al widget del juego (game)
     stackedWidget->setCurrentWidget(game);
     game->Empezar(Dificultad);
 }

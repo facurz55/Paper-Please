@@ -27,8 +27,7 @@ class gameplay : public QWidget
 public:
     explicit gameplay(QWidget *parent = nullptr);
     void Empezar(int Dificultad);
-    void Empezar(DatosJugador datos);
-
+    void EmpezarJuegoSlot(DatosJugador datos);
     void setUpPuntos(int Dificultad);
     ~gameplay();
     void EntrarNPC();
@@ -55,6 +54,8 @@ signals:
 
 public slots:
     void iniciarReloj();
+    void cargarJugardor(DatosJugador jugador);
+
 
 private slots:
     //este boton tenemos que moverlo a la parte del nivel 1 el boton condicionales

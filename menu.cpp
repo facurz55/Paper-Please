@@ -3,11 +3,12 @@
 #include <QVBoxLayout>
 #include <QMediaPlayer>
 #include <QAudioDevice>
+#include <qdebug.h>
 #include "guardarpartida/guardarpartida.h"
 
 Menu::Menu(QWidget *parent)
     : QWidget(parent)
-    , ui(new Ui::Menu), slot(0)
+    , ui(new Ui::Menu), slot(-1)
 
 {
     Puntos = 0;
@@ -46,10 +47,10 @@ Menu::Menu(QWidget *parent)
     connect(ui->BotonSalir, &QPushButton::clicked,this,&Menu::Exit);
     connect(ui->BotonCargarPartida,&QPushButton::clicked,this,&Menu::clikeoCargarPartida);
     connect(ui->atrasMenu, &QPushButton::clicked, this, &Menu::MenuPrincipal);
-    connect(ui->Slot1, &QPushButton::clicked, this, [this]() { this->slot = 0; this->clikeoBotonSlot(); });
-    connect(ui->Slot2, &QPushButton::clicked, this, [this]() { this->slot = 1; this->clikeoBotonSlot(); });
-    connect(ui->Slot3, &QPushButton::clicked, this, [this]() { this->slot = 2; this->clikeoBotonSlot(); });
-    connect(ui->botonContinua, &QPushButton::clicked, this, &Menu::clickeoJugar);
+    connect(ui->Slot1, &QPushButton::clicked, this, [this]() { this->slot = 0; this->clikeoBotonSlot(); this->cargarPartida(slot);});
+    connect(ui->Slot2, &QPushButton::clicked, this, [this]() { this->slot = 1; this->clikeoBotonSlot(); this->cargarPartida(slot); });
+    connect(ui->Slot3, &QPushButton::clicked, this, [this]() { this->slot = 2; this->clikeoBotonSlot(); this->cargarPartida(slot); });
+    connect(ui->botonContinua, &QPushButton::clicked, this, &Menu::ComenzarPartidaSlot);
 
     ui->MenuStacked->setCurrentIndex(0);
 }
@@ -57,6 +58,11 @@ Menu::Menu(QWidget *parent)
 void Menu::guardarPartida(DatosJugador datos, int Slot)
 {
     guardar.guardar(datos, Slot);
+}
+
+void Menu::cargarPartida(int slot){
+    jugador = guardar.cargar(slot);
+    emit enviarJugador(jugador);
 }
 
 Menu::~Menu()
@@ -97,8 +103,17 @@ void Menu::clickeoJugar(){
     stopMusic(); // Detener la música al jugar
     emit clickedJugar(Puntos);
     ui->BotonContinuar->setVisible(false);
-     ui->MenuStacked->setCurrentIndex(0);
+    ui->MenuStacked->setCurrentIndex(0);
 }
+
+void Menu::ComenzarPartidaSlot(){
+    stopMusic();
+    qDebug()<<jugador.nombre;
+    emit clickedJugar(jugador.puntuacion);
+    ui->BotonContinuar->setVisible(false);
+    ui->MenuStacked->setCurrentIndex(0);
+}
+
 
 void Menu::clikeoCargarPartida(){
     ui->MenuStacked->setCurrentIndex(2);

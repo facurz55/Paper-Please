@@ -9,6 +9,7 @@
 #include <QAudioDevice>
 #include "puntos.h"
 #include "guardarpartida/guardarpartida.h"
+#include "guardarpartida/datosjugador.h"
 #include "gameplay.h"
 
 namespace Ui {
@@ -28,9 +29,11 @@ public:
 public slots:
     void guardarPartida(DatosJugador datos, int);
     void cambiarNombreBoton(const QString &nombre);
+    void cargarPartida(int slot);
 
 signals:
     void clickedJugar(int dificultad);
+    void enviarJugador(DatosJugador);
 
 private slots:
     void SeleccionarDif();
@@ -42,13 +45,14 @@ private slots:
     void DificultadMedia();
     void DificultadAlta();
     void Exit();
+    void ComenzarPartidaSlot();
 
 private:
     guardarpartida guardar;
     Ui::Menu *ui;
     int Puntos;//validar con cuanto empieza los puntos
     int slot;
-
+    DatosJugador jugador;
     QMediaPlayer *backgroundMusic;
     QAudioOutput *audioOutput;      // Puntero a QAudioOutput
 };

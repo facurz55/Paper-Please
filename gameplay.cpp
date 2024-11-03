@@ -1,5 +1,6 @@
 #include "gameplay.h"
 #include "ui_gameplay.h"
+#include <qdebug.h>
 
 gameplay::gameplay(QWidget *parent)
     : QWidget(parent)
@@ -60,7 +61,7 @@ gameplay::gameplay(QWidget *parent)
 
     //TIMER
     tiempoInicio = QTime(13, 0);  //inicia a las 13
-    horaFin = QTime(14, 0);       //termina a las 22
+    horaFin = QTime(13.1, 0);       //termina a las 22
 
     // Conexiones de botones
     connect(ui->Boton_SiguienteDia, &QPushButton::clicked,  this, &gameplay::ComenzarSiguienteDia);
@@ -112,6 +113,14 @@ void gameplay::setIndexSlot3(){
     indexSLOT = 2;
 }
 
+void gameplay::cargarJugardor(DatosJugador jugador){
+    Puntos.setPunto(jugador.puntuacion);
+    multa.setMultas(jugador.multas);
+    Nivel = jugador.nivel;
+    EmpezarJuegoSlot(jugador);
+    iniciarReloj();
+}
+
 void gameplay::clikedGuardarPartida(){
     ui->nombrePartida->show();
     ui->confirmar->show();
@@ -153,7 +162,6 @@ void gameplay::clikedConfirmarGuardar(){
     // Asegurarse de que la cadena esté terminada en nulo
     nombrePartida[sizeof(nombrePartida) - 1] = '\0';
 
-    qDebug() << nombrePartida;
     // Ahora tienes el texto del QLineEdit en nombrePartida como char[]
 
     DatosJugador aux;
@@ -177,6 +185,8 @@ char* gameplay::getNombrePartida(){
     return nombrePartida;
 }
 
+
+
 void gameplay::Empezar(int Dificultad)
 {
     Nivel = 1;
@@ -186,12 +196,15 @@ void gameplay::Empezar(int Dificultad)
     EntrarNPC();
 }
 
-void gameplay::Empezar(DatosJugador datos)
+void gameplay::EmpezarJuegoSlot(DatosJugador datos)
 {
     Nivel = datos.nivel;
     Puntos.setPunto(datos.puntuacion);
-
-
+    MusicaGameplay->play();
+    iniciarReloj();
+    EntrarNPC();
+    ui->stackedWidget->setCurrentIndex(0);
+    qDebug()<<"hola";
 }
 
 void gameplay::setUpPuntos(int Dificultad)

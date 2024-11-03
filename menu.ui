@@ -41,7 +41,7 @@
 }</string>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>2</number>
      </property>
      <widget class="QWidget" name="page">
       <property name="sizePolicy">
@@ -540,7 +540,7 @@ QPushButton:pressed {
            <item>
             <widget class="QLabel" name="SeleccionarSLot">
              <property name="layoutDirection">
-              <enum>Qt::LeftToRight</enum>
+              <enum>Qt::LayoutDirection::LeftToRight</enum>
              </property>
              <property name="styleSheet">
               <string notr="true">border-image: url(:/guardar_partida.jfif);</string>
