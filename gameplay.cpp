@@ -481,6 +481,16 @@ void gameplay::siPasa()
     }
     Persona.retPop();
 
+    if(Nivel>=2){
+        Puntos.fallo_nivel_2(Persona.getResidencia(),Persona.obtenerNacionalidad(),Persona.obtenerNpc(),Persona.getProposito());
+    }
+    if((Nivel>=3) && (Persona.getBoolComp())){
+        Puntos.fallo_nivel_3(Persona.getCompania(),Persona.obtenerNpc(),Persona.obtenerNacionalidad());
+    }
+    if(Nivel>=4){
+        Puntos.fallo_nivel_4(Persona.getMaleta(),Persona.getTipoMaleta(),Persona.getOcupacion(),Persona.obtenerNpc(),Persona.getResidencia());
+    }
+
     ui->documento->hide();
     ui->datos->hide();
     ui->cerrar->hide();
@@ -515,7 +525,7 @@ void gameplay::noPasa()
     }
     Persona.retPop();
 
-    if(Nivel>=2){
+    /*if(Nivel>=2){
         Puntos.fallo_nivel_2(Persona.getResidencia(),Persona.obtenerNacionalidad(),Persona.obtenerNpc(),Persona.getProposito());
     }
     if((Nivel>=3) && (Persona.getBoolComp())){
@@ -523,7 +533,7 @@ void gameplay::noPasa()
     }
     if(Nivel>=4){
         Puntos.fallo_nivel_4(Persona.getMaleta(),Persona.getTipoMaleta(),Persona.getOcupacion(),Persona.obtenerNpc(),Persona.getResidencia());
-    }
+    }*/
 
     ui->documento->hide();
     ui->datos->hide();
