@@ -23,7 +23,7 @@ class gameplay;
 class gameplay : public QWidget
 {
     Q_OBJECT
-
+    //
 public:
     explicit gameplay(QWidget *parent = nullptr);
     void Empezar(int Dificultad);

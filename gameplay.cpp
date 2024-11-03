@@ -8,7 +8,7 @@ gameplay::gameplay(QWidget *parent)
 {
     ui->setupUi(this);
     Puntos.setUpMultas(&multa);
-
+    //
     //MURMULLO DEL GAMEPLAY (CON EASTER EGG MARIANO =O)
     MusicaGameplay = new QMediaPlayer(this);
     audioOutputGameplay = new QAudioOutput(this);
