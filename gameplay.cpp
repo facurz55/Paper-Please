@@ -66,7 +66,7 @@ gameplay::gameplay(QWidget *parent)
 
     //TIMER
     tiempoInicio = QTime(13, 0);  //inicia a las 13
-    horaFin = QTime(17, 0);       //termina a las 22
+    horaFin = QTime(14, 0);       //termina a las 22
 
     // Conexiones de botones
     connect(ui->Boton_SiguienteDia, &QPushButton::clicked,  this, &gameplay::ComenzarSiguienteDia);
@@ -515,6 +515,16 @@ void gameplay::noPasa()
     }
     Persona.retPop();
 
+    if(Nivel>=2){
+        Puntos.fallo_nivel_2(Persona.getResidencia(),Persona.obtenerNacionalidad(),Persona.obtenerNpc(),Persona.getProposito());
+    }
+    if((Nivel>=3) && (Persona.getBoolComp())){
+        Puntos.fallo_nivel_3(Persona.getCompania(),Persona.obtenerNpc(),Persona.obtenerNacionalidad());
+    }
+    if(Nivel>=4){
+        Puntos.fallo_nivel_4(Persona.getMaleta(),Persona.getTipoMaleta(),Persona.getOcupacion(),Persona.obtenerNpc(),Persona.getResidencia());
+    }
+
     ui->documento->hide();
     ui->datos->hide();
     ui->cerrar->hide();
@@ -544,6 +554,19 @@ void gameplay::ReiniciarNivel()
     emit clickedReiniciar();
     ui->stackedWidget->setCurrentWidget(ui->game);
     EntrarNPC();
+    ui->aceptar->show();
+    ui->denegar->show();
+    ui->mostrar_req->show();
+    ui->papeles->show();
+
+    ui->timer->show();
+
+    ui->Siguiente_NPC->show();
+
+
+
+
+    ui->botonFinalizarTurno->hide();
 }
 
 void gameplay::CondicionesNivel()
@@ -562,7 +585,21 @@ void gameplay::ComenzarSiguienteDia()
 {
     ui->stackedWidget->setCurrentWidget(ui->game);
     iniciarReloj();
+    EntrarNPC();
     emit clickedSiguienteDia();
+    ui->aceptar->show();
+    ui->denegar->show();
+    ui->mostrar_req->show();
+    ui->papeles->show();
+
+    ui->timer->show();
+
+    ui->Siguiente_NPC->show();
+
+
+
+
+    ui->botonFinalizarTurno->hide();
 }
 
 void gameplay::actualizarReloj()
@@ -614,3 +651,22 @@ void gameplay::MostrarCondiciones(){
     ui->RFecha->setText(condicion.obtenerFecha());
     ui->RTipoVisita->setText(condicion.obtenerTipoVisita());
 }
+
+void gameplay::on_volverAlMenu_clicked()
+{
+    ui->stackedWidget->setCurrentWidget(ui->game);
+    ui->aceptar->show();
+    ui->denegar->show();
+    ui->mostrar_req->show();
+    ui->papeles->show();
+
+    ui->timer->show();
+
+    ui->Siguiente_NPC->show();
+
+
+
+
+    ui->botonFinalizarTurno->hide();
+}
+

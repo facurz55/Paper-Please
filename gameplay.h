@@ -92,6 +92,8 @@ private slots:
     void actualizarResidencia();
 
 
+    void on_volverAlMenu_clicked();
+
 private:
     int Nivel;
     Ui::gameplay *ui;

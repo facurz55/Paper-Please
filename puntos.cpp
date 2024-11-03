@@ -48,6 +48,61 @@ void puntos::puntaje2(QString npc){
     }
 
 }
+void  puntos::fallo_nivel_2(QString residencia,QString origen,QString npc,QString proposito_del_viaje){
+    if((residencia=="boliviano")&& (origen=="boliviano")){
+        puntaje(npc);
+    }
+    if((origen=="paraguay") && (proposito_del_viaje=="turismo")){
+        puntaje(npc);
+    }
+    if((origen=="brazil") && (proposito_del_viaje=="visita familiar")){
+        puntaje(npc);
+    }
+}
+void puntos::fallo_nivel_3(int cantidad_acompanante,QString npc,QString origen){
+    if((origen=="boliviano") && (cantidad_acompanante!=0)){
+        puntaje(npc);
+    }
+    if(cantidad_acompanante>=5){
+        puntaje(npc);
+    }
+    if((cantidad_acompanante>=4)&& (origen=="brazil")){
+        puntaje(npc);
+    }
+    if((cantidad_acompanante<=2)&& (origen=="paraguay")){
+        puntaje(npc);
+        }
+}
+void puntos::fallo_nivel_4(int peso_maleta,QString tipo_maleta,QString ocupacion,QString npc ,QString residencia){
+    if((peso_maleta<=15) && (tipo_maleta!="liviana")){
+        puntaje(npc);
+    }
+    if((peso_maleta<=25)&& (peso_maleta>15) && (tipo_maleta!="media")){
+        puntaje(npc);
+    }
+    if((peso_maleta<=40)&& (peso_maleta>26) && (tipo_maleta!="pesada")){
+        puntaje(npc);
+    }
+    if((peso_maleta>20) && (residencia=="boliviano")){
+        puntaje(npc);
+    }
+    if((tipo_maleta=="pesada") && (residencia=="paraguay")){
+        puntaje(npc);
+    }
+    if((residencia=="argentino") && (ocupacion=="piquetero")){
+        puntaje(npc);
+    }
+    if((residencia=="brazilero") && (ocupacion=="futbolista")){
+        puntaje(npc);
+    }
+    if((residencia=="paraguayo")&& (ocupacion=="ingeniero")){
+        puntaje(npc);
+    }
+    if((residencia=="boliviano")&& (ocupacion=="camionero")){
+        puntaje(npc);
+    }
+
+}
 int puntos::obtener_puntos()
 {
     return punto;
