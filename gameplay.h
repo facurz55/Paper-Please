@@ -114,7 +114,7 @@ private:
     char nombrePartida[50];
     QString condicion1;
     const QString ALDEANO = "image:url(:/aldeano_tuco.png);";
-    const QString REFUGIADOPOLITICO = "image:url(:/pngwing.com (2).png);";
+    const QString REFUGIADOPOLITICO = "image:url(:/neymarsinho.png);";
     const QString REVOLUCIONARIO = "image:url(:/negritopix.png);";
     const QString DIPLOMATICO = "image:url(:/momardo.png);";
     QMediaPlayer *SonidoDenegar;
