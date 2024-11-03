@@ -201,7 +201,7 @@ char* gameplay::getNombrePartida(){
 
 void gameplay::Empezar(int Dificultad)
 {
-    Nivel = 1;
+    Nivel;
     MusicaGameplay->play();
     setUpPuntos(Dificultad);
     mostrarNivel(); //prueba
@@ -235,7 +235,7 @@ void gameplay::setUpPuntos(int Dificultad)
         break;
     case 1: Puntos.puntuacion2_asignada2();
         break;
-    default: Puntos.puntuacion3_asignada3();
+    case 2: Puntos.puntuacion3_asignada3();
         break;
     }
 

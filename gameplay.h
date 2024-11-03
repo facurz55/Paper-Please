@@ -97,7 +97,7 @@ private slots:
     void on_volverAlMenu_clicked();
 
 private:
-    int Nivel;
+    int Nivel = 1;
     Ui::gameplay *ui;
     QPropertyAnimation * animacionEntrada;
     QPropertyAnimation * animacionSalida;
