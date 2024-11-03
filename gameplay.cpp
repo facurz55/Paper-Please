@@ -621,8 +621,8 @@ void gameplay::ComenzarSiguienteDia()
 
     ui->Siguiente_NPC->show();
 
-
-
+    Nivel++;
+    qDebug()<<Nivel;
 
     ui->botonFinalizarTurno->hide();
 }
