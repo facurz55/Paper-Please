@@ -34,6 +34,21 @@ gameplay::gameplay(QWidget *parent)
     audioOutputAceptar->setVolume(0.3);
     connect(ui->aceptar, &QPushButton::clicked, this, &gameplay::siPasa);
 
+    //SONIDO GAME OVER
+    SonidoGameOver = new QMediaPlayer(this);
+    audioOutputGameOver = new QAudioOutput(this);
+    SonidoGameOver->setAudioOutput(audioOutputGameOver);
+    SonidoGameOver->setSource(QUrl("qrc:/game_over.wav"));
+    audioOutputGameOver->setVolume(0.3);
+
+    //SONIDO VICTORIA
+    SonidoVictoria = new QMediaPlayer(this);
+    audioOutputVictoria = new QAudioOutput(this);
+    SonidoVictoria->setAudioOutput(audioOutputVictoria);
+    SonidoVictoria->setSource(QUrl("qrc:/victoria_sound.wav"));
+    audioOutputVictoria->setVolume(0.3);
+
+
     //SONIDO AL PEDIR PAPELES
     SonidoPapel = new QMediaPlayer(this);
     audioOutputPapel = new QAudioOutput(this);
@@ -123,6 +138,14 @@ void gameplay::setIndexSlot3(){
     emit emitirIndexSlot(indexSLOT);
 }
 
+void gameplay::iniciarMusicaGameplay() {
+    MusicaGameplay->play();
+}
+
+void gameplay::detenerMusicaGameplay() {
+    MusicaGameplay->stop();
+}
+
 void gameplay::cargarJugardor(DatosJugador jugador){
     Puntos.setPunto(jugador.puntuacion);
     multa.setMultas(jugador.multas);
@@ -157,6 +180,9 @@ void gameplay::clikedConfirmarGuardar(){
     }
 
     ui->mensajePG_2->hide();
+    ui->SLOT1->hide();
+    ui->SLOT2->hide();
+    ui->SLOT3->hide();
 
     // Obtener el texto del QLineEdit
     QString texto = ui->nombrePartida->text();
@@ -200,7 +226,7 @@ char* gameplay::getNombrePartida(){
 void gameplay::Empezar(int Dificultad)
 {
     Nivel = 1;
-    MusicaGameplay->play();
+    iniciarMusicaGameplay();
     setUpPuntos(Dificultad);
     iniciarReloj(); //el reloj comienza cuando se produse el cambio de ventana
     EntrarNPC();
@@ -218,7 +244,6 @@ void gameplay::EmpezarJuegoSlot(DatosJugador datos)
 {
     Nivel = datos.nivel;
     Puntos.setPunto(datos.puntuacion);
-    MusicaGameplay->play();
     iniciarReloj();
     EntrarNPC();
     ui->stackedWidget->setCurrentIndex(0);
@@ -256,7 +281,7 @@ QLabel *gameplay::getLabelNPC(){//<-MW
 void gameplay::DatosFinalizar() {//esto para verificar si perdiste, en caso que no se muestran los puntos y mupunt
     int puntaje = Puntos.obtener_puntos();
     int multaa = multa.obtenerMultas();
-    MusicaGameplay->stop();
+    detenerMusicaGameplay();
 
     if ((multaa > 4) || (puntaje < 0)) {
         ui->labelPerdiste->setVisible(true);//muestra un label con mensaje de perdiste
@@ -264,6 +289,8 @@ void gameplay::DatosFinalizar() {//esto para verificar si perdiste, en caso que 
         ui->labelPuntos->setVisible(false);//se esconde los puntos, multas y el boton de siguiente dia
         ui->labelMultas->setVisible(false);
         ui->Boton_SiguienteDia->setVisible(false);
+        SonidoGameOver -> play();
+
     } else {//en caso de que se siga el juego se muestra lo siguiente
         ui->labelPerdiste->setVisible(false);//no perdiste asi que no muestra esto
         ui->Boton_ReiniciarNivel->setVisible(false);
@@ -272,6 +299,7 @@ void gameplay::DatosFinalizar() {//esto para verificar si perdiste, en caso que 
         ui->labelMultas->setText(QString("Multas: %1").arg(multaa));//lo mismo para multas
         ui->labelMultas->setVisible(true);
         ui->Boton_SiguienteDia->setVisible(true);//se muestra el boton del siguiente dia
+        SonidoVictoria -> play();
     }
 
     // Mostramos la pantalla de puntuacion
@@ -589,6 +617,7 @@ void gameplay::ReiniciarNivel()
 {
     emit clickedReiniciar();
     ui->stackedWidget->setCurrentWidget(ui->game);
+    iniciarMusicaGameplay();
     EntrarNPC();
     ui->aceptar->show();
     ui->denegar->show();
@@ -620,6 +649,7 @@ void gameplay::VolverMesa()
 void gameplay::ComenzarSiguienteDia()
 {
     ui->stackedWidget->setCurrentWidget(ui->game);
+    iniciarMusicaGameplay();
     iniciarReloj();
     EntrarNPC();
     emit clickedSiguienteDia();
