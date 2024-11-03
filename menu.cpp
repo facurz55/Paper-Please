@@ -13,8 +13,6 @@ Menu::Menu(QWidget *parent)
     Puntos = 0;
     ui->setupUi(this);
 
-    guardarpartida Guardar;
-
     //WIDGETS
     ui->BotonContinuar->setVisible(false);
     ui->botonContinua->hide();
@@ -48,18 +46,17 @@ Menu::Menu(QWidget *parent)
     connect(ui->BotonSalir, &QPushButton::clicked,this,&Menu::Exit);
     connect(ui->BotonCargarPartida,&QPushButton::clicked,this,&Menu::clikeoCargarPartida);
     connect(ui->atrasMenu, &QPushButton::clicked, this, &Menu::MenuPrincipal);
-    connect(ui->Slot1, &QPushButton::clicked, this, &Menu::clikeoBotonSlot);
-    connect(ui->Slot2, &QPushButton::clicked, this, &Menu::clikeoBotonSlot);
-    connect(ui->Slot3, &QPushButton::clicked, this, &Menu::clikeoBotonSlot);
+    connect(ui->Slot1, &QPushButton::clicked, this, [this]() { this->slot = 0; this->clikeoBotonSlot(); });
+    connect(ui->Slot2, &QPushButton::clicked, this, [this]() { this->slot = 1; this->clikeoBotonSlot(); });
+    connect(ui->Slot3, &QPushButton::clicked, this, [this]() { this->slot = 2; this->clikeoBotonSlot(); });
     connect(ui->botonContinua, &QPushButton::clicked, this, &Menu::clickeoJugar);
-
 
     ui->MenuStacked->setCurrentIndex(0);
 }
 
-void Menu::guardarPartida(DatosJugador datos)
+void Menu::guardarPartida(DatosJugador datos, int Slot)
 {
-    guardar.guardar(datos, slot);
+    guardar.guardar(datos, Slot);
 }
 
 Menu::~Menu()

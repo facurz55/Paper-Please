@@ -1,7 +1,7 @@
 #include "guardarpartida.h"
 
 guardarpartida::guardarpartida() {
-    test();
+    //test();
 }
 
 void guardarpartida::guardar(DatosJugador datos, int slot)
@@ -27,10 +27,8 @@ DatosJugador guardarpartida::cargar(int slot)
         return sinDatos;
 
     auto tamanio = sizeof(DatosJugador);
-    if (archivo.size() != tamanio)
-        return sinDatos;
-
     DatosJugador datos;
+
     archivo.read(reinterpret_cast<char*> (&datos), tamanio);
     archivo.close();
     return datos;

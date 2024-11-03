@@ -35,7 +35,7 @@
       <string notr="true"/>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>2</number>
      </property>
      <widget class="QWidget" name="game">
       <layout class="QVBoxLayout" name="verticalLayout_13">
@@ -72,7 +72,7 @@
              <number>0</number>
             </property>
             <property name="sizeConstraint">
-             <enum>QLayout::SizeConstraint::SetDefaultConstraint</enum>
+             <enum>QLayout::SetDefaultConstraint</enum>
             </property>
             <property name="leftMargin">
              <number>0</number>
@@ -521,9 +521,6 @@ QPushButton:hover {
             <property name="text">
              <string/>
             </property>
-            <property name="alignment">
-             <set>Qt::AlignmentFlag::AlignCenter</set>
-            </property>
            </widget>
            <widget class="QLabel" name="timer">
             <property name="geometry">
@@ -576,10 +573,7 @@ QPushButton:hover {
              <string/>
             </property>
             <property name="textFormat">
-             <enum>Qt::TextFormat::AutoText</enum>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignmentFlag::AlignCenter</set>
+             <enum>Qt::PlainText</enum>
             </property>
            </widget>
           </widget>
@@ -615,11 +609,8 @@ QPushButton:hover {
          <layout class="QHBoxLayout" name="horizontalLayout">
           <item>
            <spacer name="horizontalSpacer">
-            <property name="orientation">
-             <enum>Qt::Orientation::Horizontal</enum>
-            </property>
             <property name="sizeType">
-             <enum>QSizePolicy::Policy::Fixed</enum>
+             <enum>QSizePolicy::Fixed</enum>
             </property>
             <property name="sizeHint" stdset="0">
              <size>
@@ -632,19 +623,19 @@ QPushButton:hover {
           <item>
            <layout class="QFormLayout" name="formLayout">
             <property name="sizeConstraint">
-             <enum>QLayout::SizeConstraint::SetDefaultConstraint</enum>
+             <enum>QLayout::SetDefaultConstraint</enum>
             </property>
             <property name="fieldGrowthPolicy">
-             <enum>QFormLayout::FieldGrowthPolicy::AllNonFixedFieldsGrow</enum>
+             <enum>QFormLayout::FieldsStayAtSizeHint</enum>
             </property>
             <property name="rowWrapPolicy">
-             <enum>QFormLayout::RowWrapPolicy::WrapLongRows</enum>
+             <enum>QFormLayout::DontWrapRows</enum>
             </property>
             <property name="labelAlignment">
-             <set>Qt::AlignmentFlag::AlignCenter</set>
+             <set>Qt::AlignLeading</set>
             </property>
             <property name="formAlignment">
-             <set>Qt::AlignmentFlag::AlignCenter</set>
+             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
             </property>
             <property name="horizontalSpacing">
              <number>200</number>
@@ -776,11 +767,8 @@ QPushButton:hover {
           </item>
           <item>
            <spacer name="horizontalSpacer_2">
-            <property name="orientation">
-             <enum>Qt::Orientation::Horizontal</enum>
-            </property>
             <property name="sizeType">
-             <enum>QSizePolicy::Policy::Fixed</enum>
+             <enum>QSizePolicy::Fixed</enum>
             </property>
             <property name="sizeHint" stdset="0">
              <size>
@@ -1348,7 +1336,7 @@ QPushButton:hover {
         </font>
        </property>
        <property name="layoutDirection">
-        <enum>Qt::LayoutDirection::RightToLeft</enum>
+        <enum>Qt::LeftToRight</enum>
        </property>
        <property name="styleSheet">
         <string notr="true">QLabel {

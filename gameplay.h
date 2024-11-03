@@ -15,7 +15,6 @@
 #include "condiciones.h"
 #include "multas.h"
 #include "guardarpartida/datosjugador.h"
-#include "menu.h"
 
 namespace Ui {
 class gameplay;
@@ -47,7 +46,7 @@ signals:
     void clickedFinalizar();
     void clickedCondiciones();
     void clickedVolverMesa();
-    void GuardarDatos(DatosJugador);
+    void GuardarDatos(DatosJugador, int);
     void volverAlMenuClicked();
     void nombrePartidaActualizado(const QString &nombre);
 
@@ -115,7 +114,6 @@ private:
     QAudioOutput *audioOutputGameplay;
     int indexSLOT = -1;
     DatosJugador jugador;
-    guardarpartida partida;
 };
 
 #endif // GAMEPLAY_H

@@ -24,7 +24,7 @@ public:
     ~Menu();
 
 public slots:
-    void guardarPartida(DatosJugador datos);
+    void guardarPartida(DatosJugador datos, int);
     void cambiarNombreBoton(const QString &nombre);
 
 signals:

@@ -156,7 +156,14 @@ void gameplay::clikedConfirmarGuardar(){
     qDebug() << nombrePartida;
     // Ahora tienes el texto del QLineEdit en nombrePartida como char[]
 
+    DatosJugador aux;
+    for (int i = 0; i < 50; i++)
+        aux.nombre[i] = nombrePartida[i];
+    aux.multas = this->multa.obtenerMultas();
+    aux.nivel = this->Nivel;
+    aux.puntuacion = this->Puntos.obtener_puntos();
 
+    emit GuardarDatos(aux, indexSLOT);
 
     ui->mensajePG->show();
     ui->guardarPartida->hide();
