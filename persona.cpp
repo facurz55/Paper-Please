@@ -15,8 +15,9 @@ Persona::Persona() {
     generarResidencia();
     generarProposito();
 
-    generarPesoMaleta();
     generarCompania();
+
+    generarPesoMaleta();
     generarOcupacion();
 }
 
@@ -292,7 +293,7 @@ void Persona::generarProposito(){
         if(mal < 10){
             QStringList malProposito = {"trabajo", "residencia", "estereotipo no \nconvencional de peruano"};
             int prop = generador.bounded(malProposito.size());
-            residencia = malProposito[prop];
+            proposito = malProposito[prop];
         }
     }
     if(Visa == "diplomatico"){
@@ -302,7 +303,7 @@ void Persona::generarProposito(){
             if(mal < 10){
             QStringList malProposito = {"trabajo", "residencia", "estereotipo no \nconvencional de peruano", "se ma quedo \nla motora"};
             int prop = generador.bounded(malProposito.size());
-            residencia = malProposito[prop];
+            proposito = malProposito[prop];
         }
     }
     if(Visa == "Trabajo"){
@@ -312,7 +313,7 @@ void Persona::generarProposito(){
             if(mal < 10){
             QStringList malProposito = {"residencia", "estereotipo no \nconvencional de boliguayo", "string.h"};
             int prop = generador.bounded(malProposito.size());
-            residencia = malProposito[prop];
+            proposito = malProposito[prop];
         }
     }
     if(Visa == "Residente"){
@@ -322,7 +323,7 @@ void Persona::generarProposito(){
             if(mal < 10){
             QStringList malProposito = {"trabajo", "estereotipo no \nconvencional de somali", "estoy buscando \na Rusher King"};
             int prop = generador.bounded(malProposito.size());
-            residencia = malProposito[prop];
+            proposito = malProposito[prop];
         }
     }
     if(Visa == "refugiado politico"){
@@ -332,7 +333,7 @@ void Persona::generarProposito(){
             if(mal < 10){
             QStringList malProposito = {"trabajo", "recidencia", "estereotipo no \nconvencional de peruano", "si mi nacionalidad es \nboliviano pido disculpas"};
             int prop = generador.bounded(malProposito.size());
-            residencia = malProposito[prop];
+            proposito = malProposito[prop];
         }
     }
 
