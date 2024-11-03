@@ -37,6 +37,8 @@ public:
     QLabel *getLabelNPC();
     void MostrarCondiciones();
     void reiniciarReloj();
+    void iniciarMusicaGameplay();
+    void detenerMusicaGameplay();
 
 signals:
     void SalioElNPC();
@@ -111,7 +113,7 @@ private:
     condiciones condicion;
     char nombrePartida[50];
     QString condicion1;
-    const QString ALDEANO = "image:url(:/elprimooo.png);";
+    const QString ALDEANO = "image:url(:/aldeano_tuco.png);";
     const QString REFUGIADOPOLITICO = "image:url(:/pngwing.com (2).png);";
     const QString REVOLUCIONARIO = "image:url(:/negritopix.png);";
     const QString DIPLOMATICO = "image:url(:/momardo.png);";
@@ -119,6 +121,10 @@ private:
     QMediaPlayer *SonidoAceptar;
     QMediaPlayer *SonidoPapel;
     QMediaPlayer *MusicaGameplay;
+    QMediaPlayer *SonidoGameOver;
+    QAudioOutput *audioOutputGameOver;
+    QMediaPlayer *SonidoVictoria;
+    QAudioOutput *audioOutputVictoria;
     QAudioOutput *audioOutputPapel;
     QAudioOutput *audioOutputDenegar;
     QAudioOutput *audioOutputAceptar;
