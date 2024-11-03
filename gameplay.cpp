@@ -1,5 +1,6 @@
 #include "gameplay.h"
 #include "ui_gameplay.h"
+#include <qdebug.h>
 
 gameplay::gameplay(QWidget *parent)
     : QWidget(parent)
@@ -66,7 +67,7 @@ gameplay::gameplay(QWidget *parent)
 
     //TIMER
     tiempoInicio = QTime(13, 0);  //inicia a las 13
-    horaFin = QTime(18, 0);       //termina a las 22
+    horaFin = QTime(13.1, 0);       //termina a las 22
 
     // Conexiones de botones
     connect(ui->Boton_SiguienteDia, &QPushButton::clicked,  this, &gameplay::ComenzarSiguienteDia);
@@ -110,13 +111,21 @@ gameplay::gameplay(QWidget *parent)
 }
 
 void gameplay::setIndexSlot1(){
-    indexSLOT = 1;
+    indexSLOT = 0;
 }
 void gameplay::setIndexSlot2(){
-    indexSLOT = 2;
+    indexSLOT = 1;
 }
 void gameplay::setIndexSlot3(){
-    indexSLOT = 3;
+    indexSLOT = 2;
+}
+
+void gameplay::cargarJugardor(DatosJugador jugador){
+    Puntos.setPunto(jugador.puntuacion);
+    multa.setMultas(jugador.multas);
+    Nivel = jugador.nivel;
+    EmpezarJuegoSlot(jugador);
+    iniciarReloj();
 }
 
 void gameplay::clikedGuardarPartida(){
@@ -139,7 +148,7 @@ void gameplay::clikedCancelarGuardar(){
 
 void gameplay::clikedConfirmarGuardar(){
 
-    if(indexSLOT == 0){
+    if(indexSLOT == -1){
         ui->mensajePG_2->show();
         return;
     }
@@ -160,10 +169,16 @@ void gameplay::clikedConfirmarGuardar(){
     // Asegurarse de que la cadena esté terminada en nulo
     nombrePartida[sizeof(nombrePartida) - 1] = '\0';
 
-    qDebug() << nombrePartida;
     // Ahora tienes el texto del QLineEdit en nombrePartida como char[]
 
+    DatosJugador aux;
+    for (int i = 0; i < 50; i++)
+        aux.nombre[i] = nombrePartida[i];
+    aux.multas = this->multa.obtenerMultas();
+    aux.nivel = this->Nivel;
+    aux.puntuacion = this->Puntos.obtener_puntos();
 
+    emit GuardarDatos(aux, indexSLOT);
 
     ui->mensajePG->show();
     ui->guardarPartida->hide();
@@ -177,6 +192,8 @@ char* gameplay::getNombrePartida(){
     return nombrePartida;
 }
 
+
+
 void gameplay::Empezar(int Dificultad)
 {
     Nivel = 1;
@@ -186,12 +203,15 @@ void gameplay::Empezar(int Dificultad)
     EntrarNPC();
 }
 
-void gameplay::Empezar(DatosJugador datos)
+void gameplay::EmpezarJuegoSlot(DatosJugador datos)
 {
     Nivel = datos.nivel;
     Puntos.setPunto(datos.puntuacion);
-
-
+    MusicaGameplay->play();
+    iniciarReloj();
+    EntrarNPC();
+    ui->stackedWidget->setCurrentIndex(0);
+    qDebug()<<"hola";
 }
 
 void gameplay::setUpPuntos(int Dificultad)
@@ -233,11 +253,6 @@ void gameplay::DatosFinalizar() {//esto para verificar si perdiste, en caso que 
         ui->labelPuntos->setVisible(false);//se esconde los puntos, multas y el boton de siguiente dia
         ui->labelMultas->setVisible(false);
         ui->Boton_SiguienteDia->setVisible(false);
-
-        DatosJugador jugador;
-        jugador.multas = multaa; jugador.puntuacion = puntaje;
-        jugador.nivel = Nivel;
-        emit (jugador);
     } else {//en caso de que se siga el juego se muestra lo siguiente
         ui->labelPerdiste->setVisible(false);//no perdiste asi que no muestra esto
         ui->Boton_ReiniciarNivel->setVisible(false);
@@ -337,12 +352,12 @@ void gameplay::generarNpc()
         }
     }
 
-    Persona.generarResidencia();
+    /*Persona.generarResidencia();
     Persona.generarProposito();
 
     Persona.generarPesoMaleta();
     Persona.generarCompania();
-    Persona.generarOcupacion();
+    Persona.generarOcupacion();*/
 
     ui->aceptar->setEnabled(true);
     ui->denegar->setEnabled(true);
@@ -361,7 +376,6 @@ void gameplay::mostrarDocumentos()
     ui->visa->show();
     ui->cerrar->show();
     if (Nivel >= 2){ui->proposito->show();}
-    ui->proposito->show();
 }
 
 void gameplay::actualizarLabelDocumento() //esta funcion muestra los datos cuando se presiona un boton
@@ -403,7 +417,7 @@ void gameplay::actualizarLabelVisa()
     ui->visaD->show();
 }
 void gameplay::actualizarResidencia(){
-    QString resi = QString("\nPais de residencia\n%1\n\nProposito del viaje\n%2")
+    QString resi = QString("Pais de residencia\n%1\n\nProposito del viaje\n%2")
                             .arg(Persona.getResidencia())
                             .arg(Persona.getProposito());
 
@@ -426,7 +440,7 @@ void gameplay::actualizarMaleta(){
 }
 
 void gameplay::actualizarCompania(){
-    QString copm = QString("  Autorizacion de\n  %1 %2\n\n  Acompaniantes: %3")
+    QString copm = QString("Autorizacion de\n%1 %2\n\nAcompaniantes: %3")
                             .arg(Persona.obtenerNombre())
                             .arg(Persona.obtenerApellido())
                             .arg(Persona.getCompania());

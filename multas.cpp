@@ -14,3 +14,7 @@ int multas::obtenerMultas() const
 {
     return multa;
 }
+
+void multas::setMultas(int m){
+    multa = m;
+}

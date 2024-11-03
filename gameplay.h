@@ -15,7 +15,6 @@
 #include "condiciones.h"
 #include "multas.h"
 #include "guardarpartida/datosjugador.h"
-#include "menu.h"
 
 namespace Ui {
 class gameplay;
@@ -28,8 +27,7 @@ class gameplay : public QWidget
 public:
     explicit gameplay(QWidget *parent = nullptr);
     void Empezar(int Dificultad);
-    void Empezar(DatosJugador datos);
-
+    void EmpezarJuegoSlot(DatosJugador datos);
     void setUpPuntos(int Dificultad);
     ~gameplay();
     void EntrarNPC();
@@ -47,7 +45,7 @@ signals:
     void clickedFinalizar();
     void clickedCondiciones();
     void clickedVolverMesa();
-    void GuardarDatos(DatosJugador);
+    void GuardarDatos(DatosJugador, int);
     void volverAlMenuClicked();
     void nombrePartidaActualizado(const QString &nombre);
 
@@ -56,6 +54,8 @@ signals:
 
 public slots:
     void iniciarReloj();
+    void cargarJugardor(DatosJugador jugador);
+
 
 private slots:
     //este boton tenemos que moverlo a la parte del nivel 1 el boton condicionales
@@ -121,7 +121,8 @@ private:
     QAudioOutput *audioOutputDenegar;
     QAudioOutput *audioOutputAceptar;
     QAudioOutput *audioOutputGameplay;
-    int indexSLOT = 0;
+    int indexSLOT = -1;
+    DatosJugador jugador;
 };
 
 #endif // GAMEPLAY_H
