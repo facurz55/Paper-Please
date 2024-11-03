@@ -709,9 +709,9 @@ void gameplay::ComenzarSiguienteDia()
     ui->timer->show();
     ui->mostrar_req->setDisabled(false);
     ui->papeles->setDisabled(false);
-    ui->aceptar->setDisabled(true);
-    ui->denegar->setDisabled(true);
-    ui->Siguiente_NPC->setEnabled(true);
+    ui->aceptar->setDisabled(false);
+    ui->denegar->setDisabled(false);
+    ui->Siguiente_NPC->setDisabled(true);
     ui->Siguiente_NPC->show();
     Nivel++;
     qDebug()<<Nivel;
