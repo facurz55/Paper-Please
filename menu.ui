@@ -261,6 +261,9 @@ border-image: url(:/_025fe56e-7f50-405f-b902-336be60dd152.jfif);
            <property name="text">
             <string>SELECCIONAR LA DIFICULTAD</string>
            </property>
+           <property name="alignment">
+            <set>Qt::AlignmentFlag::AlignCenter</set>
+           </property>
            <property name="margin">
             <number>0</number>
            </property>

@@ -314,6 +314,7 @@ void gameplay::DatosFinalizar() {//esto para verificar si perdiste, en caso que 
             ui->labelPuntos->setVisible(false);//se esconde los puntos, multas y el boton de siguiente dia
             ui->labelMultas->setVisible(false);
             ui->Boton_SiguienteDia->setVisible(false);
+            SonidoGameOver -> play();
         } else {//en caso de que se siga el juego se muestra lo siguiente
             ui->labelPerdiste->setVisible(false);//no perdiste asi que no muestra esto
             ui->Boton_ReiniciarNivel->setVisible(false);
@@ -322,6 +323,7 @@ void gameplay::DatosFinalizar() {//esto para verificar si perdiste, en caso que 
             ui->labelMultas->setText(QString("Multas: %1").arg(multaa));//lo mismo para multas
             ui->labelMultas->setVisible(true);
             ui->Boton_SiguienteDia->setVisible(true);//se muestra el boton del siguiente dia
+            SonidoVictoria -> play();
             Nivel++;
         }
     }
@@ -332,6 +334,7 @@ void gameplay::DatosFinalizar() {//esto para verificar si perdiste, en caso que 
             ui->labelPuntos->setVisible(false);//se esconde los puntos, multas y el boton de siguiente dia
             ui->labelMultas->setVisible(false);
             ui->Boton_SiguienteDia->setVisible(false);
+            SonidoGameOver -> play();
         } else {//en caso de que se siga el juego se muestra lo siguiente
             ui->labelPerdiste->setVisible(false);//no perdiste asi que no muestra esto
             ui->Boton_ReiniciarNivel->setVisible(false);
@@ -340,6 +343,7 @@ void gameplay::DatosFinalizar() {//esto para verificar si perdiste, en caso que 
             ui->labelMultas->setText(QString("Multas: %1").arg(multaa));//lo mismo para multas
             ui->labelMultas->setVisible(true);
             ui->Boton_SiguienteDia->setVisible(true);//se muestra el boton del siguiente dia
+            SonidoVictoria -> play();
             Nivel++;
         }
     }
@@ -350,6 +354,7 @@ void gameplay::DatosFinalizar() {//esto para verificar si perdiste, en caso que 
             ui->labelPuntos->setVisible(false);//se esconde los puntos, multas y el boton de siguiente dia
             ui->labelMultas->setVisible(false);
             ui->Boton_SiguienteDia->setVisible(false);
+            SonidoGameOver -> play();
         } else {//en caso de que se siga el juego se muestra lo siguiente
             ui->labelPerdiste->setVisible(false);//no perdiste asi que no muestra esto
             ui->Boton_ReiniciarNivel->setVisible(false);
@@ -358,6 +363,7 @@ void gameplay::DatosFinalizar() {//esto para verificar si perdiste, en caso que 
             ui->labelMultas->setText(QString("Multas: %1").arg(multaa));//lo mismo para multas
             ui->labelMultas->setVisible(true);
             ui->Boton_SiguienteDia->setVisible(true);//se muestra el boton del siguiente dia
+            SonidoVictoria -> play();
             Nivel++;
         }
     }
