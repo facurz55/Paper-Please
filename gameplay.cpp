@@ -694,9 +694,9 @@ void gameplay::ComenzarSiguienteDia()
 
     ui->Siguiente_NPC->show();
 
-    ui->aceptar->setDisabled(true);
-    ui->denegar->setDisabled(true);
-    ui->Siguiente_NPC->setEnabled(true);
+    ui->aceptar->setEnabled(true);
+    ui->denegar->setEnabled(true);
+    ui->Siguiente_NPC->setDisabled(true);
 
     ui->botonFinalizarTurno->hide();
 }
