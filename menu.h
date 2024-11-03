@@ -22,6 +22,8 @@ class Menu : public QWidget
 public:
     explicit Menu(QWidget *parent = nullptr);
     ~Menu();
+    void startMusic();
+    void stopMusic(); // Método para detener la música*/
 
 public slots:
     void guardarPartida(DatosJugador datos, int);
@@ -40,7 +42,6 @@ private slots:
     void DificultadMedia();
     void DificultadAlta();
     void Exit();
-    void stopMusic(); // Método para detener la música*/
 
 private:
     guardarpartida guardar;
