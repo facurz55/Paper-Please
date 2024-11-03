@@ -103,13 +103,13 @@ gameplay::gameplay(QWidget *parent)
 }
 
 void gameplay::setIndexSlot1(){
-    indexSLOT = 1;
+    indexSLOT = 0;
 }
 void gameplay::setIndexSlot2(){
-    indexSLOT = 2;
+    indexSLOT = 1;
 }
 void gameplay::setIndexSlot3(){
-    indexSLOT = 3;
+    indexSLOT = 2;
 }
 
 void gameplay::clikedGuardarPartida(){
@@ -132,7 +132,7 @@ void gameplay::clikedCancelarGuardar(){
 
 void gameplay::clikedConfirmarGuardar(){
 
-    if(indexSLOT == 0){
+    if(indexSLOT == -1){
         ui->mensajePG_2->show();
         return;
     }
@@ -226,11 +226,6 @@ void gameplay::DatosFinalizar() {//esto para verificar si perdiste, en caso que 
         ui->labelPuntos->setVisible(false);//se esconde los puntos, multas y el boton de siguiente dia
         ui->labelMultas->setVisible(false);
         ui->Boton_SiguienteDia->setVisible(false);
-
-        DatosJugador jugador;
-        jugador.multas = multaa; jugador.puntuacion = puntaje;
-        jugador.nivel = Nivel;
-        emit (jugador);
     } else {//en caso de que se siga el juego se muestra lo siguiente
         ui->labelPerdiste->setVisible(false);//no perdiste asi que no muestra esto
         ui->Boton_ReiniciarNivel->setVisible(false);
