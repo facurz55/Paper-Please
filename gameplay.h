@@ -94,11 +94,12 @@ private slots:
     void actualizarOcupacion();
     void actualizarResidencia();
 
+    void mostrarNivel();
 
     void on_volverAlMenu_clicked();
 
 private:
-    int Nivel;
+    int Nivel = 1;
     Ui::gameplay *ui;
     QPropertyAnimation * animacionEntrada;
     QPropertyAnimation * animacionSalida;

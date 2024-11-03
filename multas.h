@@ -8,6 +8,7 @@ public:
     void incrementar();
     int obtenerMultas() const;
     void setMultas(int m);
+    void reiniciar();
 private:
     int multa;
 };

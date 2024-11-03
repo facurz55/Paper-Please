@@ -29,5 +29,9 @@
         <file>aldeano_tuco.png</file>
         <file>game_over.wav</file>
         <file>victoria_sound.wav</file>
+        <file>iconoRe.png</file>
+        <file>Maletas Peso.png</file>
+        <file>compania.png</file>
+        <file>Recidencia V2.png</file>
     </qresource>
 </RCC>
