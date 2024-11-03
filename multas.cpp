@@ -18,3 +18,6 @@ int multas::obtenerMultas() const
 void multas::setMultas(int m){
     multa = m;
 }
+void multas::reiniciar(){
+    multa=0;
+}

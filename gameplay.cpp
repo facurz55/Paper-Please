@@ -60,6 +60,8 @@ gameplay::gameplay(QWidget *parent)
     ui->proposito->hide();
     ui->residencia->hide();
 
+    ui->nivel->hide();
+
     ui->mensajePG_2->hide();
     ui->SLOT1->hide();
     ui->SLOT2->hide();
@@ -67,7 +69,7 @@ gameplay::gameplay(QWidget *parent)
 
     //TIMER
     tiempoInicio = QTime(13, 0);  //inicia a las 13
-    horaFin = QTime(18, 0);       //termina a las 22
+    horaFin = QTime(14, 0);       //termina a las 22
 
     // Conexiones de botones
     connect(ui->Boton_SiguienteDia, &QPushButton::clicked,  this, &gameplay::ComenzarSiguienteDia);
@@ -199,6 +201,7 @@ void gameplay::Empezar(int Dificultad)
     Nivel = 1;
     MusicaGameplay->play();
     setUpPuntos(Dificultad);
+    mostrarNivel(); //prueba
     iniciarReloj(); //el reloj comienza cuando se produse el cambio de ventana
     EntrarNPC();
 }
@@ -246,7 +249,8 @@ void gameplay::DatosFinalizar() {//esto para verificar si perdiste, en caso que 
     int puntaje = Puntos.obtener_puntos();
     int multaa = multa.obtenerMultas();
     MusicaGameplay->stop();
-
+    int niv = Nivel;
+    if(niv==1){
     if ((multaa > 4) || (puntaje < 0)) {
         ui->labelPerdiste->setVisible(true);//muestra un label con mensaje de perdiste
         ui->Boton_ReiniciarNivel->setVisible(true);//boton de reiniciar el juego
@@ -261,9 +265,68 @@ void gameplay::DatosFinalizar() {//esto para verificar si perdiste, en caso que 
         ui->labelMultas->setText(QString("Multas: %1").arg(multaa));//lo mismo para multas
         ui->labelMultas->setVisible(true);
         ui->Boton_SiguienteDia->setVisible(true);//se muestra el boton del siguiente dia
+        Nivel++;
+        }
+    }
+    if(niv==2){
+        if ((multaa > 4) || (puntaje < 50)) {
+            ui->labelPerdiste->setVisible(true);//muestra un label con mensaje de perdiste
+            ui->Boton_ReiniciarNivel->setVisible(true);//boton de reiniciar el juego
+            ui->labelPuntos->setVisible(false);//se esconde los puntos, multas y el boton de siguiente dia
+            ui->labelMultas->setVisible(false);
+            ui->Boton_SiguienteDia->setVisible(false);
+        } else {//en caso de que se siga el juego se muestra lo siguiente
+            ui->labelPerdiste->setVisible(false);//no perdiste asi que no muestra esto
+            ui->Boton_ReiniciarNivel->setVisible(false);
+            ui->labelPuntos->setText(QString("Puntos: %1").arg(puntaje));//se muestran los puntos (arg es paraa mostrar los puntos
+            ui->labelPuntos->setVisible(true);//se abre el label de puntos
+            ui->labelMultas->setText(QString("Multas: %1").arg(multaa));//lo mismo para multas
+            ui->labelMultas->setVisible(true);
+            ui->Boton_SiguienteDia->setVisible(true);//se muestra el boton del siguiente dia
+            Nivel++;
+        }
+    }
+    if(niv==3){
+        if ((multaa > 4) || (puntaje < 100)) {
+            ui->labelPerdiste->setVisible(true);//muestra un label con mensaje de perdiste
+            ui->Boton_ReiniciarNivel->setVisible(true);//boton de reiniciar el juego
+            ui->labelPuntos->setVisible(false);//se esconde los puntos, multas y el boton de siguiente dia
+            ui->labelMultas->setVisible(false);
+            ui->Boton_SiguienteDia->setVisible(false);
+        } else {//en caso de que se siga el juego se muestra lo siguiente
+            ui->labelPerdiste->setVisible(false);//no perdiste asi que no muestra esto
+            ui->Boton_ReiniciarNivel->setVisible(false);
+            ui->labelPuntos->setText(QString("Puntos: %1").arg(puntaje));//se muestran los puntos (arg es paraa mostrar los puntos
+            ui->labelPuntos->setVisible(true);//se abre el label de puntos
+            ui->labelMultas->setText(QString("Multas: %1").arg(multaa));//lo mismo para multas
+            ui->labelMultas->setVisible(true);
+            ui->Boton_SiguienteDia->setVisible(true);//se muestra el boton del siguiente dia
+            Nivel++;
+        }
+    }
+    if(niv==4){
+        if ((multaa > 4) || (puntaje < 150)) {
+            ui->labelPerdiste->setVisible(true);//muestra un label con mensaje de perdiste
+            ui->Boton_ReiniciarNivel->setVisible(true);//boton de reiniciar el juego
+            ui->labelPuntos->setVisible(false);//se esconde los puntos, multas y el boton de siguiente dia
+            ui->labelMultas->setVisible(false);
+            ui->Boton_SiguienteDia->setVisible(false);
+        } else {//en caso de que se siga el juego se muestra lo siguiente
+            ui->labelPerdiste->setVisible(false);//no perdiste asi que no muestra esto
+            ui->Boton_ReiniciarNivel->setVisible(false);
+            ui->labelPuntos->setText(QString("Puntos: %1").arg(puntaje));//se muestran los puntos (arg es paraa mostrar los puntos
+            ui->labelPuntos->setVisible(true);//se abre el label de puntos
+            ui->labelMultas->setText(QString("Multas: %1").arg(multaa));//lo mismo para multas
+            ui->labelMultas->setVisible(true);
+            ui->Boton_SiguienteDia->setVisible(true);//se muestra el boton del siguiente dia
+            Nivel++;
+        }
     }
 
+
+    mostrarNivel();//prueba
     // Mostramos la pantalla de puntuacion
+    multa.reiniciar();
     ui->stackedWidget->setCurrentWidget(ui->PantallaPuntuacion);
     emit clickedFinalizar();
 }
@@ -353,12 +416,13 @@ void gameplay::generarNpc()
     }
 
 
-    Persona.generarResidencia();
+    /*Persona.generarResidencia();
     Persona.generarProposito();
     Persona.generarPesoMaleta();  //sacara esto despues
     Persona.generarCompania();
-    Persona.generarOcupacion();
+    Persona.generarOcupacion();*/
 
+    mostrarNivel();
 
     ui->aceptar->setEnabled(true);
     ui->denegar->setEnabled(true);
@@ -377,7 +441,7 @@ void gameplay::mostrarDocumentos()
     ui->visa->show();
     ui->cerrar->show();
     if (Nivel >= 2){ui->proposito->show();}
-    ui->proposito->show(); //sacar
+    //ui->proposito->show(); //sacar
 }
 
 void gameplay::actualizarLabelDocumento() //esta funcion muestra los datos cuando se presiona un boton
@@ -390,10 +454,8 @@ void gameplay::actualizarLabelDocumento() //esta funcion muestra los datos cuand
                             .arg(Persona.obtenerNacionalidad());
 
     ui->datos->setText(datosMostrar);
-    //if (Nivel == 4){actualizarMaleta();}
-    actualizarMaleta();
-    //if (Persona.getBoolComp() && Nivel == 4){actualizarCompania();}
-    if (Persona.getBoolComp()){actualizarCompania();}
+    if (Nivel == 4){actualizarMaleta();}
+    if (Persona.getBoolComp() && Nivel >= 3){actualizarCompania();}
     ui->datos->show();
     ui->visaD->hide();
     ui->ocupacion->hide();
@@ -410,7 +472,7 @@ void gameplay::actualizarLabelVisa()
                                 .arg(Persona.getPersonaEstCivil());
 
     ui->visaD->setText(datosMostrarVisa);
-    if (Persona.getPersonaVisa() == "Trabajo" || Persona.getPersonaVisa() == "diplomatico"){actualizarOcupacion();}
+    if (Nivel == 4){if (Persona.getPersonaVisa() == "Trabajo" || Persona.getPersonaVisa() == "diplomatico"){actualizarOcupacion();}}
 
     ui->datos->hide();
     ui->MaletaPeso->hide();
@@ -432,14 +494,6 @@ void gameplay::actualizarResidencia(){
     ui->ocupacion->hide();
 }
 
-void gameplay::actualizarMaleta(){
-    QString datosMaletas = QString("Tipo de equipaje\n%1\n\nPeso: %2kg\n")
-                                    .arg(Persona.getTipoMaleta())
-                                    .arg(Persona.getMaleta());
-
-    ui->MaletaPeso->setText(datosMaletas);
-    ui->MaletaPeso->show();
-}
 
 void gameplay::actualizarCompania(){
     QString copm = QString("  Autorizacion de\n  %1 %2\n\n  Acompaniantes: %3")
@@ -451,6 +505,15 @@ void gameplay::actualizarCompania(){
     ui->compania->show();
 }
 
+void gameplay::actualizarMaleta(){
+    QString datosMaletas = QString("Tipo de equipaje\n%1\n\nPeso: %2kg\n")
+    .arg(Persona.getTipoMaleta())
+        .arg(Persona.getMaleta());
+
+    ui->MaletaPeso->setText(datosMaletas);
+    ui->MaletaPeso->show();
+}
+
 void gameplay::actualizarOcupacion(){
     QString ocupa = QString("%1 %2\n\nOcupacion\n%3")
                             .arg(Persona.obtenerNombre())
@@ -459,6 +522,13 @@ void gameplay::actualizarOcupacion(){
 
     ui->ocupacion->setText(ocupa);
     ui->ocupacion->show();
+}
+
+void gameplay::mostrarNivel(){
+    QString niv = QString("   Nivel %1")
+                      .arg(Nivel);
+    ui->nivel->setText(niv);
+    ui->nivel->show();
 }
 
 void gameplay::cerrarDocumentos()
@@ -590,7 +660,7 @@ void gameplay::ReiniciarNivel()
 
     ui->Siguiente_NPC->show();
 
-
+    mostrarNivel();
 
 
     ui->botonFinalizarTurno->hide();
@@ -618,13 +688,15 @@ void gameplay::ComenzarSiguienteDia()
     ui->denegar->show();
     ui->mostrar_req->show();
     ui->papeles->show();
-
+    ui->mostrar_req->setDisabled(false);
+    ui->papeles->setDisabled(false);
     ui->timer->show();
 
     ui->Siguiente_NPC->show();
 
-
-
+    ui->aceptar->setDisabled(true);
+    ui->denegar->setDisabled(true);
+    ui->Siguiente_NPC->setEnabled(true);
 
     ui->botonFinalizarTurno->hide();
 }
@@ -654,6 +726,9 @@ void gameplay::actualizarReloj()
         ui->proposito->hide();
         ui->residencia->hide();
 
+        ui->nivel->hide();
+
+
         ui->visa->hide();
         ui->visaD->hide();
 
@@ -662,7 +737,7 @@ void gameplay::actualizarReloj()
         return;
     }
 
-    ui->timer->setText(tiempoActual.toString("hh:mm:ss"));
+    ui->timer->setText(tiempoActual.toString("  hh:mm:ss"));
 }
 
 void gameplay::preguntar()

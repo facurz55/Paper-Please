@@ -91,6 +91,7 @@ private slots:
     void actualizarOcupacion();
     void actualizarResidencia();
 
+    void mostrarNivel();
 
     void on_volverAlMenu_clicked();
 

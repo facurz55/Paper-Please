@@ -15,8 +15,9 @@ Persona::Persona() {
     generarResidencia();
     generarProposito();
 
-    generarPesoMaleta();
     generarCompania();
+
+    generarPesoMaleta();
     generarOcupacion();
 }
 
