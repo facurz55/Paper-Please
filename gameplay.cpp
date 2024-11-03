@@ -66,7 +66,7 @@ gameplay::gameplay(QWidget *parent)
 
     //TIMER
     tiempoInicio = QTime(13, 0);  //inicia a las 13
-    horaFin = QTime(14, 0);       //termina a las 22
+    horaFin = QTime(18, 0);       //termina a las 22
 
     // Conexiones de botones
     connect(ui->Boton_SiguienteDia, &QPushButton::clicked,  this, &gameplay::ComenzarSiguienteDia);
@@ -337,12 +337,12 @@ void gameplay::generarNpc()
         }
     }
 
-    /*Persona.generarResidencia();
+    Persona.generarResidencia();
     Persona.generarProposito();
 
     Persona.generarPesoMaleta();
     Persona.generarCompania();
-    Persona.generarOcupacion();*/
+    Persona.generarOcupacion();
 
     ui->aceptar->setEnabled(true);
     ui->denegar->setEnabled(true);
@@ -361,6 +361,7 @@ void gameplay::mostrarDocumentos()
     ui->visa->show();
     ui->cerrar->show();
     if (Nivel >= 2){ui->proposito->show();}
+    ui->proposito->show();
 }
 
 void gameplay::actualizarLabelDocumento() //esta funcion muestra los datos cuando se presiona un boton
@@ -402,7 +403,7 @@ void gameplay::actualizarLabelVisa()
     ui->visaD->show();
 }
 void gameplay::actualizarResidencia(){
-    QString resi = QString("Pais de residencia\n%1\n\nProposito del viaje\n%2")
+    QString resi = QString("\nPais de residencia\n%1\n\nProposito del viaje\n%2")
                             .arg(Persona.getResidencia())
                             .arg(Persona.getProposito());
 
@@ -425,7 +426,7 @@ void gameplay::actualizarMaleta(){
 }
 
 void gameplay::actualizarCompania(){
-    QString copm = QString("Autorizacion de\n%1 %2\n\nAcompaniantes: %3")
+    QString copm = QString("  Autorizacion de\n  %1 %2\n\n  Acompaniantes: %3")
                             .arg(Persona.obtenerNombre())
                             .arg(Persona.obtenerApellido())
                             .arg(Persona.getCompania());
