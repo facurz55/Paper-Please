@@ -48,6 +48,7 @@ signals:
     void GuardarDatos(DatosJugador, int);
     void volverAlMenuClicked();
     void nombrePartidaActualizado(const QString &nombre);
+    void emitirIndexSlot(int);
 
 
 

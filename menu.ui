@@ -41,7 +41,7 @@
 }</string>
      </property>
      <property name="currentIndex">
-      <number>2</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="page">
       <property name="sizePolicy">
@@ -590,7 +590,7 @@ QPushButton:pressed {
             </widget>
            </item>
            <item>
-            <widget class="QPushButton" name="Slot3">
+            <widget class="QPushButton" name="Slot2">
              <property name="cursor">
               <cursorShape>PointingHandCursor</cursorShape>
              </property>
@@ -625,7 +625,7 @@ QPushButton:pressed {
             </widget>
            </item>
            <item>
-            <widget class="QPushButton" name="Slot2">
+            <widget class="QPushButton" name="Slot3">
              <property name="cursor">
               <cursorShape>PointingHandCursor</cursorShape>
              </property>

@@ -114,12 +114,15 @@ gameplay::gameplay(QWidget *parent)
 
 void gameplay::setIndexSlot1(){
     indexSLOT = 0;
+    emit emitirIndexSlot(indexSLOT);
 }
 void gameplay::setIndexSlot2(){
     indexSLOT = 1;
+    emit emitirIndexSlot(indexSLOT);
 }
 void gameplay::setIndexSlot3(){
     indexSLOT = 2;
+    emit emitirIndexSlot(indexSLOT);
 }
 
 void gameplay::cargarJugardor(DatosJugador jugador){
@@ -204,6 +207,14 @@ void gameplay::Empezar(int Dificultad)
     mostrarNivel(); //prueba
     iniciarReloj(); //el reloj comienza cuando se produse el cambio de ventana
     EntrarNPC();
+    ui->SLOT1->hide();
+    ui->SLOT2->hide();
+    ui->SLOT3->hide();
+    ui->mensajePG->hide();
+    ui->mensajePG->hide();
+    ui->guardarPartida->show();
+    ui->volverAlMenu->show();
+
 }
 
 void gameplay::EmpezarJuegoSlot(DatosJugador datos)
@@ -688,15 +699,22 @@ void gameplay::ComenzarSiguienteDia()
     ui->denegar->show();
     ui->mostrar_req->show();
     ui->papeles->show();
+    ui->SLOT1->hide();
+    ui->SLOT2->hide();
+    ui->SLOT3->hide();
+    ui->mensajePG->hide();
+    ui->mensajePG->hide();
+    ui->guardarPartida->show();
+    ui->volverAlMenu->show();
+    ui->timer->show();
     ui->mostrar_req->setDisabled(false);
     ui->papeles->setDisabled(false);
-    ui->timer->show();
-
+    ui->aceptar->setDisabled(true);
+    ui->denegar->setDisabled(true);
+    ui->Siguiente_NPC->setEnabled(true);
     ui->Siguiente_NPC->show();
-
-    ui->aceptar->setEnabled(true);
-    ui->denegar->setEnabled(true);
-    ui->Siguiente_NPC->setDisabled(true);
+    Nivel++;
+    qDebug()<<Nivel;
 
     ui->botonFinalizarTurno->hide();
 }

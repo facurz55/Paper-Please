@@ -35,7 +35,7 @@
       <string notr="true"/>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>2</number>
      </property>
      <widget class="QWidget" name="game">
       <layout class="QVBoxLayout" name="verticalLayout_13">
@@ -1306,10 +1306,10 @@ QPushButton:hover {
       <widget class="QPushButton" name="Boton_SiguienteDia">
        <property name="geometry">
         <rect>
-         <x>390</x>
+         <x>430</x>
          <y>490</y>
-         <width>231</width>
-         <height>24</height>
+         <width>301</width>
+         <height>41</height>
         </rect>
        </property>
        <property name="palette">
@@ -1640,7 +1640,7 @@ QPushButton:hover {
        <property name="geometry">
         <rect>
          <x>310</x>
-         <y>430</y>
+         <y>300</y>
          <width>151</width>
          <height>51</height>
         </rect>
@@ -1787,7 +1787,7 @@ QPushButton:hover {
       <widget class="QPushButton" name="volverAlMenu">
        <property name="geometry">
         <rect>
-         <x>250</x>
+         <x>40</x>
          <y>490</y>
          <width>311</width>
          <height>41</height>
