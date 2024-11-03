@@ -13,7 +13,7 @@ Menu::Menu(QWidget *parent)
 {
     Puntos = 0;
     ui->setupUi(this);
-
+    //
     //WIDGETS
     ui->BotonContinuar->setVisible(false);
     ui->botonContinua->hide();

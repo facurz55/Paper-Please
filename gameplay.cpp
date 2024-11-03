@@ -8,7 +8,7 @@ gameplay::gameplay(QWidget *parent)
 {
     ui->setupUi(this);
     Puntos.setUpMultas(&multa);
-
+    //
     //MURMULLO DEL GAMEPLAY (CON EASTER EGG MARIANO =O)
     MusicaGameplay = new QMediaPlayer(this);
     audioOutputGameplay = new QAudioOutput(this);
@@ -712,6 +712,7 @@ void gameplay::ComenzarSiguienteDia()
     ui->aceptar->setDisabled(false);
     ui->denegar->setDisabled(false);
     ui->Siguiente_NPC->setDisabled(true);
+    ui->Siguiente_NPC->setEnabled(true);
     ui->Siguiente_NPC->show();
     Nivel++;
     qDebug()<<Nivel;
