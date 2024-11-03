@@ -70,23 +70,21 @@ Menu::~Menu()
     delete ui;
 }
 
+void Menu::cargarSlot(int slot){
+    indiceSlot = slot;
+}
+
+
 void Menu::cambiarNombreBoton(const QString &nombre)
 {
-    if(ui->Slot1->text()!="Slot 1"){
-        if(ui->Slot2->text()!="Slot 2"){
-            if(ui->Slot3->text()!="Slot 3"){
-                ui->Slot1->setText(nombre);
-            }else{
-                ui->Slot3->setText(nombre);
-            }
-        }else{
-            ui->Slot2->setText(nombre);
-        }
-    }else{
-        ui->Slot1->setText(nombre);
+    switch(indiceSlot){
+    case 0: ui->Slot1->setText(nombre); break;
+    case 1: ui->Slot2->setText(nombre); break;
+    case 2: ui->Slot3->setText(nombre); break;
+    default: break;
     }
-
 }
+
 
 // Método para detener la música
 void Menu::stopMusic(){

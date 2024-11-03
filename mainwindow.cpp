@@ -25,6 +25,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(game, &gameplay::nombrePartidaActualizado, menuPage, &Menu::cambiarNombreBoton);
     connect(game, &gameplay::GuardarDatos, menuPage, &Menu::guardarPartida);
     connect(menuPage, &Menu::enviarJugador, game, &gameplay::cargarJugardor);
+    connect(game, &gameplay::emitirIndexSlot, menuPage, &Menu::cargarSlot);
 }
 
 MainWindow::~MainWindow()
