@@ -86,6 +86,14 @@ private slots:
     void setIndexSlot2();
     void setIndexSlot3();
 
+    void actualizarMaleta();
+    void actualizarCompania();
+    void actualizarOcupacion();
+    void actualizarResidencia();
+
+
+    void on_volverAlMenu_clicked();
+
 private:
     int Nivel;
     Ui::gameplay *ui;

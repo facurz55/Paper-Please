@@ -16,6 +16,9 @@ public:
     void puntuacion2_asignada2();//asignacion de puntos en dificultad 50 normal
     void puntuacion3_asignada3();//asignacion de puntos en dificultad 0  dificil
     void setPunto(int newPunto);
+    void fallo_nivel_2(QString,QString,QString,QString);
+    void fallo_nivel_3(int,QString,QString);
+    void fallo_nivel_4(int,QString,QString,QString,QString);
 
 private:
     int punto;//variable de puntos

@@ -2,6 +2,7 @@
 
 Persona::Persona() {
     // Inicializar los datos del pasaporte de forma aleatoria
+    generador.seed(seed);
     datosArchivo();
     generarNombres();  // para generar el nombre
     generarFecha();
@@ -9,10 +10,14 @@ Persona::Persona() {
     generarVisa();
     generar_Estado_civil();
     generar_Estancia();
-    pensamientos();
+    //pensamientos();
 
     generarResidencia();
     generarProposito();
+
+    generarPesoMaleta();
+    generarCompania();
+    generarOcupacion();
 }
 
 // Métodos de generación de datos
@@ -229,7 +234,7 @@ void Persona::generar_Estado_civil() {
     Estadocivil = estadocivil[num];
 }
 
-void Persona::pensamientos()
+/*void Persona::pensamientos()
 {
     QStringList ideas = {"Que lindo dia", "Tengo hambre", "vamos Messi"};
     int pens = generador.bounded(ideas.size());
@@ -240,13 +245,13 @@ void Persona::pensamientos()
         int pens = generador.bounded(ideasmalas.size());
         pensamiento = ideasmalas[pens];
     }
-}
+}*/
 
 void Persona::generarResidencia(){
     int out = generador.bounded(100);
     if(nacionalidad == "boliviano/a"){
         residencia = "Bolivia";
-        if(out < 10){
+        if(out < 25){
             QStringList pais = {"Paraguay", "Brasil", "Argentina"};
             int pai = generador.bounded(pais.size());
             residencia = pais[pai];
@@ -254,7 +259,7 @@ void Persona::generarResidencia(){
     }
     if(nacionalidad == "paraguayo/a"){
         residencia = "Paraguay";
-        if(out < 10){
+        if(out < 20){
             QStringList pais = {"Bolivia", "Brasil", "Argentina"};
             int pai = generador.bounded(pais.size());
             residencia = pais[pai];
@@ -262,7 +267,7 @@ void Persona::generarResidencia(){
     }
     if(nacionalidad == "brasileño/a"){
         residencia = "Brasil";
-        if(out < 10){
+        if(out < 15){
             QStringList pais = {"Bolivia", "Paraguay", "Argentina"};
             int pai = generador.bounded(pais.size());
             residencia = pais[pai];
@@ -271,7 +276,7 @@ void Persona::generarResidencia(){
     if(nacionalidad == "argentino/a"){
         residencia = "Argentina";
         if(out < 10){
-            QStringList pais = {"Bolivia", "Paraguay", "Brasil"};
+            QStringList pais = {"Paraguay", "Brasil"};
             int pai = generador.bounded(pais.size());
             residencia = pais[pai];
         }
@@ -285,17 +290,17 @@ void Persona::generarProposito(){
         int prop = generador.bounded(propositos.size());
         proposito = propositos[prop];
         if(mal < 10){
-            QStringList malProposito = {"trabajo", "residencia", "estereotipo no convencional de peruano"};
+            QStringList malProposito = {"trabajo", "residencia", "estereotipo no \nconvencional de peruano"};
             int prop = generador.bounded(malProposito.size());
             residencia = malProposito[prop];
         }
     }
     if(Visa == "diplomatico"){
-        QStringList propositos = {"negociaciones internacionales", "relaciones internacionales"};
+        QStringList propositos = {"negociaciones \ninternacionales", "relaciones \ninternacionales"};
         int prop = generador.bounded(propositos.size());
         proposito = propositos[prop];
             if(mal < 10){
-            QStringList malProposito = {"trabajo", "residencia", "estereotipo no convencional de peruano", "se ma quedo la motora"};
+            QStringList malProposito = {"trabajo", "residencia", "estereotipo no \nconvencional de peruano", "se ma quedo \nla motora"};
             int prop = generador.bounded(malProposito.size());
             residencia = malProposito[prop];
         }
@@ -305,7 +310,7 @@ void Persona::generarProposito(){
         int prop = generador.bounded(propositos.size());
         proposito = propositos[prop];
             if(mal < 10){
-            QStringList malProposito = {"residencia", "estereotipo no convencional de boliguayo", "string.h"};
+            QStringList malProposito = {"residencia", "estereotipo no \nconvencional de boliguayo", "string.h"};
             int prop = generador.bounded(malProposito.size());
             residencia = malProposito[prop];
         }
@@ -315,7 +320,7 @@ void Persona::generarProposito(){
         int prop = generador.bounded(propositos.size());
         proposito = propositos[prop];
             if(mal < 10){
-            QStringList malProposito = {"trabajo", "estereotipo no convencional de somali", "estoy buscando a Rusher King"};
+            QStringList malProposito = {"trabajo", "estereotipo no \nconvencional de somali", "estoy buscando \na Rusher King"};
             int prop = generador.bounded(malProposito.size());
             residencia = malProposito[prop];
         }
@@ -325,7 +330,7 @@ void Persona::generarProposito(){
         int prop = generador.bounded(propositos.size());
         proposito = propositos[prop];
             if(mal < 10){
-            QStringList malProposito = {"trabajo", "recidencia", "estereotipo no convencional de peruano", "si mi nacionalidad es boliviano pido disculpas"};
+            QStringList malProposito = {"trabajo", "recidencia", "estereotipo no \nconvencional de peruano", "si mi nacionalidad es \nboliviano pido disculpas"};
             int prop = generador.bounded(malProposito.size());
             residencia = malProposito[prop];
         }
@@ -335,26 +340,28 @@ void Persona::generarProposito(){
 
 void Persona::generarCompania(){
     int comp = generador.bounded(100);
-    if (comp < 10){
-        int companiaAux = generador.bounded(1, 5);
+    compania = 0;
+    if (comp < 50){
+        int companiaAux = generador.bounded(1, 9);
         compania = companiaAux;
-    }
+        compBool = true;
+    }else{compBool = false;}
 }
 
 void Persona::generarPesoMaleta(){
     int auxP = generador.bounded(100);
     if (auxP < 40){
         tipoMaleta = "ligero";
-        int peso = generador.bounded(2, 7);
+        int peso = generador.bounded(2, 15);
         maleta = peso;
     }
     if (auxP > 60){
         tipoMaleta = "intermedio";
-        int peso = generador.bounded(8, 20);
+        int peso = generador.bounded(8, 30);
         maleta = peso;
     }else{
         tipoMaleta = "pesado";
-        int peso = generador.bounded(21, 40);
+        int peso = generador.bounded(20, 60);
         maleta = peso;
     }
 }
@@ -362,22 +369,22 @@ void Persona::generarPesoMaleta(){
 void Persona::generarOcupacion(){
     if (Visa == "Trabajo"){
         if (nacionalidad == "argentino/a"){
-            QStringList auxO = {"Desarrollador de software", "Especialista en ciberseguridad", "Médico", "Profesor/a universitario/a", "Gerente de ventas"};
+            QStringList auxO = {"Desarrollador de software", "Especialista en ciberseguridad", "Médico", "Profesor/a universitario/a", "Gerente de ventas","piquetero"};
             int ocu = generador.bounded(auxO.size());
             ocupacion = auxO[ocu];
         }
         if (nacionalidad == "brasileño/a"){
-            QStringList auxO = {"Analista de datos", "Fisioterapeuta", "Recursos humanos", "bailarin", "Estilista"};
+            QStringList auxO = {"Analista de datos", "Fisioterapeuta", "Recursos humanos", "bailarin", "Estilista","futbolista"};
             int ocu = generador.bounded(auxO.size());
             ocupacion = auxO[ocu];
         }
         if (nacionalidad == "paraguayo/a"){
-            QStringList auxO = {"Maestro/a", "Educador/a infantil", "Especialista en marketing", "albañil"};
+            QStringList auxO = {"Maestro/a", "Educador/a infantil", "Especialista en marketing", "albañil","ingeniero"};
             int ocu = generador.bounded(auxO.size());
             ocupacion = auxO[ocu];
         }
         if (nacionalidad == "boliviano/a"){
-            QStringList auxO = {"Tutor/a", "verdulero", "Enfermero/a", "Chef", "Ingeniero/a civil"};
+            QStringList auxO = {"Tutor/a", "verdulero", "Enfermero/a", "Chef", "Ingeniero/a civil","camionero"};
             int ocu = generador.bounded(auxO.size());
             ocupacion = auxO[ocu];
         }
@@ -458,4 +465,6 @@ QString Persona::getTipoMaleta(){
 QString Persona::getOcupacion(){
     return ocupacion;
 }
-
+bool Persona::getBoolComp(){
+    return compBool;
+}

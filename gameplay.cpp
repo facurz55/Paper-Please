@@ -54,6 +54,12 @@ gameplay::gameplay(QWidget *parent)
     ui->nombrePartida->hide();
     ui->mensajePG->hide();
     ui->volverAlMenu->hide();
+    ui->MaletaPeso->hide();
+    ui->compania->hide();
+    ui->ocupacion->hide();
+    ui->proposito->hide();
+    ui->residencia->hide();
+
     ui->mensajePG_2->hide();
     ui->SLOT1->hide();
     ui->SLOT2->hide();
@@ -78,6 +84,7 @@ gameplay::gameplay(QWidget *parent)
     connect(ui->SLOT2, &QPushButton::clicked, this, &gameplay::setIndexSlot2);
     connect(ui->SLOT3, &QPushButton::clicked, this, &gameplay::setIndexSlot3);
     connect(ui->visa, SIGNAL(clicked()), this, SLOT(actualizarLabelVisa()));
+    connect(ui->proposito, SIGNAL(clicked()), this, SLOT(actualizarResidencia()));
     connect(ui->aceptar, SIGNAL(clicked()), this, SLOT(siPasa()));
     connect(ui->denegar, SIGNAL(clicked()), this, SLOT(noPasa()));
     connect(ui->cerrar, SIGNAL(clicked()), this, SLOT(cerrarDocumentos()));
@@ -330,7 +337,7 @@ void gameplay::generarNpc()
     Persona.generarVisa();
     Persona.generar_Estado_civil();
     Persona.generar_Estancia();
-    Persona.pensamientos();
+    //Persona.pensamientos();
     if (Nivel >= 2){
         Persona.generarResidencia();
         Persona.generarProposito();
@@ -345,14 +352,18 @@ void gameplay::generarNpc()
         }
     }
 
+    /*Persona.generarResidencia();
+    Persona.generarProposito();
+
+    Persona.generarPesoMaleta();
+    Persona.generarCompania();
+    Persona.generarOcupacion();*/
+
     ui->aceptar->setEnabled(true);
     ui->denegar->setEnabled(true);
     ui->papeles->setEnabled(true);
     ui->mostrar_req->setEnabled(true);
     ui->Siguiente_NPC->setDisabled(true);
-    if (Persona.getCompania() != 0){
-      // boton de compania
-    }
 
     SalirNPC();
 }
@@ -364,6 +375,7 @@ void gameplay::mostrarDocumentos()
     ui->documento->show();
     ui->visa->show();
     ui->cerrar->show();
+    if (Nivel >= 2){ui->proposito->show();}
 }
 
 void gameplay::actualizarLabelDocumento() //esta funcion muestra los datos cuando se presiona un boton
@@ -376,8 +388,14 @@ void gameplay::actualizarLabelDocumento() //esta funcion muestra los datos cuand
                             .arg(Persona.obtenerNacionalidad());
 
     ui->datos->setText(datosMostrar);
+    //if (Nivel == 4){actualizarMaleta();}
+    actualizarMaleta();
+    //if (Persona.getBoolComp() && Nivel == 4){actualizarCompania();}
+    if (Persona.getBoolComp()){actualizarCompania();}
     ui->datos->show();
     ui->visaD->hide();
+    ui->ocupacion->hide();
+    ui->residencia->hide();
 }
 
 
@@ -390,9 +408,55 @@ void gameplay::actualizarLabelVisa()
                                 .arg(Persona.getPersonaEstCivil());
 
     ui->visaD->setText(datosMostrarVisa);
+    if (Persona.getPersonaVisa() == "Trabajo" || Persona.getPersonaVisa() == "diplomatico"){actualizarOcupacion();}
 
     ui->datos->hide();
+    ui->MaletaPeso->hide();
+    ui->compania->hide();
+    ui->residencia->hide();
     ui->visaD->show();
+}
+void gameplay::actualizarResidencia(){
+    QString resi = QString("Pais de residencia\n%1\n\nProposito del viaje\n%2")
+                            .arg(Persona.getResidencia())
+                            .arg(Persona.getProposito());
+
+    ui->residencia->setText(resi);
+    ui->residencia->show();
+    ui->datos->hide();
+    ui->MaletaPeso->hide();
+    ui->compania->hide();
+    ui->visaD->hide();
+    ui->ocupacion->hide();
+}
+
+void gameplay::actualizarMaleta(){
+    QString datosMaletas = QString("Tipo de equipaje\n%1\n\nPeso: %2kg\n")
+                                    .arg(Persona.getTipoMaleta())
+                                    .arg(Persona.getMaleta());
+
+    ui->MaletaPeso->setText(datosMaletas);
+    ui->MaletaPeso->show();
+}
+
+void gameplay::actualizarCompania(){
+    QString copm = QString("Autorizacion de\n%1 %2\n\nAcompaniantes: %3")
+                            .arg(Persona.obtenerNombre())
+                            .arg(Persona.obtenerApellido())
+                            .arg(Persona.getCompania());
+
+    ui->compania->setText(copm);
+    ui->compania->show();
+}
+
+void gameplay::actualizarOcupacion(){
+    QString ocupa = QString("%1 %2\n\nOcupacion\n%3")
+                            .arg(Persona.obtenerNombre())
+                            .arg(Persona.obtenerApellido())
+                            .arg(Persona.getOcupacion());
+
+    ui->ocupacion->setText(ocupa);
+    ui->ocupacion->show();
 }
 
 void gameplay::cerrarDocumentos()
@@ -404,7 +468,16 @@ void gameplay::cerrarDocumentos()
     ui->visa->hide();
     ui->documento->hide();
     ui->visaD->hide();
+    ui->MaletaPeso->hide();
+    ui->compania->hide();
+    ui->ocupacion->hide();
+    ui->proposito->hide();
+    ui->residencia->hide();
+
 }
+
+
+
 
 
 //aca se determina si la decision del jugador esta bien o no dependiendo de lo que elija
@@ -423,11 +496,26 @@ void gameplay::siPasa()
     }
     Persona.retPop();
 
+    if(Nivel>=2){
+        Puntos.fallo_nivel_2(Persona.getResidencia(),Persona.obtenerNacionalidad(),Persona.obtenerNpc(),Persona.getProposito());
+    }
+    if((Nivel>=3) && (Persona.getBoolComp())){
+        Puntos.fallo_nivel_3(Persona.getCompania(),Persona.obtenerNpc(),Persona.obtenerNacionalidad());
+    }
+    if(Nivel>=4){
+        Puntos.fallo_nivel_4(Persona.getMaleta(),Persona.getTipoMaleta(),Persona.getOcupacion(),Persona.obtenerNpc(),Persona.getResidencia());
+    }
+
     ui->documento->hide();
     ui->datos->hide();
     ui->cerrar->hide();
     ui->visa->hide();
     ui->visaD->hide();
+    ui->MaletaPeso->hide();
+    ui->compania->hide();
+    ui->ocupacion->hide();
+    ui->proposito->hide();
+    ui->residencia->hide();
 
     ui->aceptar->setDisabled(true);
     ui->denegar->setDisabled(true);
@@ -452,11 +540,26 @@ void gameplay::noPasa()
     }
     Persona.retPop();
 
+    /*if(Nivel>=2){
+        Puntos.fallo_nivel_2(Persona.getResidencia(),Persona.obtenerNacionalidad(),Persona.obtenerNpc(),Persona.getProposito());
+    }
+    if((Nivel>=3) && (Persona.getBoolComp())){
+        Puntos.fallo_nivel_3(Persona.getCompania(),Persona.obtenerNpc(),Persona.obtenerNacionalidad());
+    }
+    if(Nivel>=4){
+        Puntos.fallo_nivel_4(Persona.getMaleta(),Persona.getTipoMaleta(),Persona.getOcupacion(),Persona.obtenerNpc(),Persona.getResidencia());
+    }*/
+
     ui->documento->hide();
     ui->datos->hide();
     ui->cerrar->hide();
     ui->visa->hide();
     ui->visaD->hide();
+    ui->MaletaPeso->hide();
+    ui->compania->hide();
+    ui->ocupacion->hide();
+    ui->proposito->hide();
+    ui->residencia->hide();
 
     ui->aceptar->setDisabled(true);
     ui->denegar->setDisabled(true);
@@ -476,6 +579,19 @@ void gameplay::ReiniciarNivel()
     emit clickedReiniciar();
     ui->stackedWidget->setCurrentWidget(ui->game);
     EntrarNPC();
+    ui->aceptar->show();
+    ui->denegar->show();
+    ui->mostrar_req->show();
+    ui->papeles->show();
+
+    ui->timer->show();
+
+    ui->Siguiente_NPC->show();
+
+
+
+
+    ui->botonFinalizarTurno->hide();
 }
 
 void gameplay::CondicionesNivel()
@@ -494,7 +610,21 @@ void gameplay::ComenzarSiguienteDia()
 {
     ui->stackedWidget->setCurrentWidget(ui->game);
     iniciarReloj();
+    EntrarNPC();
     emit clickedSiguienteDia();
+    ui->aceptar->show();
+    ui->denegar->show();
+    ui->mostrar_req->show();
+    ui->papeles->show();
+
+    ui->timer->show();
+
+    ui->Siguiente_NPC->show();
+
+
+
+
+    ui->botonFinalizarTurno->hide();
 }
 
 void gameplay::actualizarReloj()
@@ -516,6 +646,11 @@ void gameplay::actualizarReloj()
         ui->datos->hide();
         ui->Siguiente_NPC->hide();
         ui->cerrar->hide();
+        ui->MaletaPeso->hide();
+        ui->compania->hide();
+        ui->ocupacion->hide();
+        ui->proposito->hide();
+        ui->residencia->hide();
 
         ui->visa->hide();
         ui->visaD->hide();
@@ -541,3 +676,22 @@ void gameplay::MostrarCondiciones(){
     ui->RFecha->setText(condicion.obtenerFecha());
     ui->RTipoVisita->setText(condicion.obtenerTipoVisita());
 }
+
+void gameplay::on_volverAlMenu_clicked()
+{
+    ui->stackedWidget->setCurrentWidget(ui->game);
+    ui->aceptar->show();
+    ui->denegar->show();
+    ui->mostrar_req->show();
+    ui->papeles->show();
+
+    ui->timer->show();
+
+    ui->Siguiente_NPC->show();
+
+
+
+
+    ui->botonFinalizarTurno->hide();
+}
+
