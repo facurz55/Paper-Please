@@ -37,6 +37,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         multas.cpp multas.h
         guardarpartida/datosjugador.h
         guardarpartida/guardarpartida.h guardarpartida/guardarpartida.cpp
+        logs/logs.h logs/logs.cpp
 
     )
 # Define target properties for Android with Qt 6 as:

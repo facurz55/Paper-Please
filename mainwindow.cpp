@@ -7,6 +7,8 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
+    log.setText("Texto de prueba");
+
     //STACKEDWIDGET
     stackedWidget = new QStackedWidget(this);
 

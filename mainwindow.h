@@ -11,7 +11,7 @@
 #include "persona.h"
 #include "menu.h"
 #include "gameplay.h"
-
+#include "logs/logs.h"
 
 
 QT_BEGIN_NAMESPACE
@@ -53,7 +53,7 @@ private slots:
     //void noPasa();
 private:
     Ui::MainWindow *ui;
-
+    Logs log;
     QSoundEffect sonido;
     Menu *menuPage;//Puntero de la clase
     gameplay *game;//Puntero para la pantalla donde jugamos
