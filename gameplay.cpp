@@ -2,9 +2,9 @@
 #include "ui_gameplay.h"
 #include <qdebug.h>
 
-gameplay::gameplay(QWidget *parent)
+gameplay::gameplay(Logs * logs, QWidget *parent)
     : QWidget(parent)
-    , ui(new Ui::gameplay), Reloj(this)
+    , ui(new Ui::gameplay), Reloj(this), log(logs)
 {
     ui->setupUi(this);
     Puntos.setUpMultas(&multa);
@@ -156,6 +156,7 @@ void gameplay::detenerMusicaGameplay() {
 }
 
 void gameplay::cargarJugardor(DatosJugador jugador){
+    log->setText("Jugador pulso paraa cargar partida.");
     Puntos.setPunto(jugador.puntuacion);
     multa.setMultas(jugador.multas);
     Nivel = jugador.nivel;
@@ -164,6 +165,7 @@ void gameplay::cargarJugardor(DatosJugador jugador){
 }
 
 void gameplay::clikedGuardarPartida(){
+    log->setText("Jugador guardo la partida.");
     ui->nombrePartida->show();
     ui->confirmar->show();
     ui->cancelar->show();
@@ -174,6 +176,7 @@ void gameplay::clikedGuardarPartida(){
 }
 
 void gameplay::clikedCancelarGuardar(){
+    log->setText("Jugador cancelo el guarddo.");
     ui->nombrePartida->clear();
     ui->nombrePartida->hide();
     ui->confirmar->hide();
@@ -292,12 +295,14 @@ QLabel *gameplay::getLabelNPC(){//<-MW
 }
 
 void gameplay::DatosFinalizar() {//esto para verificar si perdiste, en caso que no se muestran los puntos y mupunt
+    log->setText("Jugador finalizo el nivel.");
     int puntaje = Puntos.obtener_puntos();
     int multaa = multa.obtenerMultas();
     detenerMusicaGameplay();
     int niv = Nivel;
     if(niv==1){
     if ((multaa > 4) || (puntaje < 0)) {
+            log->setText("Jugador perdio al nivel 1.");
         ui->labelPerdiste->setVisible(true);//muestra un label con mensaje de perdiste
         ui->Boton_ReiniciarNivel->setVisible(true);//boton de reiniciar el juego
         ui->labelPuntos->setVisible(false);//se esconde los puntos, multas y el boton de siguiente dia
@@ -306,6 +311,7 @@ void gameplay::DatosFinalizar() {//esto para verificar si perdiste, en caso que 
         SonidoGameOver -> play();
 
     } else {//en caso de que se siga el juego se muestra lo siguiente
+        log->setText("Jugador gano el nivel 1.");
         ui->labelPerdiste->setVisible(false);//no perdiste asi que no muestra esto
         ui->Boton_ReiniciarNivel->setVisible(false);
         ui->labelPuntos->setText(QString("Puntos: %1").arg(puntaje));//se muestran los puntos (arg es paraa mostrar los puntos
@@ -319,6 +325,7 @@ void gameplay::DatosFinalizar() {//esto para verificar si perdiste, en caso que 
     }
     if(niv==2){
         if ((multaa > 4) || (puntaje < 50)) {
+            log->setText("Jugador perdio al nivel 2.");
             ui->labelPerdiste->setVisible(true);//muestra un label con mensaje de perdiste
             ui->Boton_ReiniciarNivel->setVisible(true);//boton de reiniciar el juego
             ui->labelPuntos->setVisible(false);//se esconde los puntos, multas y el boton de siguiente dia
@@ -326,6 +333,7 @@ void gameplay::DatosFinalizar() {//esto para verificar si perdiste, en caso que 
             ui->Boton_SiguienteDia->setVisible(false);
             SonidoGameOver -> play();
         } else {//en caso de que se siga el juego se muestra lo siguiente
+            log->setText("Jugador gano el nivel 2.");
             ui->labelPerdiste->setVisible(false);//no perdiste asi que no muestra esto
             ui->Boton_ReiniciarNivel->setVisible(false);
             ui->labelPuntos->setText(QString("Puntos: %1").arg(puntaje));//se muestran los puntos (arg es paraa mostrar los puntos
@@ -339,6 +347,7 @@ void gameplay::DatosFinalizar() {//esto para verificar si perdiste, en caso que 
     }
     if(niv==3){
         if ((multaa > 4) || (puntaje < 100)) {
+            log->setText("Jugador perdio al nivel 3.");
             ui->labelPerdiste->setVisible(true);//muestra un label con mensaje de perdiste
             ui->Boton_ReiniciarNivel->setVisible(true);//boton de reiniciar el juego
             ui->labelPuntos->setVisible(false);//se esconde los puntos, multas y el boton de siguiente dia
@@ -346,6 +355,7 @@ void gameplay::DatosFinalizar() {//esto para verificar si perdiste, en caso que 
             ui->Boton_SiguienteDia->setVisible(false);
             SonidoGameOver -> play();
         } else {//en caso de que se siga el juego se muestra lo siguiente
+            log->setText("Jugador gano el nivel 3.");
             ui->labelPerdiste->setVisible(false);//no perdiste asi que no muestra esto
             ui->Boton_ReiniciarNivel->setVisible(false);
             ui->labelPuntos->setText(QString("Puntos: %1").arg(puntaje));//se muestran los puntos (arg es paraa mostrar los puntos
@@ -359,6 +369,7 @@ void gameplay::DatosFinalizar() {//esto para verificar si perdiste, en caso que 
     }
     if(niv==4){
         if ((multaa > 4) || (puntaje < 150)) {
+            log->setText("Jugador perdio al nivel 4.");
             ui->labelPerdiste->setVisible(true);//muestra un label con mensaje de perdiste
             ui->Boton_ReiniciarNivel->setVisible(true);//boton de reiniciar el juego
             ui->labelPuntos->setVisible(false);//se esconde los puntos, multas y el boton de siguiente dia
@@ -366,6 +377,7 @@ void gameplay::DatosFinalizar() {//esto para verificar si perdiste, en caso que 
             ui->Boton_SiguienteDia->setVisible(false);
             SonidoGameOver -> play();
         } else {//en caso de que se siga el juego se muestra lo siguiente
+            log->setText("Jugador gano el nivel 4.");
             ui->labelPerdiste->setVisible(false);//no perdiste asi que no muestra esto
             ui->Boton_ReiniciarNivel->setVisible(false);
             ui->labelPuntos->setText(QString("Puntos: %1").arg(puntaje));//se muestran los puntos (arg es paraa mostrar los puntos
@@ -490,6 +502,7 @@ void gameplay::generarNpc()
 
 void gameplay::mostrarDocumentos()
 {
+    log->setText("Jugador solcito ver los documentos.");
     SonidoPapel->play();
     ui->papeles->setDisabled(true);
     ui->documento->show();
@@ -588,6 +601,7 @@ void gameplay::mostrarNivel(){
 
 void gameplay::cerrarDocumentos()
 {
+    log->setText("Jugador acepto la persona.");
     ui->papeles->setEnabled(true);
 
     ui->datos->hide();
@@ -610,6 +624,7 @@ void gameplay::cerrarDocumentos()
 //aca se determina si la decision del jugador esta bien o no dependiendo de lo que elija
 void gameplay::siPasa()
 {
+    log->setText("Jugador acepto la persona.");
     SonidoAceptar->play();
     int p1 = Persona.obtenerPop();
     QString tipo = Persona.obtenerNpc();
@@ -654,6 +669,7 @@ void gameplay::siPasa()
 
 void gameplay::noPasa()
 {
+    log->setText("Jugador rechazo la persona.");
     SonidoDenegar->play();
     int p1 = Persona.obtenerPop();
     QString tipo = Persona.obtenerNpc();
@@ -703,6 +719,8 @@ void gameplay::iniciarReloj() //funcion de inicio del reloj
 
 void gameplay::ReiniciarNivel()
 {
+    log->setText("Jugador perdio el nivel y reinicio.");
+
     emit clickedReiniciar();
     ui->stackedWidget->setCurrentWidget(ui->game);
     iniciarMusicaGameplay();
@@ -724,6 +742,7 @@ void gameplay::ReiniciarNivel()
 
 void gameplay::CondicionesNivel()
 {
+    log->setText("Jugador solicito las condiciones.");
     emit clickedCondiciones();
     ui->stackedWidget->setCurrentWidget(ui->game_3);
     if (Nivel >= 2){
@@ -732,6 +751,7 @@ void gameplay::CondicionesNivel()
 }
 
 void gameplay::botonReglas1(){
+    log->setText("Jugador cambio a la segunda pagina.");
     ui->stackedWidget->setCurrentWidget(ui->pantalla_reglas);
     ui->nivel2_reglas_2->show();
     if(Nivel>=3){
@@ -742,17 +762,20 @@ void gameplay::botonReglas1(){
     }
 }
 void gameplay::botonReglas2(){
+    log->setText("Jugador cambio a la primer pagina.");
     ui->stackedWidget->setCurrentWidget(ui->game_3);
 }
 
 void gameplay::VolverMesa()
 {
+    log->setText("Jugador volvio a la mesa.");
     ui->stackedWidget->setCurrentWidget(ui->game);
     emit clickedVolverMesa();
 }
 
 void gameplay::ComenzarSiguienteDia()
 {
+    log->setText("Jugador Paso al siguiente nivel.");
     ui->stackedWidget->setCurrentWidget(ui->game);
     iniciarMusicaGameplay();
     iniciarReloj();
@@ -829,6 +852,7 @@ void gameplay::preguntar()
 
 
 void gameplay::MostrarCondiciones(){
+    log->setText("Jugador solicito las condiciones.");
     ui->RNacionalidad->setText(condicion.obtenerNacionalidad());
     ui->REstancia->setText(condicion.obtenerEstancia());
     ui->REstCivil->setText(condicion.obtenerEstCivil());
@@ -838,6 +862,7 @@ void gameplay::MostrarCondiciones(){
 
 void gameplay::on_volverAlMenu_clicked()
 {
+     log->setText("Jugador pulso el boton de volver.");
     ui->stackedWidget->setCurrentWidget(ui->game);
     ui->aceptar->show();
     ui->denegar->show();

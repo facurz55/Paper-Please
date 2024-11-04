@@ -1,16 +1,15 @@
 #ifndef LOGS_H
 #define LOGS_H
-#include <fstream>
-#include <iostream>
-using namespace std;
+#include <QString>
+#include <QDateTime>
+#include <QDebug>
+#include <QFile>
 class Logs
 {
 public:
     Logs();
     ~Logs();
-    void setText(string texto);
-private:
-    ofstream archivo;
+    void setText(QString texto);
 };
 
 #endif // LOGS_H

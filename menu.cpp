@@ -6,9 +6,9 @@
 #include <qdebug.h>
 #include "guardarpartida/guardarpartida.h"
 
-Menu::Menu(QWidget *parent)
+Menu::Menu(Logs * logs,QWidget *parent)
     : QWidget(parent)
-    , ui(new Ui::Menu), slot(-1)
+    , ui(new Ui::Menu), slot(-1), log(logs)
 
 {
     Puntos = 0;

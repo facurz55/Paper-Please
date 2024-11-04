@@ -15,6 +15,7 @@
 #include "condiciones.h"
 #include "multas.h"
 #include "guardarpartida/datosjugador.h"
+#include "logs/logs.h"
 
 namespace Ui {
 class gameplay;
@@ -25,7 +26,7 @@ class gameplay : public QWidget
     Q_OBJECT
     //
 public:
-    explicit gameplay(QWidget *parent = nullptr);
+    explicit gameplay(Logs * logs, QWidget *parent = nullptr);
     void Empezar(int Dificultad);
     void EmpezarJuegoSlot(DatosJugador datos);
     void setUpPuntos(int Dificultad);
@@ -103,6 +104,7 @@ private slots:
     void on_volverAlMenu_clicked();
 
 private:
+    Logs * log;
     int Nivel = 1;
     Ui::gameplay *ui;
     QPropertyAnimation * animacionEntrada;

@@ -7,14 +7,12 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    log.setText("Texto de prueba");
-
     //STACKEDWIDGET
     stackedWidget = new QStackedWidget(this);
 
     setCentralWidget(stackedWidget);
-    menuPage = new Menu(this);
-    game = new gameplay(this);
+    menuPage = new Menu(&log, this);
+    game = new gameplay(&log, this);
 
     stackedWidget->addWidget(menuPage);     //añade la ventana del menu
     stackedWidget->addWidget(game);         //añade la ventana donde jugamos

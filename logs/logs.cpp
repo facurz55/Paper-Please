@@ -1,23 +1,37 @@
 #include "logs.h"
-#include <QString>
-#include <QDateTime>
+
 
 Logs::Logs() {
-    this->archivo.open("/logs.txt", ios::app);
     QString fechaActual = QDateTime::currentDateTime().toString("dd-MM-yyyy HH:mm:ss");
-    auto fecha = fechaActual.toStdString();
-    archivo << "INICIO DEL JUEGO: " << fecha << endl;
+    QFile archivo("logs.txt");
+
+    if(!archivo.open(QIODevice::Text | QIODevice::Append)){
+        qDebug() << "No se pudo abrir el archivo de logs";
+    }
+
+    QTextStream stream(&archivo);
+    stream << "INICIO DEL JUEGO: " << fechaActual  << "\n";
+    archivo.close();
 
 }
 
 Logs::~Logs()
 {
-    this->archivo.close();
+
 }
 
-void Logs::setText(string texto)
+void Logs::setText(QString texto)
 {
     QString fechaActual = "[" + QDateTime::currentDateTime().toString("dd-MM-yyyy HH:mm:ss") + "] ";
-    auto fechaLogRecibido = fechaActual.toStdString();
-    archivo << fechaLogRecibido << texto << endl;
+    qDebug() << "anduvo";
+
+    QFile archivo("logs.txt");
+
+    if(!archivo.open(QIODevice::Text | QIODevice::Append)){
+        qDebug() << "No se pudo abrir el archivo de logs";
+    }
+
+    QTextStream stream(&archivo);
+    stream << fechaActual << texto << "\n";
+    archivo.close();
 }

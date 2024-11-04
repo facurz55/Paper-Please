@@ -11,7 +11,7 @@
 #include "guardarpartida/guardarpartida.h"
 #include "guardarpartida/datosjugador.h"
 #include "gameplay.h"
-
+#include "logs/logs.h"
 namespace Ui {
 class Menu;
 }
@@ -19,9 +19,9 @@ class Menu;
 class Menu : public QWidget
 {
     Q_OBJECT
-    //
+
 public:
-    explicit Menu(QWidget *parent = nullptr);
+    explicit Menu(Logs * log, QWidget *parent = nullptr);
     ~Menu();
     void startMusic();
     void stopMusic(); // Método para detener la música*/
@@ -49,6 +49,7 @@ private slots:
     void ComenzarPartidaSlot();
 
 private:
+     Logs * log;
     guardarpartida guardar;
     Ui::Menu *ui;
     int Puntos;//validar con cuanto empieza los puntos
