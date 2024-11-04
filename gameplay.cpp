@@ -257,10 +257,13 @@ void gameplay::setUpPuntos(int Dificultad)
 {
     switch (Dificultad){
     case 0: Puntos.puntuacion_asignada1();
+        Nivel=1;
         break;
     case 1: Puntos.puntuacion2_asignada2();
+        Nivel=1;
         break;
     case 2: Puntos.puntuacion3_asignada3();
+        Nivel=1;
         break;
     }
 
@@ -701,7 +704,7 @@ void gameplay::ReiniciarNivel()
     ui->denegar->show();
     ui->mostrar_req->show();
     ui->papeles->show();
-
+    iniciarReloj();
     ui->timer->show();
 
     ui->Siguiente_NPC->show();
@@ -750,7 +753,7 @@ void gameplay::ComenzarSiguienteDia()
     ui->Siguiente_NPC->setDisabled(true);
     ui->Siguiente_NPC->setEnabled(true);
     ui->Siguiente_NPC->show();
-    Nivel++;
+
     qDebug()<<Nivel;
 
     ui->botonFinalizarTurno->hide();

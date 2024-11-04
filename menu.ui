@@ -41,7 +41,7 @@
 }</string>
      </property>
      <property name="currentIndex">
-      <number>1</number>
+      <number>2</number>
      </property>
      <widget class="QWidget" name="page">
       <property name="sizePolicy">
@@ -262,7 +262,7 @@ border-image: url(:/_025fe56e-7f50-405f-b902-336be60dd152.jfif);
             <string>SELECCIONAR LA DIFICULTAD</string>
            </property>
            <property name="alignment">
-            <set>Qt::AlignmentFlag::AlignCenter</set>
+            <set>Qt::AlignCenter</set>
            </property>
            <property name="margin">
             <number>0</number>
@@ -543,7 +543,7 @@ QPushButton:pressed {
            <item>
             <widget class="QLabel" name="SeleccionarSLot">
              <property name="layoutDirection">
-              <enum>Qt::LayoutDirection::LeftToRight</enum>
+              <enum>Qt::LeftToRight</enum>
              </property>
              <property name="styleSheet">
               <string notr="true">border-image: url(:/guardar_partida.jfif);</string>
