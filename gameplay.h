@@ -55,6 +55,7 @@ signals:
 
 
 
+
 public slots:
     void iniciarReloj();
     void cargarJugardor(DatosJugador jugador);
@@ -95,6 +96,9 @@ private slots:
     void actualizarResidencia();
 
     void mostrarNivel();
+
+    void botonReglas1();
+    void botonReglas2();
 
     void on_volverAlMenu_clicked();
 

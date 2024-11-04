@@ -49,29 +49,29 @@ void puntos::puntaje2(QString npc){
 
 }
 void  puntos::fallo_nivel_2(QString residencia,QString origen,QString npc,QString proposito_del_viaje){
-    if((residencia=="boliviano")&& (origen=="boliviano")){
+    if((residencia=="bolivia")&& (origen=="boliviano/a")){
         puntaje(npc);
     }
-    if((origen=="paraguay") && (proposito_del_viaje=="turismo")){
+    if((origen=="paraguayo/a") && (proposito_del_viaje=="turismo")){
         puntaje(npc);
     }
-    if((origen=="brazil") && (proposito_del_viaje=="visita familiar")){
+    if((origen=="brasileño/a") && (proposito_del_viaje=="visita familiar")){
         puntaje(npc);
     }
 }
 void puntos::fallo_nivel_3(int cantidad_acompanante,QString npc,QString origen){
-    if((origen=="boliviano") && (cantidad_acompanante!=0)){
+    if((origen=="boliviano/a") && (cantidad_acompanante!=0)){
         puntaje(npc);
     }
     if(cantidad_acompanante>=5){
         puntaje(npc);
     }
-    if((cantidad_acompanante>=4)&& (origen=="brazil")){
+    if((cantidad_acompanante>=4)&& (origen=="brasileño/a")){
         puntaje(npc);
     }
-    if((cantidad_acompanante<=2)&& (origen=="paraguay")){
+    if((cantidad_acompanante<=2)&& (origen=="paraguayo/a")){
         puntaje(npc);
-        }
+    }
 }
 void puntos::fallo_nivel_4(int peso_maleta,QString tipo_maleta,QString ocupacion,QString npc ,QString residencia){
     if((peso_maleta<=15) && (tipo_maleta!="liviana")){
@@ -83,26 +83,27 @@ void puntos::fallo_nivel_4(int peso_maleta,QString tipo_maleta,QString ocupacion
     if((peso_maleta<=40)&& (peso_maleta>26) && (tipo_maleta!="pesada")){
         puntaje(npc);
     }
-    if((peso_maleta>20) && (residencia=="boliviano")){
+    if((peso_maleta>20) && (residencia=="Bolivia")){
         puntaje(npc);
     }
-    if((tipo_maleta=="pesada") && (residencia=="paraguay")){
+    if((tipo_maleta=="pesada") && (residencia=="Paraguay")){
         puntaje(npc);
     }
-    if((residencia=="argentino") && (ocupacion=="piquetero")){
+    if((residencia=="Argentina") && (ocupacion=="piquetero")){
         puntaje(npc);
     }
-    if((residencia=="brazilero") && (ocupacion=="futbolista")){
+    if((residencia=="Brasil") && (ocupacion=="futbolista")){
         puntaje(npc);
     }
-    if((residencia=="paraguayo")&& (ocupacion=="ingeniero")){
+    if((residencia=="Paraguay")&& (ocupacion=="ingeniero")){
         puntaje(npc);
     }
-    if((residencia=="boliviano")&& (ocupacion=="camionero")){
+    if((residencia=="Bolivia")&& (ocupacion=="camionero")){
         puntaje(npc);
     }
 
 }
+
 int puntos::obtener_puntos()
 {
     return punto;

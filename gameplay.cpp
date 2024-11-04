@@ -74,7 +74,10 @@ gameplay::gameplay(QWidget *parent)
     ui->ocupacion->hide();
     ui->proposito->hide();
     ui->residencia->hide();
-
+    ui->nivel2_reglas_2->hide();
+    ui->nivel3_reglas_2->hide();
+    ui->nivel4->hide();
+    ui->regNiv1->hide();
     ui->nivel->hide();
 
     ui->mensajePG_2->hide();
@@ -107,6 +110,9 @@ gameplay::gameplay(QWidget *parent)
     connect(ui->cerrar, SIGNAL(clicked()), this, SLOT(cerrarDocumentos()));
     connect(ui->papeles, SIGNAL(clicked()), this, SLOT(mostrarDocumentos()));
 
+    connect(ui->regNiv1, SIGNAL(clicked()), this, SLOT(botonReglas1()));
+    connect(ui->regNiv2, SIGNAL(clicked()), this, SLOT(botonReglas2()));
+
     //ANIMACIONES
     animacionEntrada = new QPropertyAnimation(ui->Label_NPC, "pos");
     PrepararAnimacion();
@@ -125,6 +131,7 @@ gameplay::gameplay(QWidget *parent)
 
     // Seteamos como widget principal donde se mostrara el juego:
     ui->stackedWidget->setCurrentWidget(ui->game);
+
 }
 
 void gameplay::setIndexSlot1(){
@@ -718,6 +725,23 @@ void gameplay::ReiniciarNivel()
 void gameplay::CondicionesNivel()
 {
     emit clickedCondiciones();
+    ui->stackedWidget->setCurrentWidget(ui->game_3);
+    if (Nivel >= 2){
+        ui->regNiv1->show();
+    } //bottonnnnnnn
+}
+
+void gameplay::botonReglas1(){
+    ui->stackedWidget->setCurrentWidget(ui->pantalla_reglas);
+    ui->nivel2_reglas_2->show();
+    if(Nivel>=3){
+        ui->nivel3_reglas_2->show();
+    }
+    if(Nivel>=4){
+        ui->nivel4->show();
+    }
+}
+void gameplay::botonReglas2(){
     ui->stackedWidget->setCurrentWidget(ui->game_3);
 }
 
