@@ -87,7 +87,7 @@ gameplay::gameplay(Logs * logs, QWidget *parent)
 
     //TIMER
     tiempoInicio = QTime(13, 0);  //inicia a las 13
-    horaFin = QTime(15, 0);       //termina a las 22
+    horaFin = QTime(22, 0);       //termina a las 22
 
     // Conexiones de botones
     connect(ui->Boton_SiguienteDia, &QPushButton::clicked,  this, &gameplay::ComenzarSiguienteDia);
